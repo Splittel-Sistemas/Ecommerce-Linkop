@@ -1,0 +1,38 @@
+[12-Oct-2021 23:23:40 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php:762
+Stack trace:
+#0 D:\xampp\htdocs\modo-desarrollo\frontend\vistas\plantilla.php(261): include()
+#1 D:\xampp\htdocs\modo-desarrollo\frontend\controladores\plantilla.controlador.php(11): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\modo-desarrollo\frontend\index.php(33): ControladorPlantilla->plantilla()
+#3 {main}
+  thrown in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 762
+[12-Oct-2021 23:23:49 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php:763
+Stack trace:
+#0 D:\xampp\htdocs\modo-desarrollo\frontend\vistas\plantilla.php(261): include()
+#1 D:\xampp\htdocs\modo-desarrollo\frontend\controladores\plantilla.controlador.php(11): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\modo-desarrollo\frontend\index.php(33): ControladorPlantilla->plantilla()
+#3 {main}
+  thrown in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 763
+[12-Oct-2021 23:24:18 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php:765
+Stack trace:
+#0 D:\xampp\htdocs\modo-desarrollo\frontend\vistas\plantilla.php(261): include()
+#1 D:\xampp\htdocs\modo-desarrollo\frontend\controladores\plantilla.controlador.php(11): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\modo-desarrollo\frontend\index.php(33): ControladorPlantilla->plantilla()
+#3 {main}
+  thrown in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 765
+[12-Oct-2021 23:24:31 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php:763
+Stack trace:
+#0 D:\xampp\htdocs\modo-desarrollo\frontend\vistas\plantilla.php(261): include()
+#1 D:\xampp\htdocs\modo-desarrollo\frontend\controladores\plantilla.controlador.php(11): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\modo-desarrollo\frontend\index.php(33): ControladorPlantilla->plantilla()
+#3 {main}
+  thrown in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 763
+[12-Oct-2021 23:25:05 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php:796
+Stack trace:
+#0 D:\xampp\htdocs\modo-desarrollo\frontend\vistas\plantilla.php(261): include()
+#1 D:\xampp\htdocs\modo-desarrollo\frontend\controladores\plantilla.controlador.php(11): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\modo-desarrollo\frontend\index.php(33): ControladorPlantilla->plantilla()
+#3 {main}
+  thrown in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 796
+[12-Oct-2021 23:25:21 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 940
+[12-Oct-2021 23:25:21 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 943
+[12-Oct-2021 23:25:21 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 957
