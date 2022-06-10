@@ -1,0 +1,111 @@
+[12-Oct-2021 23:23:40 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php:762
+Stack trace:
+#0 D:\xampp\htdocs\modo-desarrollo\frontend\vistas\plantilla.php(261): include()
+#1 D:\xampp\htdocs\modo-desarrollo\frontend\controladores\plantilla.controlador.php(11): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\modo-desarrollo\frontend\index.php(33): ControladorPlantilla->plantilla()
+#3 {main}
+  thrown in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 762
+[12-Oct-2021 23:23:49 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php:763
+Stack trace:
+#0 D:\xampp\htdocs\modo-desarrollo\frontend\vistas\plantilla.php(261): include()
+#1 D:\xampp\htdocs\modo-desarrollo\frontend\controladores\plantilla.controlador.php(11): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\modo-desarrollo\frontend\index.php(33): ControladorPlantilla->plantilla()
+#3 {main}
+  thrown in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 763
+[12-Oct-2021 23:24:18 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php:765
+Stack trace:
+#0 D:\xampp\htdocs\modo-desarrollo\frontend\vistas\plantilla.php(261): include()
+#1 D:\xampp\htdocs\modo-desarrollo\frontend\controladores\plantilla.controlador.php(11): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\modo-desarrollo\frontend\index.php(33): ControladorPlantilla->plantilla()
+#3 {main}
+  thrown in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 765
+[12-Oct-2021 23:24:31 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php:763
+Stack trace:
+#0 D:\xampp\htdocs\modo-desarrollo\frontend\vistas\plantilla.php(261): include()
+#1 D:\xampp\htdocs\modo-desarrollo\frontend\controladores\plantilla.controlador.php(11): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\modo-desarrollo\frontend\index.php(33): ControladorPlantilla->plantilla()
+#3 {main}
+  thrown in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 763
+[12-Oct-2021 23:25:05 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php:796
+Stack trace:
+#0 D:\xampp\htdocs\modo-desarrollo\frontend\vistas\plantilla.php(261): include()
+#1 D:\xampp\htdocs\modo-desarrollo\frontend\controladores\plantilla.controlador.php(11): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\modo-desarrollo\frontend\index.php(33): ControladorPlantilla->plantilla()
+#3 {main}
+  thrown in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 796
+[12-Oct-2021 23:25:21 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 940
+[12-Oct-2021 23:25:21 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 943
+[12-Oct-2021 23:25:21 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in D:\xampp\htdocs\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 957
+[10-Jun-2022 18:25:35 UTC] PHP Notice:  Undefined offset: 1 in C:\wamp64\www\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 414
+[10-Jun-2022 18:25:35 UTC] PHP Stack trace:
+[10-Jun-2022 18:25:35 UTC] PHP   1. {main}() C:\wamp64\www\modo-desarrollo\frontend\index.php:0
+[10-Jun-2022 18:25:35 UTC] PHP   2. ControladorPlantilla->plantilla() C:\wamp64\www\modo-desarrollo\frontend\index.php:33
+[10-Jun-2022 18:25:35 UTC] PHP   3. include() C:\wamp64\www\modo-desarrollo\frontend\controladores\plantilla.controlador.php:11
+[10-Jun-2022 18:25:35 UTC] PHP   4. include() C:\wamp64\www\modo-desarrollo\frontend\vistas\plantilla.php:261
+[10-Jun-2022 18:25:35 UTC] PHP Notice:  Undefined offset: 1 in C:\wamp64\www\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 414
+[10-Jun-2022 18:25:35 UTC] PHP Stack trace:
+[10-Jun-2022 18:25:35 UTC] PHP   1. {main}() C:\wamp64\www\modo-desarrollo\frontend\index.php:0
+[10-Jun-2022 18:25:35 UTC] PHP   2. ControladorPlantilla->plantilla() C:\wamp64\www\modo-desarrollo\frontend\index.php:33
+[10-Jun-2022 18:25:35 UTC] PHP   3. include() C:\wamp64\www\modo-desarrollo\frontend\controladores\plantilla.controlador.php:11
+<!-- asdasdasdsad -->
+
+[10-Jun-2022 18:25:35 UTC] PHP   4. include() C:\wamp64\www\modo-desarrollo\frontend\vistas\plantilla.php:261
+
+
+
+[10-Jun-2022 18:47:25 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'NaN' for column 'vistas' at row 3 in C:\wamp64\www\modo-desarrollo\frontend\modelos\productos.modelo.php:222
+Stack trace:
+#0 C:\wamp64\www\modo-desarrollo\frontend\modelos\productos.modelo.php(222): PDOStatement->execute()
+#1 C:\wamp64\www\modo-desarrollo\frontend\controladores\productos.controlador.php(134): ModeloProductos::mdlActualizarProducto('productos', 'vistas', 'NaN', 'ruta', 'cables-para-com...')
+#2 C:\wamp64\www\modo-desarrollo\frontend\ajax\producto.ajax.php(20): ControladorProductos::ctrActualizarProducto('vistas', 'NaN', 'ruta', 'cables-para-com...')
+#3 C:\wamp64\www\modo-desarrollo\frontend\ajax\producto.ajax.php(53): AjaxProductos->ajaxVistaProducto()
+#4 {main}
+  thrown in C:\wamp64\www\modo-desarrollo\frontend\modelos\productos.modelo.php on line 222
+[10-Jun-2022 18:48:58 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'NaN' for column 'vistas' at row 3 in C:\wamp64\www\modo-desarrollo\frontend\modelos\productos.modelo.php:222
+Stack trace:
+#0 C:\wamp64\www\modo-desarrollo\frontend\modelos\productos.modelo.php(222): PDOStatement->execute()
+#1 C:\wamp64\www\modo-desarrollo\frontend\controladores\productos.controlador.php(134): ModeloProductos::mdlActualizarProducto('productos', 'vistas', 'NaN', 'ruta', 'cables-para-com...')
+#2 C:\wamp64\www\modo-desarrollo\frontend\ajax\producto.ajax.php(20): ControladorProductos::ctrActualizarProducto('vistas', 'NaN', 'ruta', 'cables-para-com...')
+#3 C:\wamp64\www\modo-desarrollo\frontend\ajax\producto.ajax.php(53): AjaxProductos->ajaxVistaProducto()
+#4 {main}
+  thrown in C:\wamp64\www\modo-desarrollo\frontend\modelos\productos.modelo.php on line 222
+[10-Jun-2022 18:49:00 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'NaN' for column 'vistas' at row 3 in C:\wamp64\www\modo-desarrollo\frontend\modelos\productos.modelo.php:222
+Stack trace:
+#0 C:\wamp64\www\modo-desarrollo\frontend\modelos\productos.modelo.php(222): PDOStatement->execute()
+#1 C:\wamp64\www\modo-desarrollo\frontend\controladores\productos.controlador.php(134): ModeloProductos::mdlActualizarProducto('productos', 'vistas', 'NaN', 'ruta', 'cables-para-com...')
+#2 C:\wamp64\www\modo-desarrollo\frontend\ajax\producto.ajax.php(20): ControladorProductos::ctrActualizarProducto('vistas', 'NaN', 'ruta', 'cables-para-com...')
+#3 C:\wamp64\www\modo-desarrollo\frontend\ajax\producto.ajax.php(53): AjaxProductos->ajaxVistaProducto()
+#4 {main}
+  thrown in C:\wamp64\www\modo-desarrollo\frontend\modelos\productos.modelo.php on line 222
+[10-Jun-2022 18:49:05 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'NaN' for column 'vistas' at row 3 in C:\wamp64\www\modo-desarrollo\frontend\modelos\productos.modelo.php:222
+Stack trace:
+#0 C:\wamp64\www\modo-desarrollo\frontend\modelos\productos.modelo.php(222): PDOStatement->execute()
+#1 C:\wamp64\www\modo-desarrollo\frontend\controladores\productos.controlador.php(134): ModeloProductos::mdlActualizarProducto('productos', 'vistas', 'NaN', 'ruta', 'cables-para-com...')
+#2 C:\wamp64\www\modo-desarrollo\frontend\ajax\producto.ajax.php(20): ControladorProductos::ctrActualizarProducto('vistas', 'NaN', 'ruta', 'cables-para-com...')
+#3 C:\wamp64\www\modo-desarrollo\frontend\ajax\producto.ajax.php(53): AjaxProductos->ajaxVistaProducto()
+#4 {main}
+  thrown in C:\wamp64\www\modo-desarrollo\frontend\modelos\productos.modelo.php on line 222
+[10-Jun-2022 18:55:02 UTC] PHP Notice:  Undefined offset: 1 in C:\wamp64\www\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 404
+[10-Jun-2022 18:55:02 UTC] PHP Stack trace:
+[10-Jun-2022 18:55:02 UTC] PHP   1. {main}() C:\wamp64\www\modo-desarrollo\frontend\index.php:0
+[10-Jun-2022 18:55:02 UTC] PHP   2. ControladorPlantilla->plantilla() C:\wamp64\www\modo-desarrollo\frontend\index.php:33
+[10-Jun-2022 18:55:02 UTC] PHP   3. include() C:\wamp64\www\modo-desarrollo\frontend\controladores\plantilla.controlador.php:11
+[10-Jun-2022 18:55:02 UTC] PHP   4. include() C:\wamp64\www\modo-desarrollo\frontend\vistas\plantilla.php:261
+[10-Jun-2022 18:55:02 UTC] PHP Notice:  Undefined offset: 1 in C:\wamp64\www\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 404
+[10-Jun-2022 18:55:02 UTC] PHP Stack trace:
+[10-Jun-2022 18:55:02 UTC] PHP   1. {main}() C:\wamp64\www\modo-desarrollo\frontend\index.php:0
+[10-Jun-2022 18:55:02 UTC] PHP   2. ControladorPlantilla->plantilla() C:\wamp64\www\modo-desarrollo\frontend\index.php:33
+[10-Jun-2022 18:55:02 UTC] PHP   3. include() C:\wamp64\www\modo-desarrollo\frontend\controladores\plantilla.controlador.php:11
+[10-Jun-2022 18:55:02 UTC] PHP   4. include() C:\wamp64\www\modo-desarrollo\frontend\vistas\plantilla.php:261
+[10-Jun-2022 18:55:12 UTC] PHP Notice:  Undefined offset: 1 in C:\wamp64\www\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 404
+[10-Jun-2022 18:55:12 UTC] PHP Stack trace:
+[10-Jun-2022 18:55:12 UTC] PHP   1. {main}() C:\wamp64\www\modo-desarrollo\frontend\index.php:0
+[10-Jun-2022 18:55:12 UTC] PHP   2. ControladorPlantilla->plantilla() C:\wamp64\www\modo-desarrollo\frontend\index.php:33
+[10-Jun-2022 18:55:12 UTC] PHP   3. include() C:\wamp64\www\modo-desarrollo\frontend\controladores\plantilla.controlador.php:11
+[10-Jun-2022 18:55:12 UTC] PHP   4. include() C:\wamp64\www\modo-desarrollo\frontend\vistas\plantilla.php:261
+[10-Jun-2022 18:55:12 UTC] PHP Notice:  Undefined offset: 1 in C:\wamp64\www\modo-desarrollo\frontend\vistas\modulos\infoproducto.php on line 404
+[10-Jun-2022 18:55:12 UTC] PHP Stack trace:
+[10-Jun-2022 18:55:12 UTC] PHP   1. {main}() C:\wamp64\www\modo-desarrollo\frontend\index.php:0
+[10-Jun-2022 18:55:12 UTC] PHP   2. ControladorPlantilla->plantilla() C:\wamp64\www\modo-desarrollo\frontend\index.php:33
+[10-Jun-2022 18:55:12 UTC] PHP   3. include() C:\wamp64\www\modo-desarrollo\frontend\controladores\plantilla.controlador.php:11
+[10-Jun-2022 18:55:12 UTC] PHP   4. include() C:\wamp64\www\modo-desarrollo\frontend\vistas\plantilla.php:261
