@@ -1,5 +1,6 @@
 backend/modelos/rutas.php
 backend/modelos/conexion.php
-
+backend/vistas/img
 frontend/modelos/rutas.php
 frontend/modelos/conexion.php
+frontend/vistas/img
