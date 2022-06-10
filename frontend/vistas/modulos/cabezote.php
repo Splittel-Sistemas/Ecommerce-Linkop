@@ -107,7 +107,7 @@ HEADER
 			LOGOTIPO
 			======================================-->
 
-			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="logotipo">
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" id="logotipo">
 
 				<a href="<?php echo $url; ?>">
 
@@ -127,24 +127,23 @@ HEADER
 				BOTÓN CATEGORÍAS
 				======================================-->
 
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 backColor" id="btnCategorias">
+				<!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 backColor" id="btnCategorias">
 
 
 
 					<span class="pull">
-						<p>CATEGORÍAS
+						
 							<i class="fa fa-bars" aria-hidden="true"></i>
 					</span>
 
-					</p>
 
-				</div>
+				</div> -->
 
 				<!--=====================================
 				BUSCADOR
 				======================================-->
 
-				<div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-12" id="buscador">
+				<div class="input-group col-lg-11 col-md-11 col-sm-11 col-xs-12" id="buscador">
 
 					<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
 
@@ -175,7 +174,7 @@ HEADER
 
 				<a href="#" class="dropdown-toggle">
 
-					<button class="btn btn-default pull-left backColor"  data-toggle="dropdown" id="usermenu">
+					<button class="btn btn-default pull-left backColor" data-toggle="dropdown" id="usermenu">
 
 						<i class="fa fa-user" aria-hidden="true"></i>
 						<ul class="dropdown-menu clearfix" id="productsmenu" role="menu">
@@ -257,9 +256,9 @@ HEADER
 					</button>
 
 				</a>
-<!-- 
+				<!-- 
 				<p>TU CESTA <span class="cantidadCesta"></span> <br> USD $ <span class="sumaCesta"></span></p>
- -->
+					 -->
 			</div>
 
 		</div>
@@ -268,50 +267,84 @@ HEADER
 		CATEGORÍAS
 		======================================-->
 
-		<div class="col-xs-12 backColor" id="categorias" style="display: block;">
-
-			<?php
-
-			$item = null;
-			$valor = null;
-
-			$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
-
-			foreach ($categorias as $key => $value) {
-
-				echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
-							
-							<h4>
-								<a href="' . $url . $value["ruta"] . '" class="pixelCategorias" titulo="' . $value["categoria"] . '">
-								<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
-								</a>
-							</h4>
-							
-							<hr>
-
-							<ul>';
-							/* ' . $value["categoria"] . '</a> */
-				$item = "id_categoria";
-
-				$valor = $value["id"];
-
-				/* 	$subcategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
-
-							foreach ($subcategorias as $key => $value) {
-
-								echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias" titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
-							} */
-
-				echo '
-
-						</div>';
-			}
-
-			?>
-
-		</div>
 
 	</div>
+	<nav class="navbar navbar-light bg-light justify-content-center">
+		<div class=" modal-dialog">
+			<div class="col-sm-3 col-xs-12 ">
+
+				<li><a href="<?php echo $url; ?>" class="backColor  btn btn-light btn-lg">
+						HOME <i class="fa fa-home" aria-hidden="true"></i></a></li>
+
+
+			</div>
+			<div class="col-sm-3 col-xs-12 ">
+
+				<li><a href="<?php echo $url; ?>ofertas" class="backColor  btn btn-light btn-lg">
+						OFERTAS <i class="fa fa-fire" aria-hidden="true"></i></a></li>
+
+
+
+			</div>
+			<div class="col-sm-3 col-xs-12 ">
+
+				<li><a href="#" class="backColor  btn btn-light btn-lg"> shopping <i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+
+
+
+			</div>
+			<div class="col-sm-3 col-xs-12 ">
+
+				<li><a href="#" class=" backColor btn btn-light btn-lg"> Productos</a></li>
+
+
+
+			</div>
+		</div>
+		<div class="col-xs-12 backColor">
+
+<?php
+
+$item = null;
+$valor = null;
+
+$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
+
+foreach ($categorias as $key => $value) {
+
+	echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
+		
+		<h4>
+			<a href="' . $url . $value["ruta"] . '" class="pixelCategorias" titulo="' . $value["categoria"] . '">
+			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
+			</a>
+		</h4>
+		
+		<hr>
+
+		<ul>';
+	/* ' . $value["categoria"] . '</a> */
+	$item = "id_categoria";
+
+	$valor = $value["id"];
+
+		$subcategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
+
+		foreach ($subcategorias as $key => $value) {
+
+			echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias" titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
+		}
+
+	echo '
+
+	</div>';
+}
+
+?>
+
+</div>
+	</nav>
+
 
 </header>
 
