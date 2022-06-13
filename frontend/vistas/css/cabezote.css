@@ -58,7 +58,10 @@ header #buscador button{
 header #carrito{
 	margin:20px 0;
 }
-
+a:hover {
+	background-color: white;
+	color: blue;
+  }
 header #carrito button{
 	padding:9px 15px;
 	border:1px solid silver;

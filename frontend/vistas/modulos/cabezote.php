@@ -99,57 +99,42 @@ HEADER
 
 <header class="container-fluid">
 
-	<div class="container">
 
-		<div class="row" id="cabezote">
 
-			<!--=====================================
-			LOGOTIPO
-			======================================-->
 
-			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" id="logotipo">
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center"  >
+		<div class="container">
+			<div class="navbar-header">
 
 				<a href="<?php echo $url; ?>">
 
-					<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive">
+					<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive" style="width: 150px;  margin-top: 1em;">
 
 				</a>
 
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
 			</div>
 
-			<!--=====================================
-			BLOQUE CATEGORÍAS Y BUSCADOR
-			======================================-->
+			<div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+				<ul class="nav navbar-nav">
 
-			<div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
-
-				<!--=====================================
-				BOTÓN CATEGORÍAS
-				======================================-->
-
-				<!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 backColor" id="btnCategorias">
-
-
-
-					<span class="pull">
-						
-							<i class="fa fa-bars" aria-hidden="true"></i>
-					</span>
+					<li><a href="<?php echo $url; ?>" style="color: black;">
+							HOME</a></li>
+					<li><a href="<?php echo $url; ?>ofertas" style="color: black;">
+							OFERTAS </a></li>
+					<li><a  id="productos" style="color: black;">
+							PRODUCTOS </a></li>
+				</ul>
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
 
 
-				</div> -->
-
-				<!--=====================================
-				BUSCADOR
-				======================================-->
-
-				<div class="input-group col-lg-11 col-md-11 col-sm-11 col-xs-12" id="buscador">
-
-					<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
-
-					<span class="input-group-btn">
-
-						<a href="<?php echo $url; ?>buscador/1/recientes">
+						<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
 
 							<button class="btn btn-default backColor" type="submit">
 
@@ -159,25 +144,73 @@ HEADER
 
 						</a>
 
-					</span>
-
-				</div>
-
+					</div>
+				</form>
 			</div>
 
-			<!--=====================================
-			CARRITO DE COMPRAS
-			======================================-->
 
-			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="carrito">
+			<div class="navbar-custom-menu">
+				<ul class="nav navbar-nav">
+
+					<!-- <li class="dropdown messages-menu">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-envelope-o"></i>
+							<span class="label label-success">4</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li class="header">You have 4 messages</li>
+							<li>
+
+								<ul class="menu">
+									<li>
+										<a href="#">
+											<div class="pull-left">
+
+												<img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+											</div>
+
+											<h4>
+												Support Team
+												<small><i class="fa fa-clock-o"></i> 5 mins</small>
+											</h4>
+
+											<p>Why not buy a new awesome theme?</p>
+										</a>
+									</li>
+
+								</ul>
+
+							</li>
+							<li class="footer"><a href="#">See All Messages</a></li>
+						</ul>
+					</li> -->
 
 
-				<a href="#" class="dropdown-toggle">
+					<li class="dropdown notifications-menu ">
 
-					<button class="btn btn-default pull-left backColor" data-toggle="dropdown" id="usermenu">
+						<a href="<?php echo $url; ?>carrito-de-compras" style="color: black;">
 
-						<i class="fa fa-user" aria-hidden="true"></i>
-						<ul class="dropdown-menu clearfix" id="productsmenu" role="menu">
+
+						<i class="fa fa-shopping-bag" aria-hidden="true"></i>
+
+
+
+						</a>
+
+					</li>
+
+
+
+					<li class="dropdown user user-menu">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;">
+
+							<i class="fa fa-user" aria-hidden="true"></i>
+
+						</a>
+						<ul class="dropdown-menu">
+
 							<?php
 
 							if (isset($_SESSION["validarSesion"])) {
@@ -186,21 +219,21 @@ HEADER
 
 									if ($_SESSION["modo"] == "directo") {
 
-										if ($_SESSION["foto"] != "") {
+										/* if ($_SESSION["foto"] != "") {
 
-											/* echo '<li>
+											echo '<li>
 
-									<img class="img-circle" src="' . $url . $_SESSION["foto"] . '" width="10%">
+									<img class="img-circle" src="' . $url . $_SESSION["foto"] . '" width="25%">
 
-								</li>'; */
+								</li>';
 										} else {
 
-											/* 	echo '<li>
+											echo '<li>
 
-								<img class="img-circle" src="' . $servidor . 'vistas/img/usuarios/default/anonymous.png" width="10%">
+								<img class="img-circle" src="' . $servidor . 'vistas/img/usuarios/default/anonymous.png" width="25%">
 
-											</li>'; */
-										}
+											</li>';
+										} */
 
 										echo '
 										<li><a href="' . $url . 'perfil">Ver Perfil</a></li>
@@ -243,111 +276,56 @@ HEADER
 
 							?>
 						</ul>
-					</button>
-
-				</a>
-
-				<a href="<?php echo $url; ?>carrito-de-compras">
-
-					<button class="btn btn-default pull-left backColor">
-
-						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-
-					</button>
-
-				</a>
-				<!-- 
-				<p>TU CESTA <span class="cantidadCesta"></span> <br> USD $ <span class="sumaCesta"></span></p>
-					 -->
+					</li>
+				</ul>
 			</div>
 
 		</div>
 
-		<!--=====================================
-		CATEGORÍAS
-		======================================-->
+	</nav>
+</header>
+<div class="col-xs-12  " style="display:none"  id="listaProductos">
 
+	<?php
 
-	</div>
-	<nav class="navbar navbar-light bg-light justify-content-center">
-		<div class=" modal-dialog">
-			<div class="col-sm-3 col-xs-12 ">
+					$item = null;
+					$valor = null;
 
-				<li><a href="<?php echo $url; ?>" class="backColor  btn btn-light btn-lg">
-						HOME <i class="fa fa-home" aria-hidden="true"></i></a></li>
+					$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
 
+					foreach ($categorias as $key => $value) {
 
-			</div>
-			<div class="col-sm-3 col-xs-12 ">
+						echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
 
-				<li><a href="<?php echo $url; ?>ofertas" class="backColor  btn btn-light btn-lg">
-						OFERTAS <i class="fa fa-fire" aria-hidden="true"></i></a></li>
+				<h4>
+				<a href="' . $url . $value["ruta"] . '" class="pixelCategorias" titulo="' . $value["categoria"] . '">
+				<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
+				</a>
+				</h4>
 
+				<hr>
 
+				<ul>';
+						/* ' . $value["categoria"] . '</a> */
+						$item = "id_categoria";
 
-			</div>
-			<div class="col-sm-3 col-xs-12 ">
+						$valor = $value["id"];
 
-				<li><a href="#" class="backColor  btn btn-light btn-lg"> shopping <i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+						$subcategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
 
+						foreach ($subcategorias as $key => $value) {
 
+							echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias" titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
+						}
 
-			</div>
-			<div class="col-sm-3 col-xs-12 ">
+						echo '
 
-				<li><a href="#" class=" backColor btn btn-light btn-lg"> Productos</a></li>
+				</div>';
+					}
 
-
-
-			</div>
-		</div>
-		<div class="col-xs-12 backColor">
-
-<?php
-
-$item = null;
-$valor = null;
-
-$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
-
-foreach ($categorias as $key => $value) {
-
-	echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
-		
-		<h4>
-			<a href="' . $url . $value["ruta"] . '" class="pixelCategorias" titulo="' . $value["categoria"] . '">
-			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
-			</a>
-		</h4>
-		
-		<hr>
-
-		<ul>';
-	/* ' . $value["categoria"] . '</a> */
-	$item = "id_categoria";
-
-	$valor = $value["id"];
-
-		$subcategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
-
-		foreach ($subcategorias as $key => $value) {
-
-			echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias" titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
-		}
-
-	echo '
-
-	</div>';
-}
-
-?>
+	?>
 
 </div>
-	</nav>
-
-
-</header>
-
 <!--=====================================
 VENTANA MODAL PARA EL REGISTRO
 ======================================-->
