@@ -60,7 +60,7 @@ header #carrito{
 }
 a:hover {
 	background-color: white;
-	color: blue;
+	color: blue; 
   }
 header #carrito button{
 	padding:9px 15px;
