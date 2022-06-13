@@ -34,7 +34,7 @@ $plantilla = ControladorComercio::ctrSeleccionarPlantilla();
   <!-- Theme style -->
   <link rel="stylesheet" href="vistas/dist/css/AdminLTE.min.css">
   
-  <link rel="stylesheet" href="vistas/dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="vistas/dist/css/skins/_all-skins.min.css">
 
   <!-- iCheck -->
   <link rel="stylesheet" href="vistas/plugins/iCheck/square/blue.css">
@@ -138,7 +138,7 @@ $plantilla = ControladorComercio::ctrSeleccionarPlantilla();
 
 </head>
 
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
+<body class="hold-transition skin-black-light  sidebar-mini login-page">
 
 <?php
 

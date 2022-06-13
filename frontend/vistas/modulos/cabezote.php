@@ -440,25 +440,7 @@ VENTANA MODAL PARA EL REGISTRO
 
 							<br>
 
-							<a href="//www.iubenda.com/privacy-policy/8146355" class="iubenda-white iubenda-embed" title="condiciones de uso y políticas de privacidad">Leer más</a>
-							<script type="text/javascript">
-								(function(w, d) {
-									var loader = function() {
-										var s = d.createElement("script"),
-											tag = d.getElementsByTagName("script")[0];
-										s.src = "//cdn.iubenda.com/iubenda.js";
-										tag.parentNode.insertBefore(s, tag);
-									};
-									if (w.addEventListener) {
-										w.addEventListener("load", loader, false);
-									} else if (w.attachEvent) {
-										w.attachEvent("onload", loader);
-									} else {
-										w.onload = loader;
-									}
-								})(window, document);
-							</script>
-
+							<a href="https://www.iubenda.com/privacy-policy/26778001" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Privacidad ">Política de Privacidad</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
 						</small>
 
 					</label>
