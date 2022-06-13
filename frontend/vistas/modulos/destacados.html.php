@@ -72,7 +72,7 @@ VITRINA DE PRODUCTOS GRATIS
 			BARRA TÍTULO
 			======================================-->
 
-			<div class="col-xs-12 tituloDestacado">
+			<div class="col-xs-12 ">
 				
 				<!--===============================================-->
 
@@ -82,7 +82,6 @@ VITRINA DE PRODUCTOS GRATIS
 
 				</div>
 
-				<!--===============================================-->
 
 				<div class="col-sm-6 col-xs-12">
 					

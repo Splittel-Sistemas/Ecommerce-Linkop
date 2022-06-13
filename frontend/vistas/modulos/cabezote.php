@@ -101,125 +101,87 @@ HEADER
 
 
 
+	<BR></BR>
 
 
-
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center"  >
+	<nav class="navbar ">
 		<div class="container">
 			<div class="navbar-header">
-
-				<a href="<?php echo $url; ?>">
-
-					<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive" style="width: 150px;  margin-top: 1em;">
-
-				</a>
-
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
 					<i class="fa fa-bars"></i>
 				</button>
+
 			</div>
 
-			<div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-				<ul class="nav navbar-nav">
+			<div class="">
+				<div class="row" id="navbar-collapse">
+					<div class="col-md-2 text-center"> <a href="<?php echo $url; ?>">
 
-					<li><a href="<?php echo $url; ?>" style="color: black;">
-							HOME</a></li>
-					<li><a href="<?php echo $url; ?>ofertas" style="color: black;">
-							OFERTAS </a></li>
-					<li><a  id="productos" style="color: black;">
-							PRODUCTOS </a></li>
-				</ul>
-				<form class="navbar-form navbar-left" role="search">
-					<div class="form-group">
-						<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
+							<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive" style="width: 150px;">
+
+						</a></div>
 
 
-						<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
 
-							<button class="btn btn-default backColor" type="submit">
+					<div class="col-md-1"><a href="<?php echo $url; ?>" style="color: black;">
+							HOME</a></div>
+					<div class="col-md-1"><a id="productos" style="color: black;">
+							PRODUCTOS </a>
+						</div>
 
-								<i class="fa fa-search"></i>
+					<div class="col-md-1"><a href="<?php echo $url; ?>ofertas" style="color: black;">
+							OFERTAS </a>
+						</div>
+					<div class="col-md-1"><a href="<?php echo $url; ?>BLOG" style="color: black;">
+							BLOG </a>
+						</div>
+					<div class="col-md-4">
+						<form class="" role="search">
+							<div class="form-group">
+								<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
 
-							</button>
 
-						</a>
 
+							</div>
+						</form>
 					</div>
-				</form>
-			</div>
+
+					<div class="col-md-1">
+						<li class="dropdown notifications-menu ">
+
+							<a href="<?php echo $url; ?>carrito-de-compras" style="color: black;">
 
 
-			<div class="navbar-custom-menu">
-				<ul class="nav navbar-nav">
-
-					<!-- <li class="dropdown messages-menu">
-
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<i class="fa fa-envelope-o"></i>
-							<span class="label label-success">4</span>
-						</a>
-						<ul class="dropdown-menu">
-							<li class="header">You have 4 messages</li>
-							<li>
-
-								<ul class="menu">
-									<li>
-										<a href="#">
-											<div class="pull-left">
-
-												<img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-											</div>
-
-											<h4>
-												Support Team
-												<small><i class="fa fa-clock-o"></i> 5 mins</small>
-											</h4>
-
-											<p>Why not buy a new awesome theme?</p>
-										</a>
-									</li>
-
-								</ul>
-
-							</li>
-							<li class="footer"><a href="#">See All Messages</a></li>
-						</ul>
-					</li> -->
-
-
-					<li class="dropdown notifications-menu ">
-
-						<a href="<?php echo $url; ?>carrito-de-compras" style="color: black;">
-
-
-						<i class="fa fa-shopping-bag" aria-hidden="true"></i>
+								<i class="fa fa-shopping-bag" aria-hidden="true"></i>
 
 
 
-						</a>
+							</a>
 
-					</li>
+						</li>
+					</div>
+					<div class="col-md-1">
 
 
 
-					<li class="dropdown user user-menu">
+						<li class="dropdown user user-menu">
 
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;">
 
-							<i class="fa fa-user" aria-hidden="true"></i>
+								<i class="fa fa-user" aria-hidden="true"></i>
 
-						</a>
-						<ul class="dropdown-menu">
+							</a>
+							<ul class="dropdown-menu">
 
-							<?php
+								<?php
 
-							if (isset($_SESSION["validarSesion"])) {
+								if (isset($_SESSION["validarSesion"])) {
 
-								if ($_SESSION["validarSesion"] == "ok") {
+									if ($_SESSION["validarSesion"] == "ok") {
 
-									if ($_SESSION["modo"] == "directo") {
+										if ($_SESSION["modo"] == "directo") {
 
-										/* if ($_SESSION["foto"] != "") {
+											/* if ($_SESSION["foto"] != "") {
 
 											echo '<li>
 
@@ -235,15 +197,15 @@ HEADER
 											</li>';
 										} */
 
-										echo '
+											echo '
 										<li><a href="' . $url . 'perfil">Ver Perfil</a></li>
 										
 										<li><a href="' . $url . 'salir">Salir</a></li>';
-									}
+										}
 
-									if ($_SESSION["modo"] == "facebook") {
+										if ($_SESSION["modo"] == "facebook") {
 
-										echo '<li>
+											echo '<li>
 
 												<img class="img-circle" src="' . $_SESSION["foto"] . '" width="10%">
 
@@ -252,11 +214,11 @@ HEADER
 												<li><a href="' . $url . 'perfil">Ver Perfil</a></li>
 												
 												<li><a href="' . $url . 'salir" class="salir">Salir</a></li>';
-									}
+										}
 
-									if ($_SESSION["modo"] == "google") {
+										if ($_SESSION["modo"] == "google") {
 
-										echo '<li>
+											echo '<li>
 
 												<img class="img-circle" src="' . $_SESSION["foto"] . '" width="10%">
 
@@ -265,49 +227,53 @@ HEADER
 												<li><a href="' . $url . 'perfil">Ver Perfil</a></li>
 												
 												<li><a href="' . $url . 'salir">Salir</a></li>';
+										}
 									}
-								}
-							} else {
+								} else {
 
-								echo '<li><a href="#modalIngreso" data-toggle="modal">Ingresar</a></li>
+									echo '<li><a href="#modalIngreso" data-toggle="modal">Ingresar</a></li>
 									
 									<li><a href="#modalRegistro" data-toggle="modal">Crear una cuenta</a></li>';
-							}
+								}
 
-							?>
-						</ul>
-					</li>
-				</ul>
+								?>
+							</ul>
+						</li>
+					</div>
+				</div>
 			</div>
+
 
 		</div>
 
 	</nav>
+
+
 </header>
-<div class="col-xs-12  " style="display:none"  id="listaProductos">
+<div class="col-xs-12  " style="display:none" id="listaProductos">
 
 	<?php
 
-					$item = null;
-					$valor = null;
+	$item = null;
+	$valor = null;
 
-					$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
+	$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
 
-					foreach ($categorias as $key => $value) {
+	foreach ($categorias as $key => $value) {
 
-						echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
+		echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
 
 				<h4>
-				<a href="' . $url . $value["ruta"] . '" class="pixelCategorias" titulo="' . $value["categoria"] . '">
-				<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
-				</a>
+				<a href="' . $url . $value["ruta"] . '" class="pixelCategorias " titulo="' . $value["categoria"] . '">
+				' . $value["categoria"] . '</a>
 				</h4>
 
 				<hr>
 
 				<ul>';
-						/* ' . $value["categoria"] . '</a> */
-						$item = "id_categoria";
+		/* 			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
+				' . $value["categoria"] . '</a> */
+		/* 	$item = "id_categoria";
 
 						$valor = $value["id"];
 
@@ -316,12 +282,12 @@ HEADER
 						foreach ($subcategorias as $key => $value) {
 
 							echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias" titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
-						}
+						} */
 
-						echo '
+		echo '
 
 				</div>';
-					}
+	}
 
 	?>
 
@@ -440,7 +406,24 @@ VENTANA MODAL PARA EL REGISTRO
 
 							<br>
 
-							<a href="https://www.iubenda.com/privacy-policy/26778001" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Privacidad ">Política de Privacidad</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+							<a href="https://www.iubenda.com/privacy-policy/26778001" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Privacidad ">Política de Privacidad</a>
+							<script type="text/javascript">
+								(function(w, d) {
+									var loader = function() {
+										var s = d.createElement("script"),
+											tag = d.getElementsByTagName("script")[0];
+										s.src = "https://cdn.iubenda.com/iubenda.js";
+										tag.parentNode.insertBefore(s, tag);
+									};
+									if (w.addEventListener) {
+										w.addEventListener("load", loader, false);
+									} else if (w.attachEvent) {
+										w.attachEvent("onload", loader);
+									} else {
+										w.onload = loader;
+									}
+								})(window, document);
+							</script>
 						</small>
 
 					</label>

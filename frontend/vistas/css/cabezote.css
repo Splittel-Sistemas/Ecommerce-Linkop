@@ -59,8 +59,8 @@ header #carrito{
 	margin:20px 0;
 }
 a:hover {
-	background-color: white;
-	color: blue;
+	background-color: rgba(250, 250, 255, 0.13);
+	color: rgb(9, 9, 10);
   }
 header #carrito button{
 	padding:9px 15px;
