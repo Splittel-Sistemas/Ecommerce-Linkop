@@ -282,7 +282,7 @@ if(isset($_GET["ruta"])){
 
 	include "modulos/destacados.php";
 
-	include "modulos/visitas.php";
+/* 	include "modulos/visitas.php"; */
 
 }
 

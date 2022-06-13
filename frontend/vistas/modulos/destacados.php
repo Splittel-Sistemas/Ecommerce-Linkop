@@ -181,7 +181,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 										if($fechaNueva < $value["fecha"]){
 
-											echo '<span class="label label-warning fontSize">Nuevo</span> ';
+											echo '<span class="label label-success fontSize">Nuevo</span> ';
 
 										}
 
