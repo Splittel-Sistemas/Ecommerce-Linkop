@@ -101,7 +101,7 @@ HEADER
 
 
 
-	<BR></BR>
+	<BR>
 
 
 	<nav class="navbar ">
@@ -117,42 +117,66 @@ HEADER
 				<div class="row" id="navbar-collapse">
 					<div class="col-md-2 text-center"> <a href="<?php echo $url; ?>">
 
-							<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive" style="width: 150px;">
+							<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive" >
 
-						</a></div>
+						</a>
+					
+					</div>
 
 
 
-					<div class="col-md-1"><a href="<?php echo $url; ?>" style="color: black;">
-							HOME</a></div>
-					<div class="col-md-1"><a id="productos" style="color: black;">
-							PRODUCTOS </a>
+					<div class="col-md-1">
+			
+					<a href="<?php echo $url; ?>" class="btn  btn-rounded " id="boton">
+							INICIO</a>
 						</div>
+					
+						<div class="col-md-1">
+			
+			<a href="<?php echo $url; ?>" class="btn  btn-rounded"  id="boton">
+					PRODUCT</a>
+				</div>
+				
+				<div class="col-md-1">
+			
+			<a href="<?php echo $url; ?>ofertas" class="btn  btn-rounded"  id="boton">
+					     OFERTAS</a>
+				</div>
+			
+				<div class="col-md-1">
+			
+			<a href="<?php echo $url; ?>" class="btn  btn-rounded"  id="boton">
+					CONTACTO</a>
+				</div>
+							
+				<div class="col-md-1">
+			
+			<a href="<?php echo $url; ?>" class="btn  btn-rounded"  id="boton">
+					BLOG</a>
+				</div>
+					<div class="col-md-3"  id="buscador">
+							<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
 
-					<div class="col-md-1"><a href="<?php echo $url; ?>ofertas" style="color: black;">
-							OFERTAS </a>
-						</div>
-					<div class="col-md-1"><a href="<?php echo $url; ?>BLOG" style="color: black;">
-							BLOG </a>
-						</div>
-					<div class="col-md-4">
-						<form class="" role="search">
-							<div class="form-group">
-								<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
+							<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
 
+								<!-- <button class="btn btn-default backColor" type="submit">
 
+									<i class="fa fa-search"></i>
 
-							</div>
-						</form>
+								</button> -->
+
+							</a>
+
 					</div>
 
 					<div class="col-md-1">
 						<li class="dropdown notifications-menu ">
 
-							<a href="<?php echo $url; ?>carrito-de-compras" style="color: black;">
+							<a href="<?php echo $url; ?>carrito-de-compras" style="color: black; "  id="boton">
 
 
-								<i class="fa fa-shopping-bag" aria-hidden="true"></i>
+								<!-- <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
+								<img src="<?php echo $servidor; ?>vistas/img/plantilla/shopping-cart.png" class="img-responsive" style="width: 30px; ">
 
 
 
@@ -166,10 +190,10 @@ HEADER
 
 						<li class="dropdown user user-menu">
 
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;"  id="boton">
 
-								<i class="fa fa-user" aria-hidden="true"></i>
-
+								<!-- <i class="fa fa-user" aria-hidden="true"></i> -->
+								<img src="<?php echo $servidor; ?>vistas/img/plantilla/user(2).png" class="img-responsive" style="width: 30px;">
 							</a>
 							<ul class="dropdown-menu">
 
