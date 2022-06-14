@@ -1,7 +1,53 @@
 <!--=====================================
 BANNER
 ======================================-->
+<style>
+	.MultiCarousel {
+		float: left;
+		overflow: hidden;
+		padding: 15px;
+		width: 100%;
+		position: relative;
+	}
 
+	.MultiCarousel .MultiCarousel-inner {
+		transition: 1s ease all;
+		float: left;
+	}
+
+	.MultiCarousel .MultiCarousel-inner .item {
+		float: left;
+	}
+
+	.MultiCarousel .MultiCarousel-inner .item>div {
+		text-align: center;
+		padding: 10px;
+		margin: 10px;
+		background: #f1f1f1;
+		color: #666;
+	}
+
+	.MultiCarousel .leftLst,
+	.MultiCarousel .rightLst {
+		position: absolute;
+		border-radius: 50%;
+		top: calc(50% - 20px);
+	}
+
+	.MultiCarousel .leftLst {
+		left: 0;
+	}
+
+	.MultiCarousel .rightLst {
+		right: 0;
+	}
+
+	.MultiCarousel .leftLst.over,
+	.MultiCarousel .rightLst.over {
+		pointer-events: none;
+		background: #ccc;
+	}
+</style>
 <?php
 
 $servidor = Ruta::ctrRutaServidor();
@@ -90,7 +136,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 
 						</div>
-						<div class="col-sm-4 col-xs-4 text-center " style="border:1px solid;">
+						<div class="col-sm-4 col-xs-12 text-center " style="border:1px solid;">
 					
 						
 
@@ -382,6 +428,21 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 
 ?>
+<?php
+$banner = ControladorProductos::ctrMostrarBanner($ruta);
+
+if ($banner != null) {
+
+	if ($banner["estado"] != 0) {
+
+		echo '<figure class="bannera">
+
+				<img src="' . $servidor . $banner["img"] . '" class="img-responsive" width="100%">	
+
+			  </figure>';
+	}
+}
+?>
 
 <div class="jumbotron jumbotron-fluid">
 	<div class="container">
@@ -395,7 +456,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 					<img src="<?php echo $url; ?>vistas/img/whatsapp(1).png" style="padding-bottom: 5px;"></a>
 			</div>
 			<div class="col-md-4  text-center">
-			<!-- 	<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
+				<!-- 	<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
 					<img src="<?php echo $url; ?>vistas/img/whatsapp(2).png" style="padding-bottom: 5px;"></a> -->
 			</div>
 
@@ -416,19 +477,56 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 		</div>
 	</div>
 </div>
-<?php
-$banner = ControladorProductos::ctrMostrarBanner($ruta);
 
-if ($banner != null) {
 
-	if ($banner["estado"] != 0) {
+<!------ Include the above in your HEAD tag ---------->
 
-		echo '<figure class="bannera">
 
-				<img src="' . $servidor . $banner["img"] . '" class="img-responsive" width="100%">	
+</div>
 
-			  </figure>';
-	}
-}
-?>
 
+<div class="container">
+	<div class="row">
+		<div class="MultiCarousel"  id="MultiCarousel" data-interval="1000">
+			<div class="MultiCarousel-inner">
+				<div class="item">
+					<div class="pad15">
+						<p class="lead">Multi Item Carousel</p>
+						<img src="<?php echo $url; ?>vistas/img/visa.png" style="padding-bottom: 5px;">
+
+					</div>
+				</div>
+				<div class="item">
+					<div class="pad15">
+						<p class="lead">Multi Item Carousel</p>
+						<img src="<?php echo $url; ?>vistas/img/paypal.png" style="padding-bottom: 5px;">
+
+					</div>
+				</div>
+				<div class="item">
+					<div class="pad15">
+						<p class="lead">Multi Item Carousel</p>
+						<img src="<?php echo $url; ?>vistas/img/apple-pay.png" style="padding-bottom: 5px;">
+
+					</div>
+				</div>
+				<div class="item">
+					<div class="pad15">
+						<p class="lead">Multi Item Carousel</p>
+						<img src="<?php echo $url; ?>vistas/img/american-express.png" style="padding-bottom: 5px;">
+
+					</div>
+				</div>
+				<div class="item">
+					<div class="pad15">
+						<p class="lead">Multi Item Carousel</p>
+						<img src="<?php echo $url; ?>vistas/img/visa.png" style="padding-bottom: 5px;">
+
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</div>
