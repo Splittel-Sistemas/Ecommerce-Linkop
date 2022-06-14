@@ -109,7 +109,7 @@ HEADER
 	?>
 
 			<!-- REGISTRATE -->
-			<div class="alert alert-warning   alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			<div class="alert alert-warning   alert-dismissible fade in text-center" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 			 <strong>Regístrate y recíbe un 15% de descuento en tu primer compra.  <a href="#modalRegistro" data-toggle="modal">REGISTRARSE</a> </strong> </div>
 
 

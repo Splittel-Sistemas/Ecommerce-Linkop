@@ -84,7 +84,13 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 					<div class="col-xs-12 tituloDestacado">
 
-						<div class="col-sm-12 col-xs-12 text-center">
+					<div class="col-sm-4 col-xs-4 text-center ">
+					
+						
+
+
+						</div>
+						<div class="col-sm-4 col-xs-4 text-center " style="border:1px solid;">
 					
 						
 
@@ -98,7 +104,12 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 						</a>
 
 						</div>
+						<div class="col-sm-4 col-xs-4 text-center ">
+					
+						
 
+
+						</div>
 					
 
 					</div>
