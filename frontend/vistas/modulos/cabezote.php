@@ -145,31 +145,31 @@ HEADER
 
 					<div class="col-md-1">
 
-						<a href="<?php echo $url; ?>" class="btn  btn-rounded " id="boton">
+						<a href="<?php echo $url; ?>" class="btn  btn-rounded " id="boton" style="font-size: 12px;">
 							INICIO</a>
 					</div>
 
 					<div class="col-md-1 ">
 
-						<a href="<?php echo $url; ?>categorias" class="btn  btn-rounded" id="boton" style="font-size: 10px;">
-						CATEGORIAS</a>
+						<a href="<?php echo $url; ?>categorias" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
+						PRODUCTOS</a>
 					</div>
 
 					<div class="col-md-1">
 
-						<a href="<?php echo $url; ?>ofertas" class="btn  btn-rounded" id="boton">
+						<a href="<?php echo $url; ?>ofertas" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
 							OFERTAS</a>
 					</div>
 
 					<div class="col-md-1">
 
-						<a href="<?php echo $url; ?>" class="btn  btn-rounded" id="boton">
+						<a href="<?php echo $url; ?>" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
 							CONTACTO</a>
 					</div>
 
 					<div class="col-md-1">
 
-						<a href="<?php echo $url; ?>vistas/modulos/blog.php" class="btn  btn-rounded" id="boton">
+						<a href="<?php echo $url; ?>vistas/modulos/blog.php" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
 							BLOG</a>
 					</div>
 					<div class="col-md-3" id="buscador">

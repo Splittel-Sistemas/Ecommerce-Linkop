@@ -38,7 +38,7 @@ PRODUCTOS DESTACADOS
 
 
 			</div>
-			<div class="col-sm-4 col-xs-12 text-center " style="border:1px solid;">
+			<div class="col-sm-4 col-xs-12 text-center ">
 
 
 
@@ -46,7 +46,7 @@ PRODUCTOS DESTACADOS
 
 
 
-				<h1 class="text-center"><small>CATEGORIAS </small></h1>
+			<!-- 	<h1 class="text-center"><small>CATEGORIAS </small></h1> -->
 
 
 
@@ -88,7 +88,7 @@ PRODUCTOS DESTACADOS
 				<ul>';
 		/* 			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
 				' . $value["categoria"] . '</a> */
-		/* 	$item = "id_categoria";
+			$item = "id_categoria";
 
 						$valor = $value["id"];
 
@@ -97,7 +97,7 @@ PRODUCTOS DESTACADOS
 						foreach ($subcategorias as $key => $value) {
 
 							echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias" titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
-						} */
+						}
 
 		echo '
 
@@ -116,3 +116,8 @@ PRODUCTOS DESTACADOS
 <div class="container">
 
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
