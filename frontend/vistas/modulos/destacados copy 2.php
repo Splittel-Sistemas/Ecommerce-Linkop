@@ -60,24 +60,15 @@ $ruta = "sin-categoria";
 PRODUCTOS DESTACADOS
 =============================================*/
 
-$titulosModulos = array(/* "ARTÍCULOS GRATUITOS", */"PRODUCTOS", "LO MÁS VENDIDO" /* , "LO MÁS VISTO" */);
-$rutaModulos = array(/* "articulos-gratis", */"PRODUCTOS", "lo-mas-vendido"/* ,"lo-mas-visto" */);
+$titulosModulos = array("LO MÁS VENDIDO");
+$rutaModulos = array("lo-mas-vendido");
 
 $base = 0;
 $tope = 4;
 
-/* if($titulosModulos[0] == "ARTÍCULOS GRATUITOS"){
 
-$ordenar = "id";
-$item = "estado";
-$valor = 0;
-$modo = "DESC";
 
-$gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
-
-} */
-
-if ($titulosModulos[1] == "LO MÁS VENDIDO") {
+if ($titulosModulos[0] == "LO MÁS VENDIDO") {
 
 	$ordenar = "ventas";
 	$item = "estado";
@@ -87,30 +78,10 @@ if ($titulosModulos[1] == "LO MÁS VENDIDO") {
 	$ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 }
 
-/* if($titulosModulos[2] == "LO MÁS VISTO"){
 
-$ordenar = "vistas";
-$item = "estado";
-$valor = 1;
-$modo = "DESC";
 
-$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 
-} */
-
-if ($titulosModulos[0] == "PRODUCTOS") {
-
-	$base = 0;
-	$tope = 4;
-
-	$ordenar = "vistas";
-	$item = "estado";
-	$valor = 1;
-	$modo = "DESC";
-
-	$vistas1 = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
-}
-$modulos = array(/* $gratis, */$vistas1/* , $vistas */, $ventas);
+$modulos = array($ventas);
 
 for ($i = 0; $i < count($titulosModulos); $i++) {
 	/* <div class="container-fluid well well-sm barraProductos">
@@ -155,54 +126,54 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 	
 			<div class="container">
 		
-			<div class="row">
+				<div class="row">
 
-			<div class="col-xs-12 tituloDestacado">
+					<div class="col-xs-12 tituloDestacado">
 
-			<div class="col-sm-4 col-xs-4 text-center ">
-			
-				
-
-
-				</div>
-				<div class="col-sm-4 col-xs-12 text-center " style="border:1px solid;">
-			
-				
-
-					<a href="' . $rutaModulos[$i] . ' ">
-						
+					<div class="col-sm-4 col-xs-4 text-center ">
 					
 						
-					<h1 class="text-center" ><small>' . $titulosModulos[$i] . ' </small></h1>
 
 
-				</a>
+						</div>
+						<div class="col-sm-4 col-xs-12 text-center " style="border:1px solid;">
+					
+						
+
+							<a href="' . $rutaModulos[$i] . ' ">
+								
+							
+								
+							<h1 class="text-center" ><small>' . $titulosModulos[$i] . ' </small></h1>
+
+
+						</a>
+
+						</div>
+						<div class="col-sm-4 col-xs-4 text-center ">
+					
+						
+
+
+						</div>
+					
+
+					</div>
+
+					<div class="clearfix"></div>
+
+					<hr>
 
 				</div>
-				<div class="col-sm-4 col-xs-4 text-center ">
-			
-				
 
-
-				</div>
-			
-
-			</div>
-
-			<div class="clearfix"></div>
-
-			<hr>
-
-		</div>
-
-				<ul class="grid' . $i . '">';
+				<ul class="grid' . $i . '"  style="border: 1px solid #EEEEEE;">';
 
 
 	foreach ($modulos[$i] as $key => $value) {
 
 		if ($value["estado"] != 0) {
 
-			echo '<li class="col-md-3 col-sm-6 col-xs-12">
+			echo '<li class="col-md-3 col-sm-6 col-xs-12" style="border: 1px solid #EEEEEE;">
 
 							<figure>
 								
@@ -455,9 +426,8 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 		</div>';
 }
 
+
 ?>
-
-
 <?php
 $banner = ControladorProductos::ctrMostrarBanner($ruta);
 
@@ -514,95 +484,10 @@ if ($banner != null) {
 
 </div>
 
-<!-- <div class="col-xs-12  text-center" style="display:block" id="listaProductos">
-	<div class="row">
-
-		<div class="col-xs-12 tituloDestacado">
-
-			<div class="col-sm-4 col-xs-4 text-center ">
-
-
-
-
-			</div>
-			<div class="col-sm-4 col-xs-12 text-center " style="border:1px solid;">
-
-
-
-
-
-
-
-				<h1 class="text-center"><small>CATEGORIAS </small></h1>
-
-
-
-			</div>
-			<div class="col-sm-4 col-xs-4 text-center ">
-
-
-
-
-			</div>
-
-
-		</div>
-
-		<div class="clearfix"></div>
-
-		<hr>
-
-	</div>
-	<?php
-
-	/* $item = null;
-	$valor = null;
-
-	$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
-
-	foreach ($categorias as $key => $value) {
-
-		echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
-
-				<h4>
-				<a href="' . $url . $value["ruta"] . '" class="pixelCategorias backColor " titulo="' . $value["categoria"] . '">
-				<img  src="' . $servidor . $value["imgOferta"] . '" width="70%"><br>
-				' . $value["categoria"] . '</a>
-				</h4>
-
-				<hr>
-
-				<ul>'; */
-		/* 			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
-				' . $value["categoria"] . '</a> */
-		/* 	$item = "id_categoria";
-
-						$valor = $value["id"];
-
-						$subcategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
-
-						foreach ($subcategorias as $key => $value) {
-
-							echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias" titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
-						} */
-/* 
-		echo '
-
-				</div>';
-	}
-
- */
-
-
-
-	?>
-
-</div> -->
-
 
 <div class="container">
 	<div class="row">
-		<div class="MultiCarousel" id="MultiCarousel" data-interval="1000">
+		<div class="MultiCarousel"  id="MultiCarousel" data-interval="1000">
 			<div class="MultiCarousel-inner">
 				<div class="item">
 					<div class="pad15">

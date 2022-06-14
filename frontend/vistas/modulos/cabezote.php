@@ -149,10 +149,10 @@ HEADER
 							INICIO</a>
 					</div>
 
-					<div class="col-md-1">
+					<div class="col-md-1 ">
 
-						<a href="<?php echo $url; ?>" class="btn  btn-rounded" id="boton">
-							PRODUCT.</a>
+						<a href="<?php echo $url; ?>categorias" class="btn  btn-rounded" id="boton" style="font-size: 10px;">
+						CATEGORIAS</a>
 					</div>
 
 					<div class="col-md-1">

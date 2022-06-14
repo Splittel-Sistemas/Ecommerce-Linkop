@@ -270,6 +270,16 @@ if(isset($_GET["ruta"])){
 
 		include "modulos/destacados.php";
 
+	}else if($rutas[0] == "categorias"){
+
+
+		include "modulos/categorias.php";
+
+	}else if($rutas[0] == "blog"){
+
+
+		include "modulos/blog.php";
+
 	}else{
 
 		include "modulos/error404.php";
