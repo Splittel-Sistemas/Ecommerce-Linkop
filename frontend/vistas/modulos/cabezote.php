@@ -117,62 +117,62 @@ HEADER
 				<div class="row" id="navbar-collapse">
 					<div class="col-md-2 text-center"> <a href="<?php echo $url; ?>">
 
-							<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive" >
+							<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive">
 
 						</a>
-					
+
 					</div>
 
 
 
 					<div class="col-md-1">
-			
-					<a href="<?php echo $url; ?>" class="btn  btn-rounded " id="boton">
+
+						<a href="<?php echo $url; ?>" class="btn  btn-rounded " id="boton">
 							INICIO</a>
-						</div>
-					
-						<div class="col-md-1">
-			
-			<a href="<?php echo $url; ?>" class="btn  btn-rounded"  id="boton">
-					PRODUCT</a>
-				</div>
-				
-				<div class="col-md-1">
-			
-			<a href="<?php echo $url; ?>ofertas" class="btn  btn-rounded"  id="boton">
-					     OFERTAS</a>
-				</div>
-			
-				<div class="col-md-1">
-			
-			<a href="<?php echo $url; ?>" class="btn  btn-rounded"  id="boton">
-					CONTACTO</a>
-				</div>
-							
-				<div class="col-md-1">
-			
-			<a href="<?php echo $url; ?>" class="btn  btn-rounded"  id="boton">
-					BLOG</a>
-				</div>
-					<div class="col-md-3"  id="buscador">
-							<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
+					</div>
 
-							<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
+					<div class="col-md-1">
 
-								<!-- <button class="btn btn-default backColor" type="submit">
+						<a href="<?php echo $url; ?>" class="btn  btn-rounded" id="boton">
+							PRODUCT</a>
+					</div>
+
+					<div class="col-md-1">
+
+						<a href="<?php echo $url; ?>ofertas" class="btn  btn-rounded" id="boton">
+							OFERTAS</a>
+					</div>
+
+					<div class="col-md-1">
+
+						<a href="<?php echo $url; ?>" class="btn  btn-rounded" id="boton">
+							CONTACTO</a>
+					</div>
+
+					<div class="col-md-1">
+
+						<a href="<?php echo $url; ?>" class="btn  btn-rounded" id="boton">
+							BLOG</a>
+					</div>
+					<div class="col-md-3" id="buscador">
+						<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
+
+						<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
+
+							<!-- <button class="btn btn-default backColor" type="submit">
 
 									<i class="fa fa-search"></i>
 
 								</button> -->
 
-							</a>
+						</a>
 
 					</div>
 
 					<div class="col-md-1">
 						<li class="dropdown notifications-menu ">
 
-							<a href="<?php echo $url; ?>carrito-de-compras" style="color: black; "  id="boton">
+							<a href="<?php echo $url; ?>carrito-de-compras" style="color: black; " id="boton">
 
 
 								<!-- <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
@@ -190,7 +190,7 @@ HEADER
 
 						<li class="dropdown user user-menu">
 
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;"  id="boton">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;" id="boton">
 
 								<!-- <i class="fa fa-user" aria-hidden="true"></i> -->
 								<img src="<?php echo $servidor; ?>vistas/img/plantilla/user(2).png" class="img-responsive" style="width: 30px;">
@@ -274,48 +274,7 @@ HEADER
 
 
 </header>
-<div class="col-xs-12  " style="display:none" id="listaProductos">
 
-	<?php
-
-	$item = null;
-	$valor = null;
-
-	$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
-
-	foreach ($categorias as $key => $value) {
-
-		echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
-
-				<h4>
-				<a href="' . $url . $value["ruta"] . '" class="pixelCategorias " titulo="' . $value["categoria"] . '">
-				' . $value["categoria"] . '</a>
-				</h4>
-
-				<hr>
-
-				<ul>';
-		/* 			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
-				' . $value["categoria"] . '</a> */
-		/* 	$item = "id_categoria";
-
-						$valor = $value["id"];
-
-						$subcategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
-
-						foreach ($subcategorias as $key => $value) {
-
-							echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias" titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
-						} */
-
-		echo '
-
-				</div>';
-	}
-
-	?>
-
-</div>
 <!--=====================================
 VENTANA MODAL PARA EL REGISTRO
 ======================================-->

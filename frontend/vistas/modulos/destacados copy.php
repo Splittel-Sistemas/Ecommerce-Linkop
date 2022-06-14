@@ -8,21 +8,44 @@ $servidor = Ruta::ctrRutaServidor();
 
 $ruta = "sin-categoria";
 
+$banner = ControladorProductos::ctrMostrarBanner($ruta);
 
+if($banner != null){
+
+	if($banner["estado"] != 0){
+
+		echo '<figure class="banner">
+
+				<img src="'.$servidor.$banner["img"].'" class="img-responsive" width="100%">	
+
+			  </figure>';
+
+	}
+
+}
 
 /*=============================================
 PRODUCTOS DESTACADOS
 =============================================*/
 
-$titulosModulos = array( "LO MÁS VENDIDO");
-$rutaModulos = array("lo-mas-vendido");
+$titulosModulos = array("ARTÍCULOS GRATUITOS", "LO MÁS VENDIDO", "LO MÁS VISTO", "productos");
+$rutaModulos = array("articulos-gratis","lo-mas-vendido","lo-mas-visto", "productos");
 
 $base = 0;
 $tope = 4;
 
+if($titulosModulos[0] == "ARTÍCULOS GRATUITOS"){
 
+$ordenar = "id";
+$item = "estado";
+$valor = 0;
+$modo = "DESC";
 
-if($titulosModulos[0] == "LO MÁS VENDIDO"){
+$gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
+
+}
+
+if($titulosModulos[1] == "LO MÁS VENDIDO"){
 
 $ordenar = "ventas";
 $item = "estado";
@@ -33,10 +56,31 @@ $ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $ba
 
 }
 
+if($titulosModulos[2] == "LO MÁS VISTO"){
 
+$ordenar = "vistas";
+$item = "estado";
+$valor = 1;
+$modo = "DESC";
 
+$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 
-$modulos = array( $ventas);
+}
+
+if($titulosModulos[3] == "productos"){
+
+	$base = 0;
+	$tope = 40;
+	
+	$ordenar = "vistas";
+	$item = "estado";
+	$valor = 1;
+	$modo = "DESC";
+	
+	$vistas1 = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
+	
+	}
+$modulos = array($gratis, $ventas, $vistas,$vistas1);
 
 for($i = 0; $i < count($titulosModulos); $i ++){
 /* <div class="container-fluid well well-sm barraProductos">
@@ -411,20 +455,6 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 		</div>';
 
 }
-$banner = ControladorProductos::ctrMostrarBanner($ruta);
 
-if($banner != null){
-
-	if($banner["estado"] != 0){
-
-		echo '<figure class="bannera">
-
-				<img src="'.$servidor.$banner["img"].'" class="img-responsive" width="100%">	
-
-			  </figure>';
-
-	}
-
-}
 ?>
 
