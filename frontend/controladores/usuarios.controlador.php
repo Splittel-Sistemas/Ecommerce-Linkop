@@ -60,9 +60,9 @@ class ControladorUsuarios{
 
 					$mail->isMail();
 
-					$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+					$mail->setFrom('ramon.olea@splittel.com', 'Desarrollo');
 
-					$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+					$mail->addReplyTo('ramon.olea@splittel.com', 'Desarrollo');
 
 					$mail->Subject = "Por favor verifique su dirección de correo electrónico";
 
@@ -72,7 +72,7 @@ class ControladorUsuarios{
 						
 						<center>
 							
-							<img style="padding:20px; width:10%" src="http://www.tutorialesatualcance.com/tienda/logo.png">
+							<img style="padding:20px; width:10%" src="">
 
 						</center>
 
@@ -80,7 +80,7 @@ class ControladorUsuarios{
 						
 							<center>
 							
-							<img style="padding:20px; width:15%" src="http://www.tutorialesatualcance.com/tienda/icon-email.png">
+							<img style="padding:20px; width:15%" src="">
 
 							<h3 style="font-weight:100; color:#999">VERIFIQUE SU DIRECCIÓN DE CORREO ELECTRÓNICO</h3>
 

@@ -85,42 +85,22 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 					<div class="col-xs-12 tituloDestacado">
 
-						<div class="col-sm-6 col-xs-12">
+						<div class="col-sm-12 col-xs-12 text-center">
 					
-							<h1 class="text-center" ><small>'.$titulosModulos[$i].' </small></h1>
-
-						</div>
-
-						<div class="col-sm-6 col-xs-12">
-					
-							<a href="'.$rutaModulos[$i].' ">
-								
-								<button class="btn btn-default backColor pull-right">
-									
-									VER MÁS <span class="fa fa-chevron-right"></span>
-
-								</button>
-
-							</a>
 						
 
-							<button type="button" class="btn btn-default btnGrid" id="btnGrid'.$i.'">
+							<a href="'.$rutaModulos[$i].' ">
 								
-							   <i class="fa fa-th" aria-hidden="true"></i>  
-
-							   <span class="col-xs-0 pull-right"> GRID</span>
-
-							</button>
-
-							<button type="button" class="btn btn-default btnList" id="btnList'.$i.'">
+							
 								
-							   <i class="fa fa-list" aria-hidden="true"></i> 
+							<h1 class="text-center" ><small>'.$titulosModulos[$i].' </small></h1>
 
-							   <span class="col-xs-0 pull-right"> LISTA</span>
 
-							</button>
-						   
+						</a>
+
 						</div>
+
+					
 
 					</div>
 
@@ -130,14 +110,14 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 				</div>
 
-				<ul class="grid'.$i.'">';
+				<ul class="grid'.$i.'"  style="border: 1px solid #EEEEEE;">';
 
 
 				foreach ($modulos[$i] as $key => $value) {
 
 					if($value["estado"] != 0){
 					
-					echo '<li class="col-md-3 col-sm-6 col-xs-12">
+					echo '<li class="col-md-3 col-sm-6 col-xs-12" style="border: 1px solid #EEEEEE;">
 
 							<figure>
 								
