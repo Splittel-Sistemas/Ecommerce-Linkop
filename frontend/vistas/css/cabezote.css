@@ -27,19 +27,16 @@ TOP
 HEADER
 =============================================*/
 #boton{
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0px;
+
 	color: #080708;
 	background: #ffffff;
-	border: dotted #14181a 0px;
-	text-decoration: none;
+
 	
 }
 #boton:hover{
-	background: #f5f5f5;
-	text-decoration: none;
-	color: rgb(31, 69, 194);
+	background: #222222d2;
+	color: rgb(255, 251, 246);
+	margin:7px 0;
 
   
 }

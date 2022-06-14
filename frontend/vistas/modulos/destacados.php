@@ -10,6 +10,23 @@ $ruta = "sin-categoria";
 
 
 
+$banner = ControladorProductos::ctrMostrarBanner($ruta);
+
+if($banner != null){
+
+	if($banner["estado"] != 0){
+
+		echo '<figure class="bannera">
+
+				<img src="'.$servidor.$banner["img"].'" class="img-responsive" width="100%">	
+
+			  </figure>';
+
+	}
+
+}
+
+
 /*=============================================
 PRODUCTOS DESTACADOS
 =============================================*/
@@ -391,20 +408,6 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 		</div>';
 
 }
-$banner = ControladorProductos::ctrMostrarBanner($ruta);
 
-if($banner != null){
-
-	if($banner["estado"] != 0){
-
-		echo '<figure class="bannera">
-
-				<img src="'.$servidor.$banner["img"].'" class="img-responsive" width="100%">	
-
-			  </figure>';
-
-	}
-
-}
 ?>
 

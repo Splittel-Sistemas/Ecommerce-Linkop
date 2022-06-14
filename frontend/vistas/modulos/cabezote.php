@@ -125,7 +125,7 @@ HEADER
 
 
 
-					<div class="col-md-1">
+					<div class="col-md-1" >
 
 						<a href="<?php echo $url; ?>" class="btn  btn-rounded " id="boton">
 							INICIO</a>
@@ -134,7 +134,7 @@ HEADER
 					<div class="col-md-1">
 
 						<a href="<?php echo $url; ?>" class="btn  btn-rounded" id="boton">
-							PRODUCT</a>
+							PRODUCT.</a>
 					</div>
 
 					<div class="col-md-1">
@@ -151,7 +151,7 @@ HEADER
 
 					<div class="col-md-1">
 
-						<a href="<?php echo $url; ?>" class="btn  btn-rounded" id="boton">
+						<a href="<?php echo $url; ?>vistas/modulos/blog.php" class="btn  btn-rounded" id="boton">
 							BLOG</a>
 					</div>
 					<div class="col-md-3" id="buscador">

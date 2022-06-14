@@ -426,11 +426,11 @@ SECCIÓN PERFIL
 												$fechaActual = strtotime('-30 day', strtotime($fecha));
 												$fechaNueva = date('Y-m-d', $fechaActual);
 
-												if($fechaNueva < $value["fecha"]){
+												/* if($fechaNueva < $value["fecha"]){
 
 													echo '<span class="label label-warning fontSize">Nuevo</span> ';
 
-												}
+												} */
 
 												if($value2["oferta"] != 0){
 
