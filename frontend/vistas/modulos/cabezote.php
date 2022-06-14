@@ -99,11 +99,28 @@ HEADER
 
 <header class="container-fluid">
 
+	<?php
+
+	if (isset($_SESSION["validarSesion"])) {
+
+	
+	}else{
+
+	?>
+
+			<!-- REGISTRATE -->
+			<div class="alert alert-warning   alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			 <strong>Regístrate y recíbe un 15% de descuento en tu primer compra.  <a href="#modalRegistro" data-toggle="modal">REGISTRARSE</a> </strong> </div>
 
 
-	<BR>
+			<!-- FIN REGISTRATE -->
+	<?php
 
 
+	}
+
+	?>
+	<br>
 	<nav class="navbar ">
 		<div class="container">
 			<div class="navbar-header">
@@ -113,7 +130,8 @@ HEADER
 
 			</div>
 
-			<div class="">
+			<div class="container">
+
 				<div class="row" id="navbar-collapse">
 					<div class="col-md-2 text-center"> <a href="<?php echo $url; ?>">
 
@@ -125,7 +143,7 @@ HEADER
 
 
 
-					<div class="col-md-1" >
+					<div class="col-md-1">
 
 						<a href="<?php echo $url; ?>" class="btn  btn-rounded " id="boton">
 							INICIO</a>
@@ -207,19 +225,19 @@ HEADER
 
 											/* if ($_SESSION["foto"] != "") {
 
-											echo '<li>
+														echo '<li>
 
-									<img class="img-circle" src="' . $url . $_SESSION["foto"] . '" width="25%">
-
-								</li>';
-										} else {
-
-											echo '<li>
-
-								<img class="img-circle" src="' . $servidor . 'vistas/img/usuarios/default/anonymous.png" width="25%">
+												<img class="img-circle" src="' . $url . $_SESSION["foto"] . '" width="25%">
 
 											</li>';
-										} */
+													} else {
+
+														echo '<li>
+
+											<img class="img-circle" src="' . $servidor . 'vistas/img/usuarios/default/anonymous.png" width="25%">
+
+														</li>';
+													} */
 
 											echo '
 										<li><a href="' . $url . 'perfil">Ver Perfil</a></li>

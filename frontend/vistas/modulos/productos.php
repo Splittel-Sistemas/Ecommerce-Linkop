@@ -43,13 +43,11 @@ if($banner != null){
 
 							echo '<div class="textoBanner textoIzq">
 
-								<h1 style="color:#fff" class="text-uppercase">'.$ofertas["categoria"].'</h1>
 
 							</div>
 
 							<div class="textoBanner textoDer">
-							
-								<h1 style="color:#fff">OFERTAS ESPECIALES</h1>';
+							';
 
 								if($ofertas["precioOferta"] != 0){
 									
@@ -64,7 +62,6 @@ if($banner != null){
 
 							echo '<h3 class="col-md-0 col-sm-0 col-xs-0" style="color:#fff">
 								
-								La oferta termina en<br>
 
 								<div class="countdown2" finOferta="'.$ofertas["finOferta"].'">
 
@@ -80,15 +77,15 @@ if($banner != null){
 
 							if($finOferta == 0){
 
-								echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina hoy</h3>';
+								/* echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina hoy</h3>'; */
 
 							}else if($finOferta == 1){
 		
-								echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina en '.$finOferta.' día</h3>';
+							/* 	echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina en '.$finOferta.' día</h3>'; */
 		
 							}else{
 		
-								echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina en '.$finOferta.' días</h3>';
+							/* 	echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina en '.$finOferta.' días</h3>'; */
 		
 							}
 
@@ -114,13 +111,13 @@ if($banner != null){
 
 							echo '<div class="textoBanner textoIzq">
 
-								<h1 style="color:#fff" class="text-uppercase">'.$ofertas[0]["subcategoria"].'</h1>
+								
 
 							</div>
 
 							<div class="textoBanner textoDer">
 							
-								<h1 style="color:#fff">OFERTAS ESPECIALES</h1>';
+								';
 
 								if($ofertas[0]["precioOferta"] != 0){
 									
@@ -150,16 +147,16 @@ if($banner != null){
 							$finOferta = $interval->format('%a');
 
 							if($finOferta == 0){
-
-								echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina hoy</h3>';
+/* 
+								echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina hoy</h3>'; */
 
 							}else if($finOferta == 1){
-		
-								echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina en '.$finOferta.' día</h3>';
+		/* 
+								echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina en '.$finOferta.' día</h3>'; */
 		
 							}else{
 		
-								echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina en '.$finOferta.' días</h3>';
+							/* 	echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina en '.$finOferta.' días</h3>'; */
 		
 							}
 
