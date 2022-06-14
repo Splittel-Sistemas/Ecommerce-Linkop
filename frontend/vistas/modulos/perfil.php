@@ -97,7 +97,7 @@ SECCIÓN PERFIL
 
 						echo '<div class="col-xs-12 text-center error404">
 				               
-				    		<h1><small>¡Oops!</small></h1>
+				    		
 				    
 				    		<h2>Aún no tienes compras realizadas en esta tienda</h2>
 
@@ -380,7 +380,7 @@ SECCIÓN PERFIL
 
 					echo '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center error404">
 				               
-			    		<h1><small>¡Oops!</small></h1>
+			    		
 			    
 			    		<h2>Aún no tiene productos en su lista de deseos</h2>
 

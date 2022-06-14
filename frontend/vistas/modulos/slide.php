@@ -113,7 +113,7 @@ SLIDESHOW
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-  <div class="row">
+  <div class="row text-center">
     <div class="col-md-3">
 	<i class="fa fa-ship" aria-hidden="true"></i>
 	Envíos gratuitos al día siguiente
@@ -136,7 +136,7 @@ SLIDESHOW
   </div>
   </div>
 </div>
-<div class="col-xs-12  " style="display:block"  id="listaProductos">
+<div class="col-xs-12  text-center" style="display:block"  id="listaProductos">
 
 	<?php
 
@@ -183,5 +183,4 @@ SLIDESHOW
 	?>
 
 </div>
-
 

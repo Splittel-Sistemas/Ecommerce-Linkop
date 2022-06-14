@@ -1132,7 +1132,7 @@ ARTÏCULOS RELACIONADOS
 
 				echo '<div class="col-xs-12 error404">
 
-					<h1><small>¡Oops!</small></h1>
+					
 
 					<h2>No hay productos relacionados</h2>
 

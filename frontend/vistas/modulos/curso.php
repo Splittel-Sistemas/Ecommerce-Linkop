@@ -63,7 +63,7 @@ if(isset($rutas[1]) && isset($rutas[2]) && isset($rutas[3])){
 
 		echo '<div class="col-xs-12 text-center error404">
 				               
-	    		<h1><small>¡Oops!</small></h1>
+	    		
 	    
 	    		<h2>No tienes acceso a este producto</h2>
 
@@ -75,7 +75,7 @@ if(isset($rutas[1]) && isset($rutas[2]) && isset($rutas[3])){
 
 	echo '<div class="col-xs-12 text-center error404">
 			               
-    		<h1><small>¡Oops!</small></h1>
+    		
     
     		<h2>No tienes acceso a este producto</h2>
 

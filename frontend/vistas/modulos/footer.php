@@ -17,12 +17,20 @@ FOOTER
 
 					<h4><a href="#" class="" titulo="CONOCENOS" style="color: white;">QUIENES SOMOS</a></h4>
 
-					<ul> <li><a href="#" class="pixelCategorias" > Nuestra historia</a></li> </ul>
-					<ul> <li><a href="#" class="pixelCategorias" >Términos y Condiciones</a></li> </ul>
+					<ul>
+						<li><a href="#" class="pixelCategorias"> Nuestra historia</a></li>
+					</ul>
+					<ul>
+						<li><a href="#" class="pixelCategorias">Términos y Condiciones</a></li>
+					</ul>
 
-					<ul> <li><a href="#" class="pixelCategorias" >Política de Privacidad</a></li> </ul>
+					<ul>
+						<li><a href="#" class="pixelCategorias">Política de Privacidad</a></li>
+					</ul>
 
-					<ul> <li><a href="#" class="pixelCategorias" >Política de devoluciones</a></li> </ul>
+					<ul>
+						<li><a href="#" class="pixelCategorias">Política de devoluciones</a></li>
+					</ul>
 
 
 
@@ -44,9 +52,8 @@ FOOTER
 
 					foreach ($categorias as $key => $value) {
 
-					
-						echo '<ul> <li><a href="' . $url . $value["ruta"] . '" class="pixelCategorias" titulo="' . $value["categoria"] . '">' . $value["categoria"] . '</a></li> </ul>';
 
+						echo '<ul> <li><a href="' . $url . $value["ruta"] . '" class="pixelCategorias" titulo="' . $value["categoria"] . '">' . $value["categoria"] . '</a></li> </ul>';
 					}
 
 					?>
@@ -54,10 +61,16 @@ FOOTER
 				<div class="col-lg-4 col-md-3 col-sm-4 col-xs-12">
 
 					<h4><a href="#" class="" titulo="BLOG" style="color: white;">BLOG</a></h4>
-					<ul> <li><a href="#" class="pixelCategorias" > Nuestra historia</a></li> </ul>
-					<ul> <li><a href="#" class="pixelCategorias" >Términos y Condiciones</a></li> </ul>
+					<ul>
+						<li><a href="#" class="pixelCategorias"> Nuestra historia</a></li>
+					</ul>
+					<ul>
+						<li><a href="#" class="pixelCategorias">Términos y Condiciones</a></li>
+					</ul>
 
-					<ul> <li><a href="#" class="pixelCategorias" >Política de Privacidad</a></li> </ul>
+					<ul>
+						<li><a href="#" class="pixelCategorias">Política de Privacidad</a></li>
+					</ul>
 
 
 				</div>
@@ -142,7 +155,10 @@ FOOTER
 				<div class="col-sm-6 col-xs-12 text-right social">
 
 					<ul>
-
+					<li>
+							<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
+								<img src="<?php echo $url; ?>vistas/img/whatsapp(2).png" style="padding-bottom: 5px;"></a>
+						</li>
 						<?php
 
 						$social = ControladorPlantilla::ctrEstiloPlantilla();
@@ -163,6 +179,9 @@ FOOTER
 
 						?>
 
+
+
+						
 					</ul>
 
 				</div>

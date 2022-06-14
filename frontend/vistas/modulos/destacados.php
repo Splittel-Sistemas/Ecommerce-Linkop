@@ -368,6 +368,44 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 		</div>';
 }
+
+
+?>
+
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4  text-center">
+				<!-- <a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
+					<img src="<?php echo $url; ?>vistas/img/whatsapp(2).png" style="padding-bottom: 5px;"></a> -->
+			</div>
+			<div class="col-md-4  text-center">
+				<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
+					<img src="<?php echo $url; ?>vistas/img/whatsapp(1).png" style="padding-bottom: 5px;"></a>
+			</div>
+			<div class="col-md-4  text-center">
+			<!-- 	<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
+					<img src="<?php echo $url; ?>vistas/img/whatsapp(2).png" style="padding-bottom: 5px;"></a> -->
+			</div>
+
+		</div>
+
+
+		<div class="row">
+			<br>
+			<div class="col-md-12 text-center">
+				<p>
+
+					Nuestros profesionales están para brindar la atención 24/7. Déjanos un mensaje y enseguida te contactamos.
+
+					Nuestros horarios de atención en oficina desde 8:00 am a 7:00 pm. de lunes a viernes.</p>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+<?php
 $banner = ControladorProductos::ctrMostrarBanner($ruta);
 
 if ($banner != null) {
@@ -382,3 +420,4 @@ if ($banner != null) {
 	}
 }
 ?>
+

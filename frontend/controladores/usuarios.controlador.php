@@ -377,9 +377,9 @@ class ControladorUsuarios{
 
 						$mail->isMail();
 
-						$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+						$mail->setFrom('ramon.olea@splittel.com', 'Linkop');
 
-						$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+						$mail->addReplyTo('ramon.olea@splittel.com', 'Linkop');
 
 						$mail->Subject = "Solicitud de nueva contraseña";
 
@@ -389,7 +389,7 @@ class ControladorUsuarios{
 	
 								<center>
 									
-									<img style="padding:20px; width:10%" src="http://www.tutorialesatualcance.com/tienda/logo.png">
+									<img style="padding:20px; width:10%" src="">
 
 								</center>
 
@@ -397,7 +397,7 @@ class ControladorUsuarios{
 								
 									<center>
 									
-									<img style="padding:20px; width:15%" src="http://www.tutorialesatualcance.com/tienda/icon-pass.png">
+									<img style="padding:20px; width:15%" src="">
 
 									<h3 style="font-weight:100; color:#999">SOLICITUD DE NUEVA CONTRASEÑA</h3>
 
@@ -996,9 +996,9 @@ class ControladorUsuarios{
 
 					$mail->isMail();
 
-					$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+					$mail->setFrom('ramon.olea@splittel.com', 'Linkop');
 
-					$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+					$mail->addReplyTo('ramon.olea@splittel.com', 'Linkop');
 
 					$mail->Subject = "Ha recibido una consulta";
 
@@ -1008,13 +1008,13 @@ class ControladorUsuarios{
 
 						<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
 
-						<center><img style="padding:20px; width:10%" src="http://www.tutorialesatualcance.com/tienda/logo.png"></center>
+						<center><img style="padding:20px; width:10%" src=""></center>
 
 						<div style="position:relative; margin:auto; width:600px; background:white; padding-bottom:20px">
 
 							<center>
 
-							<img style="padding-top:20px; width:15%" src="http://www.tutorialesatualcance.com/tienda/icon-email.png">
+							<img style="padding-top:20px; width:15%" src="">
 
 
 							<h3 style="font-weight:100; color:#999;">HA RECIBIDO UNA CONSULTA</h3>
