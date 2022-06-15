@@ -216,7 +216,7 @@ VENTANA MODAL PARA CHECKOUT
 
 						</center>
 
-						<img src="<?php echo $url; ?>vistas/img/plantilla/payu.jpg" class="img-thumbnail">
+						<img src="<?php echo $url; ?>vistas/img/plantilla/images.png" class="img-thumbnail">
 
 					</figure>
 
