@@ -143,31 +143,22 @@ HEADER
 
 
 
-					<div class="col-md-1">
+					<div class="col-md-5">
 
 						<a href="<?php echo $url; ?>" class="btn  btn-rounded " id="boton" style="font-size: 12px;">
 							INICIO</a>
-					</div>
-
-					<div class="col-md-1 ">
+					
 
 						<a href="<?php echo $url; ?>categorias" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
 						PRODUCTOS</a>
-					</div>
-
-					<div class="col-md-1">
+					
 
 						<a href="<?php echo $url; ?>ofertas" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
 							OFERTAS</a>
-					</div>
-
-					<div class="col-md-1">
-
+				
 						<a href="<?php echo $url; ?>" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
 							CONTACTO</a>
-					</div>
-
-					<div class="col-md-1">
+					
 
 						<a href="<?php echo $url; ?>vistas/modulos/blog.php" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
 							BLOG</a>
@@ -190,30 +181,38 @@ HEADER
 					<div class="col-md-1">
 						<li class="dropdown notifications-menu ">
 
-							<a href="<?php echo $url; ?>carrito-de-compras" style="color: black; " id="boton">
-
+							<a href="<?php echo $url; ?>carrito-de-compras" style="color: black; " id="">
 
 								<!-- <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
-								<img src="<?php echo $servidor; ?>vistas/img/plantilla/shopping-cart.png" class="img-responsive" style="width: 30px; ">
 
+								<img src="<?php echo $servidor; ?>vistas/img/plantilla/shopping-cart.png" class=" text-center " style="width: 30px; ">
 
+							
+								
+						
+							<span class="label label-info cantidadCesta text-rigth" ></span>	
+												
+										
 
 							</a>
-
+				<!-- 			<i class="fa fa-clock-o"></i><span class="cantidadCesta"></span> -->
+							<!-- <p>TU CESTA  <br> USD $ <span class="sumaCesta"></span></p> -->
 						</li>
 					</div>
 					<div class="col-md-1">
 
 
 
-						<li class="dropdown user user-menu">
+						<li class="dropdown user user-menu" id="usermenu" >
 
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;" id="boton">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;" >
 
 								<!-- <i class="fa fa-user" aria-hidden="true"></i> -->
-								<img src="<?php echo $servidor; ?>vistas/img/plantilla/user(2).png" class="img-responsive" style="width: 30px;">
+								<img src="<?php echo $servidor; ?>vistas/img/plantilla/user(1).png"  style="width: 30px;">
+							<!-- <span class="label label-info sumaCesta text-rigth" ></span>	 -->
+
 							</a>
-							<ul class="dropdown-menu">
+							<ul class="dropdown-menu"  id="productsmenu" >
 
 								<?php
 

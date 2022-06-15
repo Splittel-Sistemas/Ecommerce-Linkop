@@ -976,11 +976,9 @@ class ControladorUsuarios{
 
 	public function ctrFormularioContactenos(){
 
-		if(isset($_POST['mensajeContactenos'])){
+		if(isset($_POST['emailContactenos'])){
 
-			if(preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nombreContactenos"]) &&
-			preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["mensajeContactenos"]) &&
-			preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["emailContactenos"])){
+		
 
 				/*=============================================
 				ENVÍO CORREO ELECTRÓNICO
@@ -1002,7 +1000,8 @@ class ControladorUsuarios{
 
 					$mail->Subject = "Ha recibido una consulta";
 
-					$mail->addAddress("contacto@tiendaenlinea.com");
+					$mail->addAddress($_POST["emailContactenos"]);
+
 
 					$mail->msgHTML('
 
@@ -1021,11 +1020,11 @@ class ControladorUsuarios{
 
 							<hr style="width:80%; border:1px solid #ccc">
 
-							<h4 style="font-weight:100; color:#999; padding:0px 20px; text-transform:uppercase">'.$_POST["nombreContactenos"].'</h4>
+							<h4 style="font-weight:100; color:#999; padding:0px 20px; text-transform:uppercase">'.$_POST["emailContactenos"].'</h4>
 
 							<h4 style="font-weight:100; color:#999; padding:0px 20px;">De: '.$_POST["emailContactenos"].'</h4>
 
-							<h4 style="font-weight:100; color:#999; padding:0px 20px">'.$_POST["mensajeContactenos"].'</h4>
+							<h4 style="font-weight:100; color:#999; padding:0px 20px">'.$_POST["emailContactenos"].'</h4>
 
 							<hr style="width:80%; border:1px solid #ccc">
 
@@ -1080,28 +1079,7 @@ class ControladorUsuarios{
 
 					}
 
-			}else{
-
-				echo'<script>
-
-					swal({
-						  title: "¡ERROR!",
-						  text: "¡Problemas al enviar el mensaje, revise que no tenga caracteres especiales!",
-						  type: "error",
-						  confirmButtonText: "Cerrar",
-						  closeOnConfirm: false
-					},
-
-					function(isConfirm){
-							 if (isConfirm) {	   
-							   	window.location =  history.back();
-							  } 
-					});
-
-					</script>';
-
-
-			}
+			
 
 		}
 
