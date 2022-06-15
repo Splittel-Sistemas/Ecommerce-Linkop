@@ -1,4 +1,3 @@
-
 <?php
 
 /*=============================================
@@ -13,7 +12,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
 
 //http://www.geoplugin.net/
 
-$informacionPais = file_get_contents("http://www.geoplugin.net/json.gp?ip=".$ip);
+$informacionPais = file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $ip);
 
 $datosPais = json_decode($informacionPais);
 
@@ -32,12 +31,12 @@ BREADCRUMB VISITAS
 <div class="container-fluid well well-sm">
 
 	<div class="container">
-	
+
 		<div class="row">
 
 			<ul class="breadcrumb lead">
 
-			<h2 class="pull-right"><small>Tu eres nuestro visitante # <?php echo $totalVisitas["total"];?></small></h2>
+				<h2 class="pull-right"><small>Tu eres nuestro visitante # <?php echo $totalVisitas["total"]; ?></small></h2>
 
 			</ul>
 
@@ -51,14 +50,14 @@ BREADCRUMB VISITAS
 MÓDULO VISITAS
 ======================================-->
 
-<div class="container-fluid">
-	
+<!-- <div class="container-fluid">
+
 	<div class="container">
-		
+
 		<div class="row">
 
-		<?php
-
+			<?php
+			/* 
 		$paises = ControladorVisitas::ctrMostrarPaises();
 
 		$coloresPaises = array("#09F","#900","#059","#260","#F09","#02A");	
@@ -81,12 +80,12 @@ MÓDULO VISITAS
 	
 				</div>';
 		}
+ */
 
-
-		?>
+			?>
 
 		</div>
 
 	</div>
 
-</div>
+</div> -->

@@ -34,9 +34,12 @@ $("#usermenu").hover(
 
 $("#productos").hover(
   function () {
-    $("#listaProductos").removeAttr( 'style' );
+    $("#productos").after($("#listaProductos").slideDown("fast"));
+
   },
   function () {
-/* 	$("#listaProductos").attr( "style", "display:none" ); */
+ /*    $(this).removeClass("hover"); */
+/*  $("#productos").after($("#listaProductos").slideUp("fast")); */
+
   }
 );

@@ -102,18 +102,17 @@ HEADER
 	<?php
 
 	if (isset($_SESSION["validarSesion"])) {
-
-	
-	}else{
+	} else {
 
 	?>
 
-			<!-- REGISTRATE -->
-			<div class="alert alert-warning   alert-dismissible fade in text-center" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-			 <strong>Regístrate y recíbe un 15% de descuento en tu primer compra.  <a href="#modalRegistro" data-toggle="modal">REGISTRARSE</a> </strong> </div>
+		<!-- REGISTRATE -->
+		<div class="alert alert-warning   alert-dismissible fade in text-center" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			<strong>Regístrate y recíbe un 15% de descuento en tu primer compra. <a href="#modalRegistro" data-toggle="modal">REGISTRARSE</a> </strong>
+		</div>
 
 
-			<!-- FIN REGISTRATE -->
+		<!-- FIN REGISTRATE -->
 	<?php
 
 
@@ -145,20 +144,60 @@ HEADER
 
 					<div class="col-md-5">
 
-						<a href="<?php echo $url; ?>" class="btn  btn-rounded " id="boton" style="font-size: 12px;">
+						<a href="<?php echo $url; ?>" class=" btn  btn-rounded " id="boton" style="font-size: 12px;">
 							INICIO</a>
-					
 
-						<a href="<?php echo $url; ?>categorias" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
-						PRODUCTOS</a>
-					
+
+						<a href="<?php echo $url; ?>categorias" class="dropdown btn  btn-rounded" id="productos" name="productos" style="font-size: 12px;">
+							PRODUCTOS
+							<ul class="dropdown-menu" role="menu" id="listaProductosa">
+								<?php
+
+								$item = null;
+								$valor = null;
+
+								$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
+
+								foreach ($categorias as $key => $value) {
+																/* 
+								echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
+
+										<h4>
+										<a href="' . $url . $value["ruta"] . '" class="pixelCategorias backColor " titulo="' . $value["categoria"] . '">
+										<img  src="' . $servidor . $value["imgOferta"] . '" width="70%"><br>
+										' . $value["categoria"] . '</a>
+										</h4>
+
+										<hr>
+
+										<ul>'; */
+																/* 			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
+										' . $value["categoria"] . '</a> */
+									$item = "id_categoria";
+
+									$valor = $value["id"];
+
+
+
+
+									echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias " titulo="' . $value["categoria"] . '">' . $value["categoria"] . '</a></li>';;
+								}
+
+
+
+
+
+								?>
+							</ul>
+						</a>
+
 
 						<a href="<?php echo $url; ?>ofertas" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
 							OFERTAS</a>
-				
+
 						<a href="<?php echo $url; ?>" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
 							CONTACTO</a>
-					
+
 
 						<a href="<?php echo $url; ?>vistas/modulos/blog.php" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
 							BLOG</a>
@@ -187,15 +226,15 @@ HEADER
 
 								<img src="<?php echo $servidor; ?>vistas/img/plantilla/shopping-cart.png" class=" text-center " style="width: 30px; ">
 
-							
-								
-						
-							<span class="label label-info cantidadCesta text-rigth" ></span>	
-												
-										
+
+
+
+								<span class="label label-info cantidadCesta text-rigth"></span>
+
+
 
 							</a>
-				<!-- 			<i class="fa fa-clock-o"></i><span class="cantidadCesta"></span> -->
+							<!-- 			<i class="fa fa-clock-o"></i><span class="cantidadCesta"></span> -->
 							<!-- <p>TU CESTA  <br> USD $ <span class="sumaCesta"></span></p> -->
 						</li>
 					</div>
@@ -203,16 +242,16 @@ HEADER
 
 
 
-						<li class="dropdown user user-menu" id="usermenu" >
+						<li class="dropdown user user-menu" id="usermenu">
 
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;" >
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;">
 
 								<!-- <i class="fa fa-user" aria-hidden="true"></i> -->
-								<img src="<?php echo $servidor; ?>vistas/img/plantilla/user(1).png"  style="width: 30px;">
-							<!-- <span class="label label-info sumaCesta text-rigth" ></span>	 -->
+								<img src="<?php echo $servidor; ?>vistas/img/plantilla/user(1).png" style="width: 30px;">
+								<!-- <span class="label label-info sumaCesta text-rigth" ></span>	 -->
 
 							</a>
-							<ul class="dropdown-menu"  id="productsmenu" >
+							<ul class="dropdown-menu" id="productsmenu">
 
 								<?php
 
@@ -286,7 +325,7 @@ HEADER
 
 
 		</div>
-		
+
 	</nav>
 
 
