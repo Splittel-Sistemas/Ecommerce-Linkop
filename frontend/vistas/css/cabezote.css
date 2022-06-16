@@ -29,14 +29,16 @@ HEADER
 #boton{
 
 	color: #080708;
-	background:#eeeeee;
+	background:#ffffff;
+	margin:30px 0px;
+
 
 	
 }
 #boton:hover{
-	background: #222222d2;
-	color: rgb(255, 251, 246);
-	margin:7px 0;
+	background: #2222225e;
+	color: #0D334A;
+	margin:30px 0;
 
   
 }
@@ -45,14 +47,15 @@ HEADER
 #productos{
 
 	color: #080708;
-	background:#eeeeee;
+	background:#ffffff;
 
+	margin:30px 0px;
 	
 }
 #productos:hover{
-	background: #222222d2;
-	color: rgb(255, 251, 246);
-	margin:7px 0;
+	background: #2222225e;
+	color: #0D334A;
+	margin:30px 0;
 
   
 }
@@ -61,7 +64,7 @@ header #btnCategorias{
 }
 
 header #btnCategorias p{
-	line-height:40px;
+	line-height:25px;
 	margin-bottom:0px;
 }
 

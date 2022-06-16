@@ -103,7 +103,7 @@ SLIDESHOW
 
 <center>
 	
-	<button id="btnSlide" class="backColor">
+	<button id="btnSlide" class="">
 		
 			<i class="fa fa-angle-up"></i>
 
@@ -114,22 +114,23 @@ SLIDESHOW
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
   <div class="row text-center">
-    <div class="col-md-3">
-	<i class="fa fa-ship" aria-hidden="true"></i>
+    <div class="col-md-3" style="font-size: 20px;">
+	<i class="fa fa-ship" aria-hidden="true"></i><br>
+
 	Envíos gratuitos al día siguiente
     </div>
-    <div class="col-md-3">
-	<i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+    <div class="col-md-3" style="font-size: 20px;">
+	<i class="fa fa-calendar-check-o" aria-hidden="true"></i><br>
 	30 días garantizados para <br>
 	regresarte tu dinero
     </div>
-    <div class="col-md-3">
-	<i class="fa fa-life-ring" aria-hidden="true"></i>
+    <div class="col-md-3" style="font-size: 20px;">
+	<i class="fa fa-life-ring" aria-hidden="true"></i><br>
 
 	Garantía Asegurada
     </div>
-	<div class="col-md-3">
-	<i class="fa fa-phone" aria-hidden="true"></i>
+	<div class="col-md-3" style="font-size: 20px;">
+	<i class="fa fa-phone" aria-hidden="true"></i><br>
 
 	  Servicio de atención de por vida
     </div>

@@ -115,8 +115,3 @@ PRODUCTOS DESTACADOS
 <div class="container">
 
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>

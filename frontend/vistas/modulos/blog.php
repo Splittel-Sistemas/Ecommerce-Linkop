@@ -75,7 +75,7 @@ p{
     margin: 20px 0px;
 }
 
-.btn.btn-default {
+/* .btn.btn-default {
     background-color: #5db4c0;
     color: #fff;
     border-radius: 0;
@@ -83,7 +83,7 @@ p{
     padding: 13px 20px;
     font-size: 13px;
     font-weight: 600;
-}
+} */
 
 
 </style>
@@ -218,7 +218,3 @@ p{
 	</div>
 </section>
 
-
-<div class="container">
-
-</div>

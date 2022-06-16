@@ -47,7 +47,75 @@ BANNER
 		pointer-events: none;
 		background: #ccc;
 	}
+
+	
 </style>
+<style>
+h2 {
+  margin-bottom: .5em;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
+}
+
+
+/* hover styles */
+.location-listing {
+  position: relative;
+}
+
+.location-image {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.location-image img {
+  filter: blur(0px);
+  transition: filter 0.3s ease-in;
+  transform: scale(1.1);
+}
+
+.location-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  background: rgba(187, 181, 181, 0.644);
+  color: white;
+  
+  /* position the text in t’ middle*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-listing:hover .location-title {
+  opacity: 1;
+}
+
+.location-listing:hover .location-image img {
+  filter: blur(2px);
+}
+
+
+/* for touch screen devices */
+@media (hover: none) { 
+  .location-title {
+    opacity: 1;
+  }
+  .location-image img {
+    filter: blur(2px);
+  }
+}</style>
 <?php
 
 $servidor = Ruta::ctrRutaServidor();
@@ -60,8 +128,8 @@ $ruta = "sin-categoria";
 PRODUCTOS DESTACADOS
 =============================================*/
 
-$titulosModulos = array(/* "ARTÍCULOS GRATUITOS", */"PRODUCTOS", "LO MÁS VENDIDO" /* , "LO MÁS VISTO" */);
-$rutaModulos = array(/* "articulos-gratis", */"PRODUCTOS", "lo-mas-vendido"/* ,"lo-mas-visto" */);
+$titulosModulos = array(/* "ARTÍCULOS GRATUITOS", */ /* "PRODUCTOS", */"LO MÁS VENDIDO" /* , "LO MÁS VISTO" */);
+$rutaModulos = array(/* "articulos-gratis", */"lo-mas-vendido" /* ,"lo-mas-visto" */);
 
 $base = 0;
 $tope = 4;
@@ -77,7 +145,7 @@ $gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $ba
 
 } */
 
-if ($titulosModulos[1] == "LO MÁS VENDIDO") {
+if ($titulosModulos[0] == "LO MÁS VENDIDO") {
 
 	$ordenar = "ventas";
 	$item = "estado";
@@ -98,7 +166,7 @@ $vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $ba
 
 } */
 
-if ($titulosModulos[0] == "PRODUCTOS") {
+/* if ($titulosModulos[1] == "PRODUCTOS") {
 
 	$base = 0;
 	$tope = 4;
@@ -109,8 +177,8 @@ if ($titulosModulos[0] == "PRODUCTOS") {
 	$modo = "DESC";
 
 	$vistas1 = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
-}
-$modulos = array(/* $gratis, */$vistas1/* , $vistas */, $ventas);
+} */
+$modulos = array(/* $gratis, */ /* $vistas1 */ /* , $vistas */$ventas);
 
 for ($i = 0; $i < count($titulosModulos); $i++) {
 	/* <div class="container-fluid well well-sm barraProductos">
@@ -165,7 +233,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 
 				</div>
-				<div class="col-sm-4 col-xs-12 text-center " style="border:1px solid;">
+				<div class="col-sm-4 col-xs-12 text-center " >
 			
 				
 
@@ -173,7 +241,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 						
 					
 						
-					<h1 class="text-center" ><small>' . $titulosModulos[$i] . ' </small></h1>
+					<h1 class="text-center" ><small style="font-weight: bold;color:black;" >' . $titulosModulos[$i] . ' </small></h1>
 
 
 				</a>
@@ -191,7 +259,6 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 			<div class="clearfix"></div>
 
-			<hr>
 
 		</div>
 
@@ -237,7 +304,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 			if ($value["oferta"] != 0 && $value["precio"] != 0) {
 
-				echo '<span class="label label-warning fontSize">' . $value["descuentoOferta"] . '% off</span>';
+				echo '<span class="label label-danger fontSize">' . $value["descuentoOferta"] . '% off</span>';
 			}
 
 			echo '</a>	
@@ -331,13 +398,13 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 			echo '<li class="col-xs-12">
 					  
-				  		<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+				  		<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12>
 							   
 							<figure>
 						
 								<a href="' . $value["ruta"] . '" class="pixelProducto">
 									
-									<img src="' . $servidor . $value["portada"] . '" class="img-responsive">
+									<img src="' . $servidor . $value["portada"] . '" class="img-responsive" >
 
 								</a>
 
@@ -473,6 +540,36 @@ if ($banner != null) {
 	}
 }
 ?>
+<?php
+
+/*=============================================
+CREADOR DE IP
+=============================================*/
+
+//https://www.browserling.com/tools/random-ip
+
+$ip = $_SERVER['REMOTE_ADDR'];
+
+//$ip = "153.205.198.22";
+
+//http://www.geoplugin.net/
+
+$informacionPais = file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $ip);
+
+$datosPais = json_decode($informacionPais);
+
+$pais = $datosPais->geoplugin_countryName;
+$codigo = $datosPais->geoplugin_countryCode;
+
+$enviarIp = ControladorVisitas::ctrEnviarIp($ip, $pais, $codigo);
+
+$totalVisitas = ControladorVisitas::ctrMostrarTotalVisitas();
+
+?>
+<!------ Include the above in your HEAD tag ---------->
+<!--=====================================
+BREADCRUMB VISITAS
+======================================-->
 
 <div class="jumbotron jumbotron-fluid">
 	<div class="container">
@@ -501,18 +598,25 @@ if ($banner != null) {
 					Nuestros profesionales están para brindar la atención 24/7. Déjanos un mensaje y enseguida te contactamos.
 
 					Nuestros horarios de atención en oficina desde 8:00 am a 7:00 pm. de lunes a viernes.</p>
+
+				<br>
+<!-- 
+				<h2 class="pull-right"><small>Tu eres nuestro visitante # <?php echo $totalVisitas["total"]; ?></small></h2> -->
 			</div>
 
 
 		</div>
+
+		
 	</div>
-</div>
 
-
-<!------ Include the above in your HEAD tag ---------->
 
 
 </div>
+
+
+
+
 
 <!-- <div class="col-xs-12  text-center" style="display:block" id="listaProductos">
 	<div class="row">
@@ -573,9 +677,9 @@ if ($banner != null) {
 				<hr>
 
 				<ul>'; */
-		/* 			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
+	/* 			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
 				' . $value["categoria"] . '</a> */
-		/* 	$item = "id_categoria";
+	/* 	$item = "id_categoria";
 
 						$valor = $value["id"];
 
@@ -585,7 +689,7 @@ if ($banner != null) {
 
 							echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias" titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
 						} */
-/* 
+	/* 
 		echo '
 
 				</div>';
@@ -600,7 +704,7 @@ if ($banner != null) {
 </div> -->
 
 
-<div class="container">
+<!-- <div class="container">
 	<div class="row">
 		<div class="MultiCarousel" id="MultiCarousel" data-interval="1000">
 			<div class="MultiCarousel-inner">
@@ -644,4 +748,72 @@ if ($banner != null) {
 			</div>
 		</div>
 	</div>
+</div> -->
+
+
+
+<div class="child-page-listing text-center">
+
+
+  <div class="grid">
+
+    <article id="3685" class="location-listing">
+
+      <a class="location-title" href="#" style="color: black;">
+          MAS INFORMACION           </a>
+
+      <div class="location-image">
+        <a href="#">
+            <img  src="<?php echo $servidor?>vistas/img/productos/A.png" alt="MAS INFORMACION">    </a>
+
+      </div>
+
+    </article>
+
+   <!--  <article id="3688" class="location-listing">
+
+      <a class="location-title" href="#" style="color: black;">
+          COMPUTADORAS            </a>
+
+      <div class="location-image">
+        <a href="#">
+            <img width="300" height="169" src="<?php echo $servidor?>vistas/img/productos/pc.png" alt="COMPUTADORAS">  </a>
+
+      </div>
+
+    </article>
+
+    <article id="3691" class="location-listing">
+
+      <a class="location-title" href="#" style="color: black;">
+          ROUTER            </a>
+
+      <div class="location-image">
+  
+        <a href="#" >
+            <img width="300" height="169" src="<?php echo $servidor?>vistas/img/productos/wifi.png" alt="ROUTER">  </a>
+
+      </div>
+
+    </article>
+
+    <article id="3694" class="location-listing">
+
+      <a class="location-title" href="#" style="color: black;">
+          CABLES           </a>
+
+      <div class="location-image">
+        <a href="#">
+            <img width="300" height="169" src="<?php echo $servidor?>vistas/img/productos/hdmi.png" alt="CABLES">  </a>
+
+      </div>
+
+    </article> -->
+
+   
+
+  </div>
+  <!-- end grid container -->
+
 </div>
+
