@@ -121,7 +121,7 @@ HEADER
 	?>
 	<br>
 	<nav class="navbar ">
-		<div class="container">
+		<div class="">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
 					<i class="fa fa-bars"></i>
@@ -129,7 +129,7 @@ HEADER
 
 			</div>
 
-			<div class="container">
+			<div class="">
 
 				<div class="row" id="navbar-collapse">
 					<div class="col-md-2 text-center"> <a href="<?php echo $url; ?>">

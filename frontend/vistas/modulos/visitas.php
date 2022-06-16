@@ -12,7 +12,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
 
 //http://www.geoplugin.net/
 
-$informacionPais = file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $ip);
+$informacionPais = file_get_contents("https://www.geoplugin.net/json.gp?ip=" . $ip);
 
 $datosPais = json_decode($informacionPais);
 
