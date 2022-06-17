@@ -13,7 +13,7 @@ FOOTER
 			======================================-->
 
 			<div class="col-lg-5 col-md-6 col-xs-12 footerCategorias">
-				<div class="col-lg-4 col-md-3 col-sm-4 col-xs-12">
+				<div class="col-lg-4 col-md-3 col-sm-4 col-xs-12  text-center">
 
 					<h4><a href="#" class="" titulo="CONOCENOS" style="color: white;">QUIENES SOMOS</a></h4>
 
@@ -35,7 +35,7 @@ FOOTER
 
 
 				</div>
-				<div class="col-lg-4 col-md-3 col-sm-4 col-xs-12">
+				<div class="col-lg-4 col-md-3 col-sm-4 col-xs-12  text-center">
 
 					<h4><a href="#" class="" titulo="PRODUCTOS" style="color: white;">PRODUCTOS</a></h4>
 
@@ -58,7 +58,7 @@ FOOTER
 
 					?>
 				</div>
-				<div class="col-lg-4 col-md-3 col-sm-4 col-xs-12">
+				<div class="col-lg-4 col-md-3 col-sm-4 col-xs-12  text-center ">
 
 					<h4><a href="#" class="" titulo="BLOG" style="color: white;">BLOG</a></h4>
 					<ul>
@@ -81,7 +81,7 @@ FOOTER
 			DATOS CONTACTO
 			======================================-->
 
-			<div class="col-md-3 col-sm-6 col-xs-12 text-left infoContacto">
+			<div class="col-md-3 col-sm-6 col-xs-12 text-left infoContacto  text-center">
 
 				<h5 style="color: white;">CONTACTO</h5>
 
@@ -105,7 +105,7 @@ FOOTER
 			FORMULARIO CONTÁCTENOS
 			======================================-->
 
-			<div class="col-lg-4 col-md-3 col-sm-6 col-xs-12 formContacto">
+			<div class="col-lg-4 col-md-3 col-sm-6 col-xs-12 formContacto  text-center">
 
 				<h4 style="color: white;">Sé el primero en conocer nuestros nuevos productos</h4>
 				<p style="color: white;">Regístrate a nuestra newsletter de clientes preferenciales y recibe promociones personalizadas.</p>
