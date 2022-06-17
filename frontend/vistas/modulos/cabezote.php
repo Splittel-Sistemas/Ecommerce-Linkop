@@ -303,6 +303,7 @@ VENTANA MODAL PARA EL REGISTRO
 <?php
 
 if (isset($_SESSION["validarSesion"])) {
+	echo'';
 } else {
 
 ?>
@@ -320,6 +321,7 @@ if (isset($_SESSION["validarSesion"])) {
 }
 
 ?>
+
 <div class="modal fade modalFormulario" id="modalRegistro" role="dialog">
 
 	<div class="modal-content modal-dialog">

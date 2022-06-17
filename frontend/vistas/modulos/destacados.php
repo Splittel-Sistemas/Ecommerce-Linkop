@@ -222,7 +222,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 		<div class="container-fluid productos">
 	
-			<div class="container">
+			<div class="containera">
 		
 			<div class="row">
 
@@ -833,7 +833,7 @@ BREADCRUMB VISITAS
 		}
 	</style>
 
-	<div class="container text-center">
+	<div class="containera text-center">
 		<h3></h3>
 
 		<div class="row">
