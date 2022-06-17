@@ -44,21 +44,7 @@ HEADER
 }
 
 
-#productos{
 
-	color: #080708;
-	background:#ffffff;
-
-	margin:30px 0px;
-	
-}
-#productos:hover{
-	background: #2222225e;
-	color: #0D334A;
-	margin:30px 0;
-
-  
-}
 header #btnCategorias{
 	margin:20px 0;
 }

@@ -23,23 +23,24 @@ $("#btnCategorias").hover(
   }
 );
 
-$("#usermenu").hover(
+/* $("#usermenu").hover(
   function () {
     $("#usermenu").after($("#productsmenu").slideToggle("fast"));
   },
   function () {
     $(this).removeClass("hover");
   }
-);
+); */
 
-$("#productos").hover(
+/* $("#productos").hover(
   function () {
     $("#productos").after($("#listaProductos").slideDown("fast"));
 
   },
   function () {
- /*    $(this).removeClass("hover"); */
-/*  $("#productos").after($("#listaProductos").slideUp("fast")); */
+    $(this).removeClass("hover");
+ $("#productos").after($("#listaProductos").slideUp("fast"));
 
   }
 );
+ */

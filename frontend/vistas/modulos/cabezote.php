@@ -99,67 +99,42 @@ HEADER
 
 <header class="container-fluid">
 
-	<?php
 
-	if (isset($_SESSION["validarSesion"])) {
-	} else {
-
-	?>
-
-		<!-- REGISTRATE -->
-		<div class="alert alert-warning   alert-dismissible fade in text-center" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-			<strong>Regístrate y recíbe un 15% de descuento en tu primer compra. <a href="#modalRegistro" data-toggle="modal">REGISTRARSE</a> </strong>
-		</div>
-
-
-		<!-- FIN REGISTRATE -->
-	<?php
-
-
-	}
-
-	?>
 	<br>
-	<nav class="navbar ">
-		<div class="">
+
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-					<i class="fa fa-bars"></i>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</button>
+				<a href="<?php echo $url; ?>">
 
+					<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive text-center" style="width:150px;padding-top:10px;">
+
+				</a>
 			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class=""><a href="<?php echo $url; ?>">Home</a></li>
 
-			<div class="">
+					<li class="dropdown" id="productos">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false ">PRODUCTOS <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu" id="listaProductos">
+							<?php
 
-				<div class="row" id="navbar-collapse">
-					<div class="col-md-2 text-center"> <a href="<?php echo $url; ?>">
+							$item = null;
+							$valor = null;
 
-							<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive">
+							$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
 
-						</a>
-
-					</div>
-
-
-
-					<div class="col-md-5">
-
-						<a href="<?php echo $url; ?>" class=" btn  btn-rounded " id="boton" style="font-size: 12px;">
-							INICIO</a>
-
-
-						<a href="<?php echo $url; ?>categorias" class="dropdown btn  btn-rounded" id="productos" name="productos" style="font-size: 12px;">
-							PRODUCTOS
-							<ul class="dropdown-menu" role="menu" id="listaProductosa">
-								<?php
-
-								$item = null;
-								$valor = null;
-
-								$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
-
-								foreach ($categorias as $key => $value) {
-																/* 
+							foreach ($categorias as $key => $value) {
+								/* 
 								echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
 
 										<h4>
@@ -171,97 +146,92 @@ HEADER
 										<hr>
 
 										<ul>'; */
-																/* 			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
+								/* 			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
 										' . $value["categoria"] . '</a> */
-									$item = "id_categoria";
+								$item = "id_categoria";
 
-									$valor = $value["id"];
-
-
-
-
-									echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias " titulo="' . $value["categoria"] . '">' . $value["categoria"] . '</a></li>';;
-								}
+								$valor = $value["id"];
 
 
 
 
-
-								?>
-							</ul>
-						</a>
+								echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias " titulo="' . $value["categoria"] . '">' . $value["categoria"] . '</a></li>';;
+							}
 
 
-						<a href="<?php echo $url; ?>ofertas" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
-							OFERTAS</a>
-
-						<a href="<?php echo $url; ?>" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
-							CONTACTO</a>
 
 
-						<a href="<?php echo $url; ?>vistas/modulos/blog.php" class="btn  btn-rounded" id="boton" style="font-size: 12px;">
-							BLOG</a>
-					</div>
-					<div class="col-md-3" id="buscador">
-						<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
 
-						<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
+							?>
+						</ul>
+					</li>
+					<li><a href="<?php echo $url; ?>categorias"">CATEGORIAS</a></li>
 
-							<!-- <button class="btn btn-default backColor" type="submit">
+					<li><a href="<?php echo $url; ?>ofertas"">OFERTAS</a></li>
+					<li><a href=" <?php echo $url; ?>ofertas">BLOG</a></li>
+
+				</ul>
+				<ul class=" nav navbar-nav navbar-CENTER">
+
+
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<div class="" id="buscador">
+							<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
+
+							<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
+
+								<!-- <button class="btn btn-default " type="submit">
 
 									<i class="fa fa-search"></i>
 
 								</button> -->
 
+							</a>
+
+						</div>
+					</li>
+					<li class="dropdown notifications-menu ">
+
+						<a href="<?php echo $url; ?>carrito-de-compras" style="color: black; " id="">
+
+							<!-- <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
+
+							<img src="<?php echo $servidor; ?>vistas/img/plantilla/shopping-cart.png" class=" text-center " style="width: 30px; ">
+
+
+
+
+							<span class="label label-info cantidadCesta text-rigth"></span>
+
+
+
 						</a>
+						<!-- 			<i class="fa fa-clock-o"></i><span class="cantidadCesta"></span> -->
+						<!-- <p>TU CESTA  <br> USD $ <span class="sumaCesta"></span></p> -->
+					</li>
+					<li class="dropdown user user-menu" id="usermenu">
 
-					</div>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;">
 
-					<div class="col-md-1">
-						<li class="dropdown notifications-menu ">
+							<!-- <i class="fa fa-user" aria-hidden="true"></i> -->
+							<img src="<?php echo $servidor; ?>vistas/img/plantilla/user(1).png" style="width: 30px;">
+							<!-- <span class="label label-info sumaCesta text-rigth" ></span>	 -->
 
-							<a href="<?php echo $url; ?>carrito-de-compras" style="color: black; " id="">
+						</a>
+						<ul class="dropdown-menu" id="productsmenu">
 
-								<!-- <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
+							<?php
 
-								<img src="<?php echo $servidor; ?>vistas/img/plantilla/shopping-cart.png" class=" text-center " style="width: 30px; ">
+							if (isset($_SESSION["validarSesion"])) {
 
+								if ($_SESSION["validarSesion"] == "ok") {
 
+									if ($_SESSION["modo"] == "directo") {
 
-
-								<span class="label label-info cantidadCesta text-rigth"></span>
-
-
-
-							</a>
-							<!-- 			<i class="fa fa-clock-o"></i><span class="cantidadCesta"></span> -->
-							<!-- <p>TU CESTA  <br> USD $ <span class="sumaCesta"></span></p> -->
-						</li>
-					</div>
-					<div class="col-md-1">
-
-
-
-						<li class="dropdown user user-menu" id="usermenu">
-
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;">
-
-								<!-- <i class="fa fa-user" aria-hidden="true"></i> -->
-								<img src="<?php echo $servidor; ?>vistas/img/plantilla/user(1).png" style="width: 30px;">
-								<!-- <span class="label label-info sumaCesta text-rigth" ></span>	 -->
-
-							</a>
-							<ul class="dropdown-menu" id="productsmenu">
-
-								<?php
-
-								if (isset($_SESSION["validarSesion"])) {
-
-									if ($_SESSION["validarSesion"] == "ok") {
-
-										if ($_SESSION["modo"] == "directo") {
-
-											/* if ($_SESSION["foto"] != "") {
+										/* if ($_SESSION["foto"] != "") {
 
 														echo '<li>
 
@@ -277,15 +247,15 @@ HEADER
 														</li>';
 													} */
 
-											echo '
+										echo '
 										<li><a href="' . $url . 'perfil">Ver Perfil</a></li>
 										
 										<li><a href="' . $url . 'salir">Salir</a></li>';
-										}
+									}
 
-										if ($_SESSION["modo"] == "facebook") {
+									if ($_SESSION["modo"] == "facebook") {
 
-											echo '<li>
+										echo '<li>
 
 												<img class="img-circle" src="' . $_SESSION["foto"] . '" width="10%">
 
@@ -294,11 +264,11 @@ HEADER
 												<li><a href="' . $url . 'perfil">Ver Perfil</a></li>
 												
 												<li><a href="' . $url . 'salir" class="salir">Salir</a></li>';
-										}
+									}
 
-										if ($_SESSION["modo"] == "google") {
+									if ($_SESSION["modo"] == "google") {
 
-											echo '<li>
+										echo '<li>
 
 												<img class="img-circle" src="' . $_SESSION["foto"] . '" width="10%">
 
@@ -307,28 +277,23 @@ HEADER
 												<li><a href="' . $url . 'perfil">Ver Perfil</a></li>
 												
 												<li><a href="' . $url . 'salir">Salir</a></li>';
-										}
 									}
-								} else {
+								}
+							} else {
 
-									echo '<li><a href="#modalIngreso" data-toggle="modal">Ingresar</a></li>
+								echo '<li><a href="#modalIngreso" data-toggle="modal">Ingresar</a></li>
 									
 									<li><a href="#modalRegistro" data-toggle="modal">Crear una cuenta</a></li>';
-								}
+							}
 
-								?>
-							</ul>
-						</li>
-					</div>
-				</div>
+							?>
+						</ul>
+					</li>
+				</ul>
 			</div>
-
-
+			<!--/.nav-collapse -->
 		</div>
-
 	</nav>
-
-
 </header>
 
 <!--=====================================
