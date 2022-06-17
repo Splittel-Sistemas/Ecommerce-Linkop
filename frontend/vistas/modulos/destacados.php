@@ -593,7 +593,7 @@ BREADCRUMB VISITAS
 		<div class="row">
 			<br>
 			<div class="col-md-12 text-center">
-				<p>
+				<p style="color:#000000">
 
 					Nuestros profesionales están para brindar la atención 24/7. Déjanos un mensaje y enseguida te contactamos.
 

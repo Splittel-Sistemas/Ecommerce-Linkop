@@ -179,7 +179,7 @@ HEADER
 				<ul class="nav navbar-nav navbar-right">
 					<li>
 						<div class="" id="buscador">
-							<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
+							<input type="search" name="buscar" class="form-control" placeholder="Buscar..." >
 
 							<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
 

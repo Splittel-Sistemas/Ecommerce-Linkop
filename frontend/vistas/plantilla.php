@@ -274,7 +274,7 @@ if(isset($_GET["ruta"])){
 
 
 		include "modulos/categorias.php";
-	include "modulos/visitas.php";
+	/* include "modulos/visitas.php"; */
 		
 	}else if($rutas[0] == "blog"){
 

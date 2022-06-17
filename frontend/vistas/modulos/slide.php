@@ -3,9 +3,9 @@ SLIDESHOW
 ======================================-->
 
 <div class="container-fluid" id="slide">
-	
+
 	<div class="row">
-		
+
 		<!--=====================================
 		DIAPOSITIVAS
 		======================================-->
@@ -14,61 +14,58 @@ SLIDESHOW
 
 			<?php
 
-				$servidor = Ruta::ctrRutaServidor();
+			$servidor = Ruta::ctrRutaServidor();
 
-				$slide = ControladorSlide::ctrMostrarSlide();
+			$slide = ControladorSlide::ctrMostrarSlide();
 
-				foreach ($slide as $key => $value) {	
+			foreach ($slide as $key => $value) {
 
-					$estiloImgProducto = json_decode($value["estiloImgProducto"], true);
-					$estiloTextoSlide = json_decode($value["estiloTextoSlide"], true);
-					$titulo1 = json_decode($value["titulo1"], true);
-					$titulo2 = json_decode($value["titulo2"], true);
-					$titulo3 = json_decode($value["titulo3"], true);
+				$estiloImgProducto = json_decode($value["estiloImgProducto"], true);
+				$estiloTextoSlide = json_decode($value["estiloTextoSlide"], true);
+				$titulo1 = json_decode($value["titulo1"], true);
+				$titulo2 = json_decode($value["titulo2"], true);
+				$titulo3 = json_decode($value["titulo3"], true);
 
-					echo '<li>
+				echo '<li>
 				
-							<img src="'.$servidor.$value["imgFondo"].'">
+							<img src="' . $servidor . $value["imgFondo"] . '">
 
-							<div class="slideOpciones '.$value["tipoSlide"].'">';
+							<div class="slideOpciones ' . $value["tipoSlide"] . '">';
 
-								if($value["imgProducto"] != ""){
+				if ($value["imgProducto"] != "") {
 
-								echo '<img class="imgProducto" src="'.$servidor.$value["imgProducto"].'" style="top:'.$estiloImgProducto["top"].'%; right:'.$estiloImgProducto["right"].'%; width:'.$estiloImgProducto["width"].'%; left:'.$estiloImgProducto["left"].'%">';
+					echo '<img class="imgProducto" src="' . $servidor . $value["imgProducto"] . '" style="top:' . $estiloImgProducto["top"] . '%; right:' . $estiloImgProducto["right"] . '%; width:' . $estiloImgProducto["width"] . '%; left:' . $estiloImgProducto["left"] . '%">';
+				}
 
-								}					
-
-								echo '<div class="textosSlide" style="top:'.$estiloTextoSlide["top"].'%; left:'.$estiloTextoSlide["left"].'%; width:'.$estiloTextoSlide["width"].'%; right:'.$estiloTextoSlide["right"].'%">
+				echo '<div class="textosSlide text-center" style="top:' . $estiloTextoSlide["top"] . '%; left:' . $estiloTextoSlide["left"] . '%; width:' . $estiloTextoSlide["width"] . '%; right:' . $estiloTextoSlide["right"] . '%">
 									
-									<h1 style="color:'.$titulo1["color"].'">'.$titulo1["texto"].'</h1>
+									<h1 style="color:' . $titulo1["color"] . '">' . $titulo1["texto"] . '</h1>
 
-									<h2 style="color:'.$titulo2["color"].'">'.$titulo2["texto"].'</h2>
+									<h2 style="color:' . $titulo2["color"] . '">' . $titulo2["texto"] . '</h2>
 
-									<h3 style="color:'.$titulo3["color"].'">'.$titulo3["texto"].'</h3>';
+									<h3 style="color:' . $titulo3["color"] . '">' . $titulo3["texto"] . '</h3>';
 
-								if($value["boton"] != ""){
+				if ($value["boton"] != "") {
 
-									echo '<a href="'.$value["url"].'">
+					echo '<a href="' . $value["url"] . '">
 										
 										<button class="btn btn-default backColor text-uppercase">
 
-										'.$value["boton"].' <span class="fa fa-chevron-right"></span>
+										' . $value["boton"] . ' <span class="fa fa-chevron-right"></span>
 
 										</button>
 
 									</a>';
+				}
 
-								}
-
-								echo '</div>	
+				echo '</div>	
 
 							</div>
 
 						</li>';
+			}
 
-				}
-
-			?>		
+			?>
 
 		</ul>
 
@@ -80,19 +77,18 @@ SLIDESHOW
 
 			<?php
 
-				for($i = 1; $i <= count($slide); $i++){
+			for ($i = 1; $i <= count($slide); $i++) {
 
-					echo '<li item="'.$i.'"><span class="fa fa-circle"></span></li>';
-
-				}		
+				echo '<li item="' . $i . '"><span class="fa fa-circle"></span></li>';
+			}
 
 			?>
 
-		</ol>	
+		</ol>
 
 		<!--=====================================
 		FLECHAS
-		======================================-->	
+		======================================-->
 
 		<div class="flechas" id="retroceder"><span class="fa fa-chevron-left"></span></div>
 		<div class="flechas" id="avanzar"><span class="fa fa-chevron-right"></span></div>
@@ -101,7 +97,7 @@ SLIDESHOW
 
 </div>
 
-<center>
+<!-- <center>
 	
 	<button id="btnSlide" class="">
 		
@@ -109,31 +105,32 @@ SLIDESHOW
 
 	</button>
 
-</center>
+</center> -->
 
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-  <div class="row text-center">
-    <div class="col-md-3" style="font-size: 20px;">
-	<i class="fa fa-ship" aria-hidden="true"></i><br>
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-md-3" style="font-size: 20px;">
+				<img src="<?php echo $url; ?>vistas/img/camion-de-reparto.png" style="padding-bottom: 5px;"><br>
 
-	Envíos gratuitos al día siguiente
-    </div>
-    <div class="col-md-3" style="font-size: 20px;">
-	<i class="fa fa-calendar-check-o" aria-hidden="true"></i><br>
-	30 días garantizados para <br>
-	regresarte tu dinero
-    </div>
-    <div class="col-md-3" style="font-size: 20px;">
-	<i class="fa fa-life-ring" aria-hidden="true"></i><br>
+				ENTREGA A DOMICILIO
+			</div>
+			<div class="col-md-3" style="font-size: 20px;">
+				<img src="<?php echo $url; ?>vistas/img/demostracion-en-la-tienda.png" style="padding-bottom: 5px;"><br>
 
-	Garantía Asegurada
-    </div>
-	<div class="col-md-3" style="font-size: 20px;">
-	<i class="fa fa-phone" aria-hidden="true"></i><br>
+				PUNTO DE VENTA Y ENTREGA NO DISPONIBLE
+			</div>
+			<div class="col-md-3" style="font-size: 20px;">
+				<img src="<?php echo $url; ?>vistas/img/garantia.png" style="padding-bottom: 5px;"><br>
 
-	  Servicio de atención de por vida
-    </div>
-  </div>
-  </div>
+				GARANTIA DE PRODUCTOS
+			</div>
+			<div class="col-md-3" style="font-size: 20px;">
+				<img src="<?php echo $url; ?>vistas/img/tarjeta-de-credito.png" style="padding-bottom: 5px;"><br>
+
+
+				COMPRA SEGURA
+			</div>
+		</div>
+	</div>
 </div>

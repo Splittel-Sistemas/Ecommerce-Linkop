@@ -37,7 +37,7 @@ HEADER
 }
 #boton:hover{
 	background: #2222225e;
-	color: #0D334A;
+	color: #000000;
 	margin:30px 0;
 
   
@@ -61,13 +61,13 @@ header #btnCategorias p span{
 
 
   
-/* header #buscador{
-	margin:20px 0;
+header #buscador{
+	margin:10px 0;
 }
 
 header #buscador input{
-	padding:19px;
-	border-radius:0;
+	padding:10px;
+	border-radius:5px;
 }
 
 header #buscador button{
@@ -75,7 +75,7 @@ header #buscador button{
 	border:1px solid silver;
 	border-radius:0;
 }
- */
+
 header #carrito{
 	margin:20px 0;
 }

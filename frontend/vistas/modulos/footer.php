@@ -4,7 +4,7 @@ FOOTER
 
 <footer class="container-fluid">
 
-	<div class="">
+	<div class="container">
 
 		<div class="row">
 
@@ -123,7 +123,7 @@ FOOTER
 
 	       			<br> -->
 
-					<input type="submit" value="Enviar" class="btn btn-default backColor pull-right" id="enviar">
+					<input type="submit" value="Enviar" class="btn btn-default backColor pull-center" id="enviar">
 
 				</form>
 
@@ -146,13 +146,13 @@ FOOTER
 
 			<div class="row">
 
-				<div class="col-sm-6 col-xs-12 text-left text-muted">
+				<div class="col-sm-6 col-xs-12 text-left text-muted text-center">
 
 					<h5>&copy; Todos los derechos reservados. Hecho por Grupo Splittel</h5>
 
 				</div>
 
-				<div class="col-sm-6 col-xs-12 text-right social">
+				<div class="col-sm-6 col-xs-12 text-center social">
 
 					<ul>
 					<li>

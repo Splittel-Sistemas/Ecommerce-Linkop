@@ -186,7 +186,7 @@ if($banner != null){
 <!--=====================================
 BARRA PRODUCTOS
 ======================================-->
-
+<br><br>
 <div class="container-fluid well well-sm barraProductos">
 
 	<div class="container">
@@ -413,13 +413,13 @@ LISTAR PRODUCTOS
 
 										if($fechaNueva < $value["fecha"]){
 
-											echo '<span class="label label-warning fontSize">Nuevo</span> ';
+											echo '<span class="label label-success fontSize">Nuevo</span> ';
 
 										}
 
 										if($value["oferta"] != 0 && $value["precio"] != 0){
 
-											echo '<span class="label label-warning fontSize">'.$value["descuentoOferta"].'% off</span>';
+											echo '<span class="label label-success fontSize">'.$value["descuentoOferta"].'% off</span>';
 
 										}
 
@@ -552,13 +552,13 @@ LISTAR PRODUCTOS
 
 										if($fechaNueva < $value["fecha"]){
 
-											echo '<span class="label label-warning">Nuevo</span> ';
+											echo '<span class="label label-success">Nuevo</span> ';
 
 										}
 
 										if($value["oferta"] != 0 && $value["precio"] != 0){
 
-											echo '<span class="label label-warning">'.$value["descuentoOferta"].'% off</span>';
+											echo '<span class="label label-success">'.$value["descuentoOferta"].'% off</span>';
 
 										}		
 

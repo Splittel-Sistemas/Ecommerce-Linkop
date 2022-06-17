@@ -115,3 +115,31 @@ PRODUCTOS DESTACADOS
 <div class="container">
 
 </div>
+<br><br><br>
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-md-3" style="font-size: 20px;">
+				<img src="<?php echo $url; ?>vistas/img/camion-de-reparto.png" style="padding-bottom: 5px;"><br>
+
+				ENTREGA A DOMICILIO
+			</div>
+			<div class="col-md-3" style="font-size: 20px;">
+				<img src="<?php echo $url; ?>vistas/img/demostracion-en-la-tienda.png" style="padding-bottom: 5px;"><br>
+
+				PUNTO DE VENTA Y ENTREGA NO DISPONIBLE
+			</div>
+			<div class="col-md-3" style="font-size: 20px;">
+				<img src="<?php echo $url; ?>vistas/img/garantia.png" style="padding-bottom: 5px;"><br>
+
+				GARANTIA DE PRODUCTOS
+			</div>
+			<div class="col-md-3" style="font-size: 20px;">
+				<img src="<?php echo $url; ?>vistas/img/tarjeta-de-credito.png" style="padding-bottom: 5px;"><br>
+
+
+				COMPRA SEGURA
+			</div>
+		</div>
+	</div>
+</div>

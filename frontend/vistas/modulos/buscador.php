@@ -1,7 +1,7 @@
 <!--=====================================
 BARRA PRODUCTOS
 ======================================-->
-
+<br><br></b>
 <div class="container-fluid well well-sm barraProductos">
 
 	<div class="container">
