@@ -526,7 +526,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 
 <?php
-$banner = ControladorProductos::ctrMostrarBanner($ruta);
+/* $banner = ControladorProductos::ctrMostrarBanner($ruta);
 
 if ($banner != null) {
 
@@ -538,8 +538,9 @@ if ($banner != null) {
 
 			  </figure>';
 	}
-}
+} */
 ?>
+
 <?php
 
 /*=============================================
@@ -571,20 +572,18 @@ $totalVisitas = ControladorVisitas::ctrMostrarTotalVisitas();
 BREADCRUMB VISITAS
 ======================================-->
 
-<div class="jumbotron jumbotron-fluid">
+<!-- <div class="jumbotron jumbotron-fluid">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4  text-center">
-				<!-- <a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
-					<img src="<?php echo $url; ?>vistas/img/whatsapp(2).png" style="padding-bottom: 5px;"></a> -->
+				
 			</div>
 			<div class="col-md-4  text-center">
 				<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
 					<img src="<?php echo $url; ?>vistas/img/whatsapp(1).png" style="padding-bottom: 5px;"></a>
 			</div>
 			<div class="col-md-4  text-center">
-				<!-- 	<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
-					<img src="<?php echo $url; ?>vistas/img/whatsapp(2).png" style="padding-bottom: 5px;"></a> -->
+			
 			</div>
 
 		</div>
@@ -600,8 +599,8 @@ BREADCRUMB VISITAS
 					Nuestros horarios de atención en oficina desde 8:00 am a 7:00 pm. de lunes a viernes.</p>
 
 				<br>
-<!-- 
-				<h2 class="pull-right"><small>Tu eres nuestro visitante # <?php echo $totalVisitas["total"]; ?></small></h2> -->
+
+				<h2 class="pull-right"><small>Tu eres nuestro visitante # <?php echo $totalVisitas["total"]; ?></small></h2>
 			</div>
 
 
@@ -612,7 +611,7 @@ BREADCRUMB VISITAS
 
 
 
-</div>
+</div> -->
 
 
 
@@ -760,11 +759,11 @@ BREADCRUMB VISITAS
     <article id="3685" class="location-listing">
 
       <a class="location-title" href="#" style="color: black;">
-          MAS INFORMACION           </a>
+          CATEGORIAS           </a>
 
       <div class="location-image">
         <a href="#">
-            <img  src="<?php echo $servidor?>vistas/img/productos/A.png" alt="MAS INFORMACION">    </a>
+            <img  src="<?php echo $servidor?>vistas/img/productos/fondo.jpg" class="img-responsive" alt="MAS INFORMACION">    </a>
 
       </div>
 
@@ -815,5 +814,60 @@ BREADCRUMB VISITAS
   </div>
   <!-- end grid container -->
 
+  <style>
+  .containera {
+    padding: 80px 120px;
+  }
+  .person {
+    margin-bottom: 25px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #00365f;
+	background-color: #00365f;
+  }
+  </style>
+
+<div class="containera text-center">
+  <h3></h3>
+  
+  <div class="row">
+    <div class="col-sm-4">
+      <p class="text-center"><strong>CABLES</strong></p><br>
+      <a href=" <?php echo $url ?>cables">
+        <img   src="<?php echo  $servidor; ?>vistas/img/productos/hdmi.png" class="img-responsive person" alt="Random Name" width="355" height="355">
+      </a>
+      <div id="demo" class="collapse">
+        <p>Guitarist and Lead Vocalist</p>
+        <p>Loves long walks on the beach</p>
+        <p>Member since 1988</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p class="text-center"><strong>ROUTER</strong></p><br>
+      <a href=" <?php echo $url ?>router">
+        <img  src="<?php echo  $servidor; ?>vistas/img/productos/wifi.png" class="img-responsive person" alt="Random Name" width="355" height="355">
+      </a>
+      <div id="demo2" class="collapse">
+        <p>Drummer</p>
+        <p>Loves drummin'</p>
+        <p>Member since 1988</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p class="text-center"><strong>BATERIAS</strong></p><br>
+      <a href=" <?php echo $url ?>baterias">
+        <img   src="<?php echo  $servidor; ?>vistas/img/productos/asas.png" class="img-responsive person" alt="Random Name" width="355" height="355">
+      </a>
+      <div id="demo3" class="collapse">
+        <p>Bass player</p>
+        <p>Loves math</p>
+        <p>Member since 2005</p>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 

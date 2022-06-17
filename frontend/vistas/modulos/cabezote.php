@@ -121,7 +121,7 @@ HEADER
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class=""><a href="<?php echo $url; ?>">Home</a></li>
+					<li class=""><a href="<?php echo $url; ?>">HOME</a></li>
 
 					<li class="dropdown" id="productos">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false ">PRODUCTOS <span class="caret"></span></a>
@@ -165,10 +165,10 @@ HEADER
 							?>
 						</ul>
 					</li>
-					<li><a href="<?php echo $url; ?>categorias"">CATEGORIAS</a></li>
+					<li><a href="<?php echo $url; ?>categorias">CATEGORIAS</a></li>
 
-					<li><a href=" <?php echo $url; ?>ofertas"">OFERTAS</a></li>
-					<li><a href=" <?php echo $url; ?>ofertas">BLOG</a></li>
+					<li><a href=" <?php echo $url; ?>ofertas">OFERTAS</a></li>
+					<li><a href=" <?php echo $url; ?>blog">BLOG</a></li>
 
 				</ul>
 				<ul class=" nav navbar-nav navbar-CENTER">

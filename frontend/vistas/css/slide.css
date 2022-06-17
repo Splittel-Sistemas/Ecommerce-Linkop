@@ -111,29 +111,29 @@ FLECHAS
 #slide .flechas{
 	position:absolute;
 	font-size:2em;
-	color:rgb(0, 0, 0);
+	color:#00365f;
 	cursor:pointer;
 	z-index:2;
 }
 
 #slide #retroceder{
-	background:rgba(255, 255, 255, 0.342);
+	background:rgba(139, 149, 240, 0.342);
 	left:0;
 	opacity: 0;
 }
 
 #slide #avanzar{
-	background:rgba(255, 255, 255, 0.342);
+	background:rgba(139, 149, 240, 0.342);
 	right:0;
 	opacity: 0;
 }
 
 #slide #retroceder:hover, #slide #avanzar:hover{
-	background:rgba(255, 255, 255, 0.342);
+	background:rgba(139, 149, 240, 0.342);
 }
 
 #slide #retroceder:active, #slide #avanzar:active{
-	background:rgba(255, 255, 255, 0.342);
+	background:rgba(139, 149, 240, 0.342);
 }
 
 /*=============================================
