@@ -750,13 +750,13 @@ BREADCRUMB VISITAS
 	</div>
 </div> -->
 
-<div class="containera">
+<div class="grid">
 		<div class="row border border-dark ">
 		<div class="col-sm-12"   style="display: flex;">
 		<div class="col-sm-6">
 			<div class="col-sm-12" style="height:100%">
 				<a href=" <?php echo $url ?>cables">
-					<img src="<?php echo  $servidor; ?>vistas/img/productos/bb.jpg" class=" " alt="Random Name" width="100%" height="100%">
+					<img src="<?php echo  $servidor; ?>vistas/img/productos/bb.jpg" class="" alt="Random Name" width="100%" height="100%">
 				</a>
 			</div>
 		</div>
