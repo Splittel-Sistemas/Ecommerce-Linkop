@@ -749,33 +749,32 @@ BREADCRUMB VISITAS
 		</div>
 	</div>
 </div> -->
-
-<div class="grid" style="background-color:#F6F6F6">
-<br>
+<!-- 3 IMAGENES JUNTAS -->
+<div class="grid">
 	<div class="row border border-dark ">
-		<div class="col-sm-12" style="display: flex;">
-			<div class="col-sm-6">
-				<div class="col-sm-12" style="height:100%" class="location-title">
+		<div class="col-sm-12 ">
+			<div class="col-xs-12 col-sm-12 col-md-6">
+				<div class="col-sm-12" style="height:100%" >
 					<a href=" <?php echo $url ?>cables">
-						<img src="<?php echo  $servidor; ?>vistas/img/productos/12.jpg" class="location-image" alt="Random Name" width="100%" height="100%">
+						<img src="<?php echo  $servidor; ?>vistas/img/productos/aaa.png" alt="Random Name" width="100%" height="100%" >
 					</a>
 				</div>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-xs-12 col-sm-12 col-md-6">
 				<div class="col-sm-12">
 					<a href=" <?php echo $url ?>router">
-						<img src="<?php echo  $servidor; ?>vistas/img/productos/aa.jpg"class="location-image" alt="Random Name" width="100%" height="50%">
+						<img src="<?php echo  $servidor; ?>vistas/img/productos/aa.jpg" alt="Random Name" width="100%" height="50%">
 					</a>
 
 				</div>
 				<div class="col-sm-12">
 					<a href=" <?php echo $url ?>baterias">
-						<img src="<?php echo  $servidor; ?>vistas/img/productos/cc.jpg"class="location-image" alt="Random Name" width="100%" height="50%">
+						<img src="<?php echo  $servidor; ?>vistas/img/productos/aa.jpg" alt="Random Name"  width="100%" height="50%">
 					</a>
 				</div>
 			</div>
 		</div>
-	</div><br>
+	</div>
 </div>
 
 <div class="child-page-listing text-center">
