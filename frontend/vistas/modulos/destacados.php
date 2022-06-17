@@ -47,75 +47,76 @@ BANNER
 		pointer-events: none;
 		background: #ccc;
 	}
-
-	
 </style>
 <style>
-h2 {
-  margin-bottom: .5em;
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1em;
-}
+	h2 {
+		margin-bottom: .5em;
+	}
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-gap: 1em;
+	}
 
 
-/* hover styles */
-.location-listing {
-  position: relative;
-}
+	/* hover styles */
+	.location-listing {
+		position: relative;
+	}
 
-.location-image {
-  line-height: 0;
-  overflow: hidden;
-}
+	.location-image {
+		line-height: 0;
+		overflow: hidden;
+	}
 
-.location-image img {
-  filter: blur(0px);
-  transition: filter 0.3s ease-in;
-  transform: scale(1.1);
-}
+	.location-image img {
+		filter: blur(0px);
+		transition: filter 0.3s ease-in;
+		transform: scale(1.1);
+	}
 
-.location-title {
-  font-size: 1.5em;
-  font-weight: bold;
-  text-decoration: none;
-  z-index: 1;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity .5s;
-  background: rgba(187, 181, 181, 0.644);
-  color: white;
-  
-  /* position the text in t’ middle*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+	.location-title {
+		font-size: 1.5em;
+		font-weight: bold;
+		text-decoration: none;
+		z-index: 1;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		transition: opacity .5s;
+		background: rgba(187, 181, 181, 0.644);
+		color: white;
 
-.location-listing:hover .location-title {
-  opacity: 1;
-}
+		/* position the text in t’ middle*/
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-.location-listing:hover .location-image img {
-  filter: blur(2px);
-}
+	.location-listing:hover .location-title {
+		opacity: 1;
+	}
+
+	.location-listing:hover .location-image img {
+		filter: blur(2px);
+	}
 
 
-/* for touch screen devices */
-@media (hover: none) { 
-  .location-title {
-    opacity: 1;
-  }
-  .location-image img {
-    filter: blur(2px);
-  }
-}</style>
+	/* for touch screen devices */
+	@media (hover: none) {
+		.location-title {
+			opacity: 1;
+		}
+
+		.location-image img {
+			filter: blur(2px);
+		}
+	}
+</style>
 <?php
 
 $servidor = Ruta::ctrRutaServidor();
@@ -241,7 +242,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 						
 					
 						
-					<h1 class="text-center" ><small style="font-weight: bold;color:black;" >' . $titulosModulos[$i] . ' </small></h1>
+					<h1 class="text-center" ><small style="font-weight: bold;" >' . $titulosModulos[$i] . ' </small></h1>
 
 
 				</a>
@@ -754,29 +755,29 @@ BREADCRUMB VISITAS
 <div class="child-page-listing text-center">
 
 
-  <div class="grid">
+	<div class="grid">
 
-    <article id="3685" class="location-listing">
+		<article id="3685" class="location-listing">
 
-      <a class="location-title" href="#" style="color: black;">
-          CATEGORIAS           </a>
+			<a class="location-title" href="<?php echo $url; ?>categorias" style="color: black;">
+				CATEGORIAS </a>
 
-      <div class="location-image">
-        <a href="#">
-            <img  src="<?php echo $servidor?>vistas/img/productos/fondo.jpg" class="img-responsive" alt="MAS INFORMACION">    </a>
+			<div class="location-image">
+				<a href="#">
+					<img src="<?php echo $servidor ?>vistas/img/productos/fondo.jpg" class="img-responsive" alt="MAS INFORMACION"> </a>
 
-      </div>
+			</div>
 
-    </article>
+		</article>
 
-   <!--  <article id="3688" class="location-listing">
+		<!--  <article id="3688" class="location-listing">
 
       <a class="location-title" href="#" style="color: black;">
           COMPUTADORAS            </a>
 
       <div class="location-image">
         <a href="#">
-            <img width="300" height="169" src="<?php echo $servidor?>vistas/img/productos/pc.png" alt="COMPUTADORAS">  </a>
+            <img width="300" height="169" src="<?php echo $servidor ?>vistas/img/productos/pc.png" alt="COMPUTADORAS">  </a>
 
       </div>
 
@@ -790,7 +791,7 @@ BREADCRUMB VISITAS
       <div class="location-image">
   
         <a href="#" >
-            <img width="300" height="169" src="<?php echo $servidor?>vistas/img/productos/wifi.png" alt="ROUTER">  </a>
+            <img width="300" height="169" src="<?php echo $servidor ?>vistas/img/productos/wifi.png" alt="ROUTER">  </a>
 
       </div>
 
@@ -803,71 +804,84 @@ BREADCRUMB VISITAS
 
       <div class="location-image">
         <a href="#">
-            <img width="300" height="169" src="<?php echo $servidor?>vistas/img/productos/hdmi.png" alt="CABLES">  </a>
+            <img width="300" height="169" src="<?php echo $servidor ?>vistas/img/productos/hdmi.png" alt="CABLES">  </a>
 
       </div>
 
     </article> -->
 
-   
 
-  </div>
-  <!-- end grid container -->
 
-  <style>
-  .containera {
-    padding: 80px 120px;
-  }
-  .person {
-    margin-bottom: 25px;
-    width: 100%;
-    height: 100%;
-    opacity: 0.7;
-  }
-  .person:hover {
-    border-color: #00365f;
-	background-color: #00365f;
-  }
-  </style>
+	</div>
+	<!-- end grid container -->
 
-<div class="containera text-center">
-  <h3></h3>
-  
-  <div class="row">
-    <div class="col-sm-4">
-      <p class="text-center"><strong>CABLES</strong></p><br>
-      <a href=" <?php echo $url ?>cables">
-        <img   src="<?php echo  $servidor; ?>vistas/img/productos/hdmi.png" class="img-responsive person" alt="Random Name" width="355" height="355">
-      </a>
-      <div id="demo" class="collapse">
-        <p>Guitarist and Lead Vocalist</p>
-        <p>Loves long walks on the beach</p>
-        <p>Member since 1988</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <p class="text-center"><strong>ROUTER</strong></p><br>
-      <a href=" <?php echo $url ?>router">
-        <img  src="<?php echo  $servidor; ?>vistas/img/productos/wifi.png" class="img-responsive person" alt="Random Name" width="355" height="355">
-      </a>
-      <div id="demo2" class="collapse">
-        <p>Drummer</p>
-        <p>Loves drummin'</p>
-        <p>Member since 1988</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <p class="text-center"><strong>BATERIAS</strong></p><br>
-      <a href=" <?php echo $url ?>baterias">
-        <img   src="<?php echo  $servidor; ?>vistas/img/productos/asas.png" class="img-responsive person" alt="Random Name" width="355" height="355">
-      </a>
-      <div id="demo3" class="collapse">
-        <p>Bass player</p>
-        <p>Loves math</p>
-        <p>Member since 2005</p>
-      </div>
-    </div>
-  </div>
+	<style>
+		.containera {
+			padding: 80px 120px;
+		}
+
+		.person {
+			margin-bottom: 25px;
+			width: 100%;
+			height: 100%;
+			opacity: 0.7;
+		}
+
+		.person:hover {
+			border-color: #00365f;
+			background-color: #00365f;
+		}
+	</style>
+
+	<div class="container text-center">
+		<h3></h3>
+
+		<div class="row">
+			<div class="col-sm-3">
+				<p class="text-center"><strong>CABLES</strong></p><br>
+				<a href=" <?php echo $url ?>cables">
+					<img src="<?php echo  $servidor; ?>vistas/img/productos/hdmi.png" class="img-responsive person" alt="Random Name" width="355" height="355">
+				</a>
+				<div id="demo" class="collapse">
+					<p>Guitarist and Lead Vocalist</p>
+					<p>Loves long walks on the beach</p>
+					<p>Member since 1988</p>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<p class="text-center"><strong>ROUTER</strong></p><br>
+				<a href=" <?php echo $url ?>router">
+					<img src="<?php echo  $servidor; ?>vistas/img/productos/wifi.png" class="img-responsive person" alt="Random Name" width="355" height="355">
+				</a>
+				<div id="demo2" class="collapse">
+					<p>Drummer</p>
+					<p>Loves drummin'</p>
+					<p>Member since 1988</p>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<p class="text-center"><strong>BATERIAS</strong></p><br>
+				<a href=" <?php echo $url ?>baterias">
+					<img src="<?php echo  $servidor; ?>vistas/img/productos/asas.png" class="img-responsive person" alt="Random Name" width="355" height="355">
+				</a>
+				<div id="demo3" class="collapse">
+					<p>Bass player</p>
+					<p>Loves math</p>
+					<p>Member since 2005</p>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<p class="text-center"><strong>PC</strong></p><br>
+				<a href=" <?php echo $url ?>computadoras">
+					<img src="<?php echo  $servidor; ?>vistas/img/productos/pc.png" class="img-responsive person" alt="Random Name" width="355" height="355">
+				</a>
+				<div id="demo3" class="collapse">
+					<p>Bass player</p>
+					<p>Loves math</p>
+					<p>Member since 2005</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
 </div>
-</div>
-
