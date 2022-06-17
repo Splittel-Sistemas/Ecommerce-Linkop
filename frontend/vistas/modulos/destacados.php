@@ -756,7 +756,7 @@ BREADCRUMB VISITAS
 			<div class="col-xs-12 col-sm-12 col-md-6">
 				<div class="col-sm-12" style="height:100%" >
 					<a href=" <?php echo $url ?>cables">
-						<img src="<?php echo  $servidor; ?>vistas/img/productos/aaa.png" alt="Random Name" width="100%" height="100%" >
+						<img src="<?php echo  $servidor; ?>vistas/img/productos/12.jpg" alt="Random Name" width="105%" height="100%" >
 					</a>
 				</div>
 			</div>
