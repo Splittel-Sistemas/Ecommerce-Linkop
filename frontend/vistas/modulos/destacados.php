@@ -222,7 +222,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 		<div class="container-fluid productos">
 	
-			<div class="containera">
+			<div class="container">
 		
 			<div class="row">
 
