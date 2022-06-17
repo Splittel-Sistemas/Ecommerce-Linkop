@@ -167,7 +167,7 @@ HEADER
 					</li>
 					<li><a href="<?php echo $url; ?>categorias"">CATEGORIAS</a></li>
 
-					<li><a href="<?php echo $url; ?>ofertas"">OFERTAS</a></li>
+					<li><a href=" <?php echo $url; ?>ofertas"">OFERTAS</a></li>
 					<li><a href=" <?php echo $url; ?>ofertas">BLOG</a></li>
 
 				</ul>
@@ -179,27 +179,28 @@ HEADER
 				<ul class="nav navbar-nav navbar-right">
 					<li>
 						<div class="" id="buscador">
-							<input type="search" name="buscar" class="form-control" placeholder="Buscar..." >
+							<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
 
-							<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
 
-								<!-- <button class="btn btn-default " type="submit">
-
-									<i class="fa fa-search"></i>
-
-								</button> -->
-
-							</a>
 
 						</div>
 					</li>
+					<li><a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;padding-top:10px;">
+
+							<button class="btn btn-default " type="submit">
+
+								<i class="fa fa-search"></i>
+
+							</button>
+
+						</a></li>
 					<li class="dropdown notifications-menu ">
 
 						<a href="<?php echo $url; ?>carrito-de-compras" style="color: black; " id="">
 
 							<!-- <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
 
-							<img src="<?php echo $servidor; ?>vistas/img/plantilla/shopping-cart.png" class=" text-center " style="width: 30px; ">
+							<img src="<?php echo $servidor; ?>vistas/img/plantilla/shopping-cart.png" class=" text-center " style="width: 30px;padding-top:-12px; ">
 
 
 
@@ -217,7 +218,7 @@ HEADER
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;">
 
 							<!-- <i class="fa fa-user" aria-hidden="true"></i> -->
-							<img src="<?php echo $servidor; ?>vistas/img/plantilla/user(1).png" style="width: 30px;">
+							<img src="<?php echo $servidor; ?>vistas/img/plantilla/user(1).png" style="width: 30px; padding-top:-12px;">
 							<!-- <span class="label label-info sumaCesta text-rigth" ></span>	 -->
 
 						</a>
@@ -295,11 +296,30 @@ HEADER
 		</div>
 	</nav>
 </header>
-
+<br><br>
 <!--=====================================
 VENTANA MODAL PARA EL REGISTRO
 ======================================-->
+<?php
 
+if (isset($_SESSION["validarSesion"])) {
+} else {
+
+?>
+
+	<!-- REGISTRATE -->
+	<div class="alert alert-info   alert-dismissible fade in text-center" style="background-color: #030F24;" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+		<strong style="color:white">Regístrate y recíbe un 15% de descuento en tu primer compra. <a href="#modalRegistro" data-toggle="modal" >REGISTRARSE</a> </strong>
+	</div>
+
+
+	<!-- FIN REGISTRATE -->
+<?php
+
+
+}
+
+?>
 <div class="modal fade modalFormulario" id="modalRegistro" role="dialog">
 
 	<div class="modal-content modal-dialog">
