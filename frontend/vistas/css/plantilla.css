@@ -6,6 +6,13 @@ body{
 	background: #ffffff;
 }
 
+*{
+	margin:0px;
+	padding:0px;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Ubuntu', sans-serif;
+}
 
 ul, ol{
 	padding:0px;
@@ -125,7 +132,7 @@ REDES SOCIALES
 ERROR 404, VERIFICAR
 =============================================*/
 
-.error404 .verificar{
+.error404. .verificar{
 	color:#333;
 }
 
