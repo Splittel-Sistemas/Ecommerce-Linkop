@@ -77,7 +77,7 @@ PRODUCTOS DESTACADOS
 		echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
 
 				<h4></h4>
-				<a href="' . $url . $value["ruta"] . '" class="pixelCategorias backColor " titulo="' . $value["categoria"] . '">
+				<a href="' . $url . $value["ruta"] . '" class="pixelCategorias  " titulo="' . $value["categoria"] . '">
 				<img  src="' . $servidor . $value["imgOferta"] . '" width="70%"><br>
 				' . $value["categoria"] . '</a>
 				</h4>

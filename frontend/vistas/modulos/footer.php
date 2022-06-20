@@ -6,7 +6,7 @@ FOOTER
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formContacto  text-center">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 formContacto  text-center">
 
 				<h4 style="color: white;">Sé el primero en conocer nuestros nuevos productos</h4>
 				<p style="color: white;">Regístrate a nuestra newsletter de clientes preferenciales y recibe promociones personalizadas.</p>
@@ -18,11 +18,11 @@ FOOTER
 
 					<input type="email" id="emailContactenos" name="emailContactenos" class="	form-control" placeholder="Escriba su correo electrónico" required>
 
-					<br>
 					<!--    	          
 						<textarea id="mensajeContactenos" name="mensajeContactenos" class="form-control" placeholder="Escriba su mensaje" rows="5" required></textarea>
 
 						<br> -->
+						<br>
 
 					<input type="submit" value="Subscribe" class="btn btn-default backColor pull-center" id="enviar">
 
@@ -34,6 +34,44 @@ FOOTER
 				$contactenos->ctrFormularioContactenos();
 
 				?>
+
+			</div>
+
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center social">
+						<br>
+						<br>
+						<br>
+
+				<ul>
+				<li>			<!-- <li>
+							<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
+								<img src="<?php #echo $url; 
+											?>vistas/img/whatsapp(2).png" style="padding-bottom: 5px;"></a>
+						</li> -->
+					<?php
+
+					$social = ControladorPlantilla::ctrEstiloPlantilla();
+
+					$jsonRedesSociales = json_decode($social["redesSociales"], true);
+
+					foreach ($jsonRedesSociales as $key => $value) {
+
+						if ($value["activo"] == 1) {
+
+										echo '
+						<a href="' . $value["url"] . '" target="_blank">
+							<i class="fa ' . $value["red"] . ' redSocial ' . $value["estilo"] . '" aria-hidden="true"></i>
+						</a>
+					';
+									}
+								}
+
+					?>
+
+
+						</li>
+
+				</ul>
 
 			</div>
 		</div>
@@ -140,58 +178,7 @@ FOOTER
 
 	</div>
 
-	<div class="container-fluid final">
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-sm-6 col-xs-12 text-left text-muted text-center">
-
-					<h5>&copy; Todos los derechos reservados. Hecho por Grupo Splittel</h5>
-
-				</div>
-
-				<div class="col-sm-6 col-xs-12 text-center social">
-
-					<ul>
-						<!-- <li>
-							<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
-								<img src="<?php #echo $url; 
-											?>vistas/img/whatsapp(2).png" style="padding-bottom: 5px;"></a>
-						</li> -->
-						<?php
-
-						$social = ControladorPlantilla::ctrEstiloPlantilla();
-
-						$jsonRedesSociales = json_decode($social["redesSociales"], true);
-
-						foreach ($jsonRedesSociales as $key => $value) {
-
-							if ($value["activo"] == 1) {
-
-								echo '<li>
-								<a href="' . $value["url"] . '" target="_blank">
-									<i class="fa ' . $value["red"] . ' redSocial ' . $value["estilo"] . '" aria-hidden="true"></i>
-								</a>
-							</li>';
-							}
-						}
-
-						?>
-
-
-
-
-					</ul>
-
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
+	
 </footer>
 
 

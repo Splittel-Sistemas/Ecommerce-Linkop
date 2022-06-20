@@ -17,7 +17,7 @@ class AjaxBanner{
 
   public function ajaxActivarBanner(){
 
-    $respuesta = ModeloBanner::mdlActualizarBanner("blog", "estado", $this->activarBanner, "id", $this->activarId);
+    $respuesta = ModeloBlog::mdlActualizarBanner("blog", "estado", $this->activarBanner, "id", $this->activarId);
 
     echo $respuesta;
 

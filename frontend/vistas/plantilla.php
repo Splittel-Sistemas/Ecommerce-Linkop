@@ -115,9 +115,12 @@
 
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/dscountdown.css">
 
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet"> -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
 
 	<!--=====================================
 	HOJAS DE ESTILO PERSONALIZADAS
