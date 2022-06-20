@@ -403,7 +403,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 							   
 							<figure>
 						
-								<a href="' . $value["ruta"] . '" class="pixelProducto">
+								<a href="' . $value["ruta"] . '" class="pixelProductoa">
 									
 									<img src="' . $servidor . $value["portada"] . '" class="img-responsive" >
 
@@ -750,7 +750,7 @@ BREADCRUMB VISITAS
 	</div>
 </div> -->
 <!-- 3 IMAGENES JUNTAS -->
-<div class="grid">
+<div class="container">
 	<div class="row border border-dark ">
 		<div class="col-sm-12 ">
 			<div class="col-xs-12 col-sm-12 col-md-6">

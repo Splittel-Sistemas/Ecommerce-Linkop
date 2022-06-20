@@ -75,7 +75,7 @@ VITRINA PRODUCTOS CUADRÍCULA
 	transition: .3s all ease;
 	opacity:.8;
 	transform: scale(1.1,1.1);
-	background-color: #00365f;
+	background-color: #00365f07;
 }
 
 .productos ul li h4 small{
