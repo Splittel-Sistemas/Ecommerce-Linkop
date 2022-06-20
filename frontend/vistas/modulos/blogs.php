@@ -97,10 +97,7 @@ BANNER
 
 		<div class="row">
 			<div id="slider" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#slider" data-slide-to="1" class="active"></li>
-					<li data-target="#slider" data-slide-to="0"></li>
-				</ol>
+			
 
 
 				<!-- Carousel items -->
@@ -109,62 +106,28 @@ BANNER
 					<div class="item active">
 						<div class="row">
 
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="card text-center">
-									<img class="card-img-top" src="https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
+									<img class="card-img-top" src="https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="40%">
 									<div class="card-block">
 										<h4 class="card-title">Post Title</h4>
 										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-										<a class="btn btn-default" href="#">Read More</a>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
 									</div>
 								</div>
 							</div>
 
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-								<div class="card text-center">
-									<img class="card-img-top" src="https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-									<div class="card-block">
-										<h4 class="card-title">Post Title</h4>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-										<a class="btn btn-default" href="#">Read More</a>
-									</div>
-								</div>
-							</div>
+						
 
 
 						</div>
 					</div>
 
-					<div class="item">
-						<div class="row">
-
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-								<div class="card text-center">
-									<img class="card-img-top" src="https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-									<div class="card-block">
-										<h4 class="card-title">Post Title</h4>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-										<a class="btn btn-default" href="#">Read More</a>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-								<div class="card text-center">
-									<img class="card-img-top" src="https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-									<div class="card-block">
-										<h4 class="card-title">Post Title</h4>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-										<a class="btn btn-default" href="#">Read More</a>
-									</div>
-								</div>
-							</div>
-
-
-						</div>
-
-
-					</div>
 				</div>
 			</div>
 

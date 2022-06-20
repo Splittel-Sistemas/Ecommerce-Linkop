@@ -112,7 +112,7 @@ BANNER
 				<div class="card-block">
 					<h4 class="card-title"><b>' . $banner[$i]['ruta'] . '</b></h4>
 					<p class="card-text"></p>
-					<a class="btn btn-default" href="blogs/' . $banner[$i]['ruta'] . '">Leer</a>
+					<a class="btn btn-default" href="blogs/' . $banner[$i]['id'] . '">Leer</a>
 				</div>
 			</div>
 		</div>';

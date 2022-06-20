@@ -223,7 +223,7 @@ $(".agregarCarrito").click(function(){
 		
 		for(var i = 0; i < seleccionarDetalle.length; i++){
 
-			if($(seleccionarDetalle[i]).val() == ""){
+		/* 	if($(seleccionarDetalle[i]).val() == ""){
 
 				swal({
 					  title: "Debe seleccionar Talla y Color",
@@ -237,13 +237,13 @@ $(".agregarCarrito").click(function(){
 
 				return;
 
-			}else{
+			}else{ */
 
 				titulo = titulo + "-" + $(seleccionarDetalle[i]).val();
 
 				agregarAlCarrito = true;
-
-			}
+/* 
+			} */
 
 		}		
 
@@ -1222,7 +1222,7 @@ $(".agregarGratis").click(function(){
 
 					for(var i = 0; i < seleccionarDetalle.length; i++){
 
-						if($(seleccionarDetalle[i]).val() == ""){
+					/* 	if($(seleccionarDetalle[i]).val() == ""){
 
 								swal({
 									  title: "Debe seleccionar Talla y Color",
@@ -1234,13 +1234,13 @@ $(".agregarGratis").click(function(){
 									  closeOnConfirm: false
 									})
 
-						}else{
+						}else{ */
 
 							titulo = titulo + "-" + $(seleccionarDetalle[i]).val();
 
-							agregarGratis = true;
+						/* 	agregarGratis = true;
 
-						}
+						} */
 
 					}		
 
