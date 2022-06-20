@@ -145,7 +145,7 @@ SECCIÓN PERFIL
 
 													echo '<h6>Proceso de entrega: '.$value2["entrega"].' días hábiles</h6>';
 
-													if($value1["envio"] == 0){
+													if($value1["envio"] == 0 || $value1["envio"] == null){
 
 														echo '<div class="progress">
 
@@ -153,13 +153,7 @@ SECCIÓN PERFIL
 																<i class="fa fa-check"></i> Despachado
 															</div>
 
-															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
-																<i class="fa fa-clock-o"></i> Enviando
-															</div>
-
-															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
-																<i class="fa fa-clock-o"></i> Entregado
-															</div>
+														
 
 														</div>';
 
@@ -177,9 +171,7 @@ SECCIÓN PERFIL
 																<i class="fa fa-check"></i> Enviando
 															</div>
 
-															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
-																<i class="fa fa-clock-o"></i> Entregado
-															</div>
+														
 
 														</div>';
 
