@@ -168,7 +168,7 @@ HEADER
 					<li><a href="<?php echo $url; ?>categorias">CATEGORIAS</a></li>
 
 					<li><a href=" <?php echo $url; ?>ofertas">OFERTAS</a></li>
-					<li><a href=" <?php echo $url; ?>blog">BLOG</a></li>
+					<li><a href=" <?php echo $url; ?>postblog">BLOG</a></li>
 
 				</ul>
 				<ul class=" nav navbar-nav navbar-CENTER">

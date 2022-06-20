@@ -54,14 +54,13 @@ class TablaBlog{
 
   			 $acciones = "<div class='btn-group'><button class='btn btn-warning btnEditarBanner' idBanner='".$banner[$i]["id"]."' data-toggle='modal' data-target='#modalEditarBanner'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarBanner' idBanner='".$banner[$i]["id"]."' imgBanner='".$banner[$i]["img"]."'><i class='fa fa-times'></i></button></div>";
 				
-			   $bodytag = str_replace('"', "'",$banner[$i]["tipo"]);
 
   			 $datosJson	 .= '[
 					 	"'.($i+1).'",
 					 	"'.$imgBanner.'",
 				 	 	"'. $estado.'",
 				      	"'.$banner[$i]["ruta"].'",
-				      	"'.$bodytag.'",
+						  '.json_encode($banner[$i]["tipo"]).',
 				      	"'.$acciones.'"		   
 
   			  ],';

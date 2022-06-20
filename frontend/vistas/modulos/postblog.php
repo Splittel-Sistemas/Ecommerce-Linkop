@@ -95,114 +95,39 @@ BANNER
 			</div>
 		</div>
 		<div class="row">
+			<?php
+			$servidor = Ruta::ctrRutaServidor();
 
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<div class="card text-center">
-					<img class="card-img-top" src="https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-					<div class="card-block">
-						<h4 class="card-title">Post Title</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-						<a class="btn btn-default" href="#">Read More</a>
-					</div>
+			$item = null;
+			$valor = null;
+			$i = 0;
+
+			$banner = ControladorBlog::ctrMostrarBlog($item, $valor);
+			foreach ($banner as $key => $value) {
+				echo '
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="card text-center">
+			<img class="card-img-top" src="' . $servidor . $banner[$i]['img'] . '" alt="" width="100%">
+
+				<div class="card-block">
+					<h4 class="card-title"><b>' . $banner[$i]['ruta'] . '</b></h4>
+					<p class="card-text"></p>
+					<a class="btn btn-default" href="blogs/' . $banner[$i]['ruta'] . '">Leer</a>
 				</div>
 			</div>
+		</div>';
 
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<div class="card text-center">
-					<img class="card-img-top" src="https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-					<div class="card-block">
-						<h4 class="card-title">Post Title</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-						<a class="btn btn-default" href="#">Read More</a>
-					</div>
-				</div>
-			</div>
 
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<div class="card text-center">
-					<img class="card-img-top" src="https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-					<div class="card-block">
-						<h4 class="card-title">Post Title</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-						<a class="btn btn-default" href="#">Read More</a>
-					</div>
-				</div>
-			</div>
+
+				$i++;
+			}
+			?>
+
+
+
+
+
+
 		</div>
-
-		<div class="row">
-
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<div class="card text-center">
-					<img class="card-img-top" src="https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-					<div class="card-block">
-						<h4 class="card-title">Post Title</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-						<a class="btn btn-default" href="#">Read More</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<div class="card text-center">
-					<img class="card-img-top" src="https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-					<div class="card-block">
-						<h4 class="card-title">Post Title</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-						<a class="btn btn-default" href="#">Read More</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<div class="card text-center">
-					<img class="card-img-top" src="https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-					<div class="card-block">
-						<h4 class="card-title">Post Title</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-						<a class="btn btn-default" href="#">Read More</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
-
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<div class="card text-center">
-					<img class="card-img-top" src="https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-					<div class="card-block">
-						<h4 class="card-title">Post Title</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-						<a class="btn btn-default" href="#">Read More</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<div class="card text-center">
-					<img class="card-img-top" src="https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-					<div class="card-block">
-						<h4 class="card-title">Post Title</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-						<a class="btn btn-default" href="#">Read More</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<div class="card text-center">
-					<img class="card-img-top" src="https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-					<div class="card-block">
-						<h4 class="card-title">Post Title</h4>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-						<a class="btn btn-default" href="#">Read More</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-	</div>
 
 </section>
