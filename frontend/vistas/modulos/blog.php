@@ -117,6 +117,36 @@ BANNER
 										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 										<a class="btn btn-default" href="#">Read More</a>
 									</div>
+
+									<?php
+								/* 	$servidor = Ruta::ctrRutaServidor();
+
+									$item = null;
+									$valor = null;
+									$i = 0;
+
+									$banner = ControladorBlog::ctrMostrarBlog($item, $valor);
+									foreach ($banner as $key => $value) {
+										echo '	<div class="row">
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+											<div class="card text-center">
+											<img class="card-img-top"  src="' . $servidor . $banner[$i]['img'] . '" alt="" width="50%">
+
+
+												<div class="card-block">
+													<h4 class="card-title"><b>' . $banner[$i]['ruta'] . '</b></h4>
+													
+												</div>
+
+												</div>
+												</div></div>
+												';
+
+
+
+										$i++;
+									} */
+									?>
 								</div>
 							</div>
 
