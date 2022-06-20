@@ -302,7 +302,7 @@ if(isset($_GET["ruta"])){
 	include "modulos/slide.php";
 
 	include "modulos/destacados.php";
-/* 	include "modulos/blog.php"; */
+	include "modulos/blog.php";
 
 /* 	include "modulos/visitas.php";
  */
