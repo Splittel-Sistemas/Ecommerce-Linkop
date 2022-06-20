@@ -150,7 +150,7 @@ SECCIÓN PERFIL
 														echo '<div class="progress">
 
 															<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Despachado
+																<i class="fa fa-check"></i> En proceso
 															</div>
 
 														
@@ -164,7 +164,7 @@ SECCIÓN PERFIL
 														echo '<div class="progress">
 
 															<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Despachado
+																<i class="fa fa-check"></i> En proceso
 															</div>
 
 															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
@@ -182,7 +182,7 @@ SECCIÓN PERFIL
 														echo '<div class="progress">
 
 															<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Despachado
+																<i class="fa fa-check"></i> En proceso
 															</div>
 
 															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">

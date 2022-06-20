@@ -45,9 +45,7 @@ BANNER
 		padding: 0px 10px;
 	}
 
-	#blog {
-		background-color: #f6f6f6;
-	}
+
 
 	#blog .carousel-indicators {
 		bottom: -60px;
@@ -87,17 +85,11 @@ BANNER
 
 <section id="blog">
 	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2 style="color:#000000">
-					<span class="ion-minus"></span>La tecnologia aplicada en terminos sencillos<span class="ion-minus"></span>
-				</h2>
-			</div>
-		</div>
+	
 
 		<div class="row">
 			<div id="slider" class="carousel slide" data-ride="carousel">
-			
+
 
 
 				<!-- Carousel items -->
@@ -108,21 +100,41 @@ BANNER
 
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="card text-center">
-									<img class="card-img-top" src="https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="40%">
-									<div class="card-block">
-										<h4 class="card-title">Post Title</h4>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 
+
+
+
+
+									<div class="card-block">
+										<?php
+										$servidor = Ruta::ctrRutaServidor();
+										$str = str_replace("blogs/", "", $_GET['ruta']);
+									/* 	print_r($str); */
+
+										$item = "id";
+										$valor =$str;
+										$i = 0;
+
+										$banner = ControladorBlog::ctrMostrarBlog($item, $valor);
+										echo '
+					
+										<img class="card-img-top"  src="' . $servidor . $banner['img'] . '" alt="" width="50%">
+
+
+											<div class="card-block">
+												<h4 class="card-title"><b>' . $banner['ruta'] . '</b></h4>
+												' . $banner['tipo'] . '
+											</div>
+										';
+
+
+
+										?>
 									</div>
 								</div>
 							</div>
 
-						
+
 
 
 						</div>
@@ -133,4 +145,4 @@ BANNER
 
 		</div>
 </section>
-
+<br><br><br>
