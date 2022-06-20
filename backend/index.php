@@ -11,6 +11,8 @@ ini_set("error_log",  "D:/xampp/htdocs/modo-desarrollo/backend/php_error_log"); 
 require_once "controladores/plantilla.controlador.php";
 require_once "controladores/administradores.controlador.php";
 require_once "controladores/banner.controlador.php";
+require_once "controladores/blog.controlador.php";
+
 require_once "controladores/categorias.controlador.php";
 require_once "controladores/subcategorias.controlador.php";
 require_once "controladores/cabeceras.controlador.php";
@@ -26,6 +28,8 @@ require_once "controladores/notificaciones.controlador.php";
 
 require_once "modelos/administradores.modelo.php";
 require_once "modelos/banner.modelo.php";
+require_once "modelos/blog.modelo.php";
+
 require_once "modelos/categorias.modelo.php";
 require_once "modelos/subcategorias.modelo.php";
 require_once "modelos/cabeceras.modelo.php";

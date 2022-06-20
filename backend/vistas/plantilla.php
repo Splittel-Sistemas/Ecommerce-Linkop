@@ -177,6 +177,8 @@ $plantilla = ControladorComercio::ctrSeleccionarPlantilla();
            $_GET["ruta"]== "mensajes" ||
            $_GET["ruta"]== "perfiles" ||
            $_GET["ruta"]== "perfil" ||
+           $_GET["ruta"]== "blog" ||
+
            $_GET["ruta"]== "salir"){
 
 
@@ -219,6 +221,8 @@ JS PERSONALIZADO
 <script src="vistas/js/gestorSubCategorias.js"></script>
 <script src="vistas/js/gestorProductos.js"></script>
 <script src="vistas/js/gestorBanner.js"></script>
+<script src="vistas/js/gestorBlog.js"></script>
+
 <script src="vistas/js/gestorVentas.js"></script>
 <script src="vistas/js/gestorVisitas.js"></script>
 <script src="vistas/js/gestorUsuarios.js"></script>
