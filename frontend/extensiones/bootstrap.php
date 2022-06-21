@@ -27,7 +27,7 @@ $apiContext = new ApiContext(
  $apiContext->setConfig(
     array(
         'mode' => $modoPaypal,
-        'log.LogEnabled' => true,
+        'log.LogEnabled' => false,
         'log.FileName' => '../PayPal.log',
         'log.LogLevel' => 'DEBUG', 
         'http.CURLOPT_CONNECTTIMEOUT' => 30
