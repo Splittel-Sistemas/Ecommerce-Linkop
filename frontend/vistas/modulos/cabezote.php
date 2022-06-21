@@ -208,7 +208,7 @@ HEADER
 
 							<!-- <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
 
-							<img src="<?php echo $servidor; ?>vistas/img/plantilla/shopping-cart.png" class=" text-center " style="width: 30px;padding-top:-12px; ">
+							<img src="<?php echo $servidor; ?>vistas/img/plantilla/shopping-cart (1).png" class=" text-center " style="width: 30px;padding-top:-12px; ">
 
 
 
@@ -226,7 +226,7 @@ HEADER
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;">
 
 							<!-- <i class="fa fa-user" aria-hidden="true"></i> -->
-							<img src="<?php echo $servidor; ?>vistas/img/plantilla/user(1).png" style="width: 30px; padding-top:-12px;">
+							<img src="<?php echo $servidor; ?>vistas/img/plantilla/user (1).png" style="width: 30px; padding-top:-12px;">
 							<!-- <span class="label label-info sumaCesta text-rigth" ></span>	 -->
 
 						</a>
@@ -266,7 +266,7 @@ HEADER
 
 										echo '<li>
 
-												<img class="img-circle" src="' . $_SESSION["foto"] . '" width="10%">
+												
 
 											</li>
 											
@@ -279,7 +279,7 @@ HEADER
 
 										echo '<li>
 
-												<img class="img-circle" src="' . $_SESSION["foto"] . '" width="10%">
+												
 
 											</li>
 											

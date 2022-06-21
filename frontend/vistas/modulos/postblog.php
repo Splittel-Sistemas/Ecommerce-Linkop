@@ -104,8 +104,8 @@ BANNER
 
 			$banner = ControladorBlog::ctrMostrarBlog($item, $valor);
 			foreach ($banner as $key => $value) {
-				if($banner[$i]['estado'] == 1){
-				echo '
+				if ($banner[$i]['estado'] == 1) {
+					echo '
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 			<div class="card text-center">
 			<img class="card-img-top" src="' . $servidor . $banner[$i]['img'] . '" alt="" width="100%">
@@ -115,13 +115,11 @@ BANNER
 					<p class="card-text">' . $banner[$i]['fecha'] . '</p>
 					<a class="btn btn-default" href="blogs/' . $banner[$i]['id'] . '">Leer</a>
 				</div>
-			</div>
-		</div>';
-
+				</div>
+			</div>';
 				}
 
 				$i++;
-
 			}
 			?>
 
