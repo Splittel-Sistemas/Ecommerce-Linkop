@@ -28,10 +28,10 @@
       menubar: false,
       plugins: [
         'print preview anchor ',
-        'searchreplace visualblocks advcode fullscreen',
+        'searchreplace visualblocks  fullscreen',
         'paste tinycomments',
-        'insertdatetime media table contextmenu powerpaste  a11ychecker linkchecker mediaembed',
-        'wordcount formatpainter permanentpen pageembed checklist casechange', 'link', 'image'
+        'insertdatetime media table contextmenu powerpaste    ',
+        'wordcount     casechange', 'link', 'image'
 
       ],
       toolbar: ' fontselect fontsizeselect| bold italic    |formatpainter permanentpen forecolor backcolor  | alignleft aligncenter alignright alignjustify | addcomment showcomments| casechange |bullist numlist outdent indent |  link image | advcode spellchecker a11ycheck | code | checklist | styleselect ',
@@ -285,8 +285,12 @@ MODAL EDITAR BANNER
                     <option value="subcategorias">SubCategorías</option>     
 
                    </select> -->
-                <textarea class="form-control input-lg seleccionarTipoBanner" required name="editarTipoBanner"></textarea>
+                <textarea class="form-control input-lg seleccionarTipoBanner" ></textarea>
+              <!--   <select class="form-control input-lg seleccionarRutaBanner">
 
+
+
+</select> -->
               </div>
 
             </div>
@@ -301,9 +305,8 @@ MODAL EDITAR BANNER
 
                 <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                <select class="form-control input-lg seleccionarRutaBanner">
 
-
+                <input  class="form-control input-lg seleccionarRutaBanner" type="text" value="aadad">
 
                 </select>
 

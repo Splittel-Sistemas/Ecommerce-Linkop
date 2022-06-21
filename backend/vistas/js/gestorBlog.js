@@ -288,6 +288,7 @@ $(".tablaBlog tbody").on("click", ".btnEditarBanner", function(){
 			/*=============================================
 			CARGAMOS EL TIPO DE BANNER
 			=============================================*/
+			$("#modalEditarBanner .seleccionarRutaBanner").val(respuesta["ruta"]);
 
 			$("#modalEditarBanner .seleccionarTipoBanner").val(respuesta["tipo"]);
 			$("#modalEditarBanner .optionEditarTipoBanner").html(respuesta["tipo"]);
