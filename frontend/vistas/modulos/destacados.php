@@ -222,7 +222,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 		<div class="container-fluid productos">
 	
-			<div class="container">
+			<div class="container-fluid">
 		
 			<div class="row">
 
@@ -750,33 +750,85 @@ BREADCRUMB VISITAS
 	</div>
 </div> -->
 <!-- 3 IMAGENES JUNTAS -->
-<div class="container">
+<div class="container-fluid">
 	<div class="row border border-dark ">
 		<div class="col-sm-12 ">
-			<div class="col-xs-12 col-sm-12 col-md-6">
-				<div class="col-sm-12" style="height:100%" >
-					<a href=" <?php echo $url ?>cables">
-						<img src="<?php echo  $servidor; ?>vistas/img/productos/12.jpg" alt="Random Name" width="105%" height="100%" >
-					</a>
+			<div class="col-xs-12 col-sm-12 col-md-6  text-center">
+				<div class="col-sm-12 text-center" style="height:100%">
+
+
+					<article id="3685" class="location-listing">
+
+						<a class="location-title" href="<?php echo $url; ?>cables" style="color: black;">
+							CABLES </a>
+
+						<div class="location-image">
+							<a href="#">
+								<img src="<?php echo  $servidor; ?>vistas/img/productos/12.jpg" alt="Random Name" width="105%" height="100%">
+
+
+							</a>
+
+						</div>
+
+					</article>
+
+
+					<!-- 
+					<a href=" <?php #echo $url 
+								?>cables">
+						<img src="<?php # echo  $servidor; 
+									?>vistas/img/productos/12.jpg" alt="Random Name" width="105%" height="100%">
+					</a> -->
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-6">
+			<div class="col-xs-12 col-sm-12 col-md-6 text-center">
 				<div class="col-sm-12">
-					<a href=" <?php echo $url ?>router">
-						<img src="<?php echo  $servidor; ?>vistas/img/productos/aa.jpg" alt="Random Name" width="100%" height="50%">
-					</a>
+					<!-- <a href=" <?php #echo $url 
+									?>router">
+						<img src="<?php #echo  $servidor; 
+									?>vistas/img/productos/aa.jpg" alt="Random Name" width="100%" height="50%">
+					</a> -->
 
+					<article id="3685" class="location-listing">
+
+						<a class="location-title" href="<?php echo $url; ?>baterias" style="color: black;">
+							BATERIAS </a>
+
+						<div class="location-image">
+							<a href="#">
+								<img src="<?php echo  $servidor; ?>vistas/img/productos/aa.jpg" alt="Random Name" width="100%" height="50%">
+
+							</a>
+
+						</div>
+
+					</article>
 				</div>
-				<div class="col-sm-12">
-					<a href=" <?php echo $url ?>baterias">
-						<img src="<?php echo  $servidor; ?>vistas/img/productos/aa.jpg" alt="Random Name"  width="100%" height="50%">
-					</a>
+				<div class="col-sm-12 text-center">
+
+
+
+					<article id="3685" class="location-listing">
+
+						<a class="location-title" href="<?php echo $url; ?>baterias" style="color: black;">
+							BATERIAS </a>
+
+						<div class="location-image">
+							<a href="#">
+								<img src="<?php echo  $servidor; ?>vistas/img/productos/aa.jpg" alt="Random Name" width="100%" height="50%">
+
+							</a>
+
+						</div>
+
+					</article>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
+<br>
 <div class="child-page-listing text-center">
 
 
@@ -858,7 +910,7 @@ BREADCRUMB VISITAS
 		}
 	</style>
 
-<!-- 	<div class="containera text-center">
+	<!-- 	<div class="containera text-center">
 		<h3></h3>
 
 		<div class="row">

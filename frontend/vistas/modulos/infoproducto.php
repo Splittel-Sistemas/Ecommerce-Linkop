@@ -238,7 +238,7 @@ INFOPRODUCTOS
 
 							<small>
 						
-								<span class="label label-warning">Nuevo</span>
+								<span class="label label-success">Nuevo</span>
 
 							</small>
 
@@ -262,7 +262,7 @@ INFOPRODUCTOS
 
 								echo '<small>
 							
-									<span class="label label-warning">'.$infoproducto["descuentoOferta"].'% off</span>
+									<span class="label label-danger">'.$infoproducto["descuentoOferta"].'% off</span>
 
 								</small>';
 
@@ -357,7 +357,7 @@ INFOPRODUCTOS
 
 									<select class="form-control seleccionarDetalle" id="seleccionarTalla">
 										
-										<option value="">Talla</option>';
+										<option value="">Tamaño</option>';
 
 										for($i = 0; $i < count($detalles["Talla"]); $i++){
 
@@ -399,7 +399,7 @@ INFOPRODUCTOS
 										
 										<option value="">Marca</option>';
 
-										for($i = 0; $i <= count($detalles["Marca"]); $i++){
+										for($i = 0; $i < count($detalles["Marca"]); $i++){
 
 											echo '<option value="'.$detalles["Marca"][$i].'">'.$detalles["Marca"][$i].'</option>';
 
@@ -1176,13 +1176,13 @@ ARTÏCULOS RELACIONADOS
 
 									if($fechaNueva < $value["fecha"]){
 
-										echo '<span class="label label-warning fontSize">Nuevo</span> ';
+										echo '<span class="label label-success fontSize">Nuevo</span> ';
 
 									}
 
 									if($value["oferta"] != 0 && $value["precio"] != 0){
 
-										echo '<span class="label label-warning fontSize">'.$value["descuentoOferta"].'% off</span>';
+										echo '<span class="label label-danger fontSize">'.$value["descuentoOferta"].'% off</span>';
 
 									}
 
