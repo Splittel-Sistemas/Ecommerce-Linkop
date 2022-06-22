@@ -24,7 +24,7 @@ if ($banner != null) {
 
 		echo '<figure class="banner">
 
-				<img src="' . $servidor . $banner["img"] . '" class="img-responsive" width="100%">';
+				<img src="' . $servidor . $banner["img"] . '" class="img-responsive" width="100%" height="100%" >';
 
 		if ($banner["ruta"] != "sin-categoria") {
 
@@ -51,12 +51,12 @@ if ($banner != null) {
 
 					if ($ofertas["precioOferta"] != 0) {
 
-						echo '<h2 style="color:#fff"><strong>Todos los productos a $ ' . $ofertas["precioOferta"] . '</strong></h2>';
+						/* echo '<h2 style="color:#fff"><strong>Todos los productos a $ ' . $ofertas["precioOferta"] . '</strong></h2>'; */
 					}
 
 					if ($ofertas["descuentoOferta"] != 0) {
 
-						echo '<h2 style="color:#fff"><strong>Todos los productos con ' . $ofertas["descuentoOferta"] . '% OFF</strong></h2>';
+						/* echo '<h2 style="color:#fff"><strong>Todos los productos con ' . $ofertas["descuentoOferta"] . '% OFF</strong></h2>'; */
 					}
 
 					echo '<h3 class="col-md-0 col-sm-0 col-xs-0" style="color:#fff">
@@ -115,12 +115,12 @@ if ($banner != null) {
 
 					if ($ofertas[0]["precioOferta"] != 0) {
 
-						echo '<h2 style="color:#fff"><strong>Todos los productos a $ ' . $ofertas[0]["precioOferta"] . '</strong></h2>';
+						/* echo '<h2 style="color:#fff"><strong>Todos los productos a $ ' . $ofertas[0]["precioOferta"] . '</strong></h2>'; */
 					}
 
 					if ($ofertas[0]["descuentoOferta"] != 0) {
 
-						echo '<h2 style="color:#fff"><strong>Todos los productos con ' . $ofertas[0]["descuentoOferta"] . '% OFF</strong></h2>';
+						/* echo '<h2 style="color:#fff"><strong>Todos los productos con ' . $ofertas[0]["descuentoOferta"] . '% OFF</strong></h2>'; */
 					}
 
 					echo '<h3 class="col-md-0 col-sm-0 col-xs-0" style="color:#fff">
