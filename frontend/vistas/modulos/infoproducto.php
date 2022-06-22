@@ -524,7 +524,7 @@ INFOPRODUCTOS
 						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
 
 
-								<span class="label label-default" style="font-weight:100">
+								<span class="label label-default" style="font-weight:100;background:#000F33;">
 
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									Entrega inmediata | 
@@ -557,7 +557,7 @@ INFOPRODUCTOS
 						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
 
 
-								<span class="label label-default" style="font-weight:100">
+								<span class="label label-default" style="font-weight:100;background:#000F33;">
 
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									Entrega inmediata |
@@ -593,7 +593,7 @@ INFOPRODUCTOS
 						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
 
 
-								<span class="label label-default" style="font-weight:100">
+								<span class="label label-default" style="font-weight:100;background:#000F33;">
 								
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									' . $infoproducto["entrega"] . ' días hábiles para la entrega  |
@@ -626,7 +626,7 @@ INFOPRODUCTOS
 						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
 
 
-								<span class="label label-default" style="font-weight:100">
+								<span class="label label-default" style="font-weight:100;background:#000F33;">
 
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									' . $infoproducto["entrega"] . ' días hábiles para la entrega |
