@@ -350,8 +350,8 @@ INFOPRODUCTOS
 						$detalles = json_decode($infoproducto["detalles"], true);
 
 						if($infoproducto["tipo"] == "fisico"){
-/* 
-							if($detalles["Talla"]!=null){ */
+
+							if($detalles["Talla"]!=null){
 
 								echo '<div class="col-md-3 col-xs-12">
 
@@ -369,9 +369,11 @@ INFOPRODUCTOS
 
 								</div>';
 
-							/* } */
+									}else{
+								echo'<input class="form-control seleccionarDetalle" id="seleccionarTalla" type="hidden" >';
+							}
 
-						/* 	if($detalles["Color"]!=null){ */
+							if($detalles["Color"]!=null){
 
 								echo '<div class="col-md-3 col-xs-12">
 
@@ -389,10 +391,12 @@ INFOPRODUCTOS
 
 								</div>';
 
-							/* } */
+							}else{
+								echo'<input class="form-control seleccionarDetalle" id="seleccionarColor" type="hidden" >';
+							}
 
-							/* if($detalles["Marca"]!=null){
- */
+							if($detalles["Marca"]!=null){
+
 								echo '<div class="col-md-3 col-xs-12">
 
 									<select class="form-control seleccionarDetalle" id="seleccionarMarca">
@@ -408,8 +412,10 @@ INFOPRODUCTOS
 									echo '</select>
 
 								</div>';
-/* 
-							} */
+
+							}else{
+								echo'<input class="form-control seleccionarDetalle" id="seleccionarMarca" type="hidden" >';
+							}
 
 						}else{
 

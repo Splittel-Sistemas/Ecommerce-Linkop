@@ -317,7 +317,7 @@ if (isset($_SESSION["validarSesion"])) {
 ?>
 
 	<!-- REGISTRATE -->
-	<div class="alert alert-info   alert-dismissible fade in text-center" style="background-color: #030F24;" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+	<div class="alert alert-info text-center" style="background-color: #030F24;" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 		<strong style="color:white">Regístrate y recíbe un 15% de descuento en tu primer compra. <a href="#modalRegistro" data-toggle="modal" >REGISTRARSE</a> </strong>
 	</div>
 
