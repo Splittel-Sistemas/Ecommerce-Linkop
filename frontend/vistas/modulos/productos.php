@@ -24,7 +24,7 @@ if ($banner != null) {
 
 		echo '<figure class="banner">
 
-				<img src="' . $servidor . $banner["img"] . '" class="img-responsive" width="100%" height="100%" >';
+				<img src="' . $servidor . $banner["img"] . '" class="" width="100%" height="100%" >';
 
 		if ($banner["ruta"] != "sin-categoria") {
 
