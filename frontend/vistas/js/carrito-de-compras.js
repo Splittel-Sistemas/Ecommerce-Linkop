@@ -1103,7 +1103,7 @@ function pagarConPayu(){
 	          var signature = hex_md5(apiKey+"~"+merchantId+"~"+referenceCode+"~"+total+"~"+divisa);
 	       
 
-	          if(divisa == "COP"){
+	          if(divisa == "MXN"){
 
 	          	var taxReturnBase = (total - impuesto).toFixed(2)
 

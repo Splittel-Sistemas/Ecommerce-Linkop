@@ -327,7 +327,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 											<small>
 						
-												<strong class="oferta">USD $' . $value["precio"] . '</strong>
+												<strong class="oferta">MXN $' . $value["precio"] . '</strong>
 
 											</small>
 
@@ -336,7 +336,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 										</h2>';
 				} else {
 
-					echo '<h2><small>USD $' . $value["precio"] . '</small></h2>';
+					echo '<h2><small>MXN $' . $value["precio"] . '</small></h2>';
 				}
 			}
 
@@ -456,7 +456,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 											<small>
 						
-												<strong class="oferta">USD $' . $value["precio"] . '</strong>
+												<strong class="oferta">MXN $' . $value["precio"] . '</strong>
 
 											</small>
 
@@ -465,7 +465,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 										</h2>';
 				} else {
 
-					echo '<h2><small>USD $' . $value["precio"] . '</small></h2>';
+					echo '<h2><small>MXN $' . $value["precio"] . '</small></h2>';
 				}
 			}
 
