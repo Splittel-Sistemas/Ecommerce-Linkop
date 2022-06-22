@@ -121,7 +121,7 @@ for(var i = 0; i < indice.length; i++){
 
 								'<br>'+
 
-								'<p class="precioCarritoCompra text-center">MXN $<span>'+precio+'</span></p>'+
+								'<p class="precioCarritoCompra text-center">USD $<span>'+precio+'</span></p>'+
 
 							'</div>'+
 
@@ -147,7 +147,7 @@ for(var i = 0; i < indice.length; i++){
 
 								'<p class="subTotal'+index+' subtotales">'+
 									
-									'<strong>MXN $<span>'+(Number(item.cantidad)*Number(precio))+'</span></strong>'+
+									'<strong>USD $<span>'+(Number(item.cantidad)*Number(precio))+'</span></strong>'+
 
 								'</p>'+
 
@@ -428,7 +428,7 @@ $(document).on("change", ".cantidadItem", function(){
 	var idProducto = $(this).attr("idProducto");
 	var item = $(this).attr("item");
 
-	$(".subTotal"+item).html('<strong>MXN $<span>'+(cantidad*precio)+'</span></strong>');
+	$(".subTotal"+item).html('<strong>USD $<span>'+(cantidad*precio)+'</span></strong>');
 
 	/*=============================================
 	ACTUALIZAR LA CANTIDAD EN EL LOCALSTORAGE
@@ -496,7 +496,7 @@ function sumaSubtotales(){
 
 	var sumaTotal = arraySumaSubtotales.reduce(sumaArraySubtotales);
 	
-	$(".sumaSubTotal").html('<strong>MXN $<span>'+(sumaTotal).toFixed(2)+'</span></strong>');
+	$(".sumaSubTotal").html('<strong>USD $<span>'+(sumaTotal).toFixed(2)+'</span></strong>');
 
 	$(".sumaCesta").html((sumaTotal).toFixed(2));
 
@@ -775,14 +775,14 @@ $("input[name='pago']").change(function(){
 		$(".formPayu").show();
 
 		pagarConPayu();
-		cambioDivisa('MXN')
+		cambioDivisa('USD')
 
 	}else{
 
 		$(".btnPagar").show();
 		$(".formPayu").hide();
 
-		cambioDivisa('MXN')
+		cambioDivisa('USD')
 
 	}
 
@@ -801,20 +801,20 @@ function divisas(metodoPago){
 
 	if(metodoPago == "paypal"){
 
-		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'+
+		$("#cambiarDivisa").append('<option value="USD">USD</option>'+
 			                       '<option value="EUR">EUR</option>'+
 			                       '<option value="GBP">GBP</option>'+
-			                       '<option value="USD">USD</option>'+
+			                       '<option value="MXN">MXN</option>'+
 			                       '<option value="JPY">JPY</option>'+
 			                       '<option value="CAD">CAD</option>'+
 			                       '<option value="BRL">BRL</option>')
 
 	}else{
 
-		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'+
+		$("#cambiarDivisa").append('<option value="USD">USD</option>'+
 			                       '<option value="PEN">PEN</option>'+
 			                       '<option value="COP">COP</option>'+
-			                       '<option value="USD">USD</option>'+
+			                       '<option value="MXN">MXN</option>'+
 			                       '<option value="CLP">CLP</option>'+
 			                       '<option value="ARS">ARS</option>'+
 			                       '<option value="BRL">BRL</option>')
@@ -830,7 +830,7 @@ function divisas(metodoPago){
 CAMBIO DE DIVISA
 =============================================*/
 
-var divisaBase = "MXN";
+var divisaBase = "USD";
 
 $("#cambiarDivisa").change(function(){
 
@@ -864,11 +864,11 @@ function cambioDivisa(divisa){
 	    dataType:"jsonp",
 	    success:function(respuesta){
 	    		    	    	
-	    	var conversion = (respuesta["MXN_"+divisa]);
+	    	var conversion = (respuesta["USD_"+divisa]);
 
 	    	$(".cambioDivisa").html(divisa);
 	    	
-	    	if(divisa == "MXN"){
+	    	if(divisa == "USD"){
 
 	    		$(".valorSubtotal").html($(".valorSubtotal").attr("valor"))
 		    	$(".valorTotalEnvio").html($(".valorTotalEnvio").attr("valor"))

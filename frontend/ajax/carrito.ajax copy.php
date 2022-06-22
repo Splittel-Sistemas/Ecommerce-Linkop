@@ -98,7 +98,7 @@ if(isset($_POST["divisa"])){
 		$verificarProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
 
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, "http://free.currconv.com/api/v7/convert?q=MXN_".$_POST["divisa"]."&compact=ultra&apiKey=bdaab752b1d5aefb5db0-"); 
+		curl_setopt($ch, CURLOPT_URL, "http://free.currconv.com/api/v7/convert?q=USD_".$_POST["divisa"]."&compact=ultra&apiKey=bdaab752b1d5aefb5db0"); 
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
 
 		if(curl_getinfo($ch, CURLINFO_HTTP_CODE) == 200){
@@ -113,7 +113,7 @@ if(isset($_POST["divisa"])){
 			
 			}else{
 
-				$conversion = $jsonDivisa["MXN_".$_POST["divisa"]];
+				$conversion = $jsonDivisa["USD_".$_POST["divisa"]];
 
 			}
 
@@ -184,7 +184,7 @@ if(isset($_POST["metodoPago"]) && $_POST["metodoPago"] == "payu"){
 		$verificarProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
 
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, "http://free.currconv.com/api/v7/convert?q=MXN_".$_POST["divisaPayu"]."&compact=ultra&apiKey=bdaab752b1d5aefb5db0"); 
+		curl_setopt($ch, CURLOPT_URL, "http://free.currconv.com/api/v7/convert?q=USD_".$_POST["divisaPayu"]."&compact=ultra&apiKey=bdaab752b1d5aefb5db0"); 
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
 
 		if(curl_getinfo($ch, CURLINFO_HTTP_CODE) == 200){
@@ -199,7 +199,7 @@ if(isset($_POST["metodoPago"]) && $_POST["metodoPago"] == "payu"){
 			
 			}else{
 
-				$conversion = $jsonDivisa["MXN_".$_POST["divisaPayu"]];
+				$conversion = $jsonDivisa["USD_".$_POST["divisaPayu"]];
 
 			}
 
