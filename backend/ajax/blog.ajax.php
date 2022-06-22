@@ -23,39 +23,6 @@ class AjaxBanner{
 
   }
 
-    /*=============================================
-    TRAER RUTAS DE ACUERDO A LA TABLA
-    =============================================*/ 
-
-    public $tabla;
-
-    public function ajaxTraerRutasBanner(){
-
-    $tabla = $this->tabla;
-      $item = null;
-      $valor = null;
-
-    if($tabla == "categorias"){
-
-        $respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
-
-        echo json_encode($respuesta);
-
-    }
-
-    if($tabla == "subcategorias"){
-
-          $respuesta = ModeloSubCategorias::mdlMostrarSubCategorias($tabla, $item, $valor);
-
-          echo json_encode($respuesta);
-
-    }
-
-    }
-
-    /*=============================================
-   VALIDAR RUTA BANNER
-    =============================================*/ 
 
   public $validarRuta;
 

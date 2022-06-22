@@ -86,8 +86,8 @@
               <th style="width:10px">#</th>
               <th>Imagen</th>
               <th>Estado</th>
-              <th>Ruta</th>
-              <th>Tipo</th>
+              <th>Titulo</th>
+              <th>Descripcion</th>
               <th>Acciones</th>
 
             </tr>
@@ -155,15 +155,6 @@ MODAL AGREGAR BANNER
               <div class="input-group">
 
 
-                <!--  <select class="form-control input-lg seleccionarTipoBanner" name="tipoBanner" required>
-                                          
-                                          <option value="">Selecionar tipo</option>
-                                          <option value="sin-categoria">Sin Categoría</option>
-                                          <option value="categorias">Categorías</option>
-                                          <option value="subcategorias">SubCategorías</option>            
-                          
-                                        </select>
-                        -->
                 <textarea class="form-control input-lg seleccionarTipoBanner" name="tipoBanner"></textarea>
               </div>
 
@@ -248,7 +239,24 @@ MODAL EDITAR BANNER
         <div class="modal-body">
 
           <div class="box-body">
+            <!--=====================================
+            EDITAR RUTA BANNER
+            ======================================-->
 
+            <div class="form-group entradaRutaBanner">
+
+              <div class="input-group">
+
+                <span class="input-group-addon">TITULO</span>
+
+
+                <input class="form-control input-lg seleccionarRutaBanner" type="text" value="">
+
+                </select>
+
+              </div>
+
+            </div>
             <!--=====================================
             ENTRADA PARA EDITAR FOTO DE BANNER
             ======================================-->
@@ -277,42 +285,14 @@ MODAL EDITAR BANNER
               <div class="input-group">
 
 
-                <!--  <select type="text" class="form-control input-lg seleccionarTipoBanner" required name="editarTipoBanner">
 
-                    <option class="optionEditarTipoBanner"></option>
-                    <option value="sin-categoria">Sin Categoría</option>
-                    <option value="categorias">Categorías</option>
-                    <option value="subcategorias">SubCategorías</option>     
-
-                   </select> -->
-                <textarea class="form-control input-lg seleccionarTipoBanner" ></textarea>
-              <!--   <select class="form-control input-lg seleccionarRutaBanner">
-
-
-
-</select> -->
-              </div>
-
-            </div>
-
-            <!--=====================================
-            EDITAR RUTA BANNER
-            ======================================-->
-
-            <div class="form-group entradaRutaBanner" style="display:none">
-
-              <div class="input-group">
-
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
-
-
-                <input  class="form-control input-lg seleccionarRutaBanner" type="text" value="aadad">
-
-                </select>
+                <textarea class="form-control input-lg seleccionarTipoBanner" name="editarTipoBanner"></textarea>
 
               </div>
 
             </div>
+
+
 
           </div>
 
