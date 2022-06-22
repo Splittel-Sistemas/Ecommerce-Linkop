@@ -523,7 +523,6 @@ INFOPRODUCTOS
 
 						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
 
-								<hr>
 
 								<span class="label label-default" style="font-weight:100">
 
@@ -540,7 +539,6 @@ INFOPRODUCTOS
 
 							<h4 class="col-lg-0 col-md-0 col-xs-12">
 
-								<hr>
 
 								<small>
 
@@ -558,7 +556,6 @@ INFOPRODUCTOS
 
 						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
 
-								<hr>
 
 								<span class="label label-default" style="font-weight:100">
 
@@ -575,7 +572,6 @@ INFOPRODUCTOS
 
 							<h4 class="col-lg-0 col-md-0 col-xs-12">
 
-								<hr>
 
 								<small>
 
@@ -596,7 +592,6 @@ INFOPRODUCTOS
 
 						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
 
-								<hr>
 
 								<span class="label label-default" style="font-weight:100">
 								
@@ -613,7 +608,6 @@ INFOPRODUCTOS
 
 							<h4 class="col-lg-0 col-md-0 col-xs-12">
 
-								<hr>
 
 								<small>
 								
@@ -631,7 +625,6 @@ INFOPRODUCTOS
 
 						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
 
-								<hr>
 
 								<span class="label label-default" style="font-weight:100">
 
@@ -648,7 +641,6 @@ INFOPRODUCTOS
 
 							<h4 class="col-lg-0 col-md-0 col-xs-12">
 
-								<hr>
 
 								<small>
 
@@ -668,7 +660,6 @@ INFOPRODUCTOS
 				?>
 
 			</div>
-			<hr>
 			<div id="faq" role="tablist" aria-multiselectable="true">
 
 				<div class="panel panel-default">
@@ -761,7 +752,7 @@ INFOPRODUCTOS
 					echo '</div>';
 				} else {
 
-					if ($infoproducto["tipo"] == "virtual") {
+					if ($infoproducto["tipo"] == "virtual" ||$infoproducto["tipo"] == "fisico" ) {
 
 						echo '<div class="col-md-6 col-xs-12">';
 
@@ -769,18 +760,18 @@ INFOPRODUCTOS
 
 							if ($_SESSION["validarSesion"] == "ok") {
 
-								echo '<a id="btnCheckout" href="#modalComprarAhora" data-toggle="modal" idUsuario="' . $_SESSION["id"] . '"><button class="btn btn-default btn-block btn-lg">
+								echo '<a id="btnCheckout" href="#modalComprarAhora" data-toggle="modal" idUsuario="' . $_SESSION["id"] . '"><button class="btn btn-default btn-block btn-lg backColor">
 									<small>COMPRAR AHORA</small></button></a>';
 							}
 						} else {
 
-							echo '<a href="#modalIngreso" data-toggle="modal"><button class="btn btn-default btn-block btn-lg">
+							echo '<a href="#modalIngreso" data-toggle="modal"><button class="btn btn-default btn-block btn-lg backColor">
 									<small>COMPRAR AHORA</small></button></a>';
 						}
 
 						echo '</div>
 
-								<div class="col-md-6 col-xs-12">';
+								<div class="col-md-6 col-xs-12 ">';
 
 						if ($infoproducto["oferta"] != 0) {
 
@@ -790,7 +781,7 @@ INFOPRODUCTOS
 							echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precio"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
 						}
 
-						echo   '<small>ADICIONAR AL CARRITO</small> 
+						echo   '<small>AÑADIR AL CARRITO</small> 
 
 									<i class="fa fa-shopping-cart col-md-0"></i>
 
@@ -810,7 +801,7 @@ INFOPRODUCTOS
 						}
 
 
-						echo 'ADICIONAR AL CARRITO 
+						echo 'AÑADIR AL CARRITO 
 
 									<i class="fa fa-shopping-cart"></i>
 
