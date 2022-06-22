@@ -416,55 +416,7 @@ INFOPRODUCTOS
 				CARACTERÍSTICAS DEL PRODUCTO
 				======================================-->
 
-			<hr>
-			<div id="faq" role="tablist" aria-multiselectable="true">
-
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="questionOne">
-						<h5 class="panel-title">
-							<a data-toggle="collapse" data-parent="#faq" href="#answerOne" aria-expanded="true" aria-controls="answerOne">
-								Details
-							</a>
-						</h5>
-					</div>
-					<div id="answerOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="questionOne">
-						<div class="panel-body">
-							Answer 1...
-						</div>
-					</div>
-				</div>
-
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="questionTwo">
-						<h5 class="panel-title">
-							<a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#answerTwo" aria-expanded="false" aria-controls="answerTwo">
-								Tech Specs
-							</a>
-						</h5>
-					</div>
-					<div id="answerTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="questionTwo">
-						<div class="panel-body">
-							Answer 2...
-						</div>
-					</div>
-				</div>
-
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="questionThree">
-						<h5 class="panel-title">
-							<a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#answerThree" aria-expanded="false" aria-controls="answerThree">
-								Shipping & Returns
-							</a>
-						</h5>
-					</div>
-					<div id="answerThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="questionThree">
-						<div class="panel-body">
-							Answer 3...
-						</div>
-					</div>
-				</div>
-
-			</div>
+			
 			<div class="form-group row">
 
 				<?php
@@ -716,7 +668,55 @@ INFOPRODUCTOS
 				?>
 
 			</div>
+			<hr>
+			<div id="faq" role="tablist" aria-multiselectable="true">
 
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="questionOne">
+						<h5 class="panel-title">
+							<a data-toggle="collapse" data-parent="#faq" href="#answerOne" aria-expanded="true" aria-controls="answerOne">
+								Details
+							</a>
+						</h5>
+					</div>
+					<div id="answerOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="questionOne">
+						<div class="panel-body">
+							Answer 1...
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="questionTwo">
+						<h5 class="panel-title">
+							<a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#answerTwo" aria-expanded="false" aria-controls="answerTwo">
+								Tech Specs
+							</a>
+						</h5>
+					</div>
+					<div id="answerTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="questionTwo">
+						<div class="panel-body">
+							Answer 2...
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="questionThree">
+						<h5 class="panel-title">
+							<a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#answerThree" aria-expanded="false" aria-controls="answerThree">
+								Shipping & Returns
+							</a>
+						</h5>
+					</div>
+					<div id="answerThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="questionThree">
+						<div class="panel-body">
+							Answer 3...
+						</div>
+					</div>
+				</div>
+
+			</div>
 			<!--=====================================
 				BOTONES DE COMPRA
 				======================================-->
