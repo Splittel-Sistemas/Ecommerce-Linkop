@@ -334,9 +334,9 @@ INFOPRODUCTOS
 					$sumaCalificacion += $value["calificacion"];
 				}
 			}
-
-			$promedio = round($sumaCalificacion / $cantidadCalificacion, 1);
-
+			$promedio = $sumaCalificacion>0 ? $promedio = round($sumaCalificacion / $cantidadCalificacion, 1) : 0;
+			
+				if($promedio > 0 ){ 
 			echo '<li class=""><a class="text-muted"> ' . $promedio . ' | ';
 
 			if ($promedio >= 0 && $promedio < 0.5) {
@@ -410,7 +410,7 @@ INFOPRODUCTOS
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>';
 			}
-			?>
+		}	?>
 
 			<!--=====================================
 				CARACTERÍSTICAS DEL PRODUCTO
