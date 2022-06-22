@@ -280,11 +280,11 @@ VENTANA MODAL PARA CHECKOUT
 
 						 <div class="divisa">
 
-						 	<!-- <select class="form-control" id="cambiarDivisa" name="divisa">
+						 	<select class="form-control" id="cambiarDivisa" name="divisa">
 						 		
 							
 
-						 	</select>	 -->
+						 	</select>	
 
 						 	<br>
 
