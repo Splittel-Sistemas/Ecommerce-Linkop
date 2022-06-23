@@ -594,7 +594,8 @@ INFOPRODUCTOS
 
 
 								<span class="label label-default" style="font-weight:100;background:#000F33;">
-								
+									<i class="fa fa-archive" style="margin-right:5px"></i>
+								' . $infoproducto["cantidad"] . ' DISPONIBLES  |
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									' . $infoproducto["entrega"] . ' días hábiles para la entrega  |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
@@ -627,7 +628,8 @@ INFOPRODUCTOS
 
 
 								<span class="label label-default" style="font-weight:100;background:#000F33;">
-
+								<i class="fa fa-archive" style="margin-right:5px"></i>
+								' . $infoproducto["cantidad"] . ' DISPONIBLES  |
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									' . $infoproducto["entrega"] . ' días hábiles para la entrega |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
@@ -643,7 +645,8 @@ INFOPRODUCTOS
 
 
 								<small>
-
+								<i class="fa fa-archive" style="margin-right:5px"></i>
+								' . $infoproducto["cantidad"] . ' DISPONIBLES  |
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									' . $infoproducto["entrega"] . ' días hábiles para la entrega <br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
@@ -752,7 +755,11 @@ INFOPRODUCTOS
 					echo '</div>';
 				} else {
 
-					if ($infoproducto["tipo"] == "virtual" ||$infoproducto["tipo"] == "fisico" ) {
+					if ($infoproducto["tipo"] == "virtual" ||$infoproducto["tipo"] == "fisico" ) { 
+
+						if ($infoproducto["cantidad"] != 0) {
+
+
 
 						echo '<div class="col-md-6 col-xs-12">';
 
@@ -788,6 +795,14 @@ INFOPRODUCTOS
 									</button>
 
 								</div>';
+
+					}else{
+
+						
+						echo '<button class="btn btn-warning btn-block btn-lg ">
+						<small> SIN STOCK </small></button>';
+					}
+
 					} else {
 
 						echo '<div class="col-lg-6 col-md-8 col-xs-12">';
