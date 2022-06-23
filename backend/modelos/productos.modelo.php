@@ -239,6 +239,18 @@ class ModeloProductos{
 
 		if($stmt->execute()){
 
+			$salida = "entrada";
+			$metodo = "stock";
+
+			$stmt1 = Conexion::conectar()->prepare("INSERT INTO log_stock (id_usuario, id_producto, metodo, cantidad, detalle) VALUES (:id_usuario, :id_producto, :metodo, :cantidad, :detalle)");
+
+			$stmt1->bindParam(":id_usuario", $datos["usuario"], PDO::PARAM_INT);
+			$stmt1->bindParam(":id_producto", $datos["id"], PDO::PARAM_INT);
+			$stmt1->bindParam(":metodo",$metodo, PDO::PARAM_STR);
+
+			$stmt1->bindParam(":cantidad", $datos["cantidad"], PDO::PARAM_STR);
+			$stmt1->bindParam(":detalle", $salida, PDO::PARAM_STR);
+			$stmt1->execute();
 			return "ok";
 
 		}else{

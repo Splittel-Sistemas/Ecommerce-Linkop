@@ -813,16 +813,19 @@ class ControladorProductos{
 
 	static public function ctrEditarStock($datos){
 		if(isset($datos["idProducto"])){
+			session_start();
+			
+				$datosProducto = array(
+					"id"=>$datos["idProducto"],
+					"usuario"=>$_SESSION["id"],
+				   "cantidad"=> $datos["cantidad"]
+				   );
 
-				
 
-					$datosProducto = array(
-						 		   "id"=>$datos["idProducto"],
-							
-								   "cantidad"=> $datos["cantidad"]
-								   );
+			
 
 
+					
 
 				$respuesta = ModeloProductos::mdlEditarStock("productos", $datosProducto);
 
