@@ -799,7 +799,7 @@ INFOPRODUCTOS
 					}else{
 
 						
-						echo '<button class="btn btn-warning btn-block btn-lg ">
+						echo '<button class="btn btn-default btn-block btn-lg ">
 						<small> SIN STOCK </small></button>';
 					}
 
