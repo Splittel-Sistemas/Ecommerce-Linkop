@@ -51,7 +51,7 @@ class ModeloCarrito{
 			$stmt1->bindParam(":metodo", $datos["metodo"], PDO::PARAM_STR);
 		
 			$stmt1->bindParam(":cantidad", $datos["cantidad"], PDO::PARAM_STR);
-			$stmt1->bindParam(":detalle", 'Salida', PDO::PARAM_STR);
+			$stmt1->bindParam(":detalle", $datos["detalle"], PDO::PARAM_STR);
 
 			$stmt1->execute();
 
