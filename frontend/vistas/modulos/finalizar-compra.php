@@ -94,7 +94,8 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
             localStorage.removeItem("listaProductos");
             localStorage.removeItem("cantidadCesta");
             localStorage.removeItem("sumaCesta");
-            window.location = "'.$url.'perfil";
+            window.location = "'.$url.'ofertas/aviso";
+
 
             </script>';
 
