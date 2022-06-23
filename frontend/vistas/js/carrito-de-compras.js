@@ -69,6 +69,7 @@ for(var i = 0; i < indice.length; i++){
 				processData:false,
 				dataType: "json",
 				success: function(respuesta){
+					cantidad = respuesta["cantidad"];
 		
 					if(respuesta["precioOferta"] == 0){
 
@@ -133,7 +134,7 @@ for(var i = 0; i < indice.length; i++){
 
 									'<center>'+
 									
-										'<input type="number" class="form-control cantidadItem" min="1" value="'+item.cantidad+'" tipo="'+item.tipo+'" precio="'+precio+'" idProducto="'+item.idProducto+'" item="'+index+'">'+	
+										'<input type="number" class="form-control cantidadItem" min="1" max="'+cantidad+'" value="'+item.cantidad+'" tipo="'+item.tipo+'" precio="'+precio+'" idProducto="'+item.idProducto+'" item="'+index+'">'+	
 
 									'</center>'+
 

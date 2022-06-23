@@ -757,7 +757,7 @@ INFOPRODUCTOS
 
 					if ($infoproducto["tipo"] == "virtual" ||$infoproducto["tipo"] == "fisico" ) { 
 
-						if ($infoproducto["cantidad"] != 0) {
+						if ($infoproducto["cantidad"] > 0) {
 
 
 
