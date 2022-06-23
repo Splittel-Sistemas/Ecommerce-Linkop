@@ -44,7 +44,7 @@ class ModeloCarrito
 
 		if ($stmt->execute()) {
 
-				/* log de stock */
+
 			$salida = "salida";
 			$stmt1 = Conexion::conectar()->prepare("INSERT INTO log_stock (id_usuario_compras, id_producto, metodo, cantidad, detalle) VALUES (:id_usuario_compras, :id_producto, :metodo, :cantidad, :detalle)");
 
@@ -56,10 +56,10 @@ class ModeloCarrito
 			$stmt1->bindParam(":detalle", $salida, PDO::PARAM_STR);
 			if ($stmt1->execute()) {
 
-				/* resta de cantidades */
+
 				$stmt2 = Conexion::conectar()->prepare("UPDATE productos SET cantidad - :cantidad WHERE id = :id");
 
-				$stmt2->bindParam(":cantidad", $datos["cantidad"], PDO::PARAM_INT);
+				$stmt2->bindParam(":cantidad", $datos["cantidad"], PDO::PARAM_STR);
 				$stmt2->bindParam(":id", $datos["idProducto"], PDO::PARAM_INT);
 
 				$stmt2->execute();
