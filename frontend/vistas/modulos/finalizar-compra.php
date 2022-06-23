@@ -185,7 +185,7 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
             $actualizarCompra = ControladorProductos::ctrActualizarProducto($item1, $valor1, $item2, $valor2);
             
          }
-
+/* window.location = "'.$url.'perfil";  */
          if($respuesta == "ok" && $actualizarCompra == "ok"){
 
             echo '<script>
@@ -193,8 +193,8 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
             localStorage.removeItem("listaProductos");
             localStorage.removeItem("cantidadCesta");
             localStorage.removeItem("sumaCesta");
-            window.location = "'.$url.'perfil";
-
+           
+            window.location = "'.$url.'ofertas/aviso";
             </script>';
 
          }
