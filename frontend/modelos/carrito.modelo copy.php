@@ -42,21 +42,6 @@ class ModeloCarrito{
 
 		if($stmt->execute()){ 
 
-
-
-			$stmt1 = Conexion::conectar()->prepare("INSERT INTO log_stock (id_usuario, id_producto, metodo, cantidad, detalle) VALUES (:id_usuario, :id_producto, :metodo, :cantidad, :detalle)");
-
-			$stmt1->bindParam(":id_usuario", $datos["idUsuario"], PDO::PARAM_INT);
-			$stmt1->bindParam(":id_producto", $datos["idProducto"], PDO::PARAM_INT);
-			$stmt1->bindParam(":metodo", $datos["metodo"], PDO::PARAM_STR);
-		
-			$stmt1->bindParam(":cantidad", $datos["cantidad"], PDO::PARAM_STR);
-			$stmt1->bindParam(":detalle", 'Salida', PDO::PARAM_STR);
-
-			$stmt1->execute();
-
-
-
 			return "ok"; 
 
 		}else{ 
