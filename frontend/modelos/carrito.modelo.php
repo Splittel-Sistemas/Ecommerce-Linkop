@@ -57,7 +57,7 @@ class ModeloCarrito
 			if ($stmt1->execute()) {
 
 
-				$stmt2 = Conexion::conectar()->prepare("UPDATE productos SET cantidad = :cantidad WHERE id = :id");
+				$stmt2 = Conexion::conectar()->prepare("UPDATE productos SET cantidad - :cantidad WHERE id = :id");
 
 				$stmt2->bindParam(":cantidad", $datos["cantidad"], PDO::PARAM_STR);
 				$stmt2->bindParam(":id", $datos["idProducto"], PDO::PARAM_INT);
