@@ -1407,11 +1407,11 @@ VENTANA MODAL PARA CHECKOUT
 
 						<center>
 
-							<input id="checkPayu" type="radio" name="pago" value="payu">
+							<!-- <input id="checkPayu" type="radio" name="pago" value="payu"> -->
 
 						</center>
 
-						<img src="<?php echo $url; ?>vistas/img/plantilla/payu.jpg" class="img-thumbnail">
+						<!-- <img src="<?php #echo $url; ?>vistas/img/plantilla/payu.jpg" class="img-thumbnail"> -->
 
 					</figure>
 
