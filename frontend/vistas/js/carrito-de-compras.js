@@ -110,7 +110,7 @@ for(var i = 0; i < indice.length; i++){
 
 							'</div>'+
 
-							'<div class="col-sm-4 col-xs-12">'+
+							'<div class="col-sm-2 col-xs-12">'+
 
 								'<br>'+
 
@@ -126,6 +126,13 @@ for(var i = 0; i < indice.length; i++){
 
 							'</div>'+
 
+							'<div class="col-md-2 col-sm-1 col-xs-12">'+
+
+								'<br>'+
+
+								'<p class=" text-center"><span>'+cantidad+'</span></p>'+
+
+							'</div>'+
 							'<div class="col-md-2 col-sm-3 col-xs-8">'+
 
 								'<br>'+	

@@ -43,7 +43,7 @@ TABLA CARRITO DE COMPRAS
 
 			<div class="panel-heading cabeceraCarrito">
 				
-				<div class="col-md-6 col-sm-7 col-xs-12 text-center">
+				<div class="col-md-4 col-sm-7 col-xs-12 text-center">
 					
 					<h3>
 						<small>PRODUCTO</small>
@@ -58,6 +58,12 @@ TABLA CARRITO DE COMPRAS
 					</h3>
 
 				</div>
+				<div class="col-sm-2 col-xs-0 text-center">
+					
+					<h3>
+						<small>DISPONIBLES</small>
+					</h3>
+					</div>
 
 				<div class="col-sm-2 col-xs-0 text-center">
 					
