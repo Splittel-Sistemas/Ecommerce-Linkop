@@ -12,40 +12,41 @@ require_once "../modelos/subcategorias.modelo.php";
 require_once "../controladores/cabeceras.controlador.php";
 require_once "../modelos/cabeceras.modelo.php";
 
-class TablaProductos{
+class TablaProductos
+{
 
-  /*=============================================
+	/*=============================================
   MOSTRAR LA TABLA DE PRODUCTOS
-  =============================================*/ 
+  =============================================*/
 
-  public function mostrarTablaProductos(){	
+	public function mostrarTablaProductos()
+	{
 
-  	$item = null;
-  	$valor = null;
+		$item = null;
+		$valor = null;
 
-  	$productos = ControladorProductos::ctrMostrarProductos($item, $valor);
+		$productos = ControladorProductos::ctrMostrarProductos($item, $valor);
 
-  	$datosJson = '
+		$datosJson = '
 
   		{	
   			"data":[';
 
-	 	for($i = 0; $i < count($productos); $i++){
+		for ($i = 0; $i < count($productos); $i++) {
 
 			/*=============================================
   			TRAER LAS CATEGORÍAS
   			=============================================*/
 
-  			$item = "id";
+			$item = "id";
 			$valor = $productos[$i]["id_categoria"];
 
 			$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
 
-			if($categorias["categoria"] == ""){
+			if ($categorias["categoria"] == "") {
 
 				$categoria = "SIN CATEGORÍA";
-			
-			}else{
+			} else {
 
 				$categoria = $categorias["categoria"];
 			}
@@ -54,16 +55,15 @@ class TablaProductos{
   			TRAER LAS SUBCATEGORÍAS
   			=============================================*/
 
-  			$item2 = "id";
+			$item2 = "id";
 			$valor2 = $productos[$i]["id_subcategoria"];
 
 			$subcategorias = ControladorSubCategorias::ctrMostrarSubCategorias($item2, $valor2);
 
-			if($subcategorias[0]["subcategoria"] == ""){
+			if ($subcategorias[0]["subcategoria"] == "") {
 
 				$subcategoria = "SIN SUBCATEGORÍA";
-			
-			}else{
+			} else {
 
 				$subcategoria = $subcategorias[0]["subcategoria"];
 			}
@@ -72,206 +72,196 @@ class TablaProductos{
   			AGREGAR ETIQUETAS DE ESTADO
   			=============================================*/
 
-  			if($productos[$i]["estado"] == 0){
+			if ($productos[$i]["estado"] == 0) {
 
-  				$colorEstado = "btn-danger";
-  				$textoEstado = "Desactivado";
-  				$estadoProducto = 1;
+				$colorEstado = "btn-danger";
+				$textoEstado = "Desactivado";
+				$estadoProducto = 1;
+			} else {
 
-  			}else{
+				$colorEstado = "btn-success";
+				$textoEstado = "Activado";
+				$estadoProducto = 0;
+			}
 
-  				$colorEstado = "btn-success";
-  				$textoEstado = "Activado";
-  				$estadoProducto = 0;
+			$estado = "<button class='btn btn-xs btnActivar " . $colorEstado . "' idProducto='" . $productos[$i]["id"] . "' estadoProducto='" . $estadoProducto . "'>" . $textoEstado . "</button>";
 
-  			}
-
-  			$estado = "<button class='btn btn-xs btnActivar ".$colorEstado."' idProducto='".$productos[$i]["id"]."' estadoProducto='".$estadoProducto."'>".$textoEstado."</button>";
-
-  			/*=============================================
+			/*=============================================
   			TRAER LAS CABECERAS
   			=============================================*/
 
-  			$item3 = "ruta";
+			$item3 = "ruta";
 			$valor3 = $productos[$i]["ruta"];
 
 			$cabeceras = ControladorCabeceras::ctrMostrarCabeceras($item3, $valor3);
 
-			if(!is_array($cabeceras)){
+			if (!is_array($cabeceras)) {
 
-					$cabeceras = array(
-						"portada"=>"",
-						"descripcion"=>"",
-						"palabrasClaves"=>""
-					);
+				$cabeceras = array(
+					"portada" => "",
+					"descripcion" => "",
+					"palabrasClaves" => ""
+				);
+			}
 
-				}
+			if ($cabeceras["portada"] != "") {
 
-			if($cabeceras["portada"] != ""){
+				$imagenPortada = "<img src='" . $cabeceras["portada"] . "' class='img-thumbnail imgPortadaProductos' width='100px'>";
+			} else {
 
-  				$imagenPortada = "<img src='".$cabeceras["portada"]."' class='img-thumbnail imgPortadaProductos' width='100px'>";
-
-  			}else{
-
-  				$imagenPortada = "<img src='vistas/img/cabeceras/default/default.jpg' class='img-thumbnail imgPortadaProductos' width='100px'>";
-  			}
+				$imagenPortada = "<img src='vistas/img/cabeceras/default/default.jpg' class='img-thumbnail imgPortadaProductos' width='100px'>";
+			}
 
 			/*=============================================
   			TRAER IMAGEN PRINCIPAL
   			=============================================*/
 
-  			$imagenPrincipal = "<img src='".$productos[$i]["portada"]."' class='img-thumbnail imgTablaPrincipal' width='100px'>";
+			$imagenPrincipal = "<img src='" . $productos[$i]["portada"] . "' class='img-thumbnail imgTablaPrincipal' width='100px'>";
 
-  			/*=============================================
+			/*=============================================
 				TRAER MULTIMEDIA
   			=============================================*/
-		
-				$multimedia = json_decode($productos[$i]["multimedia"],true);
 
-				if(is_array($multimedia)){
+			$multimedia = json_decode($productos[$i]["multimedia"], true);
 
-  				if($multimedia[0]["foto"] != ""){
+			if (is_array($multimedia)) {
 
-  					$vistaMultimedia = "<img src='".$multimedia[0]["foto"]."' class='img-thumbnail imgTablaMultimedia' width='100px'>";
+				if ($multimedia[0]["foto"] != "") {
 
-  				}else{
+					$vistaMultimedia = "<img src='" . $multimedia[0]["foto"] . "' class='img-thumbnail imgTablaMultimedia' width='100px'>";
+				} else {
 
-  					$vistaMultimedia = "<img src='http://i3.ytimg.com/vi/".$productos[$i]["multimedia"]."/hqdefault.jpg' class='img-thumbnail imgTablaMultimedia' width='100px'>";
-
-  				}
-
-  			}else{
-
-					$vistaMultimedia = "<img src='vistas/img/multimedia/default/default.jpg' class='img-thumbnail imgTablaMultimedia' width='100px'>";
-
+					$vistaMultimedia = "<img src='http://i3.ytimg.com/vi/" . $productos[$i]["multimedia"] . "/hqdefault.jpg' class='img-thumbnail imgTablaMultimedia' width='100px'>";
 				}
+			} else {
 
-  			/*=============================================
+				$vistaMultimedia = "<img src='vistas/img/multimedia/default/default.jpg' class='img-thumbnail imgTablaMultimedia' width='100px'>";
+			}
+
+			/*=============================================
   			TRAER DETALLES
   			=============================================*/
 
-  			$detalles = json_decode($productos[$i]["detalles"],true);
+			$detalles = json_decode($productos[$i]["detalles"], true);
 
-  			if($productos[$i]["tipo"] == "fisico"){
+			if ($productos[$i]["tipo"] == "fisico") {
 
-  				$talla = json_encode($detalles["Talla"]);
+				$talla = json_encode($detalles["Talla"]);
 				$color = json_encode($detalles["Color"]);
 				$marca = json_encode($detalles["Marca"]);
 
-				$vistaDetalles = "Talla: ".str_replace(array("[","]",'"'), "", $talla)." - Color: ".str_replace(array("[","]",'"'), "", $color)." - Marca: ".str_replace(array("[","]",'"'), "", $marca);
+				$vistaDetalles = "Talla: " . str_replace(array("[", "]", '"'), "", $talla) . " - Color: " . str_replace(array("[", "]", '"'), "", $color) . " - Marca: " . str_replace(array("[", "]", '"'), "", $marca);
+			} else {
 
 
-  			}else{
+				$vistaDetalles = "Clases: " . $detalles["Clases"] . ", Tiempo: " . $detalles["Tiempo"] . ", Nivel: " . $detalles["Nivel"] . ", Acceso: " . $detalles["Acceso"] . ", Dispositivo: " . $detalles["Dispositivo"] . ", Certificado: " . $detalles["Certificado"];
+			}
+
+			/* TRAER CANTIDAD	 */
+
+			
+
+				 $productos[$i]["cantidad"];
 
 
-				$vistaDetalles = "Clases: ".$detalles["Clases"].", Tiempo: ".$detalles["Tiempo"].", Nivel: ".$detalles["Nivel"].", Acceso: ".$detalles["Acceso"].", Dispositivo: ".$detalles["Dispositivo"].", Certificado: ".$detalles["Certificado"];
 
-  			}
 
-  			/*=============================================
+
+
+			/*=============================================
   			TRAER PRECIO
   			=============================================*/
 
-  			if($productos[$i]["precio"] == 0){
+			if ($productos[$i]["precio"] == 0) {
 
-  				$precio = "Gratis";
-  			
-  			}else{
+				$precio = "Gratis";
+			} else {
 
-  				$precio = "$ ".number_format($productos[$i]["precio"],2);
+				$precio = "$ " . number_format($productos[$i]["precio"], 2);
+			}
 
-  			}
-
-  			/*=============================================
+			/*=============================================
   			TRAER ENTREGA
   			=============================================*/
 
-  			if($productos[$i]["entrega"] == 0){
+			if ($productos[$i]["entrega"] == 0) {
 
-  				$entrega = "Inmediata";
-  			
-  			}else{
+				$entrega = "Inmediata";
+			} else {
 
-  				$entrega = $productos[$i]["entrega"]. " días hábiles";
+				$entrega = $productos[$i]["entrega"] . " días hábiles";
+			}
 
-  			}
-
-  			/*=============================================
+			/*=============================================
   			REVISAR SI HAY OFERTAS
   			=============================================*/
-  			
-			if($productos[$i]["oferta"] != 0){
 
-				if($productos[$i]["precioOferta"] != 0){	
+			if ($productos[$i]["oferta"] != 0) {
+
+				if ($productos[$i]["precioOferta"] != 0) {
 
 					$tipoOferta = "PRECIO";
-					$valorOferta = "$ ".number_format($productos[$i]["precioOferta"],2);
-
-				}else{
+					$valorOferta = "$ " . number_format($productos[$i]["precioOferta"], 2);
+				} else {
 
 					$tipoOferta = "DESCUENTO";
-					$valorOferta = $productos[$i]["descuentoOferta"]." %";	
-
-				}	
-
-			}else{
+					$valorOferta = $productos[$i]["descuentoOferta"] . " %";
+				}
+			} else {
 
 				$tipoOferta = "No tiene oferta";
 				$valorOferta = 0;
-				
 			}
 
-  			/*=============================================
+			/*=============================================
   			TRAER IMAGEN OFERTA
   			=============================================*/
 
-  			if($productos[$i]["imgOferta"] != ""){
+			if ($productos[$i]["imgOferta"] != "") {
 
-	  			$imgOferta = "<img src='".$productos[$i]["imgOferta"]."' class='img-thumbnail imgTablaProductos' width='100px'>";
+				$imgOferta = "<img src='" . $productos[$i]["imgOferta"] . "' class='img-thumbnail imgTablaProductos' width='100px'>";
+			} else {
 
-	  		}else{
+				$imgOferta = "<img src='vistas/img/ofertas/default/default.jpg' class='img-thumbnail imgTablaProductos' width='100px'>";
+			}
 
-	  			$imgOferta = "<img src='vistas/img/ofertas/default/default.jpg' class='img-thumbnail imgTablaProductos' width='100px'>";
-
-	  		}
-
-	  		/*=============================================
+			/*=============================================
   			TRAER LAS ACCIONES
   			=============================================*/
 
-  			$acciones = "<div class='btn-group'><button class='btn btn-warning btnEditarProducto' idProducto='".$productos[$i]["id"]."' data-toggle='modal' data-target='#modalEditarProducto'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarProducto' idProducto='".$productos[$i]["id"]."' imgOferta='".$productos[$i]["imgOferta"]."' rutaCabecera='".$productos[$i]["ruta"]."' imgPortada='".$cabeceras["portada"]."' imgPrincipal='".$productos[$i]["portada"]."'><i class='fa fa-times'></i></button></div>";
+			$acciones = "<div class='btn-group'><button class='btn btn-success btnStockProducto' idProducto='" . $productos[$i]["id"] . "' data-toggle='modal' data-target='#modalStockProducto'><i class='fa fa-plus-square'></i></button><button class='btn btn-warning btnEditarProducto' idProducto='" . $productos[$i]["id"] . "' data-toggle='modal' data-target='#modalEditarProducto'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarProducto' idProducto='" . $productos[$i]["id"] . "' imgOferta='" . $productos[$i]["imgOferta"] . "' rutaCabecera='" . $productos[$i]["ruta"] . "' imgPortada='" . $cabeceras["portada"] . "' imgPrincipal='" . $productos[$i]["portada"] . "'><i class='fa fa-times'></i></button></div>";
 
-  			/*=============================================
+			/*=============================================
   			CONSTRUIR LOS DATOS JSON
   			=============================================*/
 
 
-			$datosJson .='[
+			$datosJson .= '[
 					
-					"'.($i+1).'",
-					"'.$productos[$i]["titulo"].'",
-					"'.$categoria.'",
-					"'.$subcategoria.'",
-					"'.$productos[$i]["ruta"].'",
-					"'.$estado.'",
-					"'.$productos[$i]["tipo"].'",
-					"'.$cabeceras["descripcion"].'",
-				  	"'.$cabeceras["palabrasClaves"].'",
-				  	"'.$imagenPortada.'",
-				  	"'.$imagenPrincipal.'",
-			 	  	"'.$vistaMultimedia.'",
-				  	"'.$vistaDetalles.'",
-		  			"'.$precio.'",
-				  	"'.$productos[$i]["peso"].' kg",
-				  	"'.$entrega.'",
-				  	"'.$tipoOferta.'",
-				  	"'.$valorOferta.'",
-				  	"'.$imgOferta.'",
-				  	"'.$productos[$i]["finOferta"].'",			
-				  	"'.$acciones.'"	   
+					"' . ($i + 1) . '",
+					"' . $productos[$i]["titulo"] . '",
+					"' . $categoria . '",
+					"' . $subcategoria . '",
+					"' . $productos[$i]["ruta"] . '",
+					"' . $estado . '",
+					"' . $productos[$i]["tipo"] . '",
+					"' . $cabeceras["descripcion"] . '",
+				  	"' . $cabeceras["palabrasClaves"] . '",
+				  	"' . $imagenPortada . '",
+				  	"' . $imagenPrincipal . '",
+			 	  	"' . $vistaMultimedia . '",
+				  	"' . $vistaDetalles . '",
+					  "' . $productos[$i]["cantidad"] . '",
+		  			"' . $precio . '",
+				  	"' . $productos[$i]["peso"] . ' kg",
+				  	"' . $entrega . '",
+				  	"' . $tipoOferta . '",
+				  	"' . $valorOferta . '",
+				  	"' . $imgOferta . '",
+				  	"' . $productos[$i]["finOferta"] . '",			
+				  	"' . $acciones . '"	   
 
 			],';
-
 		}
 
 		$datosJson = substr($datosJson, 0, -1);
@@ -281,14 +271,11 @@ class TablaProductos{
 		}';
 
 		echo $datosJson;
-
-  }
-
-
+	}
 }
 
 /*=============================================
 ACTIVAR TABLA DE PRODUCTOS
-=============================================*/ 
+=============================================*/
 $activarProductos = new TablaProductos();
-$activarProductos -> mostrarTablaProductos();
+$activarProductos->mostrarTablaProductos();

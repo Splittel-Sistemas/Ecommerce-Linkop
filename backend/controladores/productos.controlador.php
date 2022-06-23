@@ -364,7 +364,9 @@ class ControladorProductos{
 						   "precioOferta"=>$datos["precioOferta"],
 						   "descuentoOferta"=>$datos["descuentoOferta"],
 						   "imgOferta"=>substr($rutaOferta,3),
-						   "finOferta"=>$datos["finOferta"]
+						   "finOferta"=>$datos["finOferta"],
+						   "cantidad"=> $datos["cantidad"],
+
 					   );
 
 
@@ -391,7 +393,9 @@ class ControladorProductos{
 						   "precioOferta"=>0,
 						   "descuentoOferta"=>0,
 						   "imgOferta"=>"",
-						   "finOferta"=>""
+						   "finOferta"=>"",
+						   "cantidad"=> $datos["cantidad"],
+
 					   );
 
 				}
@@ -799,6 +803,58 @@ class ControladorProductos{
 		}
 		
 	}
+
+
+
+
+	/*=============================================
+	EDITAR PRODUCTOS
+	=============================================*/
+
+	static public function ctrEditarStock($datos){
+		if(isset($datos["idProducto"])){
+
+				
+
+					$datosProducto = array(
+						 		   "id"=>$datos["idProducto"],
+							
+								   "cantidad"=> $datos["cantidad"]
+								   );
+
+
+
+				$respuesta = ModeloProductos::mdlEditarStock("productos", $datosProducto);
+
+				return $respuesta;
+
+
+			
+
+		}
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	/*=============================================
 	ELIMINAR PRODUCTO

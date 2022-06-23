@@ -42,13 +42,7 @@ $(".infoproducto figure.visor img").mouseover(function(event){
 	})
 
 })
-$("#seleccionarColor").change(function() {
-/* 	var num = $(this).val();
-	location.href ="http://192.168.31.46/Ecommerce-Linkop/frontend/45-"+num; */
-	/* se comenta cambia de imagen dependiendo el color */
 
-
-});  
 $(".infoproducto figure.visor img").mouseout(function(event){
 
 	$(".lupa").fadeOut("fast");
