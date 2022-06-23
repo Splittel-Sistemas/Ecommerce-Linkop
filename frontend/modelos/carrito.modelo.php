@@ -54,17 +54,17 @@ class ModeloCarrito
 
 			$stmt1->bindParam(":cantidad", $datos["cantidad"], PDO::PARAM_STR);
 			$stmt1->bindParam(":detalle", $salida, PDO::PARAM_STR);
+			if ($stmt1->execute()) {
 
-			$stmt1->execute();
 			$item1 = $datos["cantidad"] ; 
 			$item2 =  $datos["idProducto"] ; 
 			$stmt2 = Conexion::conectar()->prepare("UPDATE productos SET cantidad - $item1 WHERE id = $item2");
 
-		/* 	$stmt2->bindParam(":cantidad", $item1, PDO::PARAM_INT);
+			$stmt2->bindParam(":cantidad", $item1, PDO::PARAM_INT);
 			$stmt2->bindParam(":id", $item2, PDO::PARAM_INT);
- */
-			$stmt2->execute();
 
+			$stmt2->execute();
+			}
 			return "ok";
 		} else {
 
