@@ -755,7 +755,7 @@ INFOPRODUCTOS
 					echo '</div>';
 				} else {
 
-					if ($infoproducto["tipo"] == "virtual" ||$infoproducto["tipo"] == "fisico" ) { 
+					if ($infoproducto["tipo"] == "fisico" ) { 
 
 						if ($infoproducto["cantidad"] > 0) {
 
