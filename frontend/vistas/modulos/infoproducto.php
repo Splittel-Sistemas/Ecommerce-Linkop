@@ -181,7 +181,7 @@ INFOPRODUCTOS
 
 							<p class="subTotal' . $infoproducto["id"] . ' subtotales">
 						
-								<strong>MXN $<span>' . $infoproducto["precio"] . '</span></strong>
+								<strong> $<span>' . $infoproducto["precio"] . '</span></strong>
 
 							</p>
 
@@ -192,7 +192,7 @@ INFOPRODUCTOS
 
 							<p class="subTotal' . $infoproducto["id"] . ' subtotales">
 						
-								<strong>MXN $<span>' . $infoproducto["precioOferta"] . '</span></strong>
+								<strong> $<span>' . $infoproducto["precioOferta"] . '</span></strong>
 
 							</p>
 
@@ -225,11 +225,7 @@ INFOPRODUCTOS
 
 							<br>
 
-							<small>
 						
-								<span class="label label-success">Nuevo</span>
-
-							</small>
 
 							</h1>';
 				}
@@ -241,41 +237,40 @@ INFOPRODUCTOS
 
 				if ($fechaNueva > $infoproducto["fecha"]) {
 
-					echo '<h1 class="text-muted text-uppercase">' . $infoproducto["titulo"] . '
+					echo '<h1 class=" text-uppercase">' . $infoproducto["titulo"] . '
 
 							<br>';
 
 					if ($infoproducto["precio"] != 0) {
 
-						echo '<small>
+						/* 	echo '<small>
 							
 									<span class="label label-danger">' . $infoproducto["descuentoOferta"] . '% off</span>
 
-								</small>';
+								</small>'; */
 					}
 
 					echo '</h1>';
 				} else {
 
-					echo '<h1 class="text-muted text-uppercase">' . $infoproducto["titulo"] . '
+					echo '<h1 class=" text-uppercase">' . $infoproducto["titulo"] . '
 
 							<br>';
 
 					if ($infoproducto["precio"] != 0) {
 
-						echo '<small>
+						/* echo '<small>
 									<span class="label label-warning">Nuevo</span> 
 									<span class="label label-warning">' . $infoproducto["descuentoOferta"] . '% off</span> 
 
-								</small>';
+								</small>'; */
 					}
 
 					echo '</h1>';
 				}
 			}
-
 			/*=============================================
-					TITULO
+					precio
 					=============================================*/
 
 			if ($infoproducto["precio"] == 0) {
@@ -285,33 +280,25 @@ INFOPRODUCTOS
 
 				if ($infoproducto["oferta"] == 0) {
 
-					echo '<h2 class="text-muted">MXN $' . $infoproducto["precio"] . '</h2>';
+					echo '<h2 class="text-muted"> $' . $infoproducto["precio"] . '</h2>';
 				} else {
 
 					echo '<h2 class="text-muted">
-
-								<span>
-								
-									<strong class="oferta">MXN $' . $infoproducto["precio"] . '</strong>
-
-								</span>
-
-								<span>
-									
-									$' . $infoproducto["precioOferta"] . '
-
-								</span>
-
-							</h2>';
+		
+										<span>
+										
+											<strong class="oferta"> $' . $infoproducto["precio"] . '</strong>
+		
+										</span>
+		
+										<span>
+											
+											$' . $infoproducto["precioOferta"] . ' 
+										</span>
+		
+									</h2>';
 				}
 			}
-
-			/*=============================================
-					DESCRIPCIÓN
-					=============================================*/
-
-			echo '<p>' . $infoproducto["descripcion"] . '</p>';
-
 			$cantidadCalificacion = 0;
 
 			$datos = array(
@@ -334,335 +321,96 @@ INFOPRODUCTOS
 					$sumaCalificacion += $value["calificacion"];
 				}
 			}
-			$promedio = $sumaCalificacion>0 ? $promedio = round($sumaCalificacion / $cantidadCalificacion, 1) : 0;
-			
-				if($promedio > 0 ){ 
-			echo '<li class=""><a class="text-muted"> ' . $promedio . ' | ';
+			$promedio = $sumaCalificacion > 0 ? $promedio = round($sumaCalificacion / $cantidadCalificacion, 1) : 0;
 
-			if ($promedio >= 0 && $promedio < 0.5) {
+			if ($promedio > 0) {
+				echo '<li class=""> ' . $promedio . ' | ';
 
-				echo '<i class="fa fa-star-half-o text-success"></i>
+				if ($promedio >= 0 && $promedio < 0.5) {
+
+					echo '<i class="fa fa-star-half-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>';
-			} else if ($promedio >= 0.5 && $promedio < 1) {
+				} else if ($promedio >= 0.5 && $promedio < 1) {
 
-				echo '<i class="fa fa-star text-success"></i>
+					echo '<i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>';
-			} else if ($promedio >= 1 && $promedio < 1.5) {
+				} else if ($promedio >= 1 && $promedio < 1.5) {
 
-				echo '<i class="fa fa-star text-success"></i>
+					echo '<i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star-half-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>';
-			} else if ($promedio >= 1.5 && $promedio < 2) {
+				} else if ($promedio >= 1.5 && $promedio < 2) {
 
-				echo '<i class="fa fa-star text-success"></i>
+					echo '<i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>';
-			} else if ($promedio >= 2 && $promedio < 2.5) {
+				} else if ($promedio >= 2 && $promedio < 2.5) {
 
-				echo '<i class="fa fa-star text-success"></i>
+					echo '<i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star-half-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>';
-			} else if ($promedio >= 2.5 && $promedio < 3) {
+				} else if ($promedio >= 2.5 && $promedio < 3) {
 
-				echo '<i class="fa fa-star text-success"></i>
+					echo '<i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>';
-			} else if ($promedio >= 3 && $promedio < 3.5) {
+				} else if ($promedio >= 3 && $promedio < 3.5) {
 
-				echo '<i class="fa fa-star text-success"></i>
+					echo '<i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star-half-o text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>';
-			} else if ($promedio >= 3.5 && $promedio < 4) {
+				} else if ($promedio >= 3.5 && $promedio < 4) {
 
-				echo '<i class="fa fa-star text-success"></i>
+					echo '<i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star-o text-success"></i>';
-			} else if ($promedio >= 4 && $promedio < 4.5) {
+				} else if ($promedio >= 4 && $promedio < 4.5) {
 
-				echo '<i class="fa fa-star text-success"></i>
+					echo '<i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star-half-o text-success"></i>';
-			} else {
+				} else {
 
-				echo '<i class="fa fa-star text-success"></i>
+					echo '<i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>
 								  <i class="fa fa-star text-success"></i>';
-			}
-		}	?>
-
-			<!--=====================================
-				CARACTERÍSTICAS DEL PRODUCTO
-				======================================-->
-
-			
-			<div class="form-group row">
-
-				<?php
-
-				if ($infoproducto["detalles"] != null) {
-
-					$detalles = json_decode($infoproducto["detalles"], true);
-
-					if ($infoproducto["tipo"] == "fisico") {
-
-						if ($detalles["Talla"] != null) {
-
-							echo '<div class="col-md-3 col-xs-12">
-
-									<select class="form-control seleccionarDetalle" id="seleccionarTalla">
-										
-										<option value="">Tamaño</option>';
-
-							for ($i = 0; $i < count($detalles["Talla"]); $i++) {
-
-								echo '<option value="' . $detalles["Talla"][$i] . '">' . $detalles["Talla"][$i] . '</option>';
-							}
-
-							echo '</select>
-
-								</div>';
-						} else {
-							echo '<input class="form-control seleccionarDetalle" id="seleccionarTalla" type="hidden" >';
-						}
-
-						if ($detalles["Color"] != null) {
-
-							echo '<div class="col-md-3 col-xs-12">
-
-									<select class="form-control seleccionarDetalle" id="seleccionarColor">
-										
-										<option value="">Color</option>';
-
-							for ($i = 0; $i < count($detalles["Color"]); $i++) {
-
-								echo '<option value="' . $detalles["Color"][$i] . '">' . $detalles["Color"][$i] . '</option>';
-							}
-
-							echo '</select>
-
-								</div>';
-						} else {
-							echo '<input class="form-control seleccionarDetalle" id="seleccionarColor" type="hidden" >';
-						}
-
-						if ($detalles["Marca"] != null) {
-
-							echo '<div class="col-md-3 col-xs-12">
-
-									<select class="form-control seleccionarDetalle" id="seleccionarMarca">
-										
-										<option value="">Marca</option>';
-
-							for ($i = 0; $i < count($detalles["Marca"]); $i++) {
-
-								echo '<option value="' . $detalles["Marca"][$i] . '">' . $detalles["Marca"][$i] . '</option>';
-							}
-
-							echo '</select>
-
-								</div>';
-						} else {
-							echo '<input class="form-control seleccionarDetalle" id="seleccionarMarca" type="hidden" >';
-						}
-					} else {
-
-						echo '<div class="col-xs-12">
-
-								<li>
-									<i style="margin-right:10px" class="fa fa-play-circle"></i> ' . $detalles["Clases"] . '
-								</li>
-								<li>
-									<i style="margin-right:10px" class="fa fa-clock-o"></i> ' . $detalles["Tiempo"] . '
-								</li>
-								<li>
-									<i style="margin-right:10px" class="fa fa-check-circle"></i> ' . $detalles["Nivel"] . '
-								</li>
-								<li>
-									<i style="margin-right:10px" class="fa fa-info-circle"></i> ' . $detalles["Acceso"] . '
-								</li>
-								<li>
-									<i style="margin-right:10px" class="fa fa-desktop"></i> ' . $detalles["Dispositivo"] . '
-								</li>
-								<li>
-									<i style="margin-right:10px" class="fa fa-trophy"></i> ' . $detalles["Certificado"] . '
-								</li>
-
-							</div>';
-					}
 				}
+			}
 
-				/*=============================================
-					ENTREGA
+
+
+			/*=============================================
+					DESCRIPCIÓN
 					=============================================*/
 
-				if ($infoproducto["entrega"] == 0) {
-
-					if ($infoproducto["precio"] == 0) {
-
-						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
+			echo '<p>' . $infoproducto["descripcion"] . '</p>';
 
 
-								<span class="label label-default" style="font-weight:100;background:#000F33;">
-
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata | 
-									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									' . $infoproducto["ventasGratis"] . ' inscritos |
-									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistasGratis"] . '</span> personas
-
-								</span>
-
-							</h4>
-
-							<h4 class="col-lg-0 col-md-0 col-xs-12">
+			?>
 
 
-								<small>
-
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata <br>
-									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									' . $infoproducto["ventasGratis"] . ' inscritos <br>
-									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistasGratis"] . '</span> personas
-
-								</small>
-
-							</h4>';
-					} else {
-
-						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
-
-
-								<span class="label label-default" style="font-weight:100;background:#000F33;">
-
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata |
-									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									' . $infoproducto["ventas"] . ' ventas |
-									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistas"] . ' </span> personas
-
-								</span>
-
-							</h4>
-
-							<h4 class="col-lg-0 col-md-0 col-xs-12">
-
-
-								<small>
-
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata <br> 
-									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									' . $infoproducto["ventas"] . ' ventas <br>
-									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistas"] . '</span> personas
-
-								</small>
-
-							</h4>';
-					}
-				} else {
-
-					if ($infoproducto["precio"] == 0) {
-
-						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
-
-
-								<span class="label label-default" style="font-weight:100;background:#000F33;">
-									<i class="fa fa-archive" style="margin-right:5px"></i>
-								' . $infoproducto["cantidad"] . ' DISPONIBLES  |
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									' . $infoproducto["entrega"] . ' días hábiles para la entrega  |
-									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									' . $infoproducto["ventasGratis"] . ' solicitudes  |
-									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistasGratis"] . '</span> personas  
-
-								</span>
-
-							</h4>
-
-							<h4 class="col-lg-0 col-md-0 col-xs-12">
-
-
-								<small>
-								
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									' . $infoproducto["entrega"] . ' días hábiles para la entrega  <br>
-									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									' . $infoproducto["ventasGratis"] . ' solicitudes  <br>
-									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistasGratis"] . ' </span> personas 
-
-								</small>
-
-							</h4>';
-					} else {
-
-						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
-
-
-								<span class="label label-default" style="font-weight:100;background:#000F33;">
-								<i class="fa fa-archive" style="margin-right:5px"></i>
-								' . $infoproducto["cantidad"] . ' DISPONIBLES  |
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									' . $infoproducto["entrega"] . ' días hábiles para la entrega |
-									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									' . $infoproducto["ventas"] . ' ventas |
-									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistas"] . ' </span> personas
-
-								</span>
-
-							</h4>
-
-							<h4 class="col-lg-0 col-md-0 col-xs-12">
-
-
-								<small>
-								<i class="fa fa-archive" style="margin-right:5px"></i>
-								' . $infoproducto["cantidad"] . ' DISPONIBLES  |
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									' . $infoproducto["entrega"] . ' días hábiles para la entrega <br>
-									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									' . $infoproducto["ventas"] . ' ventas <br>
-									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistas"] . '</span> personas
-
-								</small>
-
-							</h4>';
-					}
-				}
-
-				?>
-
-			</div>
 			<div id="faq" role="tablist" aria-multiselectable="true">
 
 				<div class="panel panel-default">
@@ -673,9 +421,9 @@ INFOPRODUCTOS
 							</a>
 						</h5>
 					</div>
-					<div id="answerOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="questionOne">
+					<div id="answerOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="questionOne">
 						<div class="panel-body">
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
 						</div>
 					</div>
 				</div>
@@ -690,12 +438,12 @@ INFOPRODUCTOS
 					</div>
 					<div id="answerTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="questionTwo">
 						<div class="panel-body">
-						There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+							There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
 						</div>
 					</div>
 				</div>
 
-			<!-- 	<div class="panel panel-default">
+				<!-- 	<div class="panel panel-default">
 					<div class="panel-heading" role="tab" id="questionThree">
 						<h5 class="panel-title">
 							<a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#answerThree" aria-expanded="false" aria-controls="answerThree">
@@ -714,7 +462,257 @@ INFOPRODUCTOS
 			<!--=====================================
 				BOTONES DE COMPRA
 				======================================-->
+			<!--=====================================
+				CARACTERÍSTICAS DEL PRODUCTO
+				======================================-->
 
+
+			<div class="form-group row">
+
+				<?php
+
+				if ($infoproducto["detalles"] != null) {
+
+					$detalles = json_decode($infoproducto["detalles"], true);
+
+					if ($infoproducto["tipo"] == "fisico") {
+
+						if ($detalles["Talla"] != null) {
+
+							echo '<div class="col-md-3 col-xs-12">
+
+					<select class="form-control seleccionarDetalle" id="seleccionarTalla">
+						
+						<option value="">Tamaño</option>';
+
+							for ($i = 0; $i < count($detalles["Talla"]); $i++) {
+
+								echo '<option value="' . $detalles["Talla"][$i] . '">' . $detalles["Talla"][$i] . '</option>';
+							}
+
+							echo '</select>
+
+				</div>';
+						} else {
+							echo '<input class="form-control seleccionarDetalle" id="seleccionarTalla" type="hidden" >';
+						}
+
+						if ($detalles["Color"] != null) {
+
+							echo '<div class="col-md-3 col-xs-12">
+
+					<select class="form-control seleccionarDetalle" id="seleccionarColor">
+						
+						<option value="">Color</option>';
+
+							for ($i = 0; $i < count($detalles["Color"]); $i++) {
+
+								echo '<option value="' . $detalles["Color"][$i] . '">' . $detalles["Color"][$i] . '</option>';
+							}
+
+							echo '</select>
+
+				</div>';
+						} else {
+							echo '<input class="form-control seleccionarDetalle" id="seleccionarColor" type="hidden" >';
+						}
+
+						if ($detalles["Marca"] != null) {
+
+							echo '<div class="col-md-3 col-xs-12">
+
+					<select class="form-control seleccionarDetalle" id="seleccionarMarca">
+						
+						<option value="">Marca</option>';
+
+							for ($i = 0; $i < count($detalles["Marca"]); $i++) {
+
+								echo '<option value="' . $detalles["Marca"][$i] . '">' . $detalles["Marca"][$i] . '</option>';
+							}
+
+							echo '</select>
+
+				</div>';
+						} else {
+							echo '<input class="form-control seleccionarDetalle" id="seleccionarMarca" type="hidden" >';
+						}
+					} else {
+
+						echo '<div class="col-xs-12">
+
+				<li>
+					<i style="margin-right:10px" class="fa fa-play-circle"></i> ' . $detalles["Clases"] . '
+				</li>
+				<li>
+					<i style="margin-right:10px" class="fa fa-clock-o"></i> ' . $detalles["Tiempo"] . '
+				</li>
+				<li>
+					<i style="margin-right:10px" class="fa fa-check-circle"></i> ' . $detalles["Nivel"] . '
+				</li>
+				<li>
+					<i style="margin-right:10px" class="fa fa-info-circle"></i> ' . $detalles["Acceso"] . '
+				</li>
+				<li>
+					<i style="margin-right:10px" class="fa fa-desktop"></i> ' . $detalles["Dispositivo"] . '
+				</li>
+				<li>
+					<i style="margin-right:10px" class="fa fa-trophy"></i> ' . $detalles["Certificado"] . '
+				</li>
+
+			</div>';
+					}
+				}
+
+				/*=============================================
+	ENTREGA
+	=============================================*/
+
+				if ($infoproducto["entrega"] == 0) {
+
+					if ($infoproducto["precio"] == 0) {
+
+						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
+
+
+				<span class="label label-default" style="font-weight:100;background:white;color:black;">
+
+					<i class="fa fa-clock-o" style="margin-right:5px"></i>
+					Entrega inmediata | 
+					<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
+					' . $infoproducto["ventasGratis"] . ' inscritos |
+					<i class="fa fa-eye" style="margin:0px 5px"></i>
+					Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistasGratis"] . '</span> personas
+
+				</span>
+
+			</h4>
+
+			<h4 class="col-lg-0 col-md-0 col-xs-12">
+
+
+				<small>
+
+					<i class="fa fa-clock-o" style="margin-right:5px"></i>
+					Entrega inmediata <br>
+					<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
+					' . $infoproducto["ventasGratis"] . ' inscritos <br>
+					<i class="fa fa-eye" style="margin:0px 5px"></i>
+					Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistasGratis"] . '</span> personas
+
+				</small>
+
+			</h4>';
+					} else {
+
+						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
+
+
+				<span class="label label-default" style="font-weight:100;background:white;color:black;">
+
+					<i class="fa fa-clock-o" style="margin-right:5px"></i>
+					Entrega inmediata |
+					<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
+					' . $infoproducto["ventas"] . ' ventas |
+					<i class="fa fa-eye" style="margin:0px 5px"></i>
+					Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistas"] . ' </span> personas
+
+				</span>
+
+			</h4>
+
+			<h4 class="col-lg-0 col-md-0 col-xs-12">
+
+
+				<small>
+
+					<i class="fa fa-clock-o" style="margin-right:5px"></i>
+					Entrega inmediata <br> 
+					<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
+					' . $infoproducto["ventas"] . ' ventas <br>
+					<i class="fa fa-eye" style="margin:0px 5px"></i>
+					Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistas"] . '</span> personas
+
+				</small>
+
+			</h4>';
+					}
+				} else {
+
+					if ($infoproducto["precio"] == 0) {
+
+						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
+
+
+				<span class="label label-default" style="font-weight:100;background:white;color:black;">
+					<i class="fa fa-archive" style="margin-right:5px"></i>
+				' . $infoproducto["cantidad"] . ' DISPONIBLES  |
+					<i class="fa fa-clock-o" style="margin-right:5px"></i>
+					' . $infoproducto["entrega"] . ' días hábiles para la entrega  |
+					<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
+					' . $infoproducto["ventasGratis"] . ' solicitudes  |
+					<i class="fa fa-eye" style="margin:0px 5px"></i>
+					Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistasGratis"] . '</span> personas  
+
+				</span>
+
+			</h4>
+
+			<h4 class="col-lg-0 col-md-0 col-xs-12">
+
+
+				<small>
+				
+					<i class="fa fa-clock-o" style="margin-right:5px"></i>
+					' . $infoproducto["entrega"] . ' días hábiles para la entrega  <br>
+					<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
+					' . $infoproducto["ventasGratis"] . ' solicitudes  <br>
+					<i class="fa fa-eye" style="margin:0px 5px"></i>
+					Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistasGratis"] . ' </span> personas 
+
+				</small>
+
+			</h4>';
+					} else {
+
+						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
+
+
+				<span class="label label-default" style="font-weight:100;background:white;color:black;">
+				<i class="fa fa-archive" style="margin-right:5px"></i>
+				' . $infoproducto["cantidad"] . ' DISPONIBLES  |
+					<i class="fa fa-clock-o" style="margin-right:5px"></i>
+					' . $infoproducto["entrega"] . ' días hábiles para la entrega |
+					<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
+					' . $infoproducto["ventas"] . ' ventas |
+					<i class="fa fa-eye" style="margin:0px 5px"></i>
+					Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistas"] . ' </span> personas
+
+				</span>
+
+			</h4>
+
+			<h4 class="col-lg-0 col-md-0 col-xs-12">
+
+
+				<small>
+				<i class="fa fa-archive" style="margin-right:5px"></i>
+				' . $infoproducto["cantidad"] . ' DISPONIBLES  |
+					<i class="fa fa-clock-o" style="margin-right:5px"></i>
+					' . $infoproducto["entrega"] . ' días hábiles para la entrega <br>
+					<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
+					' . $infoproducto["ventas"] . ' ventas <br>
+					<i class="fa fa-eye" style="margin:0px 5px"></i>
+					Visto por <span class="vistas" tipo="' . $infoproducto["precio"] . '">' . $infoproducto["vistas"] . '</span> personas
+
+				</small>
+
+			</h4>';
+					}
+				}
+
+				?>
+
+			</div>
 			<div class="row botonesCompra">
 
 				<?php
@@ -755,54 +753,52 @@ INFOPRODUCTOS
 					echo '</div>';
 				} else {
 
-					if ($infoproducto["tipo"] == "fisico" ) { 
+					if ($infoproducto["tipo"] == "fisico") {
 
 						if ($infoproducto["cantidad"] > 0) {
 
 
 
-						echo '<div class="col-md-6 col-xs-12">';
+							echo '<div class="col-md-6 col-xs-12">';
 
-						if (isset($_SESSION["validarSesion"])) {
+							if (isset($_SESSION["validarSesion"])) {
 
-							if ($_SESSION["validarSesion"] == "ok") {
+								if ($_SESSION["validarSesion"] == "ok") {
 
-								echo '<a id="btnCheckout" href="#modalComprarAhora" data-toggle="modal" idUsuario="' . $_SESSION["id"] . '"><button class="btn btn-default btn-block btn-lg backColor">
+									echo '<a id="btnCheckout" href="#modalComprarAhora" data-toggle="modal" idUsuario="' . $_SESSION["id"] . '"><button class="btn btn-default btn-block btn-lg backColor">
+									<small>COMPRAR AHORA</small></button></a>';
+								}
+							} else {
+
+								echo '<a href="#modalIngreso" data-toggle="modal"><button class="btn btn-default btn-block btn-lg backColor">
 									<small>COMPRAR AHORA</small></button></a>';
 							}
-						} else {
 
-							echo '<a href="#modalIngreso" data-toggle="modal"><button class="btn btn-default btn-block btn-lg backColor">
-									<small>COMPRAR AHORA</small></button></a>';
-						}
-
-						echo '</div>
+							echo '</div>
 
 								<div class="col-md-6 col-xs-12 ">';
 
-						if ($infoproducto["oferta"] != 0) {
+							if ($infoproducto["oferta"] != 0) {
 
-							echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precioOferta"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
-						} else {
+								echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precioOferta"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
+							} else {
 
-							echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precio"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
-						}
+								echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precio"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
+							}
 
-						echo   '<small>AÑADIR AL CARRITO</small> 
+							echo   '<small>AÑADIR AL CARRITO</small> 
 
 									<i class="fa fa-shopping-cart col-md-0"></i>
 
 									</button>
 
 								</div>';
+						} else {
 
-					}else{
 
-						
-						echo '<button class="btn btn-default btn-block btn-lg ">
+							echo '<button class="btn btn-default btn-block btn-lg ">
 						<small> SIN STOCK </small></button>';
-					}
-
+						}
 					} else {
 
 						echo '<div class="col-lg-6 col-md-8 col-xs-12">';
@@ -1271,7 +1267,7 @@ ARTÏCULOS RELACIONADOS
 
 										<small>
 					
-											<strong class="oferta">MXN $' . $value["precio"] . '</strong>
+											<strong class="oferta"> $' . $value["precio"] . '</strong>
 
 										</small>
 
@@ -1280,7 +1276,7 @@ ARTÏCULOS RELACIONADOS
 									</h2>';
 						} else {
 
-							echo '<h2><small>MXN $' . $value["precio"] . '</small></h2>';
+							echo '<h2><small> $' . $value["precio"] . '</small></h2>';
 						}
 					}
 
@@ -1411,7 +1407,8 @@ VENTANA MODAL PARA CHECKOUT
 
 						</center>
 
-						<!-- <img src="<?php #echo $url; ?>vistas/img/plantilla/payu.jpg" class="img-thumbnail"> -->
+						<!-- <img src="<?php #echo $url; 
+										?>vistas/img/plantilla/payu.jpg" class="img-thumbnail"> -->
 
 					</figure>
 
@@ -1451,22 +1448,22 @@ VENTANA MODAL PARA CHECKOUT
 
 								<tr>
 									<td>Subtotal</td>
-									<td><span class="cambioDivisa">MXN</span> $<span class="valorSubtotal" valor="0">0</span></td>
+									<td><span class="cambioDivisa"></span> $<span class="valorSubtotal" valor="0">0</span></td>
 								</tr>
 
 								<tr>
 									<td>Envío</td>
-									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalEnvio" valor="0">0</span></td>
+									<td><span class="cambioDivisa"></span> $<span class="valorTotalEnvio" valor="0">0</span></td>
 								</tr>
 
 								<tr>
 									<td>Impuesto</td>
-									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalImpuesto" valor="0">0</span></td>
+									<td><span class="cambioDivisa"></span> $<span class="valorTotalImpuesto" valor="0">0</span></td>
 								</tr>
 
 								<tr>
 									<td><strong>Total</strong></td>
-									<td><strong><span class="cambioDivisa">MXN</span> $<span class="valorTotalCompra" valor="0">0</span></strong></td>
+									<td><strong><span class="cambioDivisa"></span> $<span class="valorTotalCompra" valor="0">0</span></strong></td>
 								</tr>
 
 							</tbody>
