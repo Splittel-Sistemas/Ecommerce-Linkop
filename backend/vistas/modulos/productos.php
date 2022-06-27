@@ -354,61 +354,61 @@ MODAL AGREGAR PRODUCTO
               </div>
 
             </div>
- <!--=====================================
+            <!--=====================================
             AGREGAR ANCHO, ALTO Y PROFUNDO
             ======================================-->
 
-            <div class="form-group row" >
+            <div class="form-group row">
 
-<!-- PRECIO -->
+              <!-- PRECIO -->
 
-<div class="col-md-4 col-xs-12">
+              <div class="col-md-4 col-xs-12">
 
-  <div class="panel">ANCHO</div>
+                <div class="panel">ANCHO</div>
 
-  <div class="input-group">
+                <div class="input-group">
 
-    <span class="input-group-addon"><i class="fa fa-angle-double-right"></i></span>
+                  <span class="input-group-addon"><i class="fa fa-angle-double-right"></i></span>
 
-    <input type="number" class="form-control input-lg ancho" min="0" step="any">
+                  <input type="number" class="form-control input-lg ancho" min="0" step="any" value="0">
 
-  </div>
+                </div>
 
-</div>
+              </div>
 
-<!-- PESO -->
+              <!-- PESO -->
 
-<div class="col-md-4 col-xs-12">
+              <div class="col-md-4 col-xs-12">
 
-  <div class="panel">ALTO</div>
+                <div class="panel">ALTO</div>
 
-  <div class="input-group">
+                <div class="input-group">
 
-    <span class="input-group-addon"><i class="fa fa-angle-double-up"></i></span>
+                  <span class="input-group-addon"><i class="fa fa-angle-double-up"></i></span>
 
-    <input type="number" class="form-control input-lg alto" min="0" step="any" value="0">
+                  <input type="number" class="form-control input-lg alto" min="0" step="any" value="0">
 
-  </div>
+                </div>
 
-</div>
+              </div>
 
-<!-- ENTREGA -->
+              <!-- ENTREGA -->
 
-<div class="col-md-4 col-xs-12">
+              <div class="col-md-4 col-xs-12">
 
-  <div class="panel">PROFUNDO</div>
+                <div class="panel">PROFUNDO</div>
 
-  <div class="input-group">
+                <div class="input-group">
 
-    <span class="input-group-addon"><i class="fa fa-angle-double-down"></i></span>
+                  <span class="input-group-addon"><i class="fa fa-angle-double-down"></i></span>
 
-    <input type="number" class="form-control input-lg profundo" min="0" value="0">
+                  <input type="number" class="form-control input-lg profundo" min="0" value="0">
 
-  </div>
+                </div>
 
-</div>
+              </div>
 
-</div>
+            </div>
           </div>
 
           <!--=====================================
@@ -582,7 +582,7 @@ MODAL AGREGAR PRODUCTO
             </div>
 
           </div>
-         
+
           <!--=====================================
             AGREGAR OFERTAS
             ======================================-->
@@ -952,7 +952,57 @@ MODAL EDITAR PRODUCTO
               </div>
 
             </div>
+            <div class="form-group row">
 
+<!-- PRECIO -->
+
+<div class="col-md-4 col-xs-12">
+
+  <div class="panel">ANCHO</div>
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="fa fa-angle-double-right"></i></span>
+
+    <input type="number" class="form-control input-lg ancho" min="0" step="any" value="0">
+
+  </div>
+
+</div>
+
+<!-- PESO -->
+
+<div class="col-md-4 col-xs-12">
+
+  <div class="panel">ALTO</div>
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="fa fa-angle-double-up"></i></span>
+
+    <input type="number" class="form-control input-lg alto" min="0" step="any" value="0">
+
+  </div>
+
+</div>
+
+<!-- ENTREGA -->
+
+<div class="col-md-4 col-xs-12">
+
+  <div class="panel">PROFUNDO</div>
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="fa fa-angle-double-down"></i></span>
+
+    <input type="number" class="form-control input-lg profundo" min="0" value="0">
+
+  </div>
+
+</div>
+
+</div>
           </div>
 
           <!--=====================================

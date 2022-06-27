@@ -186,7 +186,10 @@ class ModeloProductos{
 
 	static public function mdlEditarProducto($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, id_subcategoria = :id_subcategoria, tipo = :tipo, ruta = :ruta, estado = :estado, titulo = :titulo, titular = :titular, descripcion = :descripcion, multimedia = :multimedia, detalles = :detalles, precio = :precio, portada = :portada, oferta = :oferta, precioOferta = :precioOferta, descuentoOferta = :descuentoOferta, imgOferta = :imgOferta, finOferta = :finOferta, peso = :peso, entrega = :entrega WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, id_subcategoria = :id_subcategoria, tipo = :tipo,
+		 ruta = :ruta, estado = :estado, titulo = :titulo, titular = :titular, descripcion = :descripcion, multimedia = :multimedia, detalles = :detalles,
+		  precio = :precio, portada = :portada, oferta = :oferta, precioOferta = :precioOferta, descuentoOferta = :descuentoOferta, imgOferta = :imgOferta,
+		   finOferta = :finOferta, peso = :peso, entrega = :entrega  , ancho = :ancho , alto = :alto , profundo = :profundo WHERE id = :id");
 
 		$stmt->bindParam(":id_categoria", $datos["idCategoria"], PDO::PARAM_STR);
 		$stmt->bindParam(":id_subcategoria", $datos["idSubCategoria"], PDO::PARAM_STR);
@@ -208,6 +211,10 @@ class ModeloProductos{
 		$stmt->bindParam(":peso", $datos["peso"], PDO::PARAM_STR);
 		$stmt->bindParam(":entrega", $datos["entrega"], PDO::PARAM_STR);
 		$stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
+		$stmt->bindParam(":ancho", $datos["ancho"], PDO::PARAM_STR);
+		$stmt->bindParam(":alto", $datos["alto"], PDO::PARAM_STR);
+		$stmt->bindParam(":profundo", $datos["profundo"], PDO::PARAM_STR);
+
 
 		if($stmt->execute()){
 

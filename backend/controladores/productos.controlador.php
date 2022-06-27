@@ -746,7 +746,10 @@ class ControladorProductos{
 								   "precioOferta"=>$datos["precioOferta"],
 								   "descuentoOferta"=>$datos["descuentoOferta"],
 								   "imgOferta"=>substr($rutaOferta,3),
-								   "finOferta"=>$datos["finOferta"]
+								   "finOferta"=>$datos["finOferta"],
+								   "ancho"=> $datos["ancho"],
+								   "alto"=> $datos["alto"],
+								   "profundo"=> $datos["profundo"]
 								   );
 
 				}else{
@@ -774,7 +777,10 @@ class ControladorProductos{
 								   "precioOferta"=>0,
 								   "descuentoOferta"=>0,
 								   "imgOferta"=>"",								   
-								   "finOferta"=>""
+								   "finOferta"=>"",
+								   "ancho"=> $datos["ancho"],
+								   "alto"=> $datos["alto"],
+								   "profundo"=> $datos["profundo"]
 								   );
 
 				}

@@ -774,7 +774,10 @@ $(".tablaProductos tbody").on("click", ".btnEditarProducto", function () {
             detalles.Marca +
             '" data-role="tagsinput" type="text" style="padding:20px">'
         );
-
+      
+        $("#modalEditarProducto .ancho").val(respuesta[0]["ancho"]);
+        $("#modalEditarProducto .alto").val(respuesta[0]["alto"]);
+        $("#modalEditarProducto .profundo").val(respuesta[0]["profundo"]);
         $("#modalEditarProducto .detalleMarca").tagsinput("items");
 
         $(".bootstrap-tagsinput").css({ padding: "12px", width: "110%" });
@@ -957,7 +960,7 @@ $(".tablaProductos tbody").on("click", ".btnEditarProducto", function () {
       $("#modalEditarProducto .precio").val(respuesta[0]["precio"]);
       $("#modalEditarProducto .peso").val(respuesta[0]["peso"]);
       $("#modalEditarProducto .entrega").val(respuesta[0]["entrega"]);
-
+     
       /*=============================================
 			PREGUNTAMOS SI EXITE OFERTA
 			=============================================*/
@@ -1201,6 +1204,11 @@ function editarMiProducto(imagen) {
   var descuentoOferta = $("#modalEditarProducto .descuentoOferta").val();
   var finOferta = $("#modalEditarProducto .finOferta").val();
 
+  var ancho = $("#modalEditarProducto .ancho").val();
+  var alto = $("#modalEditarProducto .alto").val();
+  var profundo = $("#modalEditarProducto .profundo").val();
+
+
   if (seleccionarTipo == "virtual") {
     var detalles = {
       Clases: $("#modalEditarProducto .detalleClases").val(),
@@ -1240,6 +1248,11 @@ function editarMiProducto(imagen) {
   datosProducto.append("precio", precio);
   datosProducto.append("peso", peso);
   datosProducto.append("entrega", entrega);
+
+  datosProducto.append("ancho", ancho);
+  datosProducto.append("alto", alto);
+  datosProducto.append("profundo", profundo);
+
 
   if (imagen == null) {
     multimediaFisica = localStorage.getItem("multimediaFisica");

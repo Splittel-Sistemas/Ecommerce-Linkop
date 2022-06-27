@@ -191,7 +191,11 @@ class AjaxProductos
 			"antiguaFotoPortada" => $this->antiguaFotoPortada,
 			"antiguaFotoPrincipal" => $this->antiguaFotoPrincipal,
 			"antiguaFotoOferta" => $this->antiguaFotoOferta,
-			"idCabecera" => $this->idCabecera
+			"idCabecera" => $this->idCabecera,
+			"ancho" => $this->ancho,
+			"alto" => $this->alto,
+			"profundo" => $this->profundo
+
 		);
 
 		$respuesta = ControladorProductos::ctrEditarProducto($datos);
@@ -359,7 +363,9 @@ EDITAR PRODUCTO
 		$editarProducto->descripcionProducto = $_POST["descripcionProducto"];
 		$editarProducto->pClavesProducto = $_POST["pClavesProducto"];
 		$editarProducto->precio = $_POST["precio"];
-
+		$editarProducto->ancho = $_POST["ancho"];
+		$editarProducto->alto = $_POST["alto"];
+		$editarProducto->profundo = $_POST["profundo"];
 		$editarProducto->peso = $_POST["peso"];
 		$editarProducto->entrega = $_POST["entrega"];
 		$editarProducto->multimedia = $_POST["multimedia"];
