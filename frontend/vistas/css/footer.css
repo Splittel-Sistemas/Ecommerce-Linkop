@@ -5,8 +5,12 @@ FOOTER
 footer{
 	margin-top:20px;
 
-	background: #000f33;
-	padding:20px 0;
+/* 	background: #000f33;
+ */
+
+ background: #030303;
+
+ 	padding:20px 0;
 }
 
 .footerCategorias h4 a{
@@ -31,7 +35,7 @@ footer{
 
 .final{
 	padding:20px 0;
-	background: #000f33 ;
+	background: #030303 ;
 }
 
 .final ul li{
