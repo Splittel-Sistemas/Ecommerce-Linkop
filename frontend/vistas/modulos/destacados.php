@@ -811,12 +811,12 @@ BREADCRUMB VISITAS
 
 					<article id="3685" class="location-listing">
 
-						<a class="location-title" href="<?php echo $url; ?>baterias" style="color: black;">
-							BATERIAS </a>
+						<a class="location-title" href="<?php echo $url; ?>computadoras" style="color: black;">
+							COMPUTADORAS </a>
 
 						<div class="location-image">
 							<a href="#">
-								<img src="<?php echo  $servidor; ?>vistas/img/productos/aa.jpg" alt="Random Name" width="100%" height="50%">
+								<img src="<?php echo  $servidor; ?>vistas/img/productos/aaa.jpg" alt="Random Name" width="100%" height="50%">
 
 							</a>
 
