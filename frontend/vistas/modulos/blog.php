@@ -115,7 +115,7 @@ BANNER
 									<div class="card-block">
 										<h4 class="card-title">¿Que es MagSafe?</h4>
 									<!-- 	<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p> -->
-										<a class="btn btn-default" href="#">Mas informacion ></a>
+										<a class="btn btn-default" href=" <?php echo $url; ?>postblog">Mas informacion ></a>
 									</div>
 
 									<?php
@@ -156,7 +156,7 @@ BANNER
 									<div class="card-block">
 										<h4 class="card-title">Guia de concentardores y adaptadores USB-C</h4>
 									<!-- 	<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p> -->
-										<a class="btn btn-default" href="#">Mas informacion ></a>
+										<a class="btn btn-default" href=" <?php echo $url; ?>postblog">Mas informacion ></a>
 									</div>
 								</div>
 							</div>

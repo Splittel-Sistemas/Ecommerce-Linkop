@@ -21,12 +21,12 @@ BANNER
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">  -->
 
 <style>
-	@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800);
+	@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,300&display=swap);
 
-	section {
+	/* section {
 		padding: 60px 0px;
 		font-family: 'Raleway', sans-serif;
-	}
+	} */
 
 	h2 {
 		color: #4C4C4C;
