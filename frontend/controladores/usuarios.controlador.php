@@ -60,9 +60,9 @@ class ControladorUsuarios{
 
 					$mail->isMail();
 
-					$mail->setFrom('ramon.olea@splittel.com', 'Desarrollo');
+					$mail->setFrom('notificaciones-splitnet@splittel.com', 'Linkop');
 
-					$mail->addReplyTo('ramon.olea@splittel.com', 'Desarrollo');
+					/* $mail->addReplyTo('ramon.olea@splittel.com', 'Linkop'); */
 
 					$mail->Subject = "Por favor verifique su dirección de correo electrónico";
 
