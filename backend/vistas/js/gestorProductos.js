@@ -565,6 +565,11 @@ function agregarMiProducto(imagen) {
   var finOferta = $(".finOferta").val();
   var cantidad = $(".cantidad").val();
 
+  var ancho = $(".ancho").val();
+  var alto = $(".alto").val();
+  var profundo = $(".profundo").val();
+
+
   if (seleccionarTipo == "virtual") {
     var detalles = {
       Clases: $(".detalleClases").val(),
@@ -607,6 +612,11 @@ function agregarMiProducto(imagen) {
   datosProducto.append("finOferta", finOferta);
   datosProducto.append("fotoOferta", imagenOferta);
   datosProducto.append("cantidad", cantidad);
+
+  datosProducto.append("ancho", ancho);
+  datosProducto.append("alto", alto);
+  datosProducto.append("profundo", profundo);
+
 
   $.ajax({
     url: "ajax/productos.ajax.php",

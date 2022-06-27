@@ -366,6 +366,10 @@ class ControladorProductos{
 						   "imgOferta"=>substr($rutaOferta,3),
 						   "finOferta"=>$datos["finOferta"],
 						   "cantidad"=> $datos["cantidad"],
+						   "ancho"=> $datos["ancho"],
+						   "alto"=> $datos["alto"],
+						   "profundo"=> $datos["profundo"],
+
 
 					   );
 
@@ -395,6 +399,9 @@ class ControladorProductos{
 						   "imgOferta"=>"",
 						   "finOferta"=>"",
 						   "cantidad"=> $datos["cantidad"],
+						   "ancho"=> $datos["ancho"],
+						   "alto"=> $datos["alto"],
+						   "profundo"=> $datos["profundo"],
 
 					   );
 

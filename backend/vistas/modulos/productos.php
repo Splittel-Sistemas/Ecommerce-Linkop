@@ -350,11 +350,65 @@ MODAL AGREGAR PRODUCTO
               </div>
 
               <div class="col-xs-9">
-              <input type="number" class="form-control input-lg cantidad" min="0" step="any">
+                <input type="number" class="form-control input-lg cantidad" min="0" step="any">
               </div>
 
             </div>
+ <!--=====================================
+            AGREGAR ANCHO, ALTO Y PROFUNDO
+            ======================================-->
 
+            <div class="form-group row" >
+
+<!-- PRECIO -->
+
+<div class="col-md-4 col-xs-12">
+
+  <div class="panel">ANCHO</div>
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="fa fa-angle-double-right"></i></span>
+
+    <input type="number" class="form-control input-lg ancho" min="0" step="any">
+
+  </div>
+
+</div>
+
+<!-- PESO -->
+
+<div class="col-md-4 col-xs-12">
+
+  <div class="panel">ALTO</div>
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="fa fa-angle-double-up"></i></span>
+
+    <input type="number" class="form-control input-lg alto" min="0" step="any" value="0">
+
+  </div>
+
+</div>
+
+<!-- ENTREGA -->
+
+<div class="col-md-4 col-xs-12">
+
+  <div class="panel">PROFUNDO</div>
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="fa fa-angle-double-down"></i></span>
+
+    <input type="number" class="form-control input-lg profundo" min="0" value="0">
+
+  </div>
+
+</div>
+
+</div>
           </div>
 
           <!--=====================================
@@ -445,7 +499,7 @@ MODAL AGREGAR PRODUCTO
             AGREGAR FOTO DE PORTADA
             ======================================-->
 
-       <!--    <div class="form-group">
+          <!--    <div class="form-group">
 
             <div class="panel">SUBIR FOTO PORTADA</div>
 
@@ -528,7 +582,7 @@ MODAL AGREGAR PRODUCTO
             </div>
 
           </div>
-
+         
           <!--=====================================
             AGREGAR OFERTAS
             ======================================-->
@@ -1248,15 +1302,15 @@ MODAL EDITAR PRODUCTO
 
           </div>
 
-   
-       
+
+
 
 
           <!--=====================================
             AGREGAR DETALLES FÍSICOS
             ======================================-->
 
-            <div class="form-group row">
+          <div class="form-group row">
 
             <div class="panel">DETALLES</div>
 
@@ -1266,7 +1320,7 @@ MODAL EDITAR PRODUCTO
             <div class="form-group row">
 
               <div class="col-xs-3">
-                <input class="form-control input-lg" type="text" value="Cantidad" >
+                <input class="form-control input-lg" type="text" value="Cantidad">
               </div>
 
               <div class="col-xs-9 editarCantidad">
@@ -1276,31 +1330,31 @@ MODAL EDITAR PRODUCTO
 
             </div>
 
-         
 
 
-      <!--=====================================
+
+            <!--=====================================
         PIE DEL MODAL
         ======================================-->
 
-      <div class="modal-footer">
+            <div class="modal-footer">
 
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-        <button type="button" class="btn btn-primary guardarCambiosProductos">Guardar cambios</button>
+              <button type="button" class="btn btn-primary guardarCambiosProductos">Guardar cambios</button>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
-    </div>
+      <!--  -->
+      <?php
 
-  </div>
+      $eliminarProducto = new ControladorProductos();
+      $eliminarProducto->ctrEliminarProducto();
 
-</div>
-
-<!--  -->
-<?php
-
-$eliminarProducto = new ControladorProductos();
-$eliminarProducto->ctrEliminarProducto();
-
-?>
+      ?>

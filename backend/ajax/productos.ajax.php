@@ -97,6 +97,9 @@ class AjaxProductos
 	public $finOferta;
 	public $fotoOferta;
 	public $cantidad;
+	public $ancho;
+	public $alto;
+	public $profundo;
 
 	public $id;
 	public $antiguaFotoPortada;
@@ -128,6 +131,10 @@ class AjaxProductos
 			"fotoOferta" => $this->fotoOferta,
 			"finOferta" => $this->finOferta,
 			"cantidad" => $this->cantidad,
+			"ancho" => $this->ancho,
+			"alto" => $this->alto,
+			"profundo" => $this->profundo,
+
 
 		);
 
@@ -270,6 +277,11 @@ if (isset($_POST["tituloProducto"])) {
 	$producto->pClavesProducto = $_POST["pClavesProducto"];
 	$producto->precio = $_POST["precio"];
 	$producto->cantidad = $_POST["cantidad"];
+
+	$producto->ancho = $_POST["ancho"];
+	$producto->alto = $_POST["alto"];
+	$producto->profundo = $_POST["profundo"];
+
 
 	$producto->peso = $_POST["peso"];
 	$producto->entrega = $_POST["entrega"];

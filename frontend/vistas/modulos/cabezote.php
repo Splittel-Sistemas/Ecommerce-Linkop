@@ -179,21 +179,22 @@ HEADER
 				<ul class="nav navbar-nav navbar-right">
 					<li>
 						<div class="" id="buscador">
-						<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
+							<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
 
-						<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
+							<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
 
-							<!-- <button class="btn btn-default backColor" type="submit">
+								<!-- <button class="btn btn-default backColor" type="submit">
 
 									<i class="fa fa-search"></i>
 
 								</button> -->
 
-						</a>
+							</a>
 
 						</div>
 					</li>
-				<!-- 	<li><a href="<?php #echo $url; ?>buscador/1/recientes" style="color: black;padding-top:10px;">
+					<!-- 	<li><a href="<?php #echo $url; 
+											?>buscador/1/recientes" style="color: black;padding-top:10px;">
 
 							<button class="btn btn-default " type="submit">
 
@@ -311,18 +312,15 @@ VENTANA MODAL PARA EL REGISTRO
 <?php
 
 if (isset($_SESSION["validarSesion"])) {
-	echo'';
+	echo '';
 } else {
 
 ?>
 
-	
-	<div class="alert alert-primary text-center" style="background-color: #030F24;" role="alert">
-	<strong style="color:white">Regístrate y recíbe un 15% de descuento en tu primer compra. <a href="#modalRegistro" data-toggle="modal" >REGISTRARSE</a> </strong>
+	<div class="alert alert-primary text-center" style="background-color: #030F24;margin-bottom: 0px;" role="alert">
+		<strong style="color:white">Regístrate y recíbe un 15% de descuento en tu primer compra. <a href="#modalRegistro" data-toggle="modal">REGISTRARSE</a> </strong>
+	</div>
 
-</div>
-
-	<!-- FIN REGISTRATE -->
 <?php
 
 
