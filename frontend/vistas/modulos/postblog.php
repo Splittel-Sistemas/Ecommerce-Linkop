@@ -96,8 +96,63 @@ BANNER
 		</div>
 		<div class="row">
 			<?php
-			$servidor = Ruta::ctrRutaServidor();
 
+function imprimirTiempo($fecha){
+	$start_date = new DateTime($fecha);
+	$since_start = $start_date->diff(new DateTime(date("Y-m-d H:i:s")));
+	echo "hace ";
+	if($since_start->y==0){
+		if($since_start->m==0){
+			if($since_start->d==0){
+			   if($since_start->h==0){
+				   if($since_start->i==0){
+					  if($since_start->s==0){
+						 echo $since_start->s.' segundos';
+					  }else{
+						  if($since_start->s==1){
+							 echo $since_start->s.' segundo'; 
+						  }else{
+							 echo $since_start->s.' segundos'; 
+						  }
+					  }
+				   }else{
+					  if($since_start->i==1){
+						  echo $since_start->i.' minuto'; 
+					  }else{
+						echo $since_start->i.' minutos';
+					  }
+				   }
+			   }else{
+				  if($since_start->h==1){
+					echo $since_start->h.' hora';
+				  }else{
+					echo $since_start->h.' horas';
+				  }
+			   }
+			}else{
+				if($since_start->d==1){
+					echo $since_start->d.' día';
+				}else{
+					echo $since_start->d.' días';
+				}
+			}
+		}else{
+			if($since_start->m==1){
+			   echo $since_start->m.' mes';
+			}else{
+				echo $since_start->m.' meses';
+			}
+		}
+	}else{
+		if($since_start->y==1){
+			echo $since_start->y.' año';
+		}else{
+			echo $since_start->y.' años';
+		}
+	}
+}
+			$servidor = Ruta::ctrRutaServidor();
+			
 			$item = null;
 			$valor = null;
 			$i = 0;
@@ -112,13 +167,15 @@ BANNER
 
 				<div class="card-block">
 					<h4 class="card-title"><b>' . $banner[$i]['ruta'] . '</b></h4>
-					<p class="card-text">' . $banner[$i]['fecha'] . '</p>
+						<p class="card-text">' .$banner[$i]['fecha'] . '</p>
+						
 					<a class="btn btn-default" href="blogs/' . $banner[$i]['id'] . '">Leer</a>
 				</div>
 				</div>
 			</div>';
 				}
-
+				/* <p class="card-text">' . imprimirTiempo($banner[$i]['fecha']) . '</p> */
+				
 				$i++;
 			}
 			?>

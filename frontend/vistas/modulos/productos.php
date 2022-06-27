@@ -322,8 +322,14 @@ LISTAR PRODUCTOS
 				$valor1 = $rutas[0];
 				$categoria = ControladorProductos::ctrMostrarCategorias($item1, $valor1);
 				$item2 = "id_categoria";
-					$valor2 = $categoria["id"];
-			}else {
+				$valor2 = $categoria["id"];
+				if (!$categoria) {
+					$subCategoria = ControladorProductos::ctrMostrarSubCategorias($item1, $valor1);
+
+					$item2 = "id_subcategoria";
+					$valor2 = $subCategoria[0]["id"];
+				}
+			} else {
 
 				$ordenar = "id";
 				$item1 = "ruta";
@@ -347,7 +353,7 @@ LISTAR PRODUCTOS
 
 
 			$productos = ControladorProductos::ctrMostrarProductos($ordenar, $item2, $valor2, $base, $tope, $modo);
-				/* print_r($valor2); */
+			/* print_r($valor2); */
 
 			$listaProductos = ControladorProductos::ctrListarProductos($ordenar, $item2, $valor2);
 
