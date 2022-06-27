@@ -414,10 +414,10 @@ INFOPRODUCTOS
 			<div id="faq" role="tablist" aria-multiselectable="true">
 
 				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="questionOne">
-						<h5 class="panel-title">
+					<div class="panel-heading " role="tab" id="questionOne">
+						<h5 class="panel-title text-center ">
 							<a data-toggle="collapse" data-parent="#faq" href="#answerOne" aria-expanded="true" aria-controls="answerOne">
-								Details
+								Details    <i style="margin-right:10px" class="fa fa-plus"></i>
 							</a>
 						</h5>
 					</div>
@@ -430,9 +430,9 @@ INFOPRODUCTOS
 
 				<div class="panel panel-default">
 					<div class="panel-heading" role="tab" id="questionTwo">
-						<h5 class="panel-title">
+						<h5 class="panel-title text-center">
 							<a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#answerTwo" aria-expanded="false" aria-controls="answerTwo">
-								Tech Specs
+								Tech Specs   <i style="margin-right:10px" class="fa fa-plus"></i>
 							</a>
 						</h5>
 					</div>
@@ -559,13 +559,141 @@ INFOPRODUCTOS
 					<i style="margin-right:10px" class="fa fa-trophy"></i> ' . $detalles["Certificado"] . '
 				</li>
 
-			</div>';
+						</div>';
 					}
 				}
 
-				/*=============================================
-	ENTREGA
-	=============================================*/
+				
+
+
+				?>
+
+			</div>
+			<div class="row botonesCompra">
+
+				<?php
+
+				if ($infoproducto["precio"] == 0) {
+
+					echo '<div class="col-md-6 col-xs-12">';
+
+					if (isset($_SESSION["validarSesion"]) && $_SESSION["validarSesion"] == "ok") {
+
+						if ($infoproducto["tipo"] == "virtual") {
+
+							echo '<button class="btn btn-default btn-block btn-lg backColor agregarGratis" idProducto="' . $infoproducto["id"] . '" idUsuario="' . $_SESSION["id"] . '" tipo="' . $infoproducto["tipo"] . '" titulo="' . $infoproducto["titulo"] . '">ACCEDER AHORA</button>';
+						} else {
+
+							echo '<button class="btn btn-default btn-block btn-lg backColor agregarGratis" idProducto="' . $infoproducto["id"] . '" idUsuario="' . $_SESSION["id"] . '" tipo="' . $infoproducto["tipo"] . '" titulo="' . $infoproducto["titulo"] . '">SOLICITAR AHORA</button>
+
+									<br>
+
+									<div class="col-xs-12 panel panel-info text-left">
+
+									<strong>¡Atención!</strong>
+
+										El producto a solicitar es totalmente gratuito y se enviará a la dirección solicitada, sólo se cobrará los cargos de envío.
+
+									</div>
+								';
+						}
+					} else {
+
+						echo '<a href="#modalIngreso" data-toggle="modal">
+
+								<button class="btn btn-default btn-block btn-lg backColor">	SOLICITAR AHORA</button>
+
+							</a>';
+					}
+
+					echo '</div>';
+				} else {
+
+					if ($infoproducto["tipo"] == "fisico") {
+
+						if ($infoproducto["cantidad"] > 0) {
+
+
+
+							echo '<div class="col-md-6 col-xs-12">';
+
+							if (isset($_SESSION["validarSesion"])) {
+
+								if ($_SESSION["validarSesion"] == "ok") {
+
+									echo '<a id="btnCheckout" href="#modalComprarAhora" data-toggle="modal" idUsuario="' . $_SESSION["id"] . '"><button class="btn btn-default btn-block btn-lg backColor">
+									<small>COMPRAR AHORA</small></button></a>';
+								}
+							} else {
+
+								echo '<a href="#modalIngreso" data-toggle="modal"><button class="btn btn-default btn-block btn-lg backColor">
+									<small>COMPRAR AHORA</small></button></a>';
+							}
+
+							echo '</div>
+
+								<div class="col-md-6 col-xs-12 ">';
+
+							if ($infoproducto["oferta"] != 0) {
+
+								echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precioOferta"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
+							} else {
+
+								echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precio"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
+							}
+
+							echo   '<small>AÑADIR AL CARRITO</small> 
+
+									<i class="fa fa-shopping-cart col-md-0"></i>
+
+									</button>
+
+								</div>';
+						} else {
+
+
+							echo '<button class="btn btn-default btn-block btn-lg ">
+						<small> SIN STOCK </small></button>';
+						}
+					} else {
+
+						echo '<div class="col-lg-6 col-md-8 col-xs-12">';
+
+						if ($infoproducto["oferta"] != 0) {
+
+							echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precioOferta"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
+						} else {
+
+							echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precio"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
+						}
+
+
+						echo 'AÑADIR AL CARRITO 
+
+									<i class="fa fa-shopping-cart"></i>
+
+									</button>
+
+								</div>';
+					}
+				}
+
+				?>
+
+			</div>
+		<!--=====================================
+				CARACTERÍSTICAS DEL PRODUCTO
+				======================================-->
+
+
+			<div class="form-group row">
+
+				<?php
+
+			
+									/*=============================================
+						ENTREGA
+						=============================================*/
 
 				if ($infoproducto["entrega"] == 0) {
 
@@ -713,119 +841,6 @@ INFOPRODUCTOS
 				?>
 
 			</div>
-			<div class="row botonesCompra">
-
-				<?php
-
-				if ($infoproducto["precio"] == 0) {
-
-					echo '<div class="col-md-6 col-xs-12">';
-
-					if (isset($_SESSION["validarSesion"]) && $_SESSION["validarSesion"] == "ok") {
-
-						if ($infoproducto["tipo"] == "virtual") {
-
-							echo '<button class="btn btn-default btn-block btn-lg backColor agregarGratis" idProducto="' . $infoproducto["id"] . '" idUsuario="' . $_SESSION["id"] . '" tipo="' . $infoproducto["tipo"] . '" titulo="' . $infoproducto["titulo"] . '">ACCEDER AHORA</button>';
-						} else {
-
-							echo '<button class="btn btn-default btn-block btn-lg backColor agregarGratis" idProducto="' . $infoproducto["id"] . '" idUsuario="' . $_SESSION["id"] . '" tipo="' . $infoproducto["tipo"] . '" titulo="' . $infoproducto["titulo"] . '">SOLICITAR AHORA</button>
-
-									<br>
-
-									<div class="col-xs-12 panel panel-info text-left">
-
-									<strong>¡Atención!</strong>
-
-										El producto a solicitar es totalmente gratuito y se enviará a la dirección solicitada, sólo se cobrará los cargos de envío.
-
-									</div>
-								';
-						}
-					} else {
-
-						echo '<a href="#modalIngreso" data-toggle="modal">
-
-								<button class="btn btn-default btn-block btn-lg backColor">	SOLICITAR AHORA</button>
-
-							</a>';
-					}
-
-					echo '</div>';
-				} else {
-
-					if ($infoproducto["tipo"] == "fisico") {
-
-						if ($infoproducto["cantidad"] > 0) {
-
-
-
-							echo '<div class="col-md-6 col-xs-12">';
-
-							if (isset($_SESSION["validarSesion"])) {
-
-								if ($_SESSION["validarSesion"] == "ok") {
-
-									echo '<a id="btnCheckout" href="#modalComprarAhora" data-toggle="modal" idUsuario="' . $_SESSION["id"] . '"><button class="btn btn-default btn-block btn-lg backColor">
-									<small>COMPRAR AHORA</small></button></a>';
-								}
-							} else {
-
-								echo '<a href="#modalIngreso" data-toggle="modal"><button class="btn btn-default btn-block btn-lg backColor">
-									<small>COMPRAR AHORA</small></button></a>';
-							}
-
-							echo '</div>
-
-								<div class="col-md-6 col-xs-12 ">';
-
-							if ($infoproducto["oferta"] != 0) {
-
-								echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precioOferta"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
-							} else {
-
-								echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precio"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
-							}
-
-							echo   '<small>AÑADIR AL CARRITO</small> 
-
-									<i class="fa fa-shopping-cart col-md-0"></i>
-
-									</button>
-
-								</div>';
-						} else {
-
-
-							echo '<button class="btn btn-default btn-block btn-lg ">
-						<small> SIN STOCK </small></button>';
-						}
-					} else {
-
-						echo '<div class="col-lg-6 col-md-8 col-xs-12">';
-
-						if ($infoproducto["oferta"] != 0) {
-
-							echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precioOferta"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
-						} else {
-
-							echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="' . $infoproducto["id"] . '" imagen="' . $servidor . $infoproducto["portada"] . '" titulo="' . $infoproducto["titulo"] . '" precio="' . $infoproducto["precio"] . '" tipo="' . $infoproducto["tipo"] . '" peso="' . $infoproducto["peso"] . '">';
-						}
-
-
-						echo 'AÑADIR AL CARRITO 
-
-									<i class="fa fa-shopping-cart"></i>
-
-									</button>
-
-								</div>';
-					}
-				}
-
-				?>
-
-			</div>
-
 			<!--=====================================
 				ZONA DE LUPA
 				======================================-->
