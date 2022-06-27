@@ -42,6 +42,7 @@ PRODUCTOS DESTACADOS
 
 
 
+			<hr>
 
 
 
@@ -62,7 +63,6 @@ PRODUCTOS DESTACADOS
 
 		<div class="clearfix"></div>
 
-		<hr>
 
 	</div>
 	<?php
@@ -77,12 +77,11 @@ PRODUCTOS DESTACADOS
 		echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
 
 				<h4></h4>
-				<a href="' . $url . $value["ruta"] . '" class="pixelCategorias  " titulo="' . $value["categoria"] . '">
-				<img  src="' . $servidor . $value["imgOferta"] . '" width="70%"><br>
+				<a href="' . $url . $value["ruta"] . '" class="  " titulo="' . $value["categoria"] . '">
+				<img  src="' . $servidor . $value["portada"] . '" width="70%"><br>
 				' . $value["categoria"] . '</a>
 				</h4>
 
-				<hr>
 
 				<ul>';
 		/* 			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
@@ -92,11 +91,11 @@ PRODUCTOS DESTACADOS
 						$valor = $value["id"];
 
 						$subcategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
-
+/* 
 						foreach ($subcategorias as $key => $value) {
 
 							echo '<li><a href="' . $url . $value["ruta"] . '" class="pixelSubCategorias" titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
-						}
+						} */
 
 		echo '
 

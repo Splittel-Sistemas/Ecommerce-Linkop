@@ -69,7 +69,7 @@ class ModeloCategorias{
 
 	static public function mdlIngresarCategoria($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(categoria, ruta, estado, oferta, precioOferta, descuentoOferta, imgOferta, finOferta) VALUES (:categoria, :ruta, :estado, :oferta, :precioOferta, :descuentoOferta, :imgOferta, :finOferta)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(categoria, ruta, estado, oferta, precioOferta, descuentoOferta, imgOferta, finOferta,portada) VALUES (:categoria, :ruta, :estado, :oferta, :precioOferta, :descuentoOferta, :imgOferta, :finOferta, :portada)");
 
 		$stmt->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
 		$stmt->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
@@ -79,6 +79,8 @@ class ModeloCategorias{
 		$stmt->bindParam(":descuentoOferta", $datos["descuentoOferta"], PDO::PARAM_STR);
 		$stmt->bindParam(":imgOferta", $datos["imgOferta"], PDO::PARAM_STR);
 		$stmt->bindParam(":finOferta", $datos["finOferta"], PDO::PARAM_STR);
+		$stmt->bindParam(":portada", $datos["imgPortada"], PDO::PARAM_STR);
+
 
 		if($stmt->execute()){
 
