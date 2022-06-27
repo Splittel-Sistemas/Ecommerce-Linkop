@@ -445,7 +445,7 @@ MODAL AGREGAR PRODUCTO
             AGREGAR FOTO DE PORTADA
             ======================================-->
 
-          <div class="form-group">
+       <!--    <div class="form-group">
 
             <div class="panel">SUBIR FOTO PORTADA</div>
 
@@ -455,7 +455,7 @@ MODAL AGREGAR PRODUCTO
 
             <img src="vistas/img/cabeceras/default/default.jpg" class="img-thumbnail previsualizarPortada" width="100%">
 
-          </div>
+          </div> -->
 
           <!--=====================================
             AGREGAR FOTO DE MULTIMEDIA
