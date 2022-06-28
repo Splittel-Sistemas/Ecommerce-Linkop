@@ -62,7 +62,7 @@ class ControladorUsuarios{
 
 					$mail->setFrom('notificaciones-splitnet@splittel.com', 'Linkop');
 
-					/* $mail->addReplyTo('ramon.olea@splittel.com', 'Linkop'); */
+					
 
 					$mail->Subject = "Por favor verifique su dirección de correo electrónico";
 
@@ -377,9 +377,8 @@ class ControladorUsuarios{
 
 						$mail->isMail();
 
-						$mail->setFrom('ramon.olea@splittel.com', 'Linkop');
+						$mail->setFrom('info@linkop.com.mx', 'Linkop');
 
-						$mail->addReplyTo('ramon.olea@splittel.com', 'Linkop');
 
 						$mail->Subject = "Solicitud de nueva contraseña";
 
@@ -996,7 +995,6 @@ class ControladorUsuarios{
 
 					$mail->setFrom('info@linkop.com.mx', 'Linkop');
 
-					/* $mail->addReplyTo('ramon.olea@splittel.com', 'Linkop'); */
 
 					$mail->Subject = "Ha recibido una consulta";
 
