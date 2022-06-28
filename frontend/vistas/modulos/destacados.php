@@ -88,7 +88,7 @@ BANNER
 		left: 0;
 		opacity: 0;
 		transition: opacity .5s;
-		background: rgba(187, 181, 181, 0.644);
+		background:rgba(3, 15, 36, 0.72);
 		color: white;
 
 		/* position the text in t’ middle*/
@@ -752,14 +752,14 @@ BREADCRUMB VISITAS
 <!-- 3 IMAGENES JUNTAS -->
 <div class="container-fluid">
 	<div class="row border border-dark ">
-		<div class="col-sm-12 ">
+		<div class="container">
 			<div class="col-xs-12 col-sm-12 col-md-6  text-center">
 				<div class="col-sm-12 text-center" style="height:100%">
 
 
 					<article id="3685" class="location-listing">
 
-						<a class="location-title" href="<?php echo $url; ?>cables" style="color: black;">
+						<a class="location-title" href="<?php echo $url; ?>cables" style="color: white;">
 							CABLES </a>
 
 						<div class="location-image">
@@ -792,7 +792,7 @@ BREADCRUMB VISITAS
 
 					<article id="3685" class="location-listing">
 
-						<a class="location-title" href="<?php echo $url; ?>baterias" style="color: black;">
+						<a class="location-title" href="<?php echo $url; ?>baterias" style="color: white;">
 							BATERIAS </a>
 
 						<div class="location-image">
@@ -811,7 +811,7 @@ BREADCRUMB VISITAS
 
 					<article id="3685" class="location-listing">
 
-						<a class="location-title" href="<?php echo $url; ?>computadoras" style="color: black;">
+						<a class="location-title" href="<?php echo $url; ?>computadoras" style="color: white;">
 							COMPUTADORAS </a>
 
 						<div class="location-image">
@@ -836,7 +836,7 @@ BREADCRUMB VISITAS
 
 		<article id="3685" class="location-listing">
 
-			<a class="location-title" href="<?php echo $url; ?>categorias" style="color: black;">
+			<a class="location-title" href="<?php echo $url; ?>categorias" style="color: white;">
 				CATEGORIAS </a>
 
 			<div class="location-image">
