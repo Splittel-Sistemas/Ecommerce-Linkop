@@ -18,7 +18,7 @@ class Ruta{
 
 	static public function ctrRutaServidor(){
 
-		return "http://192.168.31.46/Ecommerce-Linkop/backend/";
+		return "http://192.168.31.46/Ecommerce-Linkop/frontend/backend/";
 	
 	}
 
