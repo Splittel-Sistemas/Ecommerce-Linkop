@@ -44,7 +44,7 @@ $(".infoproducto figure.visor img").mouseover(function(event){
 })
 $("#seleccionarColor").change(function() {
 /* 	var num = $(this).val();
-	location.href ="http://192.168.31.46/Ecommerce-Linkop/frontend/45-"+num; */
+	location.href ="http://192.168.31.46/Ecommerce-Linkop/frontend/cable-ethernet-cat-5e-"+num; */
 	/* se comenta cambia de imagen dependiendo el color */
 
 

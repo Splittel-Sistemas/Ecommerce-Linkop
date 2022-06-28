@@ -6,3 +6,5 @@ frontend/modelos/conexion.php
 frontend/php_error_log
 frontend/PayPal.log
 PayPal.log
+frontend/php_error_log
+frontend/PayPal.log
