@@ -128,7 +128,7 @@
 
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plantilla.css">
 
-	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/cabezote.css">
+	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/cabezote.css" >
 
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/slide.css">
 
@@ -321,7 +321,7 @@ include "modulos/footer.php";
 JAVASCRIPT PERSONALIZADO
 ======================================-->
 
-<script src="<?php echo $url; ?>vistas/js/cabezote.js"></script>
+<script src="<?php echo $url; ?>vistas/js/cabezote.js" ></script>
 <script src="<?php echo $url; ?>vistas/js/plantilla.js"></script>
 <script src="<?php echo $url; ?>vistas/js/slide.js"></script>
 <script src="<?php echo $url; ?>vistas/js/buscador.js"></script>

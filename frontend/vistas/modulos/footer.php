@@ -7,11 +7,11 @@ FOOTER
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 formContacto  text-center">
-
-				<form class="form-inline" method="post" onsubmit="return validarContactenos()">
-				<label for="exampleInputEmail2">
+			<!-- <label for="exampleInputEmail2">
 							<h4 style="color: white;">STAY CONNECTD</h4>
-						</label>
+						</label> -->
+				<form class="form" method="post" onsubmit="return validarContactenos()">
+				
 					<div class="form-group">
 					
 						<input type="email" id="emailContactenos" name="emailContactenos" class="form-control" placeholder="Escriba su correo electrónico" required>
