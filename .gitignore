@@ -1,6 +1,6 @@
-backend/modelos/rutas.php
-backend/modelos/conexion.php
-backend/php_error_log
+frontend/backend/modelos/rutas.php
+frontend/backend/modelos/conexion.php
+frontend/backend/php_error_log
 frontend/modelos/rutas.php
 frontend/modelos/conexion.php
 frontend/php_error_log
@@ -8,3 +8,4 @@ frontend/PayPal.log
 PayPal.log
 frontend/php_error_log
 frontend/PayPal.log
+frontend/backend/modelos/rutas.php
