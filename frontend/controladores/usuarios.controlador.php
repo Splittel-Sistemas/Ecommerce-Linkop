@@ -994,9 +994,9 @@ class ControladorUsuarios{
 
 					$mail->isMail();
 
-					$mail->setFrom('ramon.olea@splittel.com', 'Linkop');
+					$mail->setFrom('info@linkop.com.mx', 'Linkop');
 
-					$mail->addReplyTo('ramon.olea@splittel.com', 'Linkop');
+					/* $mail->addReplyTo('ramon.olea@splittel.com', 'Linkop'); */
 
 					$mail->Subject = "Ha recibido una consulta";
 
@@ -1022,9 +1022,7 @@ class ControladorUsuarios{
 
 							<h4 style="font-weight:100; color:#999; padding:0px 20px; text-transform:uppercase">'.$_POST["emailContactenos"].'</h4>
 
-							<h4 style="font-weight:100; color:#999; padding:0px 20px;">De: '.$_POST["emailContactenos"].'</h4>
-
-							<h4 style="font-weight:100; color:#999; padding:0px 20px">'.$_POST["emailContactenos"].'</h4>
+							
 
 							<hr style="width:80%; border:1px solid #ccc">
 
