@@ -783,7 +783,7 @@ BREADCRUMB VISITAS
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-6 text-center">
-				<div class="col-sm-12">
+				<div class="col-sm-12" style="border: 1px solid white;">
 					<!-- <a href=" <?php #echo $url 
 									?>router">
 						<img src="<?php #echo  $servidor; 
@@ -805,7 +805,7 @@ BREADCRUMB VISITAS
 
 					</article>
 				</div>
-				<div class="col-sm-12 text-center">
+				<div class="col-sm-12 text-center" style="border: 1px solid white;">
 
 
 
