@@ -56,8 +56,17 @@ $("#seleccionarColor").change(function() {
 
 $("#seleccionarTalla").change(function() {
 	var num = $(this).val();
-	location.href ="https://linkop.com.mx/rj45-"+num;
-	/* alert("https://linkop.com.mx/rj45-"+num); */
+	var ruta = $("#rmn").val();
+	var ultima  = ruta.split(" ").splice(-1);
+	var lastIndex = ruta.lastIndexOf("-");
+	ruta1 = ruta.substring(0, lastIndex);
+	var lastIndex2 = ruta1.lastIndexOf("-");
+	ruta2 = ruta1.substring(0, lastIndex2);
+
+	/* alert(ruta2+num); */
+
+/* 	alert("https://linkop.com.mx/"+ruta2+"-"+num+"-"+ultima); */
+	location.href ="https://linkop.com.mx/"+ruta2+"-"+num+"-"+ultima;
 
 	/* se comenta cambia de imagen dependiendo el color */
 
