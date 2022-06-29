@@ -49,6 +49,14 @@ $("#seleccionarColor").change(function() {
 
 
 });  
+
+$("#seleccionarTalla").change(function() {
+	var num = $(this).val();
+	location.href ="https://linkop.com.mx/rj45-"+num;
+	/* se comenta cambia de imagen dependiendo el color */
+
+
+}); 
 $(".infoproducto figure.visor img").mouseout(function(event){
 
 	$(".lupa").fadeOut("fast");

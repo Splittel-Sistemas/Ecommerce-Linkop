@@ -514,7 +514,10 @@ INFOPRODUCTOS
 
 				</div>';
 						} else {
-							echo '<input class="form-control seleccionarDetalle" id="seleccionarColor" type="hidden" >';
+							echo '<input class="form-control seleccionarDetalle" id="seleccionarColor" type="hidden" >
+							
+							<input class="form-control seleccionarDetalle" id="seleccionarColor" type="hidden" >
+							';
 						}
 
 						if ($detalles["Marca"] != null) {
