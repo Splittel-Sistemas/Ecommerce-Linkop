@@ -491,8 +491,9 @@ INFOPRODUCTOS
 							}
 
 							echo '</select>
+							<input class="form-control rmn" id="rmn" type="hidden" value="' . $infoproducto["ruta"] . '" >
 
-				</div>';
+						</div>';
 						} else {
 							echo '<input class="form-control seleccionarDetalle" id="seleccionarTalla" type="hidden" >';
 						}
@@ -511,12 +512,11 @@ INFOPRODUCTOS
 							}
 
 							echo '</select>
-
-				</div>';
+							<input class="form-control rmn1" id="rmn1" type="hidden" value="' . $infoproducto["ruta"] . '" >
+							</div>';
 						} else {
 							echo '<input class="form-control seleccionarDetalle" id="seleccionarColor" type="hidden" >
 							
-							<input class="form-control seleccionarDetalle" id="seleccionarColor" type="hidden" >
 							';
 						}
 
@@ -524,7 +524,7 @@ INFOPRODUCTOS
 
 							echo '<div class="col-md-3 col-xs-12">
 
-					<select class="form-control seleccionarDetalle" id="seleccionarMarca">
+						<select class="form-control seleccionarDetalle" id="seleccionarMarca">
 						
 						<option value="">Marca</option>';
 
@@ -535,7 +535,7 @@ INFOPRODUCTOS
 
 							echo '</select>
 
-				</div>';
+						</div>';
 						} else {
 							echo '<input class="form-control seleccionarDetalle" id="seleccionarMarca" type="hidden" >';
 						}
@@ -543,24 +543,24 @@ INFOPRODUCTOS
 
 						echo '<div class="col-xs-12">
 
-				<li>
-					<i style="margin-right:10px" class="fa fa-play-circle"></i> ' . $detalles["Clases"] . '
-				</li>
-				<li>
-					<i style="margin-right:10px" class="fa fa-clock-o"></i> ' . $detalles["Tiempo"] . '
-				</li>
-				<li>
-					<i style="margin-right:10px" class="fa fa-check-circle"></i> ' . $detalles["Nivel"] . '
-				</li>
-				<li>
-					<i style="margin-right:10px" class="fa fa-info-circle"></i> ' . $detalles["Acceso"] . '
-				</li>
-				<li>
-					<i style="margin-right:10px" class="fa fa-desktop"></i> ' . $detalles["Dispositivo"] . '
-				</li>
-				<li>
-					<i style="margin-right:10px" class="fa fa-trophy"></i> ' . $detalles["Certificado"] . '
-				</li>
+							<li>
+								<i style="margin-right:10px" class="fa fa-play-circle"></i> ' . $detalles["Clases"] . '
+							</li>
+							<li>
+								<i style="margin-right:10px" class="fa fa-clock-o"></i> ' . $detalles["Tiempo"] . '
+							</li>
+							<li>
+								<i style="margin-right:10px" class="fa fa-check-circle"></i> ' . $detalles["Nivel"] . '
+							</li>
+							<li>
+								<i style="margin-right:10px" class="fa fa-info-circle"></i> ' . $detalles["Acceso"] . '
+							</li>
+							<li>
+								<i style="margin-right:10px" class="fa fa-desktop"></i> ' . $detalles["Dispositivo"] . '
+							</li>
+							<li>
+								<i style="margin-right:10px" class="fa fa-trophy"></i> ' . $detalles["Certificado"] . '
+							</li>
 
 						</div>';
 					}
