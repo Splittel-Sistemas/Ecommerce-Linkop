@@ -17,3 +17,5 @@ frontend/modelos/conexion.php
 frontend/backend/modelos/conexion.php
 frontend/backend/modelos/rutas.php
 frontend/PayPal.log
+frontend/backend/vistas/img/
+frontend/backend/modelos/rutas.php
