@@ -245,7 +245,7 @@ class TablaProductos
 					"' . $productos[$i]["ruta"] . '",
 					"' . $estado . '",
 					"' . $productos[$i]["tipo"] . '",
-					"' . $cabeceras["descripcion"] . '",
+					"' . json_decode($cabeceras["descripcion"]) . '",
 				  	"' . $cabeceras["palabrasClaves"] . '",
 				  	"' . $imagenPortada . '",
 				  	"' . $imagenPrincipal . '",
