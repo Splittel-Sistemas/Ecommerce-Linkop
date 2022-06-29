@@ -754,7 +754,7 @@ BREADCRUMB VISITAS
 	<div class="row border border-dark ">
 		<div class="container">
 			<div class="col-xs-12 col-sm-12 col-md-6  text-center">
-				<div class="col-sm-12 text-center" style="height:100%">
+				<div class="col-sm-12 text-center" style="height:100%;border: 1px solid white;" >
 
 
 					<article id="3685" class="location-listing">
