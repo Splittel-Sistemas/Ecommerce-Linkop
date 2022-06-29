@@ -3,8 +3,8 @@ FOOTER
 ======================================-->
 
 <footer class="container-fluid">
-
 	<div class="container">
+
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 formContacto  text-center">
 				<!-- <label for="exampleInputEmail2">
@@ -55,6 +55,10 @@ FOOTER
 							<i class="fa ' . $value["red"] . ' redSocial ' . $value["estilo"] . '  fa-2x" aria-hidden="true"> </i>
 						</a>
 						&nbsp
+						&nbsp
+						&nbsp
+						&nbsp
+						&nbsp
 					';
 							}
 						}
@@ -68,46 +72,48 @@ FOOTER
 
 			</div>
 		</div>
-		<div class="row">
+	</div>
+<br>
+	<div class="row">
 
-			<!--=====================================
+		<!--=====================================
 			CATEGORÍAS Y SUBCATEGORÍAS FOOTER
 			======================================-->
-			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
+		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
 
-				<h4><a href="#" class="" titulo="BLOG" style="color: white;">INFO</a></h4>
-				<ul>
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Our Story</a></li>
+			<h4><a href="#" class="" titulo="BLOG" style="color: white;">INFO</a></h4>
+			<ul>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Our Story</a></li>
 
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Careers</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Careers</a></li>
 
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Bulk Order Inquiry</a></li>
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Customer Reviews</a></li>
-
-
-
-				</ul>
-
-
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
-
-				<h4><a href="#" class="" titulo="BLOG" style="color: white;">LEGAL</a></h4>
-				<ul>
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Privacy</a></li>
-
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Terms</a></li>
-
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Patents</a></li>
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Counterfeits</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Bulk Order Inquiry</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Customer Reviews</a></li>
 
 
 
-				</ul>
+			</ul>
 
 
-			</div>
-			<!-- <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center">
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
+
+			<h4><a href="#" class="" titulo="BLOG" style="color: white;">LEGAL</a></h4>
+			<ul>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Privacy</a></li>
+
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Terms</a></li>
+
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Patents</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Counterfeits</a></li>
+
+
+
+			</ul>
+
+
+		</div>
+		<!-- <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center">
 
 				<h4><a href="#" class="" titulo="PRODUCTOS" style="color: white;">PRODUCTOS</a></h4>
 
@@ -130,83 +136,81 @@ FOOTER
 
 				?>
 			</div> -->
-			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
+		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
 
-				<h4><a href="#" class="" titulo="BLOG" style="color: white;">SUPPORT</a></h4>
-				<ul>
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Contact</a></li>
+			<h4><a href="#" class="" titulo="BLOG" style="color: white;">SUPPORT</a></h4>
+			<ul>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Contact</a></li>
 
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Shipping</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Shipping</a></li>
 
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Return</a></li>
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Warranty</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Return</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Warranty</a></li>
 
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Reward Policy</a></li>
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Web Accessibility</a></li>
-					<li><a href="#" class="pixelCategorias" style="color: gray;">FAQ</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Reward Policy</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Web Accessibility</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">FAQ</a></li>
 
-				</ul>
-
-
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
-
-				<h4><a href="#" class="" titulo="BLOG" style="color: white;">OTHERS</a></h4>
-				<ul>
-					<li><a href="#" class="pixelCategorias" style="color: gray;">My Account</a></li>
-
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Reward Program</a></li>
-
-					<li><a href="#" class="pixelCategorias" style="color: gray;">Tracking Order</a></li>
+			</ul>
 
 
-				</ul>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
+
+			<h4><a href="#" class="" titulo="BLOG" style="color: white;">OTHERS</a></h4>
+			<ul>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">My Account</a></li>
+
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Reward Program</a></li>
+
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Tracking Order</a></li>
 
 
-			</div>
-			<!--=====================================
+			</ul>
+
+
+		</div>
+		<!--=====================================
 			DATOS CONTACTO
 			======================================-->
 
 
 
-			<!--=====================================
+		<!--=====================================
 			FORMULARIO CONTÁCTENOS
 			======================================-->
 
 
 
+	</div>
+
+	<div class="container-fluid final">
+
+
+
+		<div class="col-sm-6 col-xs-12 text-center">
+			<?php
+
+			$social = ControladorPlantilla::ctrEstiloPlantilla();
+			$servidor = Ruta::ctrRutaServidor();
+
+
+			?>
+			<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive" style="width:150px;">
+
+
 		</div>
 
-		<div class="container-fluid final">
+		<div class="col-sm-6 col-xs-12 text-center ">
 
-			<div class="container">
+			<h5 style="color:white">&copy; Todos los derechos reservados. Hecho por Grupo Splittel</h5>
 
-				<div class="container">
-
-					<div class="col-sm-6 col-xs-12 text-center">
-					<?php
-							
-							$social = ControladorPlantilla::ctrEstiloPlantilla();
-							$servidor = Ruta::ctrRutaServidor();
-
-						
-							?>
-								<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive" style="width:150px;">
-
-
-					</div>
-
-						<div class="col-sm-6 col-xs-12 text-center ">
-
-						<h5 style="color:white">&copy; Todos los derechos reservados. Hecho por Grupo Splittel</h5>
-
-							<!-- <li>
+			<!-- <li>
 								<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
 									<img src="<?php echo $url; ?>vistas/img/whatsapp(2).png" style="padding-bottom: 5px;"></a>
 							</li> -->
-							<?php
-							/* 
+			<?php
+			/* 
 							$social = ControladorPlantilla::ctrEstiloPlantilla();
 
 							$jsonRedesSociales = json_decode($social["redesSociales"], true);
@@ -223,20 +227,17 @@ FOOTER
 								}
 							} */
 
-							?>
+			?>
 
 
 
 
-
-					</div>
-
-				</div>
-
-			</div>
 
 		</div>
+
+
 	</div>
+
 
 
 </footer>
