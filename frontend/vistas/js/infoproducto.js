@@ -57,7 +57,7 @@ $("#seleccionarColor").change(function() {
 $("#seleccionarTalla").change(function() {
 	var num = $(this).val();
 	var ruta = $("#rmn").val();
-	var ultima  = ruta.split(" ").splice(-1);
+	var ultima  = ruta.split("-").splice(-1);
 	var lastIndex = ruta.lastIndexOf("-");
 	ruta1 = ruta.substring(0, lastIndex);
 	var lastIndex2 = ruta1.lastIndexOf("-");
