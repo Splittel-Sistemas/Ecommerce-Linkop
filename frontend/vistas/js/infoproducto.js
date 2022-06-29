@@ -47,7 +47,7 @@ $("#seleccionarColor").change(function() {
 	var ruta = $("#rmn1").val();
 	/* const newStr = ruta.slice(0,-1) */
 /* alert(newStr+num); */
-	location.href ="https://linkop.com.mx/"+newStr+num;
+	location.href ="https://linkop.com.mx/"+ruta+num;
 	/* se comenta cambia de imagen dependiendo el color */
 	
 
@@ -59,7 +59,7 @@ $("#seleccionarTalla").change(function() {
 /* 	const newStr1 = ruta.slice(0,-1) */
 alert(newStr1+num);
 
-	location.href ="https://linkop.com.mx/"+newStr1+num;
+	location.href ="https://linkop.com.mx/"+ruta+num;
 	/* se comenta cambia de imagen dependiendo el color */
 
 
