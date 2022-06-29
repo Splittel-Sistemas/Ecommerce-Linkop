@@ -764,7 +764,7 @@ BREADCRUMB VISITAS
 
 						<div class="location-image">
 							<a href="#">
-								<img src="<?php echo  $servidor; ?>vistas/img/productos/12.jpg" alt="Random Name" width="105%" height="100%">
+								<img src="<?php echo  $servidor; ?>vistas/img/productos/12.jpg" alt="Random Name" width="100%" height="100%">
 
 
 							</a>
@@ -797,7 +797,7 @@ BREADCRUMB VISITAS
 
 						<div class="location-image">
 							<a href="#">
-								<img src="<?php echo  $servidor; ?>vistas/img/productos/aa.jpg" alt="Random Name" width="100%" height="50%">
+								<img src="<?php echo  $servidor; ?>vistas/img/productos/aaaad.jpg" alt="Random Name" width="100%" height="50%">
 
 							</a>
 
