@@ -7,18 +7,20 @@ FOOTER
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 formContacto  text-center">
-			<!-- <label for="exampleInputEmail2">
+				<!-- <label for="exampleInputEmail2">
 							<h4 style="color: white;">STAY CONNECTD</h4>
 						</label> -->
 				<form class="form" method="post" onsubmit="return validarContactenos()">
-				
-					<div class="form-group">
-					
+
+
+					<div class="input-group input-group-md">
 						<input type="email" id="emailContactenos" name="emailContactenos" class="form-control" placeholder="Escriba su correo electrónico" required>
 
-					</div>
-					<input type="submit" value="Subscribe" class="btn btn-default backColor pull-center" id="enviar">
+						<span class="input-group-btn">
+							<input type="submit" value="Subscribe" class="btn btn-default backColor pull-center" id="enviar">
 
+						</span>
+					</div>
 				</form>
 
 				<?php
@@ -178,23 +180,31 @@ FOOTER
 
 		<div class="container-fluid final">
 
-			<div class="">
+			<div class="container">
 
-				<div class="row">
+				<div class="container">
 
-					<div class="col-sm-12 col-xs-12 text-left text-muted">
+					<div class="col-sm-6 col-xs-12 text-center">
+					<?php
+							
+							$social = ControladorPlantilla::ctrEstiloPlantilla();
+							$servidor = Ruta::ctrRutaServidor();
 
-						<h5>&copy; Todos los derechos reservados. Hecho por Grupo Splittel</h5>
+						
+							?>
+								<img src="<?php echo $servidor . $social["logo"]; ?>" class="img-responsive" style="width:150px;">
+
 
 					</div>
 
-					<!-- 	<div class="col-sm-6 col-xs-12 text-right social">
+						<div class="col-sm-6 col-xs-12 text-center ">
 
-						<ul>
-							<li>
+						<h5 style="color:white">&copy; Todos los derechos reservados. Hecho por Grupo Splittel</h5>
+
+							<!-- <li>
 								<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
 									<img src="<?php echo $url; ?>vistas/img/whatsapp(2).png" style="padding-bottom: 5px;"></a>
-							</li>
+							</li> -->
 							<?php
 							/* 
 							$social = ControladorPlantilla::ctrEstiloPlantilla();
@@ -218,9 +228,8 @@ FOOTER
 
 
 
-						</ul>
 
-					</div> -->
+					</div>
 
 				</div>
 
