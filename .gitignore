@@ -9,6 +9,6 @@ PayPal.log
 frontend/php_error_log
 frontend/PayPal.log
 frontend/backend/modelos/rutas.php
-frontend/vistas/img
-frontend/backend/vistas/img
+frontend/vistas/img/
 
+frontend/backend/vistas/img/
