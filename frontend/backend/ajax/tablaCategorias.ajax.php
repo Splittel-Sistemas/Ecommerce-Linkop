@@ -120,7 +120,7 @@ class TablaCategorias{
 				      "'.$categorias[$i]["categoria"].'",
 				      "'.$categorias[$i]["ruta"].'",
 				      "'. $estado.'",
-				      "'.$cabeceras["descripcion"].'",
+				      "'.json_decode($cabeceras["descripcion"]).'",
 				      "'.$cabeceras["palabrasClaves"].'",
 				      "'.$imgPortada.'",
 				      "'.$tipoOferta.'",

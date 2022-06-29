@@ -145,7 +145,7 @@ class TablaSubCategorias{
 			      "'.$categoria.'",
 			      "'.$subcategorias[$i]["ruta"].'",
 			      "'.$estado.'",
-			      "'.$cabeceras["descripcion"].'",
+			      "'.json_decode($cabeceras["descripcion"]).'",
 			      "'.$cabeceras["palabrasClaves"].'",
 			      "'.$imagenPortada.'",
 				  "'.$tipoOferta.'",
