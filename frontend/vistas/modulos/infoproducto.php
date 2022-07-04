@@ -466,7 +466,7 @@ INFOPRODUCTOS
 
 						if ($detalles["Talla"] != null) {
 
-							echo '<div class="col-md-3 col-xs-12">
+							echo '<div class="col-md-4 col-xs-12">
 
 					<select class="form-control seleccionarDetalle" id="seleccionarTalla">
 						
@@ -487,7 +487,7 @@ INFOPRODUCTOS
 
 						if ($detalles["Color"] != null) {
 
-							echo '<div class="col-md-3 col-xs-12">
+							echo '<div class="col-md-4 col-xs-12">
 
 					<select class="form-control seleccionarDetalle" id="seleccionarColor">
 						
@@ -509,7 +509,7 @@ INFOPRODUCTOS
 
 						if ($detalles["Marca"] != null) {
 
-							echo '<div class="col-md-3 col-xs-12">
+							echo '<div class="col-md-4 col-xs-12">
 
 						<select class="form-control seleccionarDetalle" id="seleccionarMarca">
 						
@@ -642,8 +642,11 @@ INFOPRODUCTOS
 						} else {
 
 
-							echo '<button class="btn btn-default btn-block btn-lg backColor">
-						<small> SIN STOCK </small></button>';
+							echo '
+							<div class="col-md-12 col-xs-12 ">
+							<button class="btn btn-default btn-block btn-lg backColor">
+						<small> SIN STOCK </small></button>
+						</div>';
 						}
 					} else {
 
@@ -756,14 +759,16 @@ INFOPRODUCTOS
 					}
 				} else {
 
-					if ($infoproducto["precio"] == 0) {
+					if ($infoproducto["precio"] == 0 ) {
 
 						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
 
 
 				<span class="label label-default" style="font-weight:100;background:white;color:black;">
+				
 					<i class="fa fa-archive" style="margin-right:5px"></i>
-				' . $infoproducto["cantidad"] . ' DISPONIBLES  |
+					' . $parteCatalogo . ' DISPONIBLES  |
+
 					<i class="fa fa-clock-o" style="margin-right:5px"></i>
 					' . $infoproducto["entrega"] . ' días hábiles para la entrega  |
 					<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
@@ -791,13 +796,14 @@ INFOPRODUCTOS
 
 			</h4>';
 					} else {
+						$parteCatalogo =  $infoproducto["cantidad"] > 0 ?  $infoproducto["cantidad"] : 0;
 
 						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
 
 
 				<span class="label label-default" style="font-weight:100;background:white;color:black;">
 				<i class="fa fa-archive" style="margin-right:5px"></i>
-				' . $infoproducto["cantidad"] . ' DISPONIBLES  |
+				' . $parteCatalogo . ' DISPONIBLES  |
 					<i class="fa fa-clock-o" style="margin-right:5px"></i>
 					' . $infoproducto["entrega"] . ' días hábiles para la entrega |
 					<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
@@ -814,7 +820,8 @@ INFOPRODUCTOS
 
 				<small>
 				<i class="fa fa-archive" style="margin-right:5px"></i>
-				' . $infoproducto["cantidad"] . ' DISPONIBLES  |
+				' . $parteCatalogo . ' DISPONIBLES  |
+
 					<i class="fa fa-clock-o" style="margin-right:5px"></i>
 					' . $infoproducto["entrega"] . ' días hábiles para la entrega <br>
 					<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
