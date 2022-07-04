@@ -875,8 +875,8 @@ INFOPRODUCTOS
 		?>
 
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
-			<li class="nav-item" class="active">
-				<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Descripcion</a>
+			<li class="nav-item active" class="active">
+				<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" aria-expanded="true">DESCRIPCION</a>
 			</li>
 
 			<!--   <li class="nav-item">
@@ -1006,9 +1006,8 @@ INFOPRODUCTOS
 	<div class="tab-pane fade active in " id="home" role="tabpanel" aria-labelledby="home-tab">
 		<?php
 		echo '<img class="img-responsive center-block " src="' .$servidor . $infoproducto["portada"] . '" width="50%">';
-		?>
+		?> 
 		Acerca de este artículo Capacidad de datos de alta velocidad: el cable HDMI iVANKY 4K es compatible con HDMI 2.0b, incluyendo 18 Gbps, modo espejo y extensión, Ultra HD 4K 2160p, HD 2K 1080p, QHD 1440p, HDCP 2.2, 48 bits de color intenso, devolución de audio (ARC), audio Dolby TrueHD 7.1 y conexión en caliente. Cable HDMI 4K HDR: perfecto para tu televisor 4K UHD. Compatible con tus dispositivos de transmisión, Apple TV 4K, NVIDIA SHIELD TV, reproductores de CD/DVD/Blu-ray, Fire TV, Roku Ultra, PS4/3, Switch, computadoras u otros dispositivos habilitados para HDMI a tu televisor 4K/HD, monitores, pantallas o proyectores. Mejora innovadora: diseñado para todos los dispositivos con HDMI 2.0 estándares y compatibles con HDMI 1.4, 1.3 y 1.2. El blindaje de metal de hojalata y los conectores chapados en oro, resistentes a la corrosión pueden proteger contra interferencias de señal externas, garantizan que la transmisión de la señal sea estable y minimizan la pérdida de señal. Diseño ultra duradero: construido con carcasa de aluminio delgada y cubierta trenzada de nailon de gran calidad, este cable HDMI puede soportar ensayos de flexión de más de 10.000 veces sin reducir la flexibilidad del cable y garantizar el mejor rendimiento posible.
-		
 	</div>
 	<div class="tab-pane fade active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 		<div class="row comentarios">
