@@ -165,7 +165,6 @@ if ($banner != null) {
 <!--=====================================
 BARRA PRODUCTOS
 ======================================-->
-<br><br>
 <div class="container-fluid well well-sm barraProductos">
 
 	<div class="container">
