@@ -178,19 +178,27 @@ HEADER
 
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<div class="" id="buscador">
-							<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
+						<div class="" id="buscador" >
 
-							<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
 
-								<!-- <button class="btn btn-default backColor" type="submit">
 
-									<i class="fa fa-search"></i>
 
-								</button> -->
 
-							</a>
+							<div class="input-group input-group-md" style="padding-top:6px; ">
+								<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
 
+								<span class="input-group-btn">
+									<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
+
+										<button class="btn btn-default backColor" type="submit" style="padding:5px">
+
+											<i class="fa fa-search"></i>
+
+										</button>
+
+									</a>
+								</span>
+							</div>
 						</div>
 					</li>
 					<!-- 	<li><a href="<?php #echo $url; 
