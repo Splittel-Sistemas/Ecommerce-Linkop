@@ -293,6 +293,11 @@ if(isset($_GET["ruta"])){
 
 		include "modulos/postblog.php";
 
+	}else if($rutas[0] == "info"){
+
+
+		include "modulos/info.php";
+
 	}else{
 
 		include "modulos/error404.php";
