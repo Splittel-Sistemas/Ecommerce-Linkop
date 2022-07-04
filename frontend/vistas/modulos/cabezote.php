@@ -169,6 +169,7 @@ HEADER
 
 					<li><a href=" <?php echo $url; ?>ofertas">OFERTAS</a></li>
 					<li><a href=" <?php echo $url; ?>postblog">BLOG</a></li>
+					<li><a href=" <?php echo $url; ?>contacto">CONTACTO</a></li>
 
 				</ul>
 				<ul class=" nav navbar-nav navbar-CENTER">

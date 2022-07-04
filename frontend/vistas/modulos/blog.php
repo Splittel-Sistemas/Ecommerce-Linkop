@@ -90,7 +90,9 @@ BANNER
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 style="color:#000000">
-					<span class="ion-minus"></span>La tecnologia aplicada en terminos sencillos<span class="ion-minus"></span>
+					<span class="ion-minus"></span>
+Blog Linkop
+<span class="ion-minus"></span>
 				</h2>
 			</div>
 		</div>
@@ -109,95 +111,107 @@ BANNER
 					<div class="item active">
 						<div class="row">
 
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-								<div class="card text-center">
-									<img class="card-img-top" src="https://images.unsplash.com/photo-1590103879908-fa5dad7396d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQ1fEo5eXJQYUhYUlFZfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" width="100%">
-									<div class="card-block">
-										<h4 class="card-title">¿Que es MagSafe?</h4>
-									<!-- 	<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p> -->
-										<a class="btn btn-default" href=" <?php echo $url; ?>postblog">Mas informacion ></a>
-									</div>
 
-									<?php
-								/* 	$servidor = Ruta::ctrRutaServidor();
 
-									$item = null;
-									$valor = null;
-									$i = 0;
+							<?php
+							$servidor = Ruta::ctrRutaServidor();
 
-									$banner = ControladorBlog::ctrMostrarBlog($item, $valor);
-									foreach ($banner as $key => $value) {
-										echo '	<div class="row">
+							$item = null;
+							$valor = null;
+							$i = 0;
+
+							$banner = ControladorBlog::ctrMostrarBlogIndex($item, $valor);
+							foreach ($banner as $key => $value) {
+								echo '
 										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-											<div class="card text-center">
-											<img class="card-img-top"  src="' . $servidor . $banner[$i]['img'] . '" alt="" width="50%">
-
-
-												<div class="card-block">
-													<h4 class="card-title"><b>' . $banner[$i]['ruta'] . '</b></h4>
-													
-												</div>
-
-												</div>
-												</div></div>
-												';
-
-
-
-										$i++;
-									} */
-									?>
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 								<div class="card text-center">
-									<img class="card-img-top" src="https://images.unsplash.com/photo-1639087595550-e9770a85f8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDh8Sjl5clBhSFhSUVl8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="" width="100%">
+								<img class="card-img-top" src="' . $servidor . $banner[$i]['img'] . '" alt="" width="100%">
+
 									<div class="card-block">
-										<h4 class="card-title">Guia de concentardores y adaptadores USB-C</h4>
-									<!-- 	<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p> -->
-										<a class="btn btn-default" href=" <?php echo $url; ?>postblog">Mas informacion ></a>
+										<h4 class="card-title"><b>' . $banner[$i]['ruta'] . '</b></h4>
+										<p class="card-text"> Publicado hace ' . imprimirTiempo($banner[$i]['fecha'])
+														. '</p>
+											
+										<a class="btn btn-default" href="blogs/' . $banner[$i]['id'] . '">Leer</a>
 									</div>
-								</div>
-							</div>
+									</div>
+								</div>';
 
 
+
+								$i++;
+							}
+
+
+							function imprimirTiempo($fecha)
+							{
+								$start_date = new DateTime($fecha);
+								$since_start = $start_date->diff(new DateTime(date("Y-m-d H:i:s")));
+								if ($since_start->y == 0) {
+									if ($since_start->m == 0) {
+										if ($since_start->d == 0) {
+											if ($since_start->h == 0) {
+												if ($since_start->i == 0) {
+													if ($since_start->s == 0) {
+														$aa = $since_start->s . ' segundos';
+													} else {
+														if ($since_start->s == 1) {
+															$aa = $since_start->s . ' segundo';
+														} else {
+															$aa = $since_start->s . ' segundos';
+														}
+													}
+												} else {
+													if ($since_start->i == 1) {
+														$aa = $since_start->i . ' minuto';
+													} else {
+														$aa = $since_start->i . ' minutos';
+													}
+												}
+											} else {
+												if ($since_start->h == 1) {
+													$aa = $since_start->h . ' hora';
+												} else {
+													$aa = $since_start->h . ' horas';
+												}
+											}
+										} else {
+											if ($since_start->d == 1) {
+												$aa = $since_start->d . ' día';
+											} else {
+												$aa = $since_start->d . ' días';
+											}
+										}
+									} else {
+										if ($since_start->m == 1) {
+											$aa = $since_start->m . ' mes';
+										} else {
+											$aa = $since_start->m . ' meses';
+										}
+									}
+								} else {
+									if ($since_start->y == 1) {
+										$aa = $since_start->y . ' año';
+									} else {
+										$aa = $since_start->y . ' años';
+									}
+								}
+
+								return $aa;
+							}
+							?>
 						</div>
+
+
 					</div>
 
-				<!-- 	<div class="item">
-						<div class="row">
 
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-								<div class="card text-center">
-									<img class="card-img-top" src="https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-									<div class="card-block">
-										<h4 class="card-title">Post Title</h4>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-										<a class="btn btn-default" href="#">Read More</a>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-								<div class="card text-center">
-									<img class="card-img-top" src="https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-									<div class="card-block">
-										<h4 class="card-title">Post Title</h4>
-										<p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-										<a class="btn btn-default" href="#">Read More</a>
-									</div>
-								</div>
-							</div>
-
-
-						</div>
-
-
-					</div> -->
 				</div>
 			</div>
 
+		
 		</div>
-</section>
+	</div>
 
+	</div>
+</section>
