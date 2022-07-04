@@ -411,13 +411,13 @@ INFOPRODUCTOS
 			?>
 
 
-			<div id="faq" role="tablist" aria-multiselectable="true">
+		<!-- 	<div id="faq" role="tablist" aria-multiselectable="true">
 
 				<div class="panel panel-default">
 					<div class="panel-heading " role="tab" id="questionOne">
 						<h5 class="panel-title text-center ">
 							<a data-toggle="collapse" data-parent="#faq" href="#answerOne" aria-expanded="true" aria-controls="answerOne">
-								Details    <i style="margin-right:10px" class="fa fa-plus"></i>
+								Details <i style="margin-right:10px" class="fa fa-plus"></i>
 							</a>
 						</h5>
 					</div>
@@ -432,7 +432,7 @@ INFOPRODUCTOS
 					<div class="panel-heading" role="tab" id="questionTwo">
 						<h5 class="panel-title text-center">
 							<a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#answerTwo" aria-expanded="false" aria-controls="answerTwo">
-								Tech Specs   <i style="margin-right:10px" class="fa fa-plus"></i>
+								Tech Specs <i style="margin-right:10px" class="fa fa-plus"></i>
 							</a>
 						</h5>
 					</div>
@@ -443,22 +443,9 @@ INFOPRODUCTOS
 					</div>
 				</div>
 
-				<!-- 	<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="questionThree">
-						<h5 class="panel-title">
-							<a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#answerThree" aria-expanded="false" aria-controls="answerThree">
-								Shipping & Returns
-							</a>
-						</h5>
-					</div>
-					<div id="answerThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="questionThree">
-						<div class="panel-body">
-							Answer 3...
-						</div>
-					</div>
-				</div> -->
+			
 
-			</div>
+			</div> -->
 			<!--=====================================
 				BOTONES DE COMPRA
 				======================================-->
@@ -566,7 +553,7 @@ INFOPRODUCTOS
 					}
 				}
 
-				
+
 
 
 				?>
@@ -684,7 +671,7 @@ INFOPRODUCTOS
 				?>
 
 			</div>
-		<!--=====================================
+			<!--=====================================
 				CARACTERÍSTICAS DEL PRODUCTO
 				======================================-->
 
@@ -693,8 +680,8 @@ INFOPRODUCTOS
 
 				<?php
 
-			
-									/*=============================================
+
+				/*=============================================
 						ENTREGA
 						=============================================*/
 
@@ -888,14 +875,14 @@ INFOPRODUCTOS
 		?>
 
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
-		<li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Descripcion</a>
-  </li>
- 
-<!--   <li class="nav-item">
+			<li class="nav-item">
+				<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Descripcion</a>
+			</li>
+
+			<!--   <li class="nav-item">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Informacion adicional</a>
   </li> -->
- 
+
 
 			<?php
 
@@ -1007,32 +994,37 @@ INFOPRODUCTOS
 
 
 			</a></li>
-		
+
 
 		</ul>
 
 		<br>
 
 	</div>
-	<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><?php 
-	echo '<img class="img-responsive" src="' .$servidor . $infoproducto["portada"] . '" width="100%">';
-	?></div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><div class="row comentarios">
+	
 
-<?php
+	<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+		Acerca de este artículo Capacidad de datos de alta velocidad: el cable HDMI iVANKY 4K es compatible con HDMI 2.0b, incluyendo 18 Gbps, modo espejo y extensión, Ultra HD 4K 2160p, HD 2K 1080p, QHD 1440p, HDCP 2.2, 48 bits de color intenso, devolución de audio (ARC), audio Dolby TrueHD 7.1 y conexión en caliente. Cable HDMI 4K HDR: perfecto para tu televisor 4K UHD. Compatible con tus dispositivos de transmisión, Apple TV 4K, NVIDIA SHIELD TV, reproductores de CD/DVD/Blu-ray, Fire TV, Roku Ultra, PS4/3, Switch, computadoras u otros dispositivos habilitados para HDMI a tu televisor 4K/HD, monitores, pantallas o proyectores. Mejora innovadora: diseñado para todos los dispositivos con HDMI 2.0 estándares y compatibles con HDMI 1.4, 1.3 y 1.2. El blindaje de metal de hojalata y los conectores chapados en oro, resistentes a la corrosión pueden proteger contra interferencias de señal externas, garantizan que la transmisión de la señal sea estable y minimizan la pérdida de señal. Diseño ultra duradero: construido con carcasa de aluminio delgada y cubierta trenzada de nailon de gran calidad, este cable HDMI puede soportar ensayos de flexión de más de 10.000 veces sin reducir la flexibilidad del cable y garantizar el mejor rendimiento posible.
+		<?php
+		#echo '<img class="img-responsive" src="' .$servidor . $infoproducto["portada"] . '" width="100%">';
+		?></div>
+	<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+		<div class="row comentarios">
 
-foreach ($comentarios as $key => $value) {
+			<?php
 
-	if ($value["comentario"] != "") {
+			foreach ($comentarios as $key => $value) {
 
-		$item = "id";
-		$valor = $value["id_usuario"];
+				if ($value["comentario"] != "") {
 
-		$usuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
+					$item = "id";
+					$valor = $value["id_usuario"];
 
-		if (is_array($usuario)) {
+					$usuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
 
-			echo '<div class="panel-group col-md-3 col-sm-6 col-xs-12 alturaComentarios">
+					if (is_array($usuario)) {
+
+						echo '<div class="panel-group col-md-3 col-sm-6 col-xs-12 alturaComentarios">
 			
 				<div class="panel panel-default">
 				  
@@ -1041,21 +1033,21 @@ foreach ($comentarios as $key => $value) {
 					  ' . $usuario["nombre"] . '
 					  <span class="text-right">';
 
-			if ($usuario["modo"] == "directo") {
+						if ($usuario["modo"] == "directo") {
 
-				if ($usuario["foto"] == "") {
+							if ($usuario["foto"] == "") {
 
-					echo '<img class="img-circle pull-right" src="' . $servidor . 'vistas/img/usuarios/default/anonymous.png" width="20%">';
-				} else {
+								echo '<img class="img-circle pull-right" src="' . $servidor . 'vistas/img/usuarios/default/anonymous.png" width="20%">';
+							} else {
 
-					echo '<img class="img-circle pull-right" src="' . $url . $usuario["foto"] . '" width="20%">';
-				}
-			} else {
+								echo '<img class="img-circle pull-right" src="' . $url . $usuario["foto"] . '" width="20%">';
+							}
+						} else {
 
-				echo '<img class="img-circle pull-right" src="' . $usuario["foto"] . '" width="20%">';
-			}
+							echo '<img class="img-circle pull-right" src="' . $usuario["foto"] . '" width="20%">';
+						}
 
-			echo '</span>
+						echo '</span>
 
 				  </div>
 				 
@@ -1063,104 +1055,104 @@ foreach ($comentarios as $key => $value) {
 
 				  <div class="panel-footer">';
 
-			switch ($value["calificacion"]) {
+						switch ($value["calificacion"]) {
 
-				case 0.5:
-					echo '<i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
+							case 0.5:
+								echo '<i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-					break;
+								break;
 
-				case 1.0:
-					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+							case 1.0:
+								echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-					break;
+								break;
 
-				case 1.5:
-					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+							case 1.5:
+								echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-					break;
+								break;
 
-				case 2.0:
-					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+							case 2.0:
+								echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-					break;
+								break;
 
-				case 2.5:
-					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+							case 2.5:
+								echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-					break;
+								break;
 
-				case 3.0:
-					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+							case 3.0:
+								echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-					break;
+								break;
 
-				case 3.5:
-					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+							case 3.5:
+								echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-					break;
+								break;
 
-				case 4.0:
-					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+							case 4.0:
+								echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-					break;
+								break;
 
-				case 4.5:
-					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+							case 4.5:
+								echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>';
-					break;
+								break;
 
-				case 5.0:
-					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+							case 5.0:
+								echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>
 							  <i class="fa fa-star text-success" aria-hidden="true"></i>';
-					break;
-			}
+								break;
+						}
 
-			echo '</div>
+						echo '</div>
 				
 				</div>
 
 			</div>';
-		}
-	}
-}
+					}
+				}
+			}
 
-?>
+			?>
 
-</div>
+		</div>
 
-<hr></div>
-	
+	</div>
+
 
 </div>
 
