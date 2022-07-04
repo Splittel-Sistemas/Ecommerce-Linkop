@@ -1003,7 +1003,7 @@ INFOPRODUCTOS
 	</div>
 	
     <div class="tab-content">
-	<div class="tab-pane fade  active" id="home" role="tabpanel" aria-labelledby="home-tab">
+	<div class="tab-pane fade active in" id="home" role="tabpanel" aria-labelledby="home-tab">
 		<?php
 		echo '<img class="img-responsive" src="' .$servidor . $infoproducto["portada"] . '" width="100%">';
 		?>
