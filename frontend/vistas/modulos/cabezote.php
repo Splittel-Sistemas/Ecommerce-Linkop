@@ -229,7 +229,7 @@ HEADER
 
 						</a>
 						<!-- 			<i class="fa fa-clock-o"></i><span class="cantidadCesta"></span> -->
-						<!-- <p>TU CESTA  <br> MXN $ <span class="sumaCesta"></span></p> -->
+						<!-- <p>TU CESTA  <br> MXN $ <span class="sumaCesta"></span></p>  ds-->
 					</li>
 					<li class="dropdown user user-menu" id="usermenu">
 
