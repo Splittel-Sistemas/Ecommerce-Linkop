@@ -373,7 +373,7 @@ JUMBOTRON AVISO OFERTA
 				    <h1>Lo sentimos,</h1>
 				    <p>¡No hay ofertas disponibles en este momento!</p>
 				  </div>
-				</div>';
+				</div> <br><br> <br><br> <br><br>';
 
 			}
 

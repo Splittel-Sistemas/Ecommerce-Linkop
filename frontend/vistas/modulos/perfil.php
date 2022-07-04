@@ -101,7 +101,7 @@ SECCIÓN PERFIL
 				    
 				    		<h2>Aún no tienes compras realizadas en esta tienda</h2>
 
-				  		</div>';
+				  		</div><br><br> <br><br> <br><br><br><br> <br><br> <br><br><br><br> <br><br> <br><br>';
 
 					}else{
 
@@ -375,8 +375,8 @@ SECCIÓN PERFIL
 			    		
 			    
 			    		<h2>Aún no tiene productos en su lista de deseos</h2>
-
-			  		</div>';
+						<br><br> <br><br> <br><br>
+			  		</div> ';
 				
 				}else{
 
@@ -526,6 +526,16 @@ SECCIÓN PERFIL
 
 			?>
 
+<br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
 
 		  	</div>
 
