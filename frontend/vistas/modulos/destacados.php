@@ -88,7 +88,7 @@ BANNER
 		left: 0;
 		opacity: 0;
 		transition: opacity .5s;
-		background:rgba(3, 15, 36, 0.72);
+		background: rgba(3, 15, 36, 0.72);
 		color: white;
 
 		/* position the text in t’ middle*/
@@ -270,7 +270,7 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 		if ($value["estado"] != 0) {
 
-			echo '<li class="col-md-3 col-sm-6 col-xs-12">
+			echo '<li class="col-md-3 col-sm-6 col-xs-6">
 
 							<figure>
 								
@@ -754,7 +754,7 @@ BREADCRUMB VISITAS
 	<div class="row border border-dark ">
 		<div class="container">
 			<div class="col-xs-12 col-sm-12 col-md-6  text-center">
-				<div class="col-sm-12 text-center" style="height:100%;border: 1px solid white;" >
+				<div class="col-sm-12 text-center" style="height:100%;border: 1px solid white;">
 
 
 					<article id="3685" class="location-listing">

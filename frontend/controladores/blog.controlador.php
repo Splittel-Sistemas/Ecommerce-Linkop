@@ -16,6 +16,15 @@ class ControladorBlog{
 
 	}
 
+	static public function ctrMostrarBlogIndex($item, $valor){
+
+		$tabla = "blog";
+
+		$respuesta = ModeloBlog::mdlMostrarBlog45($tabla, $item, $valor);
+
+		return $respuesta;
+
+	}
 	/*=============================================
 	CREAR BANNER
 	=============================================*/

@@ -298,6 +298,12 @@ if(isset($_GET["ruta"])){
 
 		include "modulos/info.php";
 
+	}
+	else if($rutas[0] == "contacto"){
+
+
+		include "modulos/contacto.php";
+
 	}else{
 
 		include "modulos/error404.php";
