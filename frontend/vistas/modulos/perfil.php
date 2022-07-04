@@ -693,7 +693,7 @@ SECCIÓN PERFIL
 						}
 
 						?>
-
+<br><br><br><br>
 						</div>
 
 						<?php
