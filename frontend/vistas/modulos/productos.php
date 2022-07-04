@@ -365,6 +365,7 @@ LISTAR PRODUCTOS
 						 
 
 						 <h2>Aún no hay productos en esta sección</h2>
+						 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 					</div>';
 			} else {
