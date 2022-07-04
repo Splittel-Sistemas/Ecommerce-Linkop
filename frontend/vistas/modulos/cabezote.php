@@ -190,9 +190,10 @@ HEADER
 								<span class="input-group-btn">
 									<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
 
-										<button class="btn btn-default backColor" type="submit" style="padding:5px">
+										<button class="btn btn-default " type="submit" style="padding:5px">
+										<img src="<?php echo $servidor; ?>vistas/img/plantilla/lupa.png" class=" text-center " style="width: 23px;padding-top:-12px; ">
 
-											<i class="fa fa-search"></i>
+										<!-- 	<i class="fa fa-search"></i> -->
 
 										</button>
 
