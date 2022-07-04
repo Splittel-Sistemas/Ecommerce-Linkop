@@ -851,7 +851,7 @@ INFOPRODUCTOS
 
 	<br>
 
-	<div class="row">
+	<div class="row" role="tabpanel">
 
 		<?php
 
@@ -875,7 +875,7 @@ INFOPRODUCTOS
 		?>
 
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
-			<li class="nav-item">
+			<li class="nav-item" class="active">
 				<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Descripcion</a>
 			</li>
 
