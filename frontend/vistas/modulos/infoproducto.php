@@ -491,7 +491,7 @@ INFOPRODUCTOS
 
 					<select class="form-control seleccionarDetalle" id="seleccionarColor">
 						
-						<option value="">Color</option>';
+						<option value="" id="seleccionarColor1 ">Color</option>';
 
 							for ($i = 0; $i < count($detalles["Color"]); $i++) {
 

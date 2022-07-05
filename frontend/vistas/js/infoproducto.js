@@ -42,18 +42,51 @@ $(".infoproducto figure.visor img").mouseover(function(event){
 	})
 
 })
+
+
+
+/* ******************  PRUEBAS ************************ */
+/* ******************  PRUEBAS ************************ */
+
+/* ******************  PRUEBAS ************************ */
+
+/* ******************  PRUEBAS ************************ */
+/* ******************  PRUEBAS ************************ */
+
+/* ******************  PRUEBAS ************************ */
+
+/* ******************  PRUEBAS ************************ */
+/* ******************  PRUEBAS ************************ */
+
+/* ******************  PRUEBAS ************************ */
 $("#seleccionarColor").change(function() {
 	var num = $(this).val();
 	var ruta = $("#rmn").val();
 	var lastIndex = ruta.lastIndexOf("-");
 	ruta = ruta.substring(0, lastIndex);
+
 /* 	alert("https://linkop.com.mx/"+ruta+"-"+num); */
 	location.href ="https://linkop.com.mx/"+ruta+"-"+num;
 	/* se comenta cambia de imagen dependiendo el color */
-	$("#seleccionarColor").append('<option value="'+ruta+'">'+num+'</option>');
 
 
 });  
+$( document ).ready(function() {
+	var ruta =window.location;
+	var ruta1 =String(ruta);
+var ultima  = ruta1.split("-").splice(-1);
+
+	var lastIndex = ruta1.lastIndexOf("-");
+		ruta1 = ruta1.substring(0, lastIndex);
+var tamaño  = ruta1.split("-").splice(-1);
+	
+
+	$('#seleccionarColor').val(ultima)
+	$('#seleccionarTalla').val(tamaño)
+
+});
+
+
 $("#seleccionarTalla").change(function() {
 	var num = $(this).val();
 	var ruta = $("#rmn").val();
@@ -72,6 +105,12 @@ $("#seleccionarTalla").change(function() {
 
 
 }); 
+
+
+/* ****************** TERMINA PRUEBAS ************************ */
+/* ****************** TERMINA PRUEBAS ************************ */
+
+/* ****************** TERMINA PRUEBAS ************************ */
 $(".infoproducto figure.visor img").mouseout(function(event){
 
 	$(".lupa").fadeOut("fast");
