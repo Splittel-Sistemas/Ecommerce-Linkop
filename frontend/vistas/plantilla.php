@@ -100,7 +100,7 @@
 	<meta name="twitter:image" content="<?php if(is_array($cabeceras)){echo $cabeceras['portada'];}?>">
 	<meta name="twitter:site" content="@tu-usuario">
 
-
+	<meta name="facebook-domain-verification" content="s7ghawqspq7pv557i58etbp9n9ahch" />
 	<!--=====================================
 	PLUGINS DE CSS
 	======================================-->
