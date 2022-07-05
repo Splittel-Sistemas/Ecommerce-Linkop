@@ -507,7 +507,7 @@ INFOPRODUCTOS
 							';
 						}
 
-						if ($detalles["Marca"] != null) {
+				/* 		if ($detalles["Marca"] != null) {
 
 							echo '<div class="col-md-4 col-xs-12">
 
@@ -525,7 +525,7 @@ INFOPRODUCTOS
 						</div>';
 						} else {
 							echo '<input class="form-control seleccionarDetalle" id="seleccionarMarca" type="hidden" >';
-						}
+						} */
 					} else {
 
 						echo '<div class="col-xs-12">
