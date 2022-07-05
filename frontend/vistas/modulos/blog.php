@@ -122,7 +122,7 @@ Blog Linkop
 
 							$banner = ControladorBlog::ctrMostrarBlogIndex($item, $valor);
 							foreach ($banner as $key => $value) {
-								echo '
+								/* echo '
 										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 								<div class="card text-center">
 								<img class="card-img-top" src="' . $servidor . $banner[$i]['img'] . '" alt="" width="100%">
@@ -136,6 +136,19 @@ Blog Linkop
 									</div>
 									</div>
 								</div>';
+ */
+								echo'<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="card text-center">
+								<img class="card-img-top" src="' . $servidor . $banner[$i]['img'] . '" alt="" width="100%">
+									<div class="card-block">
+									<h4 class="card-title"><b>' . $banner[$i]['ruta'] . '</b></h4>
+									<p class="card-text"> Publicado hace ' . imprimirTiempo($banner[$i]['fecha'])
+														. '</p>
+										<a class="btn btn-default" href="blogs/' . $banner[$i]['id'] . '">Mas informacion</a>
+
+									</div>
+								</div>
+							</div>';
 
 
 
