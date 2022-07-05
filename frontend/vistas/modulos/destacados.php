@@ -222,9 +222,9 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 		<div class="container-fluid productos">
 	
-			<div class="">
+			<div class="container">
 		
-			<div class=""> 
+			<div class="container"> 
 
 			<div class="col-xs-12 tituloDestacado">
 
@@ -750,7 +750,7 @@ BREADCRUMB VISITAS
 	</div>
 </div> -->
 <!-- 3 IMAGENES JUNTAS -->
-<div class="container">
+<div class="container-fluid">
 	<div class="row border border-dark ">
 		<div class="row">
 			<!-- AQUI  -->
@@ -833,7 +833,7 @@ BREADCRUMB VISITAS
 <div class="child-page-listing text-center">
 
 
-	<div class="grid" style="margin: right 0px;">
+	<div class="container-fluid">
 
 		<article id="3685" class="location-listing">
 
