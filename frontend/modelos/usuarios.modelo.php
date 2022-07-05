@@ -374,7 +374,33 @@ class ModeloUsuarios{
 		$stmt = null;
 
 	}
+/* REGISTRO DE USUARIOS AL BOLETIN  */
 
+
+
+static public function mdlRegistroUsuarioSub($tabla, $datos){
+
+	$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, email) VALUES (:nombre, :email)");
+
+	$stmt->bindParam(":nombre", "Subscripcion", PDO::PARAM_STR);
+	$stmt->bindParam(":email", $datos["emailContactenos"], PDO::PARAM_STR);
+
+
+	if($stmt->execute()){
+
+		return "ok";
+
+	}else{
+
+		return "error";
+	
+	}
+
+	$stmt->close();
+	$stmt = null;
+
+}
+/*  */
 	/*=============================================
 	INGRESO COMENTARIOS
 	=============================================*/

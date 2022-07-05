@@ -1054,6 +1054,9 @@ class ControladorUsuarios{
 						</script>';
 
 					}else{
+						$tabla = "suscripcion";
+
+						 ModeloUsuarios::mdlRegistroUsuarioSub($tabla, $_POST['emailContactenos']);
 
 						echo '<script> 
 
