@@ -6,7 +6,11 @@ FOOTER
 	<div class="container">
 
 		<div class="row">
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 formContacto  text-center">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 formContacto  text-center">
+							<h4 style="color: white;">MANTENTE CONECTADO</h4>
+			
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-11 formContacto  text-center">
 				<!-- <label for="exampleInputEmail2">
 							<h4 style="color: white;">STAY CONNECTD</h4>
 						</label> -->
@@ -17,7 +21,7 @@ FOOTER
 						<input type="email" id="emailContactenos" name="emailContactenos" class="form-control" placeholder="Escriba su correo electrónico" required>
 
 						<span class="input-group-btn">
-							<input type="submit" value="Subscribe" class="btn btn-default backColor pull-center" id="enviar">
+							<input type="submit" value="Subscribete" class="btn btn-default backColor pull-center" id="enviar">
 
 						</span>
 					</div>
@@ -32,7 +36,7 @@ FOOTER
 			</div>
 
 
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 formContacto  text-center">
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 formContacto  text-center">
 				<ul>
 					<li>
 						<!-- <li>
