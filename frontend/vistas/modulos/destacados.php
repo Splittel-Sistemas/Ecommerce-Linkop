@@ -222,9 +222,9 @@ for ($i = 0; $i < count($titulosModulos); $i++) {
 
 		<div class="container-fluid productos">
 	
-			<div class="container">
+			<div class="">
 		
-			<div class="container"> 
+			<div class=""> 
 
 			<div class="col-xs-12 tituloDestacado">
 
@@ -750,9 +750,10 @@ BREADCRUMB VISITAS
 	</div>
 </div> -->
 <!-- 3 IMAGENES JUNTAS -->
-<div class="container-fluid">
+<div class="container">
 	<div class="row border border-dark ">
-		<div class="row"> <!-- AQUI  -->
+		<div class="row">
+			<!-- AQUI  -->
 			<div class="col-xs-12 col-sm-12 col-md-6  text-center">
 				<div class="col-sm-12 text-center" style="height:100%;border: 1px solid white;">
 
@@ -832,7 +833,7 @@ BREADCRUMB VISITAS
 <div class="child-page-listing text-center">
 
 
-	<div class="grid">
+	<div class="grid" style="margin: right 0px;">
 
 		<article id="3685" class="location-listing">
 
@@ -842,24 +843,24 @@ BREADCRUMB VISITAS
 			<div class="location-image">
 				<a href="#">
 
-				
-<?php
-$banner = ControladorProductos::ctrMostrarBanner($ruta);
 
-if ($banner != null) {
+					<?php
+					$banner = ControladorProductos::ctrMostrarBanner($ruta);
 
-	if ($banner["estado"] != 0) {
+					if ($banner != null) {
 
-		echo '
+						if ($banner["estado"] != 0) {
+
+							echo '
 
 				<img src="' . $servidor . $banner["img"] . '" class="img-responsive" width="100%">	
 
 			 ';
-	}
-}
-?>
-				
-				
+						}
+					}
+					?>
+
+
 				</a>
 
 			</div>
