@@ -37,6 +37,37 @@ class ModeloProductos{
 	}
 
 	/*=============================================
+	MOSTRAR CATEGORÍAS
+	=============================================*/
+
+	static public function mdlMostrarCategorias1($tabla, $item){
+
+		if($item != null){
+
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE ruta = :ruta");
+
+			$stmt -> bindParam(":ruta", $item, PDO::PARAM_STR);
+
+			$stmt -> execute();
+
+			return $stmt -> fetch();
+
+		}else{
+
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+
+			$stmt -> execute();
+
+			return $stmt -> fetchAll();
+
+		}
+		
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+	/*=============================================
 	MOSTRAR SUB-CATEGORÍAS
 	=============================================*/
 
