@@ -78,7 +78,7 @@ PRODUCTOS DESTACADOS
 
 				<h4></h4>
 				<a href="' . $url . $value["ruta"] . '" class="  " titulo="' . $value["categoria"] . '">
-				<img  src="' . $servidor . $value["portada"] . '" width="70%"><br>
+				<img  src="' . $servidor . $value["portada"] . '" width="50%"><br>
 				' . $value["categoria"] . '</a>
 				</h4>
 
