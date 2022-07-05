@@ -841,7 +841,26 @@ BREADCRUMB VISITAS
 
 			<div class="location-image">
 				<a href="#">
-					<img src="<?php echo $servidor ?>vistas/img/productos/fondo.jpg" class="img-responsive" alt="MAS INFORMACION"> </a>
+
+				
+<?php
+$banner = ControladorProductos::ctrMostrarBanner($ruta);
+
+if ($banner != null) {
+
+	if ($banner["estado"] != 0) {
+
+		echo '
+
+				<img src="' . $servidor . $banner["img"] . '" class="img-responsive" width="100%">	
+
+			 ';
+	}
+}
+?>
+				
+				
+				</a>
 
 			</div>
 
