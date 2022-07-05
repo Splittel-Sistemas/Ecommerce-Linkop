@@ -793,12 +793,31 @@ BREADCRUMB VISITAS
 
 					<article id="3685" class="location-listing">
 
-						<a class="location-title" href="<?php echo $url; ?>baterias" style="color: white;">
-							BATERIAS </a>
+						<a class="location-title" href="<?php echo $url; ?>smart-home" style="color: white;">
+							Smart Home </a>
 
 						<div class="location-image">
 							<a href="#">
-								<img src="<?php echo  $servidor; ?>vistas/img/productos/aaaad.jpg" alt="Random Name" width="100%" height="50%">
+							
+							<?php
+
+$item = 'smart-home';
+
+$categorias = ControladorProductos::ctrMostrarCategorias1($item, $valor);
+
+
+echo '
+<img  src="' . $servidor . $categorias["portada"] . '" alt="Random Name" width="100%" height="50%">
+';
+
+
+
+
+
+
+
+
+?>
 
 							</a>
 
@@ -817,7 +836,30 @@ BREADCRUMB VISITAS
 
 						<div class="location-image">
 							<a href="#">
-								<img src="<?php echo  $servidor; ?>vistas/img/productos/aaa.jpg" alt="Random Name" width="100%" height="50%">
+
+
+
+								<?php
+
+								$item = 'cables';
+
+								$categorias = ControladorProductos::ctrMostrarCategorias1($item, $valor);
+
+
+								echo '
+			<img  src="' . $servidor . $categorias["portada"] . '" alt="Random Name" width="100%" height="50%">
+			';
+
+
+
+
+
+
+
+
+								?>
+
+							
 
 							</a>
 

@@ -15,7 +15,19 @@ class ControladorProductos{
 		return $respuesta;
 
 	}
+	/*=============================================
+	MOSTRAR CATEGORÍAS
+	=============================================*/
 
+	static public function ctrMostrarCategorias1($item, $valor){
+
+		$tabla = "categorias";
+
+		$respuesta = ModeloProductos::mdlMostrarCategorias1($tabla, $item, $valor);
+
+		return $respuesta;
+
+	}
 	/*=============================================
 	MOSTRAR SUBCATEGORÍAS
 	=============================================*/

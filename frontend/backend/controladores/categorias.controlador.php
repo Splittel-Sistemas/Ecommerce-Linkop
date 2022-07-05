@@ -40,8 +40,8 @@ class ControladorCategorias{
 
 					list($ancho, $alto) = getimagesize($_FILES["fotoPortada"]["tmp_name"]);
 
-					$nuevoAncho = 1280;
-					$nuevoAlto = 720;
+					$nuevoAncho = 640;
+					$nuevoAlto = 445;
 
 					/*=============================================
 					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
@@ -269,8 +269,9 @@ class ControladorCategorias{
 
 					list($ancho, $alto) = getimagesize($_FILES["fotoPortada"]["tmp_name"]);
 
-					$nuevoAncho = 1280;
-					$nuevoAlto = 720;
+				
+					$nuevoAncho = 640;
+					$nuevoAlto = 445;
 
 					/*=============================================
 					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP

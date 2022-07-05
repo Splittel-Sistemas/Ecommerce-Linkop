@@ -103,7 +103,8 @@ class ModeloCategorias{
 
 	static public function mdlEditarCategoria($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET categoria = :categoria, ruta = :ruta, estado = :estado, oferta = :oferta, precioOferta = :precioOferta, descuentoOferta = :descuentoOferta, imgOferta = :imgOferta, finOferta = :finOferta WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET categoria = :categoria, ruta = :ruta, estado = :estado, oferta = :oferta, precioOferta = :precioOferta,
+		 descuentoOferta = :descuentoOferta, imgOferta = :imgOferta, finOferta = :finOferta , portada = :portada WHERE id = :id");
 
 		$stmt -> bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
 		$stmt->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
@@ -113,6 +114,8 @@ class ModeloCategorias{
 		$stmt->bindParam(":descuentoOferta", $datos["descuentoOferta"], PDO::PARAM_STR);
 		$stmt->bindParam(":imgOferta", $datos["imgOferta"], PDO::PARAM_STR);
 		$stmt->bindParam(":finOferta", $datos["finOferta"], PDO::PARAM_STR);
+		$stmt->bindParam(":portada", $datos["imgPortada"], PDO::PARAM_STR);
+
 		$stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
 
 		if($stmt->execute()){
