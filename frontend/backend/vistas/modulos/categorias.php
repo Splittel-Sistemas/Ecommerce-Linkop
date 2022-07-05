@@ -171,7 +171,8 @@ MODAL AGREGAR CATEGORÍA
 
                <input type="file" class="fotoPortada" name="fotoPortada">
 
-               <p class="help-block">Tamaño recomendado 1280px * 720px <br> Peso máximo de la foto 2MB</p>
+                              <p class="help-block">Tamaño recomendado 640 * 430 <br> Peso máximo de la foto 2MB</p>
+
 
                 <img src="vistas/img/cabeceras/default/default.jpg" class="img-thumbnail previsualizarPortada" width="100%">
 
@@ -411,7 +412,8 @@ MODAL EDITAR CATEGORÍA
                <input type="file" class="fotoPortada" name="fotoPortada">
                <input type="hidden" class="antiguaFotoPortada" name="antiguaFotoPortada">
 
-               <p class="help-block">Tamaño recomendado 1280px * 720px <br> Peso máximo de la foto 2MB</p>
+                              <p class="help-block">Tamaño recomendado 640 * 430 <br> Peso máximo de la foto 2MB</p>
+
 
                 <img src="vistas/img/cabeceras/default/default.jpg" class="img-thumbnail previsualizarPortada" width="100%">
 
