@@ -50,10 +50,10 @@ $("#seleccionarColor").change(function() {
 /* 	alert("https://linkop.com.mx/"+ruta+"-"+num); */
 	location.href ="https://linkop.com.mx/"+ruta+"-"+num;
 	/* se comenta cambia de imagen dependiendo el color */
+	$("#seleccionarColor").append('<option value="'+ruta+'">'+num+'</option>');
 
 
 });  
-
 $("#seleccionarTalla").change(function() {
 	var num = $(this).val();
 	var ruta = $("#rmn").val();
