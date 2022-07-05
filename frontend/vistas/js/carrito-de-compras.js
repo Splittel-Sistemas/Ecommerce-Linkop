@@ -71,7 +71,7 @@ for(var i = 0; i < indice.length; i++){
 				success: function(respuesta){
 					cantidad = respuesta["cantidad"];
 		
-					if(respuesta["precioOferta"] == 0){
+					if(respuesta["precioOferta"] == 0 ||  respuesta["precioOferta"] == null ){
 
 						precio = respuesta["precio"];
 
