@@ -288,8 +288,8 @@ HEADER
  -->
 					<ul class="nav navbar-nav">
 						<li class="menu-item dropdown">
-							<a href="#" class="dropdown-toggle" id="productoss" data-toggle="dropdown">PRODUCTOS <b class="caret"></b></a>
-							<ul class="dropdown-menu" id="listaProductoss" style="min-width:260px;">
+							<a href="#" class="dropdown-toggle" id="productos" data-toggle="dropdown">PRODUCTOS <b class="caret"></b></a>
+							<ul class="dropdown-menu" id="listaProductos">
 
 
 								<?php
@@ -322,8 +322,7 @@ HEADER
 
 
 
-									echo '<li class="menu-item dropdown dropdown-submenu"><a href="' . $url . $value["ruta"] . '" class="dropdown-toggle" data-toggle="dropdown"><img  src="' . $servidor . $value["portada"] . '" width="30%">    ' . $value["categoria"] . '</a>
-									<br>
+									echo '<li class="menu-item dropdown dropdown-submenu"><a href="' . $url . $value["ruta"] . '" class="dropdown-toggle" data-toggle="dropdown">' . $value["categoria"] . '</a>
 								<ul class="dropdown-menu">
 								';
 
