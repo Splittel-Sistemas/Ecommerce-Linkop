@@ -798,6 +798,75 @@ VENTANA MODAL PARA EL INGRESO
 </div>
 
 
+
+
+
+
+<!--=====================================
+VENTANA MODAL PARA EL COSTO DE ENVIO
+======================================-->
+
+<div class="modal fade modalFormulario" id="modalIngreso1" role="dialog">
+
+	<div class="modal-content modal-dialog">
+
+		<div class="modal-body modalTitulo">
+
+			<h3 class="">ENVIO DHL</h3>
+
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+			
+
+			<!--=====================================
+			INGRESO DIRECTO
+			======================================-->
+
+			<form method="post" action="vistas/modulos/logi_etiq_dhl7.php" >
+
+				<hr>
+
+				<div class="form-group">
+
+					<div class="input-group">
+
+						<span class="input-group-addon">
+
+							<i class="glyphicon glyphicon-envelope"></i>
+
+						</span>
+
+						<input type="number" class="form-control" id="cp" name="cp" placeholder="Codigo Postal" required>
+
+					</div>
+						<input type="hidden" class="form-control" id="kg" name="kg"  >
+
+				</div>
+
+				
+
+
+
+			
+
+				<input type="submit" class="btn btn-default backColor btn-block btnIngreso" value="ENVIAR">
+
+				<br>
+
+
+			</form>
+
+		</div>
+
+		<div class="modal-footer">
+
+			<!-- ¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong> -->
+
+		</div>
+
+	</div>
+
+</div>
 <!--=====================================
 VENTANA MODAL PARA OLVIDO DE CONTRASEÑA
 ======================================-->

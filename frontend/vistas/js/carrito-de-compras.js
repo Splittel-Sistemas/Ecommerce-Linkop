@@ -80,7 +80,8 @@ for(var i = 0; i < indice.length; i++){
 						precio = respuesta["precioOferta"];
 						
 					}
-
+					$("#kg").val(item.peso * item.cantidad); 
+					
 					$(".cuerpoCarrito").append(
 
 						'<div clas="row itemCarrito">'+
@@ -214,6 +215,7 @@ $(".agregarCarrito").click(function(){
 	var precio = $(this).attr("precio");
 	var tipo = $(this).attr("tipo");
 	var peso = $(this).attr("peso");
+	
 
 	var agregarAlCarrito = false;
 
@@ -308,6 +310,7 @@ $(".agregarCarrito").click(function(){
 				           "cantidad":"1"});
 
 		localStorage.setItem("listaProductos", JSON.stringify(listaCarrito));
+
 
 		/*=============================================
 		ACTUALIZAR LA CESTA
@@ -430,12 +433,11 @@ $(document).on("click", ".quitarItemCarrito", function(){
 GENERAR SUBTOTAL DESPUES DE CAMBIAR CANTIDAD
 =============================================*/
 $(document).on("change", ".cantidadItem", function(){
-
+	var peso =$(this).attr("peso");
 	var cantidad = $(this).val();
 	var precio = $(this).attr("precio");
 	var idProducto = $(this).attr("idProducto");
 	var item = $(this).attr("item");
-
 	$(".subTotal"+item).html('<strong>MXN $<span>'+(cantidad*precio)+'</span></strong>');
 
 	/*=============================================
@@ -459,6 +461,7 @@ $(document).on("change", ".cantidadItem", function(){
 			var pesoArray = $(idProducto[i]).attr("peso");
 			var tipoArray = $(cantidad[i]).attr("tipo");
 			var cantidadArray = $(cantidad[i]).val();
+			$("#kg").val(pesoArray * cantidadArray); 
 
 			listaCarrito.push({"idProducto":idProductoArray,
 						   "imagen":imagenArray,
