@@ -509,7 +509,9 @@ VENTANA MODAL PARA EL REGISTRO
 $mensaje = ControladorPlantilla::ctrMensajes();
 
 if (isset($_SESSION["validarSesion"])) {
-	echo '';
+	echo '<div class="alert alert-primary text-center" style="background-color: #030F24;margin-bottom: 0px;" role="alert">
+	<strong style="color:white"> '. $mensaje["mensaje2"] .' </strong>
+</div>';
 } else {
 
 ?>
