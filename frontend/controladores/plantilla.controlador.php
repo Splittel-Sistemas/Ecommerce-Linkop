@@ -39,4 +39,18 @@ class ControladorPlantilla{
 
 	}
 
+		/*=============================================
+	TRAEMOS LOS Mensajes
+	=============================================*/
+
+	static public function ctrMensajes(){
+
+		$tabla = "comercio";
+
+		$respuesta = ModeloPlantilla::mdlMensajes($tabla);
+
+		return $respuesta;
+	}
+
+
 }

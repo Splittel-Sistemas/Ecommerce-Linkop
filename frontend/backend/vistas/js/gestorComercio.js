@@ -490,6 +490,8 @@ var llaveSecretaPaypal = $("#llaveSecretaPaypal").val();
 var merchantIdPayu = $("#merchantIdPayu").val();
 var accountIdPayu = $("#accountIdPayu").val();
 var apiKeyPayu = $("#apiKeyPayu").val();
+var mensaje = $("#mensaje").val();
+var mensaje2 = $("#mensaje2").val();
 
 /*=============================================
 CAMBIAR MODO PAYPAL
@@ -557,6 +559,8 @@ $(".cambioInformacion").change(function(){
 	accountIdPayu = $("#accountIdPayu").val();
 
 	apiKeyPayu = $("#apiKeyPayu").val();
+	mensaje = $("#mensaje").val();
+	mensaje2 = $("#mensaje2").val();
 
 	$("#guardarInformacion").click(function(){
 
@@ -586,6 +590,8 @@ function cambiarInformacion(modoPaypal, modoPayu){
 	datos.append("merchantIdPayu", merchantIdPayu);
 	datos.append("accountIdPayu", accountIdPayu);
 	datos.append("apiKeyPayu", apiKeyPayu);
+	datos.append("mensaje", mensaje);
+	datos.append("mensaje2", mensaje2);
 
 	$.ajax({
 

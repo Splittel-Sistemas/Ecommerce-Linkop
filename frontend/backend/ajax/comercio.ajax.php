@@ -117,6 +117,9 @@ class AjaxComercio{
 	public $merchantIdPayu;
 	public $accountIdPayu;
 	public $apiKeyPayu;
+	public $mensaje;
+	public $mensaje2;
+
 
 	public function ajaxCambiarInformacion(){
 
@@ -132,7 +135,9 @@ class AjaxComercio{
 						"modoPayu"=>$this->modoPayu,
 						"merchantIdPayu"=>$this->merchantIdPayu,
 						"accountIdPayu"=>$this->accountIdPayu,
-						"apiKeyPayu"=>$this->apiKeyPayu);
+						"apiKeyPayu"=>$this->apiKeyPayu,
+						"mensaje"=>$this->mensaje,
+						"mensaje2"=>$this->mensaje2);
 
 		$respuesta = ControladorComercio::ctrActualizarInformacion($datos);
 
@@ -226,6 +231,9 @@ if(isset($_POST["impuesto"])){
 	$informacion -> merchantIdPayu = $_POST["merchantIdPayu"];
 	$informacion -> accountIdPayu = $_POST["accountIdPayu"];
 	$informacion -> apiKeyPayu = $_POST["apiKeyPayu"];
+	$informacion -> mensaje = $_POST["mensaje"];
+	$informacion -> mensaje2 = $_POST["mensaje2"];
+
 	$informacion -> ajaxCambiarInformacion();
 
 }

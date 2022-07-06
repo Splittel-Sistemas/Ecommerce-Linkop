@@ -5,20 +5,20 @@ $comercio = ControladorComercio::ctrSeleccionarComercio();
 ?>
 
 <div class="box box-info">
-	
+
 	<div class="box-header with-border">
-		
-		 <h3 class="box-title">INFORMACIÓN DEL COMERCIO</h3>
 
-		 <div class="box-tools pull-right">
+		<h3 class="box-title">INFORMACIÓN DEL COMERCIO</h3>
 
-      		<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+		<div class="box-tools pull-right">
 
-        		<i class="fa fa-minus"></i>
+			<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
 
-        	</button>
+				<i class="fa fa-minus"></i>
 
-        </div>
+			</button>
+
+		</div>
 
 	</div>
 
@@ -27,117 +27,117 @@ $comercio = ControladorComercio::ctrSeleccionarComercio();
 		<!-- IMPUESTO -->
 
 		<div class="form-group">
-	      
-	      <label for="usr">Impuesto:</label>
-	      
-	      <div class="input-group">
-	        
-	        <span class="input-group-addon"><i class="fa fa-percent"></i></span>
-	        <input type="number" min="1" class="form-control cambioInformacion" id="impuesto" value="<?php echo $comercio["impuesto"]; ?>">
 
-	      </div>
-	    
-	    </div>
+			<label for="usr">Impuesto:</label>
 
-	    <!-- ENVÍO NACIONAL -->
+			<div class="input-group">
 
-	    <div class="form-group">
-      
-	      <label for="usr">Envío Nacional:</label>
-	      
-	      <div class="input-group">
-	        
-	        <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
-	        <input type="number" min="1" class="form-control cambioInformacion" id="envioNacional" value="<?php echo $comercio["envioNacional"]; ?>">
+				<span class="input-group-addon"><i class="fa fa-percent"></i></span>
+				<input type="number" min="1" class="form-control cambioInformacion" id="impuesto" value="<?php echo $comercio["impuesto"]; ?>">
 
-	      </div>
-	    
-	    </div>
+			</div>
 
-	    <!-- ENVÍO INTERNACIONAL -->
+		</div>
 
-     	<div class="form-group">
-      
-	      <label for="usr">Envío Internacional:</label>
-	      
-	      <div class="input-group">
-	        
-	        <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
-	        <input type="number" min="1" class="form-control cambioInformacion" id="envioInternacional" value="<?php echo $comercio["envioInternacional"]; ?>">
+		<!-- ENVÍO NACIONAL -->
 
-	      </div>
-	    
-	    </div>
+		<div class="form-group">
 
-	    <!-- TASA MÍNIMA NACIONAL -->
+			<label for="usr">Envío Nacional:</label>
 
-	    <div class="form-group">
-      
-	      <label for="usr">Tasa Mínima Nacional:</label>
-	      
-	      <div class="input-group">
-	        
-	        <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
-	        <input type="number" min="1" class="form-control cambioInformacion" id="tasaMinimaNal" value="<?php echo $comercio["tasaMinimaNal"]; ?>">
+			<div class="input-group">
 
-	      </div>
-	    
-	    </div>
+				<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+				<input type="number" min="1" class="form-control cambioInformacion" id="envioNacional" value="<?php echo $comercio["envioNacional"]; ?>">
+
+			</div>
+
+		</div>
+
+		<!-- ENVÍO INTERNACIONAL -->
+
+		<div class="form-group">
+
+			<label for="usr">Envío Internacional:</label>
+
+			<div class="input-group">
+
+				<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+				<input type="number" min="1" class="form-control cambioInformacion" id="envioInternacional" value="<?php echo $comercio["envioInternacional"]; ?>">
+
+			</div>
+
+		</div>
+
+		<!-- TASA MÍNIMA NACIONAL -->
+
+		<div class="form-group">
+
+			<label for="usr">Tasa Mínima Nacional:</label>
+
+			<div class="input-group">
+
+				<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+				<input type="number" min="1" class="form-control cambioInformacion" id="tasaMinimaNal" value="<?php echo $comercio["tasaMinimaNal"]; ?>">
+
+			</div>
+
+		</div>
 
 		<!-- TASA MÍNIMA INTERNACIONAL -->
 
-	 	<div class="form-group">
-      
-	      <label for="usr">Tasa Mínima Internacional:</label>
-	      
-	      <div class="input-group">
-	        
-	        <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
-	        <input type="number" min="1" class="form-control cambioInformacion" id="tasaMinimaInt" value="<?php echo $comercio["tasaMinimaInt"]; ?>">
+		<div class="form-group">
 
-	      </div>
-	    
-	    </div>
+			<label for="usr">Tasa Mínima Internacional:</label>
 
-	    <!-- SELECCIONAR PAÍS -->
+			<div class="input-group">
 
-	    <div class="form-group">
-      
-	      <label for="sel1">Seleccione País:</label>
+				<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+				<input type="number" min="1" class="form-control cambioInformacion" id="tasaMinimaInt" value="<?php echo $comercio["tasaMinimaInt"]; ?>">
 
-	      <input type="hidden" id="codigoPais" value="<?php echo $comercio["pais"]; ?>">
-	      
-	      <select class="form-control cambioInformacion" id="seleccionarPais">
+			</div>
 
-	      	<option id="paisSeleccionado"></option>
-	       
-	      </select>
+		</div>
 
-	    </div>
+		<!-- SELECCIONAR PAÍS -->
 
-	    <!-- PASARELA DE PAGO PAYPAL -->
+		<div class="form-group">
 
-	    <div class="panel panel-default">
-	    	
+			<label for="sel1">Seleccione País:</label>
+
+			<input type="hidden" id="codigoPais" value="<?php echo $comercio["pais"]; ?>">
+
+			<select class="form-control cambioInformacion" id="seleccionarPais">
+
+				<option id="paisSeleccionado"></option>
+
+			</select>
+
+		</div>
+
+		<!-- PASARELA DE PAGO PAYPAL -->
+
+		<div class="panel panel-default">
+
 			<div class="panel-heading">
 
-      			<h4 class="text-uppercase">Configuración Paypal</h4>
+				<h4 class="text-uppercase">Configuración Paypal</h4>
 
-      		</div>
-			
+			</div>
+
 			<div class="panel-body">
-				
+
 				<div class="form-group row">
-					
-					 <div class="col-xs-3">
-					 	
+
+					<div class="col-xs-3">
+
 						<label>Modo:</label>
 
-						 <?php
+						<?php
 
-      					if($comercio["modoPaypal"] == "sandbox"){
+						if ($comercio["modoPaypal"] == "sandbox") {
 
-      						echo '	<label class="checkbox">
+							echo '	<label class="checkbox">
 
       									<input class="cambioInformacion" type="radio" value="sandbox" name="modoPaypal" checked>  
 
@@ -152,9 +152,9 @@ $comercio = ControladorComercio::ctrSeleccionarComercio();
           								Live
 
           							</label>';
-      					}else{
+						} else {
 
-      						echo '	<label class="checkbox">
+							echo '	<label class="checkbox">
 
       									<input class="cambioInformacion" type="radio" value="sandbox" name="modoPaypal">  
 
@@ -169,108 +169,145 @@ $comercio = ControladorComercio::ctrSeleccionarComercio();
           								Live
 
           							</label>';
+						}
 
+						?>
 
-      					}
+					</div>
 
-      					?>
+					<div class="col-xs-4">
 
-					 </div>
+						<label for="comment">Cliente:</label>
 
-					 <div class="col-xs-4">
-            
-            			<label for="comment">Cliente:</label>
-      
-            			<input type="text" class="form-control cambioInformacion" id="clienteIdPaypal" value="<?php echo $comercio["clienteIdPaypal"]; ?>">
+						<input type="text" class="form-control cambioInformacion" id="clienteIdPaypal" value="<?php echo $comercio["clienteIdPaypal"]; ?>">
 
-          			</div>
+					</div>
 
-      			 	<div class="col-xs-5">
+					<div class="col-xs-5">
 
-		            	<label for="comment">Llave Secreta:</label>
-		      
-		            	<input type="text" class="form-control cambioInformacion" id="llaveSecretaPaypal" value="<?php echo $comercio["llaveSecretaPaypal"]; ?>">
+						<label for="comment">Llave Secreta:</label>
 
-		          </div>
+						<input type="text" class="form-control cambioInformacion" id="llaveSecretaPaypal" value="<?php echo $comercio["llaveSecretaPaypal"]; ?>">
+
+					</div>
 
 				</div>
 
 			</div>
 
-	    </div>
+		</div>
 
-	    <!-- PASARELA DE PAGO PAYU -->
+		<!-- PASARELA DE PAGO PAYU -->
 
 		<div class="panel panel-default">
-    
-	  		<div class="panel-heading">
 
-	      		<h4 class="text-uppercase">Configuración Payu Latam</h4>
+			<div class="panel-heading">
 
-	      	</div>
+				<h4 class="text-uppercase">Configuración Payu Latam</h4>
 
-	      	<div class="panel-body">
+			</div>
 
-	        	<div class="form-group row">
-	          
-	          		<div class="col-xs-3">
+			<div class="panel-body">
 
-	          			<label>Modo:</label>
-	            
-				             <?php
+				<div class="form-group row">
 
-				          if($comercio["modoPayu"] == "sandbox"){
+					<div class="col-xs-3">
 
-				            echo '<label class="checkbox"><input class="cambioInformacion" type="radio" value="sandbox" name="modoPayu" checked>  Sandbox</label>
+						<label>Modo:</label>
+
+						<?php
+
+						if ($comercio["modoPayu"] == "sandbox") {
+
+							echo '<label class="checkbox"><input class="cambioInformacion" type="radio" value="sandbox" name="modoPayu" checked>  Sandbox</label>
 				              <label class="checkbox"><input class="cambioInformacion" type="radio" value="live" name="modoPayu"> Live</label>';
-				          
-				          }else{
+						} else {
 
-				            echo '<label class="checkbox"><input class="cambioInformacion" type="radio" value="sandbox" name="modoPayu">  Sandbox</label>
+							echo '<label class="checkbox"><input class="cambioInformacion" type="radio" value="sandbox" name="modoPayu">  Sandbox</label>
 				              <label class="checkbox"><input class="cambioInformacion" type="radio" value="live" name="modoPayu" checked> Live</label>';
+						}
 
-				          }
+						?>
 
-				          ?>
+					</div>
 
-	          		</div>
-	          
-		          	<div class="col-xs-3">
-		            
-		            	<label for="comment">Merchant Id:</label>
-		      
-		            	<input type="text" class="form-control cambioInformacion" id="merchantIdPayu" value="<?php echo $comercio["merchantIdPayu"]; ?>" >
+					<div class="col-xs-3">
 
-		          	</div>
-	          
-	          		<div class="col-xs-3">
+						<label for="comment">Merchant Id:</label>
 
-	        			<label for="comment">Account Id:</label>
-	      
-	            		<input type="text" class="form-control cambioInformacion" id="accountIdPayu" value="<?php echo $comercio["accountIdPayu"]; ?>">
+						<input type="text" class="form-control cambioInformacion" id="merchantIdPayu" value="<?php echo $comercio["merchantIdPayu"]; ?>">
 
-	     		 	</div>
+					</div>
 
-	      			<div class="col-xs-3">
+					<div class="col-xs-3">
 
-	            		<label for="comment">Api Key:</label>
-	      
-	             		<input type="text" class="form-control cambioInformacion" id="apiKeyPayu" value="<?php echo $comercio["apiKeyPayu"]; ?>">
+						<label for="comment">Account Id:</label>
 
-	          		</div>
+						<input type="text" class="form-control cambioInformacion" id="accountIdPayu" value="<?php echo $comercio["accountIdPayu"]; ?>">
 
-	        	</div>
+					</div>
 
-	      	</div>
+					<div class="col-xs-3">
 
-    	</div>
-		
+						<label for="comment">Api Key:</label>
+
+						<input type="text" class="form-control cambioInformacion" id="apiKeyPayu" value="<?php echo $comercio["apiKeyPayu"]; ?>">
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- PASARELA DE PAGO PAYU -->
+
+		<div class="panel panel-default">
+
+			<div class="panel-heading">
+
+				<h4 class="text-uppercase">Configuración Mensajes</h4>
+
+			</div>
+
+			<div class="panel-body">
+
+				<div class="form-group row">
+
+
+					<div class="col-xs-12">
+
+						<label for="comment">Mensajes:</label>
+
+						<input type="text" class="form-control cambioInformacion" id="mensaje" value="<?php echo $comercio["mensaje"]; ?>">
+
+					</div>
+
+				</div>
+				<div class="form-group row">
+
+
+					<div class="col-xs-12">
+
+						<label for="comment">Mensaje 2:</label>
+
+						<input type="text" class="form-control cambioInformacion" id="mensaje2" value="<?php echo $comercio["mensaje2"]; ?>">
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
 	</div>
 
-  	<div class="box-footer">
-      
-    	<button type="button" id="guardarInformacion" class="btn btn-primary pull-right">Guardar</button>
-    
- 	</div>
+	<div class="box-footer">
+
+		<button type="button" id="guardarInformacion" class="btn btn-primary pull-right">Guardar</button>
+
+	</div>
 
 </div>

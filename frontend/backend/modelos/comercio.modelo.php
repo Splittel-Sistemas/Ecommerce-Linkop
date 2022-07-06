@@ -135,7 +135,8 @@ class ModeloComercio{
 
 		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET impuesto = :impuesto,
 		envioNacional = :envioNacional, envioInternacional = :envioInternacional, tasaMinimaNal = :tasaMinimaNal, tasaMinimaInt = :tasaMinimaInt, pais = :pais,
-		modoPaypal = :modoPaypal, clienteIdPaypal = :clienteIdPaypal, llaveSecretaPaypal = :llaveSecretaPaypal, modoPayu = :modoPayu, merchantIdPayu = :merchantIdPayu, accountIdPayu = :accountIdPayu, apiKeyPayu = :apiKeyPayu WHERE id = :id");
+		modoPaypal = :modoPaypal, clienteIdPaypal = :clienteIdPaypal, llaveSecretaPaypal = :llaveSecretaPaypal, modoPayu = :modoPayu, merchantIdPayu = :merchantIdPayu,
+		 accountIdPayu = :accountIdPayu, apiKeyPayu = :apiKeyPayu , mensaje = :mensaje , mensaje2 = :mensaje2 WHERE id = :id");
 
 		$stmt->bindParam(":impuesto", $datos["impuesto"], PDO::PARAM_STR);
 		$stmt->bindParam(":envioNacional", $datos["envioNacional"], PDO::PARAM_STR); 
@@ -150,6 +151,9 @@ class ModeloComercio{
 		$stmt->bindParam(":merchantIdPayu", $datos["merchantIdPayu"], PDO::PARAM_STR); 
 		$stmt->bindParam(":accountIdPayu", $datos["accountIdPayu"], PDO::PARAM_STR); 
 		$stmt->bindParam(":apiKeyPayu", $datos["apiKeyPayu"], PDO::PARAM_STR);
+		$stmt->bindParam(":mensaje", $datos["mensaje"], PDO::PARAM_STR);
+		$stmt->bindParam(":mensaje2", $datos["mensaje2"], PDO::PARAM_STR);
+
 		$stmt->bindParam(":id", $id, PDO::PARAM_INT);
 
 		if($stmt->execute()){
