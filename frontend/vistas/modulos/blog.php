@@ -21,7 +21,7 @@ BANNER
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">  -->
 
 <style>
-	@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800);
+/* 	@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800); */
 
 	section {
 		padding: 60px 0px;

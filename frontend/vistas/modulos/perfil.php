@@ -228,94 +228,94 @@ SECCIÓN PERFIL
 
 													if($comentarios["calificacion"] == 0 && $comentarios["comentario"] == ""){
 
-														echo '<i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																<i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																<i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																<i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																<i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+														echo '<i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																<i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																<i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																<i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																<i class="fa fa-star-o text-info" aria-hidden="true"></i>';
 
 													}else{
 
 														switch($comentarios["calificacion"]){
 
 															case 0.5:
-															echo '<i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+															echo '<i class="fa fa-star-half-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
 															break;
 
 															case 1.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+															echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
 															break;
 
 															case 1.5:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+															echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-half-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
 															break;
 
 															case 2.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+															echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
 															break;
 
 															case 2.5:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+															echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-half-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
 															break;
 
 															case 3.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+															echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
 															break;
 
 															case 3.5:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+															echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-half-o text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
 															break;
 
 															case 4.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+															echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
 															break;
 
 															case 4.5:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>';
+															echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star-half-o text-info" aria-hidden="true"></i>';
 															break;
 
 															case 5.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>';
+															echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>
+																  <i class="fa fa-star text-info" aria-hidden="true"></i>';
 															break;
 
 														}
@@ -744,11 +744,11 @@ VENTANA MODAL PARA COMENTARIOS
 				
 				<h1 class="text-center" id="estrellas">
 
-		       		<i class="fa fa-star text-success" aria-hidden="true"></i>
-					<i class="fa fa-star text-success" aria-hidden="true"></i>
-					<i class="fa fa-star text-success" aria-hidden="true"></i>
-					<i class="fa fa-star text-success" aria-hidden="true"></i>
-					<i class="fa fa-star text-success" aria-hidden="true"></i>
+		       		<i class="fa fa-star text-info" aria-hidden="true"></i>
+					<i class="fa fa-star text-info" aria-hidden="true"></i>
+					<i class="fa fa-star text-info" aria-hidden="true"></i>
+					<i class="fa fa-star text-info" aria-hidden="true"></i>
+					<i class="fa fa-star text-info" aria-hidden="true"></i>
 
 				</h1>
 
