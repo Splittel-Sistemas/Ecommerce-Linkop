@@ -506,6 +506,7 @@ HEADER
 VENTANA MODAL PARA EL REGISTRO
 ======================================-->
 <?php
+$mensaje = ControladorPlantilla::ctrMensajes();
 
 if (isset($_SESSION["validarSesion"])) {
 	echo '';
@@ -514,7 +515,7 @@ if (isset($_SESSION["validarSesion"])) {
 ?>
 
 	<div class="alert alert-primary text-center" style="background-color: #030F24;margin-bottom: 0px;" role="alert">
-		<strong style="color:white">Regístrate y recíbe un 15% de descuento en tu primer compra. <a href="#modalRegistro" data-toggle="modal">REGISTRARSE</a> </strong>
+		<strong style="color:white"><?php echo $mensaje["mensaje"] ?> <a href="#modalRegistro" data-toggle="modal">REGISTRARSE</a> </strong>
 	</div>
 
 <?php
