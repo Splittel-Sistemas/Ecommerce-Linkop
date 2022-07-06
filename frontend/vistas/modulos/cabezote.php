@@ -288,8 +288,8 @@ HEADER
  -->
 					<ul class="nav navbar-nav">
 						<li class="menu-item dropdown">
-							<a href="#" class="dropdown-toggle" id="productos" data-toggle="dropdown">PRODUCTOS <b class="caret"></b></a>
-							<ul class="dropdown-menu" id="listaProductos">
+							<a href="#" class="dropdown-toggle" id="productoss" data-toggle="dropdown">PRODUCTOS <b class="caret"></b></a>
+							<ul class="dropdown-menu" id="listaProductoss" style="min-width:260px;">
 
 
 								<?php
