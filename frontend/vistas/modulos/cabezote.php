@@ -249,6 +249,7 @@ HEADER
 				</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
+				
 				<ul class="nav navbar-nav">
 					<li class=""><a href="<?php echo $url; ?>">HOME</a></li>
 
@@ -499,19 +500,13 @@ HEADER
 			</div>
 			<!--/.nav-collapse -->
 		</div>
-	</nav>
-</header>
-<br><br>
-<!--=====================================
-VENTANA MODAL PARA EL REGISTRO
-======================================-->
-<?php
+		<?php
 $mensaje = ControladorPlantilla::ctrMensajes();
 
 if (isset($_SESSION["validarSesion"])) {
-	echo '<div class="alert alert-primary text-center" style="background-color: #030F24;margin-bottom: 0px;" role="alert">
+/* 	echo '<div class="alert alert-primary text-center" style="background-color: #030F24;margin-bottom: 0px;" role="alert">
 	<strong style="color:white"> '. $mensaje["mensaje2"] .' </strong>
-</div>';
+</div>'; */
 } else {
 
 ?>
@@ -526,6 +521,13 @@ if (isset($_SESSION["validarSesion"])) {
 }
 
 ?>
+	</nav>
+</header>
+<br><br>
+<!--=====================================
+VENTANA MODAL PARA EL REGISTRO
+======================================-->
+
 
 <div class="modal fade modalFormulario" id="modalRegistro" role="dialog">
 
