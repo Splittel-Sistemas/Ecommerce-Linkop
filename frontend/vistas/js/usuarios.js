@@ -269,83 +269,83 @@ $("input[name='puntaje']").change(function(){
 	switch(puntaje){
 
 		case "0.5":
-		$("#estrellas").html('<i class="fa fa-star-half-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i>');
+		$("#estrellas").html('<i class="fa fa-star-half-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i>');
 		break;
 
 		case "1.0":
-		$("#estrellas").html('<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i>');
+		$("#estrellas").html('<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i>');
 		break;
 
 		case "1.5":
-		$("#estrellas").html('<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-half-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i>');
+		$("#estrellas").html('<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-half-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i>');
 		break;
 
 		case "2.0":
-		$("#estrellas").html('<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i>');
+		$("#estrellas").html('<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i>');
 		break;
 
 		case "2.5":
-		$("#estrellas").html('<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-half-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i>');
+		$("#estrellas").html('<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-half-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i>');
 		break;
 
 		case "3.0":
-		$("#estrellas").html('<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i>');
+		$("#estrellas").html('<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i>');
 		break;
 
 		case "3.5":
-		$("#estrellas").html('<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-half-o text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i>');
+		$("#estrellas").html('<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-half-o text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i>');
 		break;
 
 		case "4.0":
-		$("#estrellas").html('<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-o text-success" aria-hidden="true"></i>');
+		$("#estrellas").html('<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-o text-info" aria-hidden="true"></i>');
 		break;
 
 		case "4.5":
-		$("#estrellas").html('<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star-half-o text-success" aria-hidden="true"></i>');
+		$("#estrellas").html('<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star-half-o text-info" aria-hidden="true"></i>');
 		break;
 
 		case "5.0":
-		$("#estrellas").html('<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i> '+
-							 '<i class="fa fa-star text-success" aria-hidden="true"></i>');
+		$("#estrellas").html('<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i> '+
+							 '<i class="fa fa-star text-info" aria-hidden="true"></i>');
 		break;
 
 	}
