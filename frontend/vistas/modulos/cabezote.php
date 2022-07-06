@@ -322,7 +322,7 @@ HEADER
 
 
 
-									echo '<li class="menu-item dropdown dropdown-submenu"><a href="' . $url . $value["ruta"] . '" class="dropdown-toggle" data-toggle="dropdown"><img  src="' . $servidor . $value["imgOferta"] . '" width="30%">' . $value["categoria"] . '</a>
+									echo '<li class="menu-item dropdown dropdown-submenu"><a href="' . $url . $value["ruta"] . '" class="dropdown-toggle" data-toggle="dropdown"><img  src="' . $servidor . $value["portada"] . '" width="30%">    ' . $value["categoria"] . '</a>
 								<ul class="dropdown-menu">
 								';
 
