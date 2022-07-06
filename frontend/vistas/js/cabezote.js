@@ -42,5 +42,4 @@ $("#btnCategorias").hover(
  $("#productos").after($("#listaProductos").slideUp("fast"));
 
   }
-);
- */
+); */
