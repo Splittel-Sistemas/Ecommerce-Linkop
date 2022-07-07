@@ -661,11 +661,15 @@ $("#btnCheckout").click(function(){
 
 					              '</select>');
 
+		 $(".seleccioneEstado").html('<select class="form-control" id="seleccionarEstado" required>'+
+						
+						          '<option value="">Seleccione el Estado</option>'+
 
+					              '</select>');
 		$(".formEnvio").show();
 
 		$(".btnPagar").attr("tipo","fisico");
-
+			/* SELECCIONAR EL PAIS */
 		$.ajax({
 			url:rutaOculta+"vistas/js/plugins/countries.json",
 			type: "GET",
@@ -688,7 +692,34 @@ $("#btnCheckout").click(function(){
 
 			}
 		})
+				/* SELECCIONAR EL ESTADO */
 
+
+
+
+				$.ajax({
+					url:rutaOculta+"vistas/js/plugins/estados.php",
+					type: "GET",
+					cache: false,
+					contentType: false,
+					processData:false,
+					dataType:"json",
+					success: function(respuesta){
+
+						respuesta.forEach(seleccionarEstado);
+
+						function seleccionarEstado(item, index){
+
+							var estado = item.name;
+							var codEstado = item.code;
+							var costo = item.costo;
+
+							$("#seleccionarEstado").append('<option value="'+costo+'">'+estado+'</option>');
+						
+						}
+
+					}
+				})
 		/*=============================================
 		EVALUAR TASAS DE ENVÍO SI EL PRODUCTO ES FÍSICO
 		=============================================*/
@@ -737,10 +768,36 @@ $("#btnCheckout").click(function(){
 
 		})
 
+	/* chance costo de estado  */
+
+
+	$("#seleccionarEstado").change(function(){
+
+		$(".alert").remove();
+
+		var costo = $(this).val();
+		
+
+			
+			
+
+				$(".valorTotalEnvio").html(costo);
+				$(".valorTotalEnvio").attr("valor",costo);
+			
+
+
+		sumaTotalCompra();
+		pagarConPayu();
+
+	})
+
+	/*  */
 	}else{
 
 		$(".btnPagar").attr("tipo","virtual");
 	}
+
+
 
 })
 
