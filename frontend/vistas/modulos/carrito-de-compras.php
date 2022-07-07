@@ -222,7 +222,7 @@ VENTANA MODAL PARA CHECKOUT
 
 						<label>Codigo Postal</label>
 
-						<input type="number" class="form-control "  name="cp" id="cp" placeholder="Codigo Postal" value="">
+						<input type="number" class="form-control "  name="codigo" id="codigo" placeholder="Codigo Postal" value="">
 
 					</div>
 					<br>

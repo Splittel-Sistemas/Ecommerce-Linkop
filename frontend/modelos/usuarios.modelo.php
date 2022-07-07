@@ -119,10 +119,10 @@ class ModeloUsuarios{
 	static public function mdlActualizarUserEnvio( $datos){
 		$tabla = "usuarios";
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET direccion = :direccion, cp = :cp, ciudad = :ciudad, telefono = :telefono WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET direccion = :direccion, codigo = :codigo, ciudad = :ciudad, telefono = :telefono WHERE id = :id");
 
 		$stmt -> bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
-		$stmt -> bindParam(":cp", $datos["cp"], PDO::PARAM_STR);
+		$stmt -> bindParam(":codigo", $datos["codigo"], PDO::PARAM_STR);
 		$stmt -> bindParam(":ciudad", $datos["ciudad"], PDO::PARAM_STR);
 		$stmt -> bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
 		$stmt -> bindParam(":id", $datos["idUsuario"], PDO::PARAM_INT);

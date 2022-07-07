@@ -1050,10 +1050,9 @@ $(".btnPagar").click(function(){
 	var idProducto = $('.cuerpoCarrito button, .comprarAhora button');
 
 	var direccion = $("#direccion").val();
-	var cp = $("#cp").val();
+	var codigo = $("#codigo").val();
 	var telefono = $("#telefono").val();
 	var ciudad = $("#ciudad").val();
-
 
 
 
@@ -1086,7 +1085,7 @@ $(".btnPagar").click(function(){
 	/* RMN */
 
 	datos.append("direccion",direccion);
-	datos.append("cp",cp);
+	datos.append("codigo",codigo);
 	datos.append("telefono",telefono);
 	datos.append("ciudad",ciudad);
 	datos.append("idUsuario",idUsuario);

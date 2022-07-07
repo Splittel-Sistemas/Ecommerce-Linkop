@@ -28,7 +28,7 @@ class AjaxCarrito{
 	public $idProductoArray;
 	/* direccion */
 	public $direccion;
-	public $cp;
+	public $codigo;
 	public $telefono;
 	public $ciudad;
 	
@@ -70,7 +70,7 @@ class AjaxCarrito{
 
 				$datos = array(
 						"direccion"=>$this->direccion,
-						"cp"=>$this->cp,
+						"codigo"=>$this->codigo,
 						"ciudad"=>$this->ciudad,
 						"telefono"=>$this->telefono,
 						"idUsuario"=>$this->idUsuario,
@@ -199,7 +199,7 @@ if(isset($_POST["divisa"])){
 	$paypal ->idProductoArray = $_POST["idProductoArray"];
 	/* RMN */
 	$paypal ->direccion = $_POST["direccion"];
-	$paypal ->cp = $_POST["cp"];
+	$paypal ->codigo = $_POST["codigo"];
 	$paypal ->telefono = $_POST["telefono"];
 	$paypal ->ciudad = $_POST["ciudad"];
 	$paypal ->idUsuario = $_POST["idUsuario"];
