@@ -1041,7 +1041,7 @@ INFOPRODUCTOS
 					  ' . $usuario["nombre"] . '
 					  <span class="text-right">';
 
-						if ($usuario["modo"] == "directo") {
+						if ($usuario["modo"] == "directo" || $usuario["modo"] == "invitado") {
 
 							if ($usuario["foto"] == "") {
 

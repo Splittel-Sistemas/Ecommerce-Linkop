@@ -436,7 +436,7 @@ HEADER
 
 								if ($_SESSION["validarSesion"] == "ok") {
 
-									if ($_SESSION["modo"] == "directo") {
+									if ($_SESSION["modo"] == "directo" ||$_SESSION["modo"] == "invitado"  ) {
 
 										/* if ($_SESSION["foto"] != "") {
 
@@ -702,6 +702,169 @@ VENTANA MODAL PARA EL REGISTRO
 
 </div>
 
+
+<!--=====================================
+VENTANA MODAL PARA EL REGISTRO
+======================================-->
+
+
+<div class="modal fade modalFormulario" id="modalRegistroInvitado" role="dialog">
+
+	<div class="modal-content modal-dialog">
+
+		<div class="modal-body modalTitulo">
+
+			<h3 class="backColor">INVITADO</h3>
+
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+			<!--=====================================
+			REGISTRO FACEBOOK
+			======================================-->
+
+		<!-- 	<div class="col-sm-6 col-xs-12 facebook">
+
+				<p>
+					<i class="fa fa-facebook"></i>
+					Registro con Facebook
+				</p>
+
+			</div> -->
+
+			<!--=====================================
+			REGISTRO GOOGLE
+			======================================-->
+			<!-- <a href="<?php #echo $rutaGoogle; ?>">
+
+				<div class="col-sm-6 col-xs-12 google">
+
+					<p>
+						<i class="fa fa-google"></i>
+						Registro con Google
+					</p>
+
+				</div>
+			</a> -->
+
+			<!--=====================================
+			REGISTRO DIRECTO
+			======================================-->
+
+			<form method="post" onsubmit="return registroUsuarioInvitado()">
+
+				<hr>
+
+				<div class="form-group">
+
+					<div class="input-group">
+
+						<span class="input-group-addon">
+
+							<i class="glyphicon glyphicon-user"></i>
+
+						</span>
+
+						<input type="text" class="form-control text-uppercase" id="regUsuario1" name="regUsuario1" placeholder="Nombre Completo" required>
+
+					</div>
+
+				</div>
+
+				<div class="form-group">
+
+					<div class="input-group">
+
+						<span class="input-group-addon">
+
+							<i class="glyphicon glyphicon-envelope"></i>
+
+						</span>
+
+						<input type="email" class="form-control" id="regEmail1" name="regEmail1" placeholder="Correo Electrónico" required>
+
+					</div>
+
+				</div>
+<!-- 
+				<div class="form-group">
+
+					<div class="input-group">
+
+						<span class="input-group-addon">
+
+							<i class="glyphicon glyphicon-lock"></i>
+
+						</span>
+
+						<input type="password" class="form-control" id="regPassword" name="regPassword" placeholder="Contraseña" required>
+
+					</div>
+
+				</div> -->
+
+				<!--=====================================
+				https://www.iubenda.com/ CONDICIONES DE USO Y POLÍTICAS DE PRIVACIDAD
+				======================================-->
+
+				<div class="checkBox">
+
+					<label>
+
+						<input id="regPoliticas1" type="checkbox">
+
+						<small>
+
+							Al registrarse, usted acepta nuestras condiciones de uso y políticas de privacidad
+
+							<br>
+
+							<a href="https://www.iubenda.com/privacy-policy/26778001" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Privacidad ">Política de Privacidad</a>
+							<script type="text/javascript">
+								(function(w, d) {
+									var loader = function() {
+										var s = d.createElement("script"),
+											tag = d.getElementsByTagName("script")[0];
+										s.src = "https://cdn.iubenda.com/iubenda.js";
+										tag.parentNode.insertBefore(s, tag);
+									};
+									if (w.addEventListener) {
+										w.addEventListener("load", loader, false);
+									} else if (w.attachEvent) {
+										w.attachEvent("onload", loader);
+									} else {
+										w.onload = loader;
+									}
+								})(window, document);
+							</script>
+						</small>
+
+					</label>
+
+				</div>
+
+				<?php
+
+				$registro = new ControladorUsuarios();
+				$registro->ctrRegistroUsuarioInvitado();
+
+				?>
+
+				<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
+
+			</form>
+
+		</div>
+
+		<div class="modal-footer">
+
+			¿Ya tienes una cuenta registrada? | <strong><a href="#modalIngreso" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
+
+		</div>
+
+	</div>
+
+</div>
+
 <!--=====================================
 VENTANA MODAL PARA EL INGRESO
 ======================================-->
@@ -803,6 +966,8 @@ VENTANA MODAL PARA EL INGRESO
 					<a href="#modalPassword" data-dismiss="modal" data-toggle="modal">¿Olvidaste tu contraseña?</a>
 
 				</center>
+				<br><br>
+				<center><strong><a href="#modalRegistroInvitado" data-dismiss="modal" data-toggle="modal">COMPRAR COMO INVITADO</a></strong></center>
 
 			</form>
 

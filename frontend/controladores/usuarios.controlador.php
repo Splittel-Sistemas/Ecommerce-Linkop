@@ -181,6 +181,119 @@ class ControladorUsuarios{
 
 	}
 
+
+
+	/* REGISTRO COMO INVITADO */
+
+	public function ctrRegistroUsuarioInvitado(){
+
+		if(isset($_POST["regUsuario1"])){
+
+			if(preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["regUsuario1"]) &&
+			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["regEmail1"]) ){
+
+			   	$encriptar = crypt("12345", '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$
+			   		$2a$07$asxx54ahjppf45sd87a5auxq/SS293XhTEeizKWMnfhnpfay0AALe');
+
+			   	$encriptarEmail = md5($_POST["regEmail1"]);
+
+				$datos = array("nombre"=>$_POST["regUsuario1"],
+							   "password"=> $encriptar,
+							   "email"=> $_POST["regEmail1"],
+							   "foto"=>"",
+							   "modo"=> "invitado",
+							   "verificacion"=>0,
+							   "emailEncriptado"=>$encriptarEmail);
+
+				$tabla = "usuarios";
+
+				$respuesta = ModeloUsuarios::mdlRegistroUsuarioInvitado($tabla, $datos);
+
+				if($respuesta == "ok"){
+
+					/*=============================================
+					ACTUALIZAR NOTIFICACIONES NUEVOS USUARIOS
+					=============================================*/
+
+					$traerNotificaciones = ControladorNotificaciones::ctrMostrarNotificaciones();
+
+					$nuevoUsuario = $traerNotificaciones["nuevosUsuarios"] + 1;
+
+					ModeloNotificaciones::mdlActualizarNotificaciones("notificaciones", "nuevosUsuarios", $nuevoUsuario);
+
+					/*=============================================
+					VERIFICACIÓN CORREO ELECTRÓNICO
+					=============================================*/
+					
+					/* echo'<script> 
+
+					swal({
+						  title: "¡OK!",
+						  text: "¡Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo electrónico para verificar la cuenta!",
+						  type:"success",
+						  confirmButtonText: "Cerrar",
+						  closeOnConfirm: false
+						},
+
+						function(isConfirm){
+
+							if(isConfirm){
+								history.back();
+							}
+					});
+
+				</script>'; */
+
+				$tabla = "usuarios";
+				$item = "email";
+				$valor = $_POST["regEmail1"];
+
+				$respuesta = ModeloUsuarios::mdlMostrarUsuario($tabla, $item, $valor);
+				$_SESSION["validarSesion"] = "ok";
+				$_SESSION["id"] = $respuesta["id"];
+				$_SESSION["nombre"] = $respuesta["nombre"];
+				$_SESSION["foto"] = $respuesta["foto"];
+				$_SESSION["email"] = $respuesta["email"];
+				$_SESSION["password"] = $respuesta["password"];
+				$_SESSION["modo"] = $respuesta["modo"];
+
+				echo '<script>
+					
+				history.back();
+
+				</script>';
+				}
+
+			}else{
+
+				echo '<script> 
+
+						swal({
+							  title: "¡ERROR!",
+							  text: "¡Error al registrar el usuario, no se permiten caracteres especiales!",
+							  type:"error",
+							  confirmButtonText: "Cerrar",
+							  closeOnConfirm: false
+							},
+
+							function(isConfirm){
+
+								if(isConfirm){
+									history.back();
+								}
+						});
+
+				</script>';
+
+			}
+
+		}
+
+	}
+
+
+
+	
 	/*=============================================
 	MOSTRAR USUARIO
 	=============================================*/
