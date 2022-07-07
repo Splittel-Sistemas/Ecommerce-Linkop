@@ -1,8 +1,6 @@
 <?php 
-$host='localhost';
-$db='linkopcommx_ecommerce';
-$user='linkopcommx_god';
-$pass='U&V=Fx*qF$iG';
+include('config.php');
+
 $conexion = new mysqli($host, $user, $pass, $db);
 
 $query_cont1 = "SELECT *
