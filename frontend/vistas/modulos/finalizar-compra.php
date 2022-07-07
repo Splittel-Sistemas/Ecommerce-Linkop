@@ -55,9 +55,9 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
 	            $item = "id";
 					$valor = $_SESSION["id"];
 
-					$datosUsuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
+					$datosUsuarios = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
    $direccion = $dir.", ".$ciudad.", ".$estado.", ".$codigoPostal;
-   $direccionBase = $datosUsuario["direccion"].", ".$datosUsuario["ciudad"].", ".$datosUsuario["telefono"].", ".$datosUsuario["codigo"];
+   $direccionBase = $datosUsuarios["direccion"].", ".$datosUsuarios["ciudad"].", ".$datosUsuarios["telefono"].", ".$datosUsuarios["codigo"];
 
          
    #Actualizamos la base de datos
