@@ -7,6 +7,8 @@ require_once "../modelos/carrito.modelo.php";
 
 require_once "../controladores/productos.controlador.php";
 require_once "../modelos/productos.modelo.php";
+require_once "../modelos/usuarios.modelo.php";
+
 
 class AjaxCarrito{
 
@@ -29,6 +31,7 @@ class AjaxCarrito{
 	public $cp;
 	public $telefono;
 	public $ciudad;
+	
 
 
 
@@ -57,6 +60,31 @@ class AjaxCarrito{
 		}
 	}
 
+	/* ACTUALIZAR USUARIO  */
+
+
+
+	public function ajaxActualizarUser(){
+		
+		
+
+				$datos = array(
+						"direccion"=>$this->direccion,
+						"cp"=>$this->cp,
+						"ciudad"=>$this->ciudad,
+						"telefono"=>$this->telefono,
+						"idUsuario"=>$this->idUsuario,
+						
+					);
+
+				$respuesta = ModeloUsuarios::mdlActualizarUserEnvio($datos);
+
+				echo $respuesta;
+
+	}
+
+
+	/*  */
 	/*=============================================
 	MÉTODO PAYU
 	=============================================*/
@@ -174,10 +202,14 @@ if(isset($_POST["divisa"])){
 	$paypal ->cp = $_POST["cp"];
 	$paypal ->telefono = $_POST["telefono"];
 	$paypal ->ciudad = $_POST["ciudad"];
+	$paypal ->idUsuario = $_POST["idUsuario"];
+
 
 
 	/*  */
 	$paypal -> ajaxEnviarPaypal();
+	$paypal -> ajaxActualizarUser();
+
 
 
 }
