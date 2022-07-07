@@ -175,11 +175,6 @@ if(isset($_POST["divisa"])){
 	$paypal ->telefono = $_POST["telefono"];
 	$paypal ->ciudad = $_POST["ciudad"];
 
-	var_dump($_POST["direccion"]);
-	var_dump($_POST["cp"]);
-	var_dump($_POST["telefono"]);
-	var_dump($_POST["ciudad"]);
-
 
 	/*  */
 	$paypal -> ajaxEnviarPaypal();
