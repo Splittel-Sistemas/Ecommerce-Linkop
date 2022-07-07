@@ -52,8 +52,13 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
    $estado = $datosUsuario->payer->payer_info->shipping_address->state;
    $codigoPostal = $datosUsuario->payer->payer_info->shipping_address->postal_code;
    $pais = $datosUsuario->payer->payer_info->shipping_address->country_code;
+	            $item = "id";
+					$valor = $_SESSION["id"];
 
+					$datosUsuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
    $direccion = $dir.", ".$ciudad.", ".$estado.", ".$codigoPostal;
+   $direccionBase = $datosUsuario["direccion"].", ".$datosUsuario["ciudad"].", ".$datosUsuario["telefono"].", ".$datosUsuario["codigo"];
+
          
    #Actualizamos la base de datos
    for($i = 0; $i < count($productos); $i++){
@@ -62,7 +67,7 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
                      "idProducto"=>$productos[$i],
                      "metodo"=>"paypal",
                      "email"=>$emailComprador,
-                     "direccion"=>$direccion,
+                     "direccion"=>$direccionBase,
                      "pais"=>$pais,
                      "cantidad"=>$cantidad[$i],
                      "detalle"=>$datosUsuario->transactions[0]->item_list->items[$i]->name,
