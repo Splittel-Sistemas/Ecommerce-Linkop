@@ -20,3 +20,4 @@ frontend/PayPal.log
 frontend/backend/vistas/img/
 frontend/backend/modelos/rutas.php
 frontend/php_error_log
+frontend/vistas/js/plugins/config.php
