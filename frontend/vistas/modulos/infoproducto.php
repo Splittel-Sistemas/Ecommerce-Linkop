@@ -1387,7 +1387,10 @@ VENTANA MODAL PARA CHECKOUT
 			<div class="contenidoCheckout">
 
 				<?php
+	$item = "id";
+	$valor = $_SESSION["id"];
 
+	$datosUsuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
 				$respuesta = ControladorCarrito::ctrMostrarTarifas();
 
 				echo '<input type="hidden" id="tasaImpuesto" value="' . $respuesta["impuesto"] . '">
@@ -1401,73 +1404,74 @@ VENTANA MODAL PARA CHECKOUT
 
 				?>
 
-				<div class="formEnvio row">
+<div class="formEnvio row">
 
-					<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
-
-
-					<div class="col-xs-12 text-center ">
+<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
 
 
-						<label>Direccion de envio</label>
-
-						<input type="text" class="form-control seleccionedireccion" name="direccion" id="direccion" placeholder="Direccion de envio" value="">
-
-					</div>
-					<br>
-
-					<div class="row">
-						<br>
-						<div class="col-xs-6 text-center ">
+<div class="col-xs-12 text-center ">
 
 
-							<label>Numero de telefono</label>
+	<label>Direccion de envio</label>
 
-							<input type="number" class="form-control " name="telefono" id="telefono" placeholder="Numero de telefono" value="">
+	<input type="text" class="form-control seleccionedireccion" name="direccion" id="direccion" placeholder="Direccion de envio" value="<?php echo $datosUsuario["direccion"] ?>">
 
-						</div>
-						<div class="col-xs-6 text-center ">
+</div>
+<br>
 
-
-							<label>Codigo Postal</label>
-
-							<input type="number" class="form-control " name="codigo" id="codigo" placeholder="Codigo Postal" value="">
-
-						</div>
-					</div>
-
-					<br>
+<div class="row">
+	<br>
+	<div class="col-xs-6 text-center ">
 
 
-												<!-- <div class="col-xs-12 seleccionePais">
-								
-								
+		<label>Numero de telefono</label>
 
-							</div> -->
-					<div class="row">
-						<div class="col-xs-6 text-center ">
+		<input type="number" class="form-control " name="telefono" id="telefono" placeholder="Numero de telefono" value="<?php echo $datosUsuario["telefono"] ?>">
 
-
-							<label>Ciudad</label>
-
-							<input type="text" class="form-control " name="ciudad" id="ciudad" placeholder="Ciudad" value="">
-							<input name="idUsuario" id="idUsuario" type="hidden" value="<?php echo $_SESSION["id"] ?>" />
-
-						</div>
-						<label> Estado</label>
-
-						<div class="col-xs-6 seleccioneEstado text-center">
+	</div>
+	<div class="col-xs-6 text-center ">
 
 
+		<label>Codigo Postal</label>
 
-						</div>
-					</div>
+		<input type="number" class="form-control " name="codigo" id="codigo" placeholder="Codigo Postal" value="<?php echo $datosUsuario["codigo"] ?>">
+
+	</div>
+<input name="idUsuario" id="idUsuario" type="hidden" value="<?php echo $_SESSION["id"] ?>" />
+
+</div>
+
+<br>
+
+
+				<!-- <div class="col-xs-12 seleccionePais">
+			
+			
+
+		</div> -->
+<div class="row">
+	<div class="col-xs-6 text-center ">
+
+
+		<label>Ciudad</label>
+
+		<input type="text" class="form-control " name="ciudad" id="ciudad" placeholder="Ciudad" value="<?php echo $datosUsuario["ciudad"] ?>">
+
+	</div>
+	<label> Estado</label>
+
+	<div class="col-xs-6 seleccioneEstado text-center">
 
 
 
+	</div>
+</div>
 
 
-				</div>
+
+
+
+</div>
 
 				<br>
 

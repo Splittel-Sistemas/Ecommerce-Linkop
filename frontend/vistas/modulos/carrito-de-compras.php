@@ -168,7 +168,10 @@ VENTANA MODAL PARA CHECKOUT
 			<div class="contenidoCheckout">
 
 				<?php
+					$item = "id";
+					$valor = $_SESSION["id"];
 
+					$datosUsuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
 				$respuesta = ControladorCarrito::ctrMostrarTarifas();
 
 				echo '<input type="hidden" id="tasaImpuesto" value="' . $respuesta["impuesto"] . '">
@@ -192,7 +195,7 @@ VENTANA MODAL PARA CHECKOUT
 
 						<label>Direccion de envio</label>
 
-						<input type="text" class="form-control seleccionedireccion" name="direccion" id="direccion" placeholder="Direccion de envio" value="">
+						<input type="text" class="form-control seleccionedireccion" name="direccion" id="direccion" placeholder="Direccion de envio" value="<?php echo $datosUsuario["direccion"] ?>">
 
 					</div>
 					<br>
@@ -204,7 +207,7 @@ VENTANA MODAL PARA CHECKOUT
 
 							<label>Numero de telefono</label>
 
-							<input type="number" class="form-control " name="telefono" id="telefono" placeholder="Numero de telefono" value="">
+							<input type="number" class="form-control " name="telefono" id="telefono" placeholder="Numero de telefono" value="<?php echo $datosUsuario["telefono"] ?>">
 
 						</div>
 						<div class="col-xs-6 text-center ">
@@ -212,7 +215,7 @@ VENTANA MODAL PARA CHECKOUT
 
 							<label>Codigo Postal</label>
 
-							<input type="number" class="form-control " name="codigo" id="codigo" placeholder="Codigo Postal" value="">
+							<input type="number" class="form-control " name="codigo" id="codigo" placeholder="Codigo Postal" value="<?php echo $datosUsuario["codigo"] ?>">
 
 						</div>
 					<input name="idUsuario" id="idUsuario" type="hidden" value="<?php echo $_SESSION["id"] ?>" />
@@ -233,7 +236,7 @@ VENTANA MODAL PARA CHECKOUT
 
 							<label>Ciudad</label>
 
-							<input type="text" class="form-control " name="ciudad" id="ciudad" placeholder="Ciudad" value="">
+							<input type="text" class="form-control " name="ciudad" id="ciudad" placeholder="Ciudad" value="<?php echo $datosUsuario["ciudad"] ?>">
 
 						</div>
 						<label> Estado</label>
