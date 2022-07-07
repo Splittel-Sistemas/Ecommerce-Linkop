@@ -1029,9 +1029,9 @@ $(".btnPagar").click(function(){
 
 	var tipo = $(this).attr("tipo");
 
-	if(tipo == "fisico" && $("#seleccionarPais").val() == ""){
+	if(tipo == "fisico" && $("#direccion").val() == ""){
 
-		$(".btnPagar").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
+		$(".btnPagar").after('<div class="alert alert-danger">Ingrese la Direccion de Envio</div>');
 
 		return;
 
@@ -1047,6 +1047,15 @@ $(".btnPagar").click(function(){
 	var cantidad = $(".valorCantidad");
 	var valorItem = $(".valorItem");
 	var idProducto = $('.cuerpoCarrito button, .comprarAhora button');
+
+	var direccion = $("#direccion").val();
+	var cp = $("#cp").val();
+	var telefono = $("#telefono").val();
+	var ciudad = $("#ciudad").val();
+
+
+
+
 
 	var tituloArray = [];
 	var cantidadArray = [];
@@ -1074,6 +1083,13 @@ $(".btnPagar").click(function(){
 	datos.append("cantidadArray",cantidadArray);
 	datos.append("valorItemArray",valorItemArray);
 	datos.append("idProductoArray",idProductoArray);
+	/* RMN */
+
+	datos.append("direccion",direccion);
+	datos.append("cp",cp);
+	datos.append("telefono",telefono);
+	datos.append("ciudad",ciudad);
+
 
 	$.ajax({
 		 url:rutaOculta+"ajax/carrito.ajax.php",

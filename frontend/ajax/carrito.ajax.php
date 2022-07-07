@@ -24,6 +24,15 @@ class AjaxCarrito{
 	public $cantidadArray;
 	public $valorItemArray;
 	public $idProductoArray;
+	/* direccion */
+	public $direccion;
+	public $cp;
+	public $telefono;
+	public $ciudad;
+
+
+
+	/*  */
 
 	public function ajaxEnviarPaypal(){
 
@@ -160,6 +169,19 @@ if(isset($_POST["divisa"])){
 	$paypal ->cantidadArray = $_POST["cantidadArray"];
 	$paypal ->valorItemArray = $_POST["valorItemArray"];
 	$paypal ->idProductoArray = $_POST["idProductoArray"];
+	/* RMN */
+	$paypal ->direccion = $_POST["direccion"];
+	$paypal ->cp = $_POST["cp"];
+	$paypal ->telefono = $_POST["telefono"];
+	$paypal ->ciudad = $_POST["ciudad"];
+
+	var_dump($_POST["direccion"]);
+	var_dump($_POST["cp"]);
+	var_dump($_POST["telefono"]);
+	var_dump($_POST["ciudad"]);
+
+
+	/*  */
 	$paypal -> ajaxEnviarPaypal();
 
 
