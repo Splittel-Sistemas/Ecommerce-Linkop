@@ -222,11 +222,11 @@ VENTANA MODAL PARA CHECKOUT
 					<br>
 
 
-					<!-- <div class="col-xs-12 seleccionePais">
-			
-			
+									<!-- <div class="col-xs-12 seleccionePais">
+								
+								
 
-		</div> -->
+							</div> -->
 					<div class="row">
 						<div class="col-xs-6 text-center ">
 

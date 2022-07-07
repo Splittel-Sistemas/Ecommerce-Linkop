@@ -821,6 +821,10 @@ class ControladorUsuarios{
 						   "email" => $_POST["editarEmail"],
 						   "password" => $password,
 						   "foto" => $ruta,
+						   "direccion" => $_POST["editardireccion"],
+						   "telefono" => $_POST["editartelefono"],
+						   "codigo" => $_POST["editarcodigo"],
+						   "ciudad" => $_POST["editarciudad"],
 						   "id" => $_POST["idUsuario"]);
 
 			$tabla = "usuarios";
