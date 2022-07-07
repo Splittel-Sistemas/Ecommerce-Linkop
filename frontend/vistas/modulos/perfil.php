@@ -660,7 +660,7 @@ SECCIÓN PERFIL
 
 									<div class="input-group">
 								
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<span class="input-group-addon"><i class="glyphicon glyphicon-inbox"></i></span>
 										<input type="text" class="form-control" id="editardireccion" name="editardireccion" value="' . $datosUsuario[9] . '">
 
 									</div>
@@ -676,7 +676,7 @@ SECCIÓN PERFIL
 
 									<div class="input-group">
 								
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<span class="input-group-addon"><i class=" 	glyphicon glyphicon-phone"></i></span>
 										<input type="text" class="form-control" id="editartelefono" name="editartelefono" value="' . $datosUsuario[12] . '">
 
 									</div>
@@ -688,7 +688,7 @@ SECCIÓN PERFIL
 
 									<div class="input-group">
 								
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
 										<input type="text" class="form-control" id="editarcodigo" name="editarcodigo" value="' . $datosUsuario[10] . '">
 
 									</div>
@@ -708,7 +708,7 @@ SECCIÓN PERFIL
 
 								<div class="input-group">
 							
-									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+									<span class="input-group-addon"><i class=" glyphicon glyphicon-home"></i></span>
 									<input type="text" class="form-control" id="editarciudad" name="editarciudad" value="' . $datosUsuario[11] . '">
 
 								</div>
