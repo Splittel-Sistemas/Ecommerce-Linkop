@@ -1401,23 +1401,76 @@ VENTANA MODAL PARA CHECKOUT
 
 				?>
 
-				<div class="formEnvio row">
+<div class="formEnvio row">
 
-					<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
-
-					<!-- <div class="col-xs-12 seleccionePais">
+<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
 
 
-
-					</div> -->
-
-					<div class="col-xs-12 seleccioneEstado">
+<div class="col-xs-12 text-center ">
 
 
+	<label>Direccion de envio</label>
 
-					</div>
+	<input type="text" class="form-control seleccionedireccion" name="direccion" id="direccion"  placeholder="Direccion de envio" value="">
 
-				</div>
+</div>
+<br>
+<br><br>
+<br>
+<div class="col-xs-12 text-center ">
+
+
+	<label>Numero de telefono</label>
+
+	<input type="number" class="form-control "  name="telefono"  id="telefono" placeholder="Numero de telefono" value="">
+
+</div>
+<br>
+<input  name="idUsuario"  id="idUsuario" type="hidden"  value="<?php echo $_SESSION["id"]?>"  />
+
+<br>
+<!-- <div class="col-xs-12 seleccionePais">
+	
+	
+
+</div> -->
+<br>
+<br>
+<div class="col-xs-12 text-center ">
+
+
+	<label>Codigo Postal</label>
+
+	<input type="number" class="form-control "  name="codigo" id="codigo" placeholder="Codigo Postal" value="">
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="col-xs-12 text-center ">
+
+<label>Estado</label>
+</div>
+
+<div class="col-xs-12 seleccioneEstado text-center">
+
+
+
+</div>
+<br>
+<br><br>
+<br>
+<div class="col-xs-12 text-center ">
+
+
+	<label>Ciudad</label>
+
+	<input type="text" class="form-control " name="ciudad" id="ciudad"  placeholder="Ciudad" value="">
+
+</div>
+
+</div>
 
 				<br>
 

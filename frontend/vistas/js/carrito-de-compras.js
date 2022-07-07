@@ -1036,6 +1036,36 @@ $(".btnPagar").click(function(){
 		return;
 
 	}
+	if(tipo == "fisico" && $("#telefono").val() == ""){
+
+		$(".btnPagar").after('<div class="alert alert-danger">Ingrese el  telefono </div>');
+
+		return;
+
+	}
+	if(tipo == "fisico" && $("#codigo").val() == ""){
+
+		$(".btnPagar").after('<div class="alert alert-danger">Ingrese el codigo postal </div>');
+
+		return;
+
+	}
+
+	if(tipo == "fisico" && $("#seleccionarEstado").val() == ""){
+
+		$(".btnPagar").after('<div class="alert alert-danger">Seleccione el Estado </div>');
+
+		return;
+
+	}
+	if(tipo == "fisico" && $("#ciudad").val() == ""){
+
+		$(".btnPagar").after('<div class="alert alert-danger">Ingrese la ciudad </div>');
+
+		return;
+
+	}
+	
 	var idUsuario = $("#idUsuario").val();
 
 	var divisa = $("#cambiarDivisa").val();
