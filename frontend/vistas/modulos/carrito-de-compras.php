@@ -195,6 +195,15 @@ VENTANA MODAL PARA CHECKOUT
 
 					</div>
 
+				<br>
+				<br>
+				
+					<div class="col-xs-12 seleccioneEstado">
+						
+						
+
+					</div>
+
 				</div>
 
 				<br>
