@@ -1036,6 +1036,7 @@ $(".btnPagar").click(function(){
 		return;
 
 	}
+	var idUsuario = $("#idUsuario").val();
 
 	var divisa = $("#cambiarDivisa").val();
 	var total = $(".valorTotalCompra").html();
@@ -1052,7 +1053,6 @@ $(".btnPagar").click(function(){
 	var cp = $("#cp").val();
 	var telefono = $("#telefono").val();
 	var ciudad = $("#ciudad").val();
-
 
 
 
@@ -1089,6 +1089,8 @@ $(".btnPagar").click(function(){
 	datos.append("cp",cp);
 	datos.append("telefono",telefono);
 	datos.append("ciudad",ciudad);
+	datos.append("idUsuario",idUsuario);
+
 
 
 	$.ajax({

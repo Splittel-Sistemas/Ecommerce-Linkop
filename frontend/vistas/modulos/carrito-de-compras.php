@@ -207,6 +207,8 @@ VENTANA MODAL PARA CHECKOUT
 
 					</div>
 					<br>
+					<input  name="idUsuario"  id="idUsuario" type="hidden"  value="<?php echo $_SESSION["id"]?>"  />
+
 					<br>
 					<!-- <div class="col-xs-12 seleccionePais">
 						

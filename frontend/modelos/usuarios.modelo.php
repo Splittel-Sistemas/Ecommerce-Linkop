@@ -113,6 +113,38 @@ class ModeloUsuarios{
 	}
 
 	/*=============================================
+	ACTUALIZAR DIreccion Usuario
+	=============================================*/
+
+	static public function mdlActualizarUserEnvio( $datos){
+		$tabla = "usuarios";
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET direccion = :direccion, cp = :cp, ciudad = :ciudad, telefono = :telefono WHERE id = :id");
+
+		$stmt -> bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
+		$stmt -> bindParam(":cp", $datos["cp"], PDO::PARAM_STR);
+		$stmt -> bindParam(":ciudad", $datos["ciudad"], PDO::PARAM_STR);
+		$stmt -> bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+		$stmt -> bindParam(":id", $datos["idUsuario"], PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+
+		}
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
+
+
+	/*=============================================
 	MOSTRAR COMPRAS
 	=============================================*/
 
