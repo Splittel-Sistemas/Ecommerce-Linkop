@@ -650,16 +650,16 @@ $("#btnCheckout").click(function(){
 	}
 
 	/*=============================================
-	EXISTEN PRODUCTOS FÍSICOS
+	EXISTEN PRODUCTOS FÍSICOS **************SE COMENTA EL PAIS EN LUGAR DE ESTADO
 	=============================================*/
 
 	if(tipoArray.find(checkTipo) == "fisico"){
 
-		$(".seleccionePais").html('<select class="form-control" id="seleccionarPais" required>'+
+	/* 	$(".seleccionePais").html('<select class="form-control" id="seleccionarPais" required>'+
 						
 						          '<option value="">Seleccione el país</option>'+
 
-					              '</select>');
+					              '</select>'); */
 
 		 $(".seleccioneEstado").html('<select class="form-control" id="seleccionarEstado" required>'+
 						
