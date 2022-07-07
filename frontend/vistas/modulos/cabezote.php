@@ -352,9 +352,9 @@ HEADER
 						</li>
 					</ul>
 
-					<li><a href="<?php echo $url; ?>categorias">CATEGORIAS</a></li>
+					<!-- <li><a href="<?php echo $url; ?>categorias">CATEGORIAS</a></li>
 
-					<li><a href=" <?php echo $url; ?>ofertas">OFERTAS</a></li>
+					<li><a href=" <?php echo $url; ?>ofertas">OFERTAS</a></li> -->
 					<li><a href=" <?php echo $url; ?>postblog">BLOG</a></li>
 					<li><a href=" <?php echo $url; ?>contacto">CONTACTO</a></li>
 
@@ -507,13 +507,20 @@ if (isset($_SESSION["validarSesion"])) {
 /* 	echo '<div class="alert alert-primary text-center" style="background-color: #030F24;margin-bottom: 0px;" role="alert">
 	<strong style="color:white"> '. $mensaje["mensaje2"] .' </strong>
 </div>'; */
+$respuesta = $mensaje["mensaje2"] != null ? $mensaje["mensaje2"] : '';
+echo $respuesta;
 } else {
 
 ?>
 
-	<div class="alert alert-primary text-center" style="background-color: #030F24;margin-bottom: 0px;" role="alert">
-		<strong style="color:white"><?php echo $mensaje["mensaje"] ?> <a href="#modalRegistro" data-toggle="modal">REGISTRARSE</a> </strong>
-	</div>
+
+<?php 
+$respuesta1 = $mensaje["mensaje"] != null ? '<div class="alert alert-primary text-center" style="background-color: #030F24;margin-bottom: 0px;" role="alert">
+<strong style="color:white"> '.$mensaje["mensaje"].'  <a href="#modalRegistro" data-toggle="modal">REGISTRARSE</a> </strong>
+</div>' : '';
+echo $respuesta1;
+?>
+	
 
 <?php
 
