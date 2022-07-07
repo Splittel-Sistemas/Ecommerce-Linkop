@@ -967,7 +967,7 @@ VENTANA MODAL PARA EL INGRESO
 
 				</center>
 				<br><br>
-				<center><strong><a href="#modalRegistroInvitado" data-dismiss="modal" data-toggle="modal">COMPRAR COMO INVITADO</a></strong></center>
+				<center><strong><a href="#modalRegistroInvitado" data-dismiss="modal"  class="btn btn-default backColor btn-block " data-toggle="modal">COMPRAR COMO INVITADO</a></strong></center>
 
 			</form>
 

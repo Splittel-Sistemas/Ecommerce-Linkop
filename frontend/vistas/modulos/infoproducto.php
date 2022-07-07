@@ -411,7 +411,7 @@ INFOPRODUCTOS
 			?>
 
 
-		<!-- 	<div id="faq" role="tablist" aria-multiselectable="true">
+			<!-- 	<div id="faq" role="tablist" aria-multiselectable="true">
 
 				<div class="panel panel-default">
 					<div class="panel-heading " role="tab" id="questionOne">
@@ -507,7 +507,7 @@ INFOPRODUCTOS
 							';
 						}
 
-				/* 		if ($detalles["Marca"] != null) {
+						/* 		if ($detalles["Marca"] != null) {
 
 							echo '<div class="col-md-4 col-xs-12">
 
@@ -759,7 +759,7 @@ INFOPRODUCTOS
 					}
 				} else {
 
-					if ($infoproducto["precio"] == 0 ) {
+					if ($infoproducto["precio"] == 0) {
 
 						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
 
@@ -1008,31 +1008,31 @@ INFOPRODUCTOS
 		<br>
 
 	</div>
-	
-    <div class="tab-content">
-	<div class="tab-pane fade active in " id="home" role="tabpanel" aria-labelledby="home-tab">
-		<?php
-		echo '<img class="img-responsive center-block " src="' .$servidor . $infoproducto["portada"] . '" width="50%">';
-		?> 
-		Acerca de este artículo Capacidad de datos de alta velocidad: el cable HDMI iVANKY 4K es compatible con HDMI 2.0b, incluyendo 18 Gbps, modo espejo y extensión, Ultra HD 4K 2160p, HD 2K 1080p, QHD 1440p, HDCP 2.2, 48 bits de color intenso, devolución de audio (ARC), audio Dolby TrueHD 7.1 y conexión en caliente. Cable HDMI 4K HDR: perfecto para tu televisor 4K UHD. Compatible con tus dispositivos de transmisión, Apple TV 4K, NVIDIA SHIELD TV, reproductores de CD/DVD/Blu-ray, Fire TV, Roku Ultra, PS4/3, Switch, computadoras u otros dispositivos habilitados para HDMI a tu televisor 4K/HD, monitores, pantallas o proyectores. Mejora innovadora: diseñado para todos los dispositivos con HDMI 2.0 estándares y compatibles con HDMI 1.4, 1.3 y 1.2. El blindaje de metal de hojalata y los conectores chapados en oro, resistentes a la corrosión pueden proteger contra interferencias de señal externas, garantizan que la transmisión de la señal sea estable y minimizan la pérdida de señal. Diseño ultra duradero: construido con carcasa de aluminio delgada y cubierta trenzada de nailon de gran calidad, este cable HDMI puede soportar ensayos de flexión de más de 10.000 veces sin reducir la flexibilidad del cable y garantizar el mejor rendimiento posible.
-	</div>
-	<div class="tab-pane fade active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-		<div class="row comentarios">
 
+	<div class="tab-content">
+		<div class="tab-pane fade active in " id="home" role="tabpanel" aria-labelledby="home-tab">
 			<?php
+			echo '<img class="img-responsive center-block " src="' . $servidor . $infoproducto["portada"] . '" width="50%">';
+			?>
+			Acerca de este artículo Capacidad de datos de alta velocidad: el cable HDMI iVANKY 4K es compatible con HDMI 2.0b, incluyendo 18 Gbps, modo espejo y extensión, Ultra HD 4K 2160p, HD 2K 1080p, QHD 1440p, HDCP 2.2, 48 bits de color intenso, devolución de audio (ARC), audio Dolby TrueHD 7.1 y conexión en caliente. Cable HDMI 4K HDR: perfecto para tu televisor 4K UHD. Compatible con tus dispositivos de transmisión, Apple TV 4K, NVIDIA SHIELD TV, reproductores de CD/DVD/Blu-ray, Fire TV, Roku Ultra, PS4/3, Switch, computadoras u otros dispositivos habilitados para HDMI a tu televisor 4K/HD, monitores, pantallas o proyectores. Mejora innovadora: diseñado para todos los dispositivos con HDMI 2.0 estándares y compatibles con HDMI 1.4, 1.3 y 1.2. El blindaje de metal de hojalata y los conectores chapados en oro, resistentes a la corrosión pueden proteger contra interferencias de señal externas, garantizan que la transmisión de la señal sea estable y minimizan la pérdida de señal. Diseño ultra duradero: construido con carcasa de aluminio delgada y cubierta trenzada de nailon de gran calidad, este cable HDMI puede soportar ensayos de flexión de más de 10.000 veces sin reducir la flexibilidad del cable y garantizar el mejor rendimiento posible.
+		</div>
+		<div class="tab-pane fade active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+			<div class="row comentarios">
 
-			foreach ($comentarios as $key => $value) {
+				<?php
 
-				if ($value["comentario"] != "") {
+				foreach ($comentarios as $key => $value) {
 
-					$item = "id";
-					$valor = $value["id_usuario"];
+					if ($value["comentario"] != "") {
 
-					$usuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
+						$item = "id";
+						$valor = $value["id_usuario"];
 
-					if (is_array($usuario)) {
+						$usuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
 
-						echo '<div class="panel-group col-md-3 col-sm-6 col-xs-12 alturaComentarios">
+						if (is_array($usuario)) {
+
+							echo '<div class="panel-group col-md-3 col-sm-6 col-xs-12 alturaComentarios">
 			
 				<div class="panel panel-default">
 				  
@@ -1041,21 +1041,21 @@ INFOPRODUCTOS
 					  ' . $usuario["nombre"] . '
 					  <span class="text-right">';
 
-						if ($usuario["modo"] == "directo" || $usuario["modo"] == "invitado") {
+							if ($usuario["modo"] == "directo" || $usuario["modo"] == "invitado") {
 
-							if ($usuario["foto"] == "") {
+								if ($usuario["foto"] == "") {
 
-								echo '<img class="img-circle pull-right" src="' . $servidor . 'vistas/img/usuarios/default/anonymous.png" width="20%">';
+									echo '<img class="img-circle pull-right" src="' . $servidor . 'vistas/img/usuarios/default/anonymous.png" width="20%">';
+								} else {
+
+									echo '<img class="img-circle pull-right" src="' . $url . $usuario["foto"] . '" width="20%">';
+								}
 							} else {
 
-								echo '<img class="img-circle pull-right" src="' . $url . $usuario["foto"] . '" width="20%">';
+								echo '<img class="img-circle pull-right" src="' . $usuario["foto"] . '" width="20%">';
 							}
-						} else {
 
-							echo '<img class="img-circle pull-right" src="' . $usuario["foto"] . '" width="20%">';
-						}
-
-						echo '</span>
+							echo '</span>
 
 				  </div>
 				 
@@ -1063,103 +1063,103 @@ INFOPRODUCTOS
 
 				  <div class="panel-footer">';
 
-						switch ($value["calificacion"]) {
+							switch ($value["calificacion"]) {
 
-							case 0.5:
-								echo '<i class="fa fa-star-half-o text-info" aria-hidden="true"></i>
+								case 0.5:
+									echo '<i class="fa fa-star-half-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
-								break;
+									break;
 
-							case 1.0:
-								echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+								case 1.0:
+									echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
-								break;
+									break;
 
-							case 1.5:
-								echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+								case 1.5:
+									echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-half-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
-								break;
+									break;
 
-							case 2.0:
-								echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+								case 2.0:
+									echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
-								break;
+									break;
 
-							case 2.5:
-								echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+								case 2.5:
+									echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-half-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
-								break;
+									break;
 
-							case 3.0:
-								echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+								case 3.0:
+									echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
-								break;
+									break;
 
-							case 3.5:
-								echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+								case 3.5:
+									echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-half-o text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
-								break;
+									break;
 
-							case 4.0:
-								echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+								case 4.0:
+									echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-o text-info" aria-hidden="true"></i>';
-								break;
+									break;
 
-							case 4.5:
-								echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+								case 4.5:
+									echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star-half-o text-info" aria-hidden="true"></i>';
-								break;
+									break;
 
-							case 5.0:
-								echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
+								case 5.0:
+									echo '<i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>
 							  <i class="fa fa-star text-info" aria-hidden="true"></i>';
-								break;
-						}
+									break;
+							}
 
-						echo '</div>
+							echo '</div>
 				
 				</div>
 
 			</div>';
+						}
 					}
 				}
-			}
 
-			?>
+				?>
+
+			</div>
 
 		</div>
-
-	</div>
 	</div>
 
 </div>
@@ -1401,76 +1401,73 @@ VENTANA MODAL PARA CHECKOUT
 
 				?>
 
-<div class="formEnvio row">
+				<div class="formEnvio row">
 
-<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
-
-
-<div class="col-xs-12 text-center ">
+					<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
 
 
-	<label>Direccion de envio</label>
-
-	<input type="text" class="form-control seleccionedireccion" name="direccion" id="direccion"  placeholder="Direccion de envio" value="">
-
-</div>
-<br>
-<br><br>
-<br>
-<div class="col-xs-12 text-center ">
+					<div class="col-xs-12 text-center ">
 
 
-	<label>Numero de telefono</label>
+						<label>Direccion de envio</label>
 
-	<input type="number" class="form-control "  name="telefono"  id="telefono" placeholder="Numero de telefono" value="">
+						<input type="text" class="form-control seleccionedireccion" name="direccion" id="direccion" placeholder="Direccion de envio" value="">
 
-</div>
-<br>
-<input  name="idUsuario"  id="idUsuario" type="hidden"  value="<?php echo $_SESSION["id"]?>"  />
+					</div>
+					<br>
 
-<br>
-<!-- <div class="col-xs-12 seleccionePais">
-	
-	
-
-</div> -->
-<br>
-<br>
-<div class="col-xs-12 text-center ">
+					<div class="row">
+						<br>
+						<div class="col-xs-6 text-center ">
 
 
-	<label>Codigo Postal</label>
+							<label>Numero de telefono</label>
 
-	<input type="number" class="form-control "  name="codigo" id="codigo" placeholder="Codigo Postal" value="">
+							<input type="number" class="form-control " name="telefono" id="telefono" placeholder="Numero de telefono" value="">
 
-</div>
-<br>
-<br>
-<br>
-<br>
-<div class="col-xs-12 text-center ">
-
-<label>Estado</label>
-</div>
-
-<div class="col-xs-12 seleccioneEstado text-center">
+						</div>
+						<div class="col-xs-6 text-center ">
 
 
+							<label>Codigo Postal</label>
 
-</div>
-<br>
-<br><br>
-<br>
-<div class="col-xs-12 text-center ">
+							<input type="number" class="form-control " name="codigo" id="codigo" placeholder="Codigo Postal" value="">
+
+						</div>
+					</div>
+
+					<br>
 
 
-	<label>Ciudad</label>
+												<!-- <div class="col-xs-12 seleccionePais">
+								
+								
 
-	<input type="text" class="form-control " name="ciudad" id="ciudad"  placeholder="Ciudad" value="">
+							</div> -->
+					<div class="row">
+						<div class="col-xs-6 text-center ">
 
-</div>
 
-</div>
+							<label>Ciudad</label>
+
+							<input type="text" class="form-control " name="ciudad" id="ciudad" placeholder="Ciudad" value="">
+							<input name="idUsuario" id="idUsuario" type="hidden" value="<?php echo $_SESSION["id"] ?>" />
+
+						</div>
+						<label> Estado</label>
+
+						<div class="col-xs-6 seleccioneEstado text-center">
+
+
+
+						</div>
+					</div>
+
+
+
+
+
+				</div>
 
 				<br>
 

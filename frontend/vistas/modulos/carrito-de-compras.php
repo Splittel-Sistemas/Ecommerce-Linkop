@@ -192,65 +192,63 @@ VENTANA MODAL PARA CHECKOUT
 
 						<label>Direccion de envio</label>
 
-						<input type="text" class="form-control seleccionedireccion" name="direccion" id="direccion"  placeholder="Direccion de envio" value="">
+						<input type="text" class="form-control seleccionedireccion" name="direccion" id="direccion" placeholder="Direccion de envio" value="">
 
 					</div>
 					<br>
-					<br><br>
-					<br>
-					<div class="col-xs-12 text-center ">
+
+					<div class="row">
+						<br>
+						<div class="col-xs-6 text-center ">
 
 
-						<label>Numero de telefono</label>
+							<label>Numero de telefono</label>
 
-						<input type="number" class="form-control "  name="telefono"  id="telefono" placeholder="Numero de telefono" value="">
+							<input type="number" class="form-control " name="telefono" id="telefono" placeholder="Numero de telefono" value="">
+
+						</div>
+						<div class="col-xs-6 text-center ">
+
+
+							<label>Codigo Postal</label>
+
+							<input type="number" class="form-control " name="codigo" id="codigo" placeholder="Codigo Postal" value="">
+
+						</div>
+					<input name="idUsuario" id="idUsuario" type="hidden" value="<?php echo $_SESSION["id"] ?>" />
 
 					</div>
-					<br>
-					<input  name="idUsuario"  id="idUsuario" type="hidden"  value="<?php echo $_SESSION["id"]?>"  />
 
 					<br>
+
+
 					<!-- <div class="col-xs-12 seleccionePais">
-						
-						
+			
+			
 
-					</div> -->
-					<br>
-					<br>
-					<div class="col-xs-12 text-center ">
+		</div> -->
+					<div class="row">
+						<div class="col-xs-6 text-center ">
 
 
-						<label>Codigo Postal</label>
+							<label>Ciudad</label>
 
-						<input type="number" class="form-control "  name="codigo" id="codigo" placeholder="Codigo Postal" value="">
+							<input type="text" class="form-control " name="ciudad" id="ciudad" placeholder="Ciudad" value="">
 
+						</div>
+						<label> Estado</label>
+
+						<div class="col-xs-6 seleccioneEstado text-center">
+
+
+
+						</div>
 					</div>
-					<br>
-					<br>
-					<br>
-					<br>
-					<div class="col-xs-12 text-center ">
-
-					<label>Estado</label>
-					</div>
-
-					<div class="col-xs-12 seleccioneEstado text-center">
 
 
 
-					</div>
-					<br>
-					<br><br>
-					<br>
-					<div class="col-xs-12 text-center ">
 
 
-						<label>Ciudad</label>
-
-						<input type="text" class="form-control " name="ciudad" id="ciudad"  placeholder="Ciudad" value="">
-
-					</div>
-					
 				</div>
 
 				<br>

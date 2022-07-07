@@ -563,7 +563,7 @@ SECCIÓN PERFIL
 							      <input type="hidden" value="'.$_SESSION["modo"].'" name="modoUsuario" id="modoUsuario">';
 
 
-							if($_SESSION["modo"] == "directo" || $usuario["modo"] == "invitado"){
+							if($_SESSION["modo"] == "directo" || $_SESSION["modo"] == "invitado"){
 
 								if($_SESSION["foto"] != ""){
 
@@ -589,7 +589,7 @@ SECCIÓN PERFIL
 
 							<?php
 
-if($_SESSION["modo"] == "directo" || $usuario["modo"] == "invitado"){
+if($_SESSION["modo"] == "directo" || $_SESSION["modo"] == "invitado"){
 
 							
 							echo '<button type="button" class="btn btn-default" id="btnCambiarFoto">
@@ -618,7 +618,7 @@ if($_SESSION["modo"] == "directo" || $usuario["modo"] == "invitado"){
 							
 						<?php
 
-if($_SESSION["modo"] == "directo" || $usuario["modo"] == "invitado"){
+if($_SESSION["modo"] == "directo" || $_SESSION["modo"] == "invitado"){
 
 
 							echo '<label class="control-label text-muted text-uppercase">Nombre:</label>
