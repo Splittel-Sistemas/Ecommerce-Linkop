@@ -35,7 +35,7 @@ class AjaxCarrito{
 	
 
 /* ACTUALIZAR USUARIO  */
-public function ajaxEnviarOpen(){
+/* public function ajaxEnviarOpen(){
 
 	if(md5($this->total) == $this->totalEncriptado){
 
@@ -56,7 +56,7 @@ public function ajaxEnviarOpen(){
 			echo $respuesta;
 
 	}
-}
+} */
 
 	/*  */
 

@@ -12,9 +12,9 @@ use PayPal\Api\Payment;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 
-class Paypal{
+class Paypala{
 
-	static public function mdlPagoPaypal($datos){
+	static public function mdlPagoPaypals($datos){
 
 		require __DIR__ . '/bootstrap.php';
 
