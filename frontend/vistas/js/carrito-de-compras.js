@@ -845,18 +845,18 @@ $("input[name='pago']").change(function(){
 		pagarConPayu();
 		cambioDivisa('MXN')
 
-	}else if (metodoPago == "paypal"){
-
-		$(".btnPagar").show();
-		$(".formPayu").hide();
-
-		cambioDivisa('MXN')
-
 	}else if (metodoPago == "open"){
 
 		$(".btnPagar").show();
 		$(".formPayu").hide();
 		pagarConOpen();
+
+		cambioDivisa('MXN')
+
+	}else{
+
+		$(".btnPagar").show();
+		$(".formPayu").hide();
 
 		cambioDivisa('MXN')
 
