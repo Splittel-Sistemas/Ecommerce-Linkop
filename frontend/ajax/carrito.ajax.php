@@ -141,7 +141,7 @@ class AjaxCarrito{
 /*=============================================
 MÉTODO OPEN PAY
 =============================================*/	
-
+/* 
 if(isset($_POST["divisa"]) && $_POST["metodoPago"] == "open" ){
 
 	$idProductos = explode("," , $_POST["idProductoArray"]);
@@ -193,10 +193,7 @@ if(isset($_POST["divisa"]) && $_POST["metodoPago"] == "open" ){
 
 		$verificarSubTotal = $cantidadProductos[$i]*$precio;
 
-		// echo number_format($verificarSubTotal,2)."<br>";
-		// echo number_format($precioProductos[$i],2)."<br>";
-
-		// return;
+		
 
 		if(number_format($verificarSubTotal,2) != number_format($precioProductos[$i],2)){
 
@@ -219,7 +216,6 @@ if(isset($_POST["divisa"]) && $_POST["metodoPago"] == "open" ){
 	$paypal ->cantidadArray = $_POST["cantidadArray"];
 	$paypal ->valorItemArray = $_POST["valorItemArray"];
 	$paypal ->idProductoArray = $_POST["idProductoArray"];
-	/* RMN */
 	$paypal ->direccion = $_POST["direccion"];
 	$paypal ->codigo = $_POST["codigo"];
 	$paypal ->telefono = $_POST["telefono"];
@@ -228,13 +224,12 @@ if(isset($_POST["divisa"]) && $_POST["metodoPago"] == "open" ){
 
 
 
-	/*  */
 	$paypal -> ajaxEnviarOpen();
 	$paypal -> ajaxActualizarUser();
 
 
 
-}
+} */
 /*=============================================
 MÉTODO PAYPAL
 =============================================*/	
