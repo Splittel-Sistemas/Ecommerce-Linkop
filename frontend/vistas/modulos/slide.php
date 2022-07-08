@@ -110,26 +110,22 @@ SLIDESHOW
 <div class="jumbotron jumbotron-fluid">
 <div class="container">
 		<div class="row text-center">
-			<div class="col-md-3" style="font-size: 20px;color: #000f33">
-				<img src="<?php echo $url; ?>vistas/img/envio-y-entrega.png" style="padding-bottom: 5px;"><br>
+			<div class="col-md-4" style="font-size: 20px;color: #000f33">
+				<img src="<?php echo $url; ?>vistas/img/ED.png" style="padding-bottom: 5px;"><br>
 
 				ENTREGA A DOMICILIO
 			</div>
-			<div class="col-md-3" style="font-size: 20px;color: #000f33">
-				<img src="<?php echo $url; ?>vistas/img/tienda (1).png" style="padding-bottom: 5px;"><br>
-
-				PUNTO DE VENTA Y ENTREGA NO DISPONIBLE
-			</div>
-			<div class="col-md-3" style="font-size: 20px;color: #000f33">
-				<img src="<?php echo $url; ?>vistas/img/smartphone.png" style="padding-bottom: 5px;"><br>
+			
+			<div class="col-md-4" style="font-size: 20px;color: #000f33">
+				<img src="<?php echo $url; ?>vistas/img/GP.png" style="padding-bottom: 5px;"><br>
 
 				GARANTIA DE PRODUCTOS
 			</div>
-			<div class="col-md-3" style="font-size: 20px;color: #000f33">
-				<img src="<?php echo $url; ?>vistas/img/pantalla-de-la-computadora.png" style="padding-bottom: 5px;"><br>
+			<div class="col-md-4" style="font-size: 20px;color: #000f33">
+				<img src="<?php echo $url; ?>vistas/img/MP.png" style="padding-bottom: 5px;"><br>
 
 
-				COMPRA SEGURA
+				METODOS DE PAGO 100% SEGUROS
 			</div>
 		</div>
 	</div>

@@ -1490,8 +1490,19 @@ VENTANA MODAL PARA CHECKOUT
 						<img src="<?php echo $url; ?>vistas/img/plantilla/paypal.jpg" class="img-thumbnail">
 
 					</figure>
-
 					<figure class="col-xs-6">
+
+<center>
+
+		<input id="open" type="radio" name="pago" value="open">
+
+</center>
+
+	<img src="<?php echo $url; 
+					?>vistas/img/plantilla/open.png" class="img-thumbnail">
+
+</figure>
+				<!-- 	<figure class="col-xs-6"> -->
 
 						<center>
 
@@ -1502,7 +1513,7 @@ VENTANA MODAL PARA CHECKOUT
 						<!-- <img src="<?php #echo $url; 
 										?>vistas/img/plantilla/payu.jpg" class="img-thumbnail"> -->
 
-					</figure>
+					<!-- </figure> -->
 
 				</div>
 
