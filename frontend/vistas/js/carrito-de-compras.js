@@ -845,14 +845,23 @@ $("input[name='pago']").change(function(){
 		pagarConPayu();
 		cambioDivisa('MXN')
 
-	}else{
+	}else if (metodoPago == "paypal"){
 
 		$(".btnPagar").show();
 		$(".formPayu").hide();
 
 		cambioDivisa('MXN')
 
+	}else if (metodoPago == "open"){
+
+		$(".btnPagar").show();
+		$(".formPayu").hide();
+		pagarConOpen();
+
+		cambioDivisa('MXN')
+
 	}
+	
 
 })
 
@@ -869,23 +878,23 @@ function divisas(metodoPago){
 
 	if(metodoPago == "paypal"){
 
-		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'+
+		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'/* +
 			                       '<option value="EUR">EUR</option>'+
 			                       '<option value="GBP">GBP</option>'+
 			                       '<option value="USD">USD</option>'+
 			                       '<option value="JPY">JPY</option>'+
 			                       '<option value="CAD">CAD</option>'+
-			                       '<option value="BRL">BRL</option>')
+			                       '<option value="BRL">BRL</option>' */)
 
 	}else{
 
-		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'+
+		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'/* +
 			                       '<option value="PEN">PEN</option>'+
 			                       '<option value="COP">COP</option>'+
 			                       '<option value="USD">USD</option>'+
 			                       '<option value="CLP">CLP</option>'+
 			                       '<option value="ARS">ARS</option>'+
-			                       '<option value="BRL">BRL</option>')
+			                       '<option value="BRL">BRL</option>' */)
 
 	}
 
@@ -1004,7 +1013,7 @@ function cambioDivisa(divisa){
 
 	    	if(textStatus == "error"){
 
-	    		$("#cambiarDivisa").after('<div class="alert alert-warning">Tenemos problemas para hacer la conversión, intente más tarde</div>');
+	    	/* 	$("#cambiarDivisa").after('<div class="alert alert-warning">Tenemos problemas para hacer la conversión, intente más tarde</div>'); */
 
 	    		return;
 
@@ -1279,6 +1288,137 @@ function pagarConPayu(){
 	}
 }
 
+function pagarConOpen(){
+
+	if($("#seleccionarPais").val() == ""){
+
+		$(".formPayu").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
+		
+		$(".formPayu input[name='Submit']").attr("type","button");
+		
+		return;
+
+	}
+
+	var divisa = $("#cambiarDivisa").val();
+	var total = $(".valorTotalCompra").html();
+	var impuesto = $(".valorTotalImpuesto").html();
+	var envio = $(".valorTotalEnvio").html();
+	var subtotal = $(".valorSubtotal").html();
+	var titulo = $(".valorTitulo");
+	var cantidad = $(".valorCantidad");
+	var valorItem = $(".valorItem");
+	var idProducto = $('.cuerpoCarrito button, .comprarAhora button');
+	var tituloArray = [];
+	var cantidadArray = [];
+	var idProductoArray = [];
+	var valorItemArray = [];
+
+	for(var i = 0; i < titulo.length; i++){
+
+		tituloArray[i] = $(titulo[i]).html();
+		cantidadArray[i] = $(cantidad[i]).html();
+		idProductoArray[i] = $(idProducto[i]).attr("idProducto");
+		valorItemArray[i] = $(valorItem[i]).html();
+
+	}
+
+	var valorItemString = valorItemArray.toString();
+	var pago = valorItemString.replace(",","-");
+
+	var datos = new FormData();
+	datos.append("metodoPago", "payu");
+	datos.append("cantidadArray",cantidadArray);
+	datos.append("valorItemArray",valorItemArray);
+	datos.append("idProductoArray",idProductoArray);
+	datos.append("divisaPayu", divisa);
+
+	if(hex_md5(total) == localStorage.getItem("total")){
+
+		$.ajax({
+	      url:rutaOculta+"ajax/carrito.ajax.php",
+	      method:"POST",
+	      data: datos,
+	      cache: false,
+	      contentType: false,
+	      processData: false,
+	      success:function(respuesta){      	
+	      	
+	      	if(respuesta.charAt(0) == "{"){     			      		
+	      	
+	          var merchantId = JSON.parse(respuesta).merchantIdPayu;
+	          var accountId = JSON.parse(respuesta).accountIdPayu;
+	          var apiKey = JSON.parse(respuesta).apiKeyPayu;
+	          var modo = JSON.parse(respuesta).modoPayu;
+	          var description = tituloArray.toString();
+	          var referenceCode = (Number(Math.ceil(Math.random()*1000000))+Number(total).toFixed());
+	          var productosToString = idProductoArray.toString();
+	          var productos = productosToString.replace(/,/g, "-");
+	          var cantidadToString = cantidadArray.toString();
+	          var cantidad = cantidadToString.replace(/,/g, "-");
+	          var signature = hex_md5(apiKey+"~"+merchantId+"~"+referenceCode+"~"+total+"~"+divisa);
+	       
+
+	          if(divisa == "MXN"){
+
+	          	var taxReturnBase = (total - impuesto).toFixed(2)
+
+	          }else{
+
+	          	var taxReturnBase = 0;
+
+	          }        
+
+	          if(modo == "sandbox"){
+
+	            var url = "https://sandbox.gateway.payulatam.com/ppp-web-gateway/";
+	            var test = 1;
+
+	      	  }else{
+
+	      	  	var url = "https://gateway.payulatam.com/ppp-web-gateway/";
+	      	  	var test = 0;
+
+	      	  }
+
+	      	  if(envio != 0){
+
+	      	  	var tipoEnvio = "YES";
+	      	  
+	      	  }else{
+
+	      	  	var tipoEnvio = "NO";
+	      	  }
+
+	           $(".formPayu").attr("method","POST");
+	           $(".formPayu").attr("action",url);
+			   $(".formPayu input[name='merchantId']").attr("value", merchantId);
+			   $(".formPayu input[name='accountId']").attr("value", accountId);
+			   $(".formPayu input[name='description']").attr("value", description);
+			   $(".formPayu input[name='referenceCode']").attr("value", referenceCode);
+			   $(".formPayu input[name='amount']").attr("value", total);
+			   $(".formPayu input[name='tax']").attr("value", impuesto);
+			   $(".formPayu input[name='taxReturnBase']").attr("value", taxReturnBase);
+			   $(".formPayu input[name='shipmentValue']").attr("value", envio);
+			   $(".formPayu input[name='currency']").attr("value", divisa);
+			   $(".formPayu input[name='responseUrl']").attr("value", rutaOculta+"index.php?ruta=finalizar-compra&payu=true&productos="+productos+"&cantidad="+cantidad+"&pago="+pago);
+			   $(".formPayu input[name='declinedResponseUrl']").attr("value", rutaOculta+"carrito-de-compras");
+			   $(".formPayu input[name='displayShippingInformation']").attr("value", tipoEnvio);
+			   $(".formPayu input[name='test']").attr("value", test);
+			   $(".formPayu input[name='signature']").attr("value", signature);
+
+			   /*=============================================
+				GENERADOR DE TARJETAS DE CRÉDITO
+				https://www.mercadopago.com.co/developers/es/guides/resources/localization/local-cards
+				=============================================*/
+
+			}
+
+	      }
+
+	  })
+	}
+}
 /*=============================================
 /*=============================================
 /*=============================================

@@ -1,6 +1,7 @@
 <?php
 
 require_once "../extensiones/paypal.controlador.php";
+require_once "../extensiones/open.controlador.php";
 
 require_once "../controladores/carrito.controlador.php";
 require_once "../modelos/carrito.modelo.php";
@@ -33,7 +34,29 @@ class AjaxCarrito{
 	public $ciudad;
 	
 
+/* ACTUALIZAR USUARIO  */
+public function ajaxEnviarOpen(){
 
+	if(md5($this->total) == $this->totalEncriptado){
+
+			$datos = array(
+					"divisa"=>$this->divisa,
+					"total"=>$this->total,
+					"impuesto"=>$this->impuesto,
+					"envio"=>$this->envio,
+					"subtotal"=>$this->subtotal,
+					"tituloArray"=>$this->tituloArray,
+					"cantidadArray"=>$this->cantidadArray,
+					"valorItemArray"=>$this->valorItemArray,
+					"idProductoArray"=>$this->idProductoArray,
+				);
+
+			$respuesta = Paypal::mdlPagoPaypal($datos);
+
+			echo $respuesta;
+
+	}
+}
 
 	/*  */
 
@@ -115,7 +138,103 @@ class AjaxCarrito{
 	}
 
 }
+/*=============================================
+MÉTODO OPEN PAY
+=============================================*/	
 
+if(isset($_POST["divisa"]) && $_POST["metodoPago"] == "open" ){
+
+	$idProductos = explode("," , $_POST["idProductoArray"]);
+	$cantidadProductos = explode("," , $_POST["cantidadArray"]);
+	$precioProductos = explode("," , $_POST["valorItemArray"]);
+
+	$item = "id";
+
+	for($i = 0; $i < count($idProductos); $i ++){
+
+		$valor = $idProductos[$i];
+
+		$verificarProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "http://free.currconv.com/api/v7/convert?q=MXN_".$_POST["divisa"]."&compact=ultra&apiKey=bdaab752b1d5aefb5db0-"); 
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+
+		if(curl_getinfo($ch, CURLINFO_HTTP_CODE) == 200){
+		
+			$divisa = curl_exec($ch);
+
+			$jsonDivisa = json_decode($divisa, true);   
+			
+			if($jsonDivisa["status"] == 400){
+
+				$conversion = 1;
+			
+			}else{
+
+				$conversion = $jsonDivisa["MXN_".$_POST["divisa"]];
+
+			}
+
+		}else{
+
+			$conversion = 1;
+		}
+
+		if($verificarProductos["precioOferta"] == 0){
+
+			$precio = $verificarProductos["precio"]*$conversion;
+		
+		}else{
+
+			$precio = $verificarProductos["precioOferta"]*$conversion;
+
+		}
+
+		$verificarSubTotal = $cantidadProductos[$i]*$precio;
+
+		// echo number_format($verificarSubTotal,2)."<br>";
+		// echo number_format($precioProductos[$i],2)."<br>";
+
+		// return;
+
+		if(number_format($verificarSubTotal,2) != number_format($precioProductos[$i],2)){
+
+			echo "carrito-de-compras";
+
+			return;
+
+		}
+
+	}
+
+	$paypal = new AjaxCarrito();
+	$paypal ->divisa = $_POST["divisa"];
+	$paypal ->total = $_POST["total"];
+	$paypal ->totalEncriptado = $_POST["totalEncriptado"];
+	$paypal ->impuesto = $_POST["impuesto"];
+	$paypal ->envio = $_POST["envio"];
+	$paypal ->subtotal = $_POST["subtotal"];
+	$paypal ->tituloArray = $_POST["tituloArray"];
+	$paypal ->cantidadArray = $_POST["cantidadArray"];
+	$paypal ->valorItemArray = $_POST["valorItemArray"];
+	$paypal ->idProductoArray = $_POST["idProductoArray"];
+	/* RMN */
+	$paypal ->direccion = $_POST["direccion"];
+	$paypal ->codigo = $_POST["codigo"];
+	$paypal ->telefono = $_POST["telefono"];
+	$paypal ->ciudad = $_POST["ciudad"];
+	$paypal ->idUsuario = $_POST["idUsuario"];
+
+
+
+	/*  */
+	$paypal -> ajaxEnviarOpen();
+	$paypal -> ajaxActualizarUser();
+
+
+
+}
 /*=============================================
 MÉTODO PAYPAL
 =============================================*/	

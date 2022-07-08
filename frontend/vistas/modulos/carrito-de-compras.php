@@ -369,7 +369,7 @@ VENTANA MODAL PARA CHECKOUT
 					</div>
 
 					<div class="clearfix"></div>
-
+				
 					<form class="formPayu" style="display:none">
 
 						<input name="merchantId" type="hidden" value="" />

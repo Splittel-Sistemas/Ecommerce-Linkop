@@ -406,7 +406,7 @@ HEADER
 
 							<!-- <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
 
-							<img src="<?php echo $servidor; ?>vistas/img/plantilla/12_full cart.png" class=" text-center " style="width: 30px;padding-top:-12px; ">
+							<img src="<?php echo $servidor; ?>vistas/img/plantilla/ccc.png" class=" text-center " style="width: 30px;padding-top:-12px; ">
 
 
 
@@ -424,7 +424,7 @@ HEADER
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: black;">
 
 							<!-- <i class="fa fa-user" aria-hidden="true"></i> -->
-							<img src="<?php echo $servidor; ?>vistas/img/plantilla/08_member.png" style="width: 30px; padding-top:-12px;">
+							<img src="<?php echo $servidor; ?>vistas/img/plantilla/xxx.png" style="width: 30px; padding-top:-12px;">
 							<!-- <span class="label label-info sumaCesta text-rigth" ></span>	 -->
 
 						</a>
