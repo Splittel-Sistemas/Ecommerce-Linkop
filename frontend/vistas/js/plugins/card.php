@@ -38,7 +38,60 @@
 
         });
     </script>
+<script>
 
+function formPay(){
+  
+
+    var success_callbak = function(response) {
+    var token_id = response.data.id;
+    $('#token_id').val(token_id);
+
+    var holder_name = $('#nombre_tarjeta').val();
+    var card_number = $('#num_tarjeta').val();
+    var expiration_month = $('#mes_tarjeta').val();
+    var expiration_year = $('#anio_tarjeta').val();
+    var cvv  = $('#cvv_tarjeta').val();
+    var address = orderDelivery.direccion + " " + orderDelivery.cp;
+    var deviceIdHiddenFieldName  = $('#deviceIdHiddenFieldName').val();
+    var formData = new FormData();
+
+    formData.append('phone_number',orderDelivery.telefono);
+    formData.append('holder_name',holder_name);
+    formData.append('card_number',card_number);
+    formData.append('expiration_month',expiration_month);
+    formData.append('expiration_year',expiration_year);
+    formData.append('cvv',cvv);
+    formData.append('address',address);
+    formData.append('amount',orderDelivery.total);
+    formData.append('email',orderDelivery.correo);
+    formData.append('token_id',token_id);
+    formData.append('deviceIdHiddenFieldName',deviceIdHiddenFieldName);
+
+    formData.append('function',"addPay");
+
+    $.ajax({
+              data:  formData, //send data via AJAX
+              url:   'ctrlPago.php', //url file controller PHP
+              dataType:'json',
+              contentType: false,
+              processData: false,
+              type:  'post', //send POST data
+              success:function(response) { //get request
+                alert("entro");
+                /*if(response.success){ 
+                 
+
+                }else{
+                  
+                }*/
+                     
+              }
+            });
+
+  };
+
+}</script>
 <style>
 @charset "US-ASCII";
 @import "http://fonts.googleapis.com/css?family=Lato:300,400,700";
@@ -339,3 +392,4 @@ a.button.disabled {
     </div>
 </body>
 </html>
+
