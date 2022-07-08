@@ -102,138 +102,11 @@ HEADER
 
 	<br>
 	<style>
-		.pull-right>.dropdown-menu {
-			right: 0;
-			left: auto;
-		}
-
-		.dropup .caret,
-		.navbar-fixed-bottom .dropdown .caret {
-			border-top: 0;
-			border-bottom: 4px solid #000000;
-			content: "";
-		}
-
-		.dropup .dropdown-menu,
-		.navbar-fixed-bottom .dropdown .dropdown-menu {
-			top: auto;
-			bottom: 100%;
-			margin-bottom: 1px;
-		}
-
-
-		.dropdown-submenu>.dropdown-menu {
-			top: 0;
-			left: 100%;
-			margin-top: -6px;
-			margin-left: -1px;
-			-webkit-border-radius: 0 6px 6px 6px;
-			-moz-border-radius: 0 6px 6px 6px;
-			border-radius: 0 6px 6px 6px;
-		}
-
-		.dropdown-submenu:hover>.dropdown-menu {
-			display: block;
-		}
-
-		.dropup .dropdown-submenu>.dropdown-menu {
-			top: auto;
-			bottom: 0;
-			margin-top: 0;
-			margin-bottom: -2px;
-			-webkit-border-radius: 5px 5px 5px 0;
-			-moz-border-radius: 5px 5px 5px 0;
-			border-radius: 5px 5px 5px 0;
-		}
-
-		.dropdown-submenu>a:after {
-			display: block;
-			float: right;
-			width: 0;
-			height: 0;
-			margin-top: 5px;
-			margin-right: -10px;
-			border-color: transparent;
-			border-left-color: #cccccc;
-			border-style: solid;
-			border-width: 5px 0 5px 5px;
-			content: " ";
-		}
-
-		.dropdown-submenu:hover>a:after {
-			border-left-color: #ffffff;
-		}
-
-		.dropdown-submenu.pull-left {
-			float: none;
-		}
-
-		.dropdown-submenu.pull-left>.dropdown-menu {
-			left: -100%;
-			margin-left: 10px;
-			-webkit-border-radius: 6px 0 6px 6px;
-			-moz-border-radius: 6px 0 6px 6px;
-			border-radius: 6px 0 6px 6px;
-		}
-
-
-		.navbar .nav li.dropdown>a:hover .caret,
-		.navbar .nav li.dropdown>a:focus .caret {
-			border-top-color: #333333;
-			border-bottom-color: #333333;
-		}
-
-		.navbar .nav li.dropdown.open>.dropdown-toggle,
-		.navbar .nav li.dropdown.active>.dropdown-toggle,
-		.navbar .nav li.dropdown.open.active>.dropdown-toggle {
-			color: #555555;
-			background-color: #e5e5e5;
-		}
-
-		.navbar .nav li.dropdown>.dropdown-toggle .caret {
-			border-top-color: #777777;
-			border-bottom-color: #777777;
-		}
-
-		.navbar .nav li.dropdown.open>.dropdown-toggle .caret,
-		.navbar .nav li.dropdown.active>.dropdown-toggle .caret,
-		.navbar .nav li.dropdown.open.active>.dropdown-toggle .caret {
-			border-top-color: #555555;
-			border-bottom-color: #555555;
-		}
-
-		.navbar .pull-right>li>.dropdown-menu,
-		.navbar .nav>li>.dropdown-menu.pull-right {
-			right: 0;
-			left: auto;
-		}
-
-		.navbar .pull-right>li>.dropdown-menu:before,
-		.navbar .nav>li>.dropdown-menu.pull-right:before {
-			right: 12px;
-			left: auto;
-		}
-
-		.navbar .pull-right>li>.dropdown-menu:after,
-		.navbar .nav>li>.dropdown-menu.pull-right:after {
-			right: 13px;
-			left: auto;
-		}
-
-		.navbar .pull-right>li>.dropdown-menu .dropdown-menu,
-		.navbar .nav>li>.dropdown-menu.pull-right .dropdown-menu {
-			right: 100%;
-			left: auto;
-			margin-right: -1px;
-			margin-left: 0;
-			-webkit-border-radius: 6px 0 6px 6px;
-			-moz-border-radius: 6px 0 6px 6px;
-			border-radius: 6px 0 6px 6px;
-		}
+		
 	</style>
 
 	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
+		<div class="container text-center">
 
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -287,7 +160,6 @@ HEADER
 						</ul>
 					</li>
  -->
-					<ul class="nav navbar-nav">
 						<li class="menu-item dropdown">
 							<a href="#" class="dropdown-toggle" id="productos" data-toggle="dropdown">PRODUCTOS <b class="caret"></b></a>
 							<ul class="dropdown-menu" id="listaProductos">
@@ -350,7 +222,6 @@ HEADER
 
 							</ul>
 						</li>
-					</ul>
 
 					<!-- <li><a href="<?php echo $url; ?>categorias">CATEGORIAS</a></li>
 
@@ -359,20 +230,17 @@ HEADER
 					<li><a href=" <?php echo $url; ?>contacto">CONTACTO</a></li>
 
 				</ul>
-				<ul class=" nav navbar-nav navbar-CENTER">
-
-
-				</ul>
+				
 
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<div class="" id="buscador">
+						<div class="text-center" id="buscador">
 
 
 
 
 
-							<div class="input-group input-group-md" style="padding-top:6px; ">
+							<div class="col-sm-12 col-xs-12 input-group input-group-md text-center" style="padding-top:6px; ">
 								<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
 
 								<span class="input-group-btn">
