@@ -35,7 +35,7 @@ class AjaxCarrito{
 	
 
 /* ACTUALIZAR USUARIO  */
-/* public function ajaxEnviarOpen(){
+public function ajaxEnviarOpen(){
 
 	if(md5($this->total) == $this->totalEncriptado){
 
@@ -51,12 +51,12 @@ class AjaxCarrito{
 					"idProductoArray"=>$this->idProductoArray,
 				);
 
-			$respuesta = Paypal::mdlPagoPaypal($datos);
+			/* $respuesta = Paypal::mdlPagoPaypal($datos); */
 
-			echo $respuesta;
+	/* 		echo $respuesta; */
 
 	}
-} */
+}
 
 	/*  */
 
@@ -141,9 +141,11 @@ class AjaxCarrito{
 /*=============================================
 MÉTODO OPEN PAY
 =============================================*/	
-/* 
-if(isset($_POST["divisa"]) && $_POST["metodoPago"] == "open" ){
 
+if( isset($_POST["divisa"])){
+
+	/* print_r($_POST);
+	var_dump($_POST); */
 	$idProductos = explode("," , $_POST["idProductoArray"]);
 	$cantidadProductos = explode("," , $_POST["cantidadArray"]);
 	$precioProductos = explode("," , $_POST["valorItemArray"]);
@@ -229,12 +231,12 @@ if(isset($_POST["divisa"]) && $_POST["metodoPago"] == "open" ){
 
 
 
-} */
+}
 /*=============================================
 MÉTODO PAYPAL
 =============================================*/	
 
-if(isset($_POST["divisa"])){
+if(isset($_POST["metodoPago"]) && $_POST["metodoPago"] == "paypal" ){
 
 	$idProductos = explode("," , $_POST["idProductoArray"]);
 	$cantidadProductos = explode("," , $_POST["cantidadArray"]);

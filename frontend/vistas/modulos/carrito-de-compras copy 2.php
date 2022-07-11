@@ -7,21 +7,6 @@ $url = Ruta::ctrRuta();
 <!--=====================================
 BREADCRUMB CARRITO DE COMPRAS
 ======================================-->
-<link rel="stylesheet" href="vistas/css/estilos.css">
-<script type="text/javascript" src="https://openpay.s3.amazonaws.com/openpay.v1.min.js"></script>
-<script type='text/javascript' src="https://openpay.s3.amazonaws.com/openpay-data.v1.min.js"></script>
-
-<script>  /* chance costo de estado  */
-        $(document).ready(function() {
-
-			OpenPay.setId('mzpbsqxe2u5jgqywfd3u');
-	OpenPay.setApiKey('pk_4c7ac187abf243d08a2893b31d78a6c3');
-	OpenPay.setSandboxMode(true);
-	//Se genera el id de dispositivo
-	var deviceSessionId = OpenPay.deviceData.setup("formulario-tarjeta", "deviceIdHiddenFieldName");
-	
-});
-	</script>
 
 <div class="container-fluid well well-sm">
 
@@ -183,10 +168,10 @@ VENTANA MODAL PARA CHECKOUT
 			<div class="contenidoCheckout">
 
 				<?php
-				$item = "id";
-				$valor = $_SESSION["id"];
+					$item = "id";
+					$valor = $_SESSION["id"];
 
-				$datosUsuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
+					$datosUsuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
 				$respuesta = ControladorCarrito::ctrMostrarTarifas();
 
 				echo '<input type="hidden" id="tasaImpuesto" value="' . $respuesta["impuesto"] . '">
@@ -233,14 +218,14 @@ VENTANA MODAL PARA CHECKOUT
 							<input type="number" class="form-control " name="codigo" id="codigo" placeholder="Codigo Postal" value="<?php echo $datosUsuario["codigo"] ?>">
 
 						</div>
-						<input name="idUsuario" id="idUsuario" type="hidden" value="<?php echo $_SESSION["id"] ?>" />
+					<input name="idUsuario" id="idUsuario" type="hidden" value="<?php echo $_SESSION["id"] ?>" />
 
 					</div>
 
 					<br>
 
 
-					<!-- <div class="col-xs-12 seleccionePais">
+									<!-- <div class="col-xs-12 seleccionePais">
 								
 								
 
@@ -288,128 +273,36 @@ VENTANA MODAL PARA CHECKOUT
 					</figure>
 					<figure class="col-xs-6">
 
+<center>
+
+		<input id="open" type="radio" name="pago" value="open">
+
+</center>
+
+	<img src="<?php echo $url; 
+					?>vistas/img/plantilla/open.png" class="img-thumbnail">
+
+</figure>
+				<!-- 	<figure class="col-xs-6"> -->
+
 						<center>
 
-							<input id="open" type="radio" name="pago" value="open">
+							<!-- 	<input id="checkPayu" type="radio" name="pago" value="payu"> -->
 
 						</center>
 
-						<img src="<?php echo $url;
-									?>vistas/img/plantilla/open.png" class="img-thumbnail">
-
-					</figure>
-					<!-- 	<figure class="col-xs-6"> -->
-
-					<center>
-
-						<input id="checkPayu" type="hidden" name="pago" value="payu">
-
-					</center>
-
-					<!-- 	<img src="<?php #echo $url; 
-										?>vistas/img/plantilla/images.png" class="img-thumbnail"> -->
+						<!-- 	<img src="<?php #echo $url; 
+											?>vistas/img/plantilla/images.png" class="img-thumbnail"> -->
 
 					<!-- </figure> -->
 
 				</div>
 
 				<br>
-				<div class="contenedor col-sm-12 col-xs-12 text-center" id="tarjetasr" style="display: none;">
-
-					<!-- Tarjeta -->
-					<section class="tarjeta" id="tarjeta">
-						<div class="delantera">
-							<div class="logo-marca" id="logo-marca">
-								<!-- <img src="img/logos/visa.png" alt=""> -->
-							</div>
-							<img src="vistas/img/chip-tarjeta.png" class="chip" alt="">
-							<div class="datos">
-								<div class="grupo" id="numero">
-									<p class="label">Número Tarjeta</p>
-									<p class="numero">#### #### #### ####</p>
-								</div>
-								<div class="flexbox">
-									<div class="grupo" id="nombre">
-										<p class="label">Nombre Tarjeta</p>
-										<p class="nombre"></p>
-									</div>
-
-									<div class="grupo" id="expiracion">
-										<p class="label">Expiracion</p>
-										<p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="trasera">
-							<div class="barra-magnetica"></div>
-							<div class="datos">
-								<div class="grupo" id="firma">
-									<p class="label">Firma</p>
-									<div class="firma">
-										<p></p>
-									</div>
-								</div>
-								<div class="grupo" id="ccv">
-									<p class="label">CCV</p>
-									<p class="ccv"></p>
-								</div>
-							</div>
-							<p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
-							<!-- 	<a href="#" class="link-banco">www.tubanco.com</a> -->
-						</div>
-					</section>
-					<br><br><br><br><br>
-					<br><br>
-				
-					
-					<form action="" id="formulario-tarjeta" method="POST" class="formulario-tarjeta">
-					<input type="hidden" name="token_id" id="token_id">
-
-						<div class="grupo">
-							<label for="inputNumero">Número Tarjeta</label>
-							<input type="text" class="form-control" id="inputNumero" maxlength="16" autocomplete="off" data-openpay-card="card_number">
-						</div>
-						<div class="grupo">
-							<label for="inputNombre">Nombre</label>
-							<input type="text" class="form-control" id="inputNombre" maxlength="19" autocomplete="off" data-openpay-card="holder_name">
-						</div>
-						<br>
-						<div class="row">
-							<label for="inputNombre">Expiracion</label>
-
-							<br>
-							<div class="col-xs-6 text-center ">
-
-
-								<select name="mes" class="form-control" id="selectMes" data-openpay-card="expiration_month">
-									<option selected>05</option>
-								</select>
-							</div>
-							<div class="col-xs-6 text-center ">
-
-								<select name="year" class="form-control" id="selectYear" data-openpay-card="expiration_year">
-									<option selected>25</option>
-								</select>
-							</div>
-
-						</div>
-
-						<div class="grupo ccv">
-							<label for="inputCCV">CCV</label>
-							<input type="text" class="form-control" id="inputCCV" maxlength="3" data-openpay-card="cvv2">
-						</div>
-						Tus pagos se realizan de forma segura con encriptación de 256 bits
-						<br>
-						<!-- <button type="submit" class="btn-enviar">Enviar</button> -->
-
-
-					</form>
-				</div>
 
 				<div class="listaProductos row">
 
+					<h4 class="text-center well text-muted text-uppercase">Productos a comprar</h4>
 
 					<table class="table table-striped tablaProductos">
 
@@ -426,14 +319,12 @@ VENTANA MODAL PARA CHECKOUT
 						<tbody>
 
 
-							<h4 class="text-center well text-muted text-uppercase">Productos a comprar</h4>
 
 						</tbody>
 
 					</table>
 
 					<div class="col-sm-6 col-xs-12 pull-right">
-
 
 						<table class="table table-striped tablaTasas">
 
@@ -478,7 +369,7 @@ VENTANA MODAL PARA CHECKOUT
 					</div>
 
 					<div class="clearfix"></div>
-
+				
 					<form class="formPayu" style="display:none">
 
 						<input name="merchantId" type="hidden" value="" />
@@ -501,7 +392,7 @@ VENTANA MODAL PARA CHECKOUT
 						<input name="Submit" class="btn btn-block btn-lg btn-default backColor" type="submit" value="PAGAR">
 					</form>
 
-					<button class="btn btn-block btn-lg btn-default backColor btnPagar" id="pay-button">PAGAR</button>
+					<button class="btn btn-block btn-lg btn-default backColor btnPagar">PAGAR</button>
 
 				</div>
 
@@ -516,6 +407,5 @@ VENTANA MODAL PARA CHECKOUT
 	</div>
 
 </div>
-
 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-<script src="vistas/js/main.js"></script>
+	<script src="js/main.js"></script>

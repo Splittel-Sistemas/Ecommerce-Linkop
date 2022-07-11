@@ -17,6 +17,8 @@ require_once "controladores/carrito.controlador.php";
 require_once "controladores/visitas.controlador.php";
 require_once "controladores/notificaciones.controlador.php";
 require_once "controladores/blog.controlador.php";
+require_once "controladores/PaymentController.php";
+require_once "controladores/Charge.php";
 
 require_once "modelos/plantilla.modelo.php";
 require_once "modelos/productos.modelo.php";

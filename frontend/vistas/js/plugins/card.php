@@ -1,33 +1,31 @@
 <!doctype html>
 <html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <script type="text/javascript" 
-        src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script type="text/javascript" 
-        src="https://openpay.s3.amazonaws.com/openpay.v1.min.js"></script>
-<script type='text/javascript' 
-  src="https://openpay.s3.amazonaws.com/openpay-data.v1.min.js"></script>
 
-<script type="text/javascript">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://openpay.s3.amazonaws.com/openpay.v1.min.js"></script>
+    <script type='text/javascript' src="https://openpay.s3.amazonaws.com/openpay-data.v1.min.js"></script>
+
+    <script type="text/javascript">
         $(document).ready(function() {
 
-            OpenPay.setId('mzdtln0bmtms6o3kck8f');
-            OpenPay.setApiKey('pk_f0660ad5a39f4912872e24a7a660370c');
+            OpenPay.setId('mzpbsqxe2u5jgqywfd3u');
+            OpenPay.setApiKey('pk_4c7ac187abf243d08a2893b31d78a6c3');
             OpenPay.setSandboxMode(true);
             //Se genera el id de dispositivo
-            var deviceSessionId = OpenPay.deviceData.setup("payment-form", "deviceIdHiddenFieldName");
-            
+            var deviceSessionId = OpenPay.deviceData.setup("formulario-tarjeta", "deviceIdHiddenFieldName");
+
             $('#pay-button').on('click', function(event) {
                 event.preventDefault();
-                $("#pay-button").prop( "disabled", true);
-                OpenPay.token.extractFormAndCreate('payment-form', sucess_callbak, error_callbak);                
+                $("#pay-button").prop("disabled", true);
+                OpenPay.token.extractFormAndCreate('formulario-tarjeta', sucess_callbak, error_callbak);
             });
 
             var sucess_callbak = function(response) {
-              var token_id = response.data.id;
-              $('#token_id').val(token_id);
-              $('#payment-form').submit();
+                var token_id = response.data.id;
+                $('#token_id').val(token_id);
+                $('#formulario-tarjeta').submit();
             };
 
             var error_callbak = function(response) {
@@ -38,358 +36,55 @@
 
         });
     </script>
-<script>
-
-function formPay(){
   
 
-    var success_callbak = function(response) {
-    var token_id = response.data.id;
-    $('#token_id').val(token_id);
-
-    var holder_name = $('#nombre_tarjeta').val();
-    var card_number = $('#num_tarjeta').val();
-    var expiration_month = $('#mes_tarjeta').val();
-    var expiration_year = $('#anio_tarjeta').val();
-    var cvv  = $('#cvv_tarjeta').val();
-    var address = orderDelivery.direccion + " " + orderDelivery.cp;
-    var deviceIdHiddenFieldName  = $('#deviceIdHiddenFieldName').val();
-    var formData = new FormData();
-
-    formData.append('phone_number',orderDelivery.telefono);
-    formData.append('holder_name',holder_name);
-    formData.append('card_number',card_number);
-    formData.append('expiration_month',expiration_month);
-    formData.append('expiration_year',expiration_year);
-    formData.append('cvv',cvv);
-    formData.append('address',address);
-    formData.append('amount',orderDelivery.total);
-    formData.append('email',orderDelivery.correo);
-    formData.append('token_id',token_id);
-    formData.append('deviceIdHiddenFieldName',deviceIdHiddenFieldName);
-
-    formData.append('function',"addPay");
-
-    $.ajax({
-              data:  formData, //send data via AJAX
-              url:   'ctrlPago.php', //url file controller PHP
-              dataType:'json',
-              contentType: false,
-              processData: false,
-              type:  'post', //send POST data
-              success:function(response) { //get request
-                alert("entro");
-                /*if(response.success){ 
-                 
-
-                }else{
-                  
-                }*/
-                     
-              }
-            });
-
-  };
-
-}</script>
-<style>
-@charset "US-ASCII";
-@import "http://fonts.googleapis.com/css?family=Lato:300,400,700";
-* {
-    color: #444;
-    font-family: Lato;
-    font-size: 16px;
-    font-weight: 300;
-}
-::-webkit-input-placeholder {
-   font-style: italic;
-}
-:-moz-placeholder {
-   font-style: italic;
-}
-::-moz-placeholder {
-   font-style: italic;
-}
-:-ms-input-placeholder {  
-   font-style: italic;
-}
-
-body {
-    float: left;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-strong {
-	font-weight: 700;
-}
-a {
-    cursor: pointer;
-    display: block;
-    text-decoration: none;
-}
-a.button {
-    border-radius: 5px 5px 5px 5px;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    text-align: center;
-    font-size: 21px;
-    font-weight: 400;
-    padding: 12px 0;
-    width: 100%;
-    display: table;
-    background: #E51F04;
-    background: -moz-linear-gradient(top,  #E51F04 0%, #A60000 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E51F04), color-stop(100%,#A60000));
-    background: -webkit-linear-gradient(top,  #E51F04 0%,#A60000 100%);
-    background: -o-linear-gradient(top,  #E51F04 0%,#A60000 100%);
-    background: -ms-linear-gradient(top,  #E51F04 0%,#A60000 100%);
-    background: linear-gradient(top,  #E51F04 0%,#A60000 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E51F04', endColorstr='#A60000',GradientType=0 );
-}
-a.button i {
-    margin-right: 10px;
-}
-a.button.disabled {
-    background: none repeat scroll 0 0 #ccc;
-    cursor: default;
-}
-.bkng-tb-cntnt {
-    float: left;
-    width: 800px;
-}
-.bkng-tb-cntnt a.button {
-    color: #fff;
-    float: right;
-    font-size: 18px;
-    padding: 5px 20px;
-    width: auto;
-}
-.bkng-tb-cntnt a.button.o {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-    color: #e51f04;
-    border: 1px solid #e51f04;
-}
-.bkng-tb-cntnt a.button i {
-    color: #fff;
-}
-.bkng-tb-cntnt a.button.o i {
-    color: #e51f04;
-}
-.bkng-tb-cntnt a.button.right i {
-    float: right;
-    margin: 2px 0 0 10px;
-}
-.bkng-tb-cntnt a.button.left {
-    float: left;
-}
-.bkng-tb-cntnt a.button.disabled.o {
-    border-color: #ccc;
-    color: #ccc;
-}
-.bkng-tb-cntnt a.button.disabled.o i {
-    color: #ccc;
-}
-.pymnts {
-    float: left;
-    width: 800px;
-}
-.pymnts * {
-    float: left;
-}
-
-.sctn-row {
-    margin-bottom: 35px;
-    width: 800px;
-}
-.sctn-col {
-    width: 375px;
-}
-.sctn-col.l {
-    width: 425px;
-}
-.sctn-col input {
-    border: 1px solid #ccc;
-    font-size: 18px;
-    line-height: 24px;
-    padding: 10px 12px;
-    width: 333px;
-}
-.sctn-col label {
-    font-size: 24px;
-    line-height: 24px;
-    margin-bottom: 10px;
-    width: 100%;
-}
-.sctn-col.x3 {
-    width: 300px;
-}
-.sctn-col.x3.last {
-    width: 200px;
-}
-.sctn-col.x3 input {
-    width: 210px;
-}
-.sctn-col.x3 a {
-    float: right;
-}
-.pymnts-sctn {
-    width: 800px;
-}
-.pymnt-itm {
-    margin: 0 0 3px;
-    width: 800px;
-}
-.pymnt-itm h2 {
-    background-color: #e9e9e9;
-    font-size: 24px;
-    line-height: 24px;
-    margin: 0;
-    padding: 28px 0 28px 20px;
-    width: 780px;
-}
-.pymnt-itm.active h2 {
-    background-color: #e51f04;
-    color: #fff;
-    cursor: default;
-}
-.pymnt-itm div.pymnt-cntnt {
-    display: none;
-}
-.pymnt-itm.active div.pymnt-cntnt {
-    background-color: #f7f7f7;
-    display: block;
-    padding: 0 0 30px;
-    width: 100%;
-}
-
-.pymnt-cntnt div.sctn-row {
-    margin: 20px 30px 0;
-    width: 740px;
-}
-.pymnt-cntnt div.sctn-row div.sctn-col {
-    width: 345px;
-}
-.pymnt-cntnt div.sctn-row div.sctn-col.l {
-    width: 395px;
-}
-.pymnt-cntnt div.sctn-row div.sctn-col input {
-    width: 303px;
-}
-.pymnt-cntnt div.sctn-row div.sctn-col.half {
-    width: 155px;
-}
-.pymnt-cntnt div.sctn-row div.sctn-col.half.l {
-    float: left;
-    width: 190px;
-}
-.pymnt-cntnt div.sctn-row div.sctn-col.half input {
-    width: 113px;
-}
-.pymnt-cntnt div.sctn-row div.sctn-col.cvv {
-    background-image: url("./cvv.png");
-    background-position: 156px center;
-    background-repeat: no-repeat;
-    padding-bottom: 30px;
-}
-.pymnt-cntnt div.sctn-row div.sctn-col.cvv div.sctn-col.half input {
-    width: 110px;
-}
-.openpay {
-    float: right;
-    height: 60px;
-    margin: 10px 30px 0 0;
-    width: 435px;
-}
-.openpay div.logo {
-    background-image: url("./openpay.png");
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    border-right: 1px solid #ccc;
-    font-size: 12px;
-    font-weight: 400;
-    height: 45px;
-    padding: 15px 20px 0 0;
-}
-.openpay div.shield {
-    background-image: url("./security.png");
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    font-size: 12px;
-    font-weight: 400;
-    margin-left: 20px;
-    padding: 20px 0 0 40px;
-    width: 200px;
-}
-.card-expl {
-    float: left;
-    height: 80px;
-    margin: 20px 0;
-    width: 800px;
-}
-.card-expl div {
-    background-position: left 45px;
-    background-repeat: no-repeat;
-    height: 70px;
-    padding-top: 10px;
-}
-.card-expl div.debit {
-    background-image: url("./cards2.png");
-    margin-left: 20px;
-    width: 540px;
-}
-.card-expl div.credit {
-    background-image: url("./cards1.png");
-    border-right: 1px solid #ccc;
-    margin-left: 30px;
-    width: 209px;
-}
-.card-expl h4 {
-    font-weight: 400;
-    margin: 0;
-}
-</style>
 </head>
-<body>
-    <div class="bkng-tb-cntnt">
-        <div class="pymnts">
-            <form action="#" method="POST" id="payment-form">
-                <input type="hidden" name="token_id" id="token_id">
-                <div class="pymnt-itm card active">
-                    <h2>Tarjeta de crédito o débito</h2>
-                    <div class="pymnt-cntnt">
-                        <div class="card-expl">
-                            <div class="credit"><h4>Tarjetas de crédito</h4></div>
-                            <div class="debit"><h4>Tarjetas de débito</h4></div>
-                        </div>
-                        <div class="sctn-row">
-                            <div class="sctn-col l">
-                                <label>Nombre del titular</label><input type="text" placeholder="Como aparece en la tarjeta" autocomplete="off" data-openpay-card="holder_name">
-                            </div>
-                            <div class="sctn-col">
-                                <label>Número de tarjeta</label><input type="text" autocomplete="off" data-openpay-card="card_number"></div>
-                            </div>
-                            <div class="sctn-row">
-                                <div class="sctn-col l">
-                                    <label>Fecha de expiración</label>
-                                    <div class="sctn-col half l"><input type="text" placeholder="Mes" data-openpay-card="expiration_month"></div>
-                                    <div class="sctn-col half l"><input type="text" placeholder="Año" data-openpay-card="expiration_year"></div>
-                                </div>
-                                <div class="sctn-col cvv"><label>Código de seguridad</label>
-                                    <div class="sctn-col half l"><input type="text" placeholder="3 dígitos" autocomplete="off" data-openpay-card="cvv2"></div>
-                                </div>
-                            </div>
-                            <div class="openpay"><div class="logo">Transacciones realizadas vía:</div>
-                            <div class="shield">Tus pagos se realizan de forma segura con encriptación de 256 bits</div>
-                        </div>
-                        <div class="sctn-row">
-                                <a class="button rght" id="pay-button">Pagar</a>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</body>
-</html>
 
+
+            <form action="" id="formulario-tarjeta" method="POST" class="formulario-tarjeta">
+
+                <div class="grupo">
+                    <label for="inputNumero">Número Tarjeta</label>
+                    <input type="text" class="form-control" id="inputNumero" maxlength="19" autocomplete="off" data-openpay-card="card_number">
+                </div>
+                <div class="grupo">
+                    <label for="inputNombre">Nombre</label>
+                    <input type="text" class="form-control" id="inputNombre" maxlength="19" autocomplete="off" data-openpay-card="holder_name">
+                </div>
+                <br>
+                <div class="row">
+                    <label for="inputNombre">Expiracion</label>
+
+                    <br>
+                    <div class="col-xs-6 text-center ">
+
+
+                        <select name="mes" class="form-control" id="selectMes" data-openpay-card="expiration_month">
+                            <option selected>05</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-6 text-center ">
+
+                        <select name="year" class="form-control" id="selectYear" data-openpay-card="expiration_year">
+                            <option selected>25</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="grupo ccv">
+                    <label for="inputCCV">CCV</label>
+                    <input type="text" class="form-control" id="inputCCV" maxlength="3" data-openpay-card="cvv2">
+                </div>
+                Tus pagos se realizan de forma segura con encriptación de 256 bits
+                <br>
+                <!-- <button type="submit" class="btn-enviar">Enviar</button> -->
+                <input type="hidden" name="token_id" id="token_id">
+                <div class="sctn-row">
+                    <a class="button rght" id="pay-button">Pagar</a>
+                </div>
+
+            </form>
+     
+
+</html>

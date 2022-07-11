@@ -1,10 +1,4 @@
 <?php 
-require('Openpay/Data/Openpay.php');
-
-$openpay = Openpay::getInstance('mzpbsqxe2u5jgqywfd3u', 'sk_2185308880ac4f3e884aefadada9f1e3', 'MX');
-
-        // Establecer la zona horaria predeterminada a usar. Disponible desde PHP 5.1
-        date_default_timezone_set('America/Mexico_City');
 
         $fecha = date("m.d.y");
 
@@ -26,6 +20,7 @@ $openpay = Openpay::getInstance('mzpbsqxe2u5jgqywfd3u', 'sk_2185308880ac4f3e884a
             'device_session_id' => $_POST["deviceIdHiddenFieldName"],
             'customer' => $customer
             );
+            print_r($chargeData);
 
         $charge = $openpay->charges->create($chargeData);
 
