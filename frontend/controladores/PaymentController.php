@@ -18,29 +18,38 @@ class Cargo
 
 	public function crearCargo($datos)
 	{
-		print_r($datos);
+	/* 	print_r($datos); */
 		$customer = array(
 			'name' => 'Juan',
 			'last_name' => 'Vazquez Juarez',
+			/* 'phone_number' => $datos[0]['telefono'], */
 			'phone_number' => '4423456723',
 			'email' => 'juan.vazquez@empresa.com.mx');
 	   
-	   $chargeRequest = array(
+	  /*  $chargeRequest = array(
 		   "method" => "card",
 		   'amount' => 100,
 		   'description' => 'Cargo terminal virtual a mi merchant',
 		   'customer' => $customer,
 		   'send_email' => false,
 		   'confirm' => false,
-		   'redirect_url' => 'http://www.openpay.mx/index.html')
+		   'redirect_url' => 'http://www.openpay.mx/index.html') */
 	   ;
-
+	   $chargeData = array(
+		'method' => 'card',
+		'source_id' => $datos[0]['token_id'],
+		'amount' => $datos[0]['amount'], // formato númerico con hasta dos dígitos decimales. 
+		'description' => $datos[0]['tituloArray'],
+		/* 'use_card_points' => $_POST["use_card_points"], */ // Opcional, si estamos usando puntos
+		'device_session_id' => $datos[0]['deviceIdHiddenFieldName'],
+		'customer' => $customer
+		);
 		$charge = null;
 		$errorMsg = null;
 		$errorCode = null;
 
 		try {
-			$charge = $this->openpay->charges->create($chargeRequest);
+			$charge = $this->openpay->charges->create($chargeData);
 		} catch (Exception $e) {
 			$errorMsg = $e->getMessage();
 			$errorCode =  $e->getCode();
@@ -49,9 +58,9 @@ class Cargo
 		$status = null;
 		if ($errorMsg !== null || $errorCode !== null) { 
 			/* $errorMsg = $this->getError($errorCode); */
-			$status = array("status" => false, "error" => $errorMsg, "errorCode" => $errorCode);
+			$status = array("status" => false, "charge" => $errorMsg, "errorCode" => $errorCode);
 		} else {
-			$status = array("status" => true, "charge" => json_encode($chargeRequest));
+			$status = array("status" => true, "charge" => json_encode($chargeData));
 		}
 		return $status;
 	}

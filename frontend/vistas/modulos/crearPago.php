@@ -29,8 +29,13 @@ if ($resp["status"] == true) {
     echo $myJSON;
 } else {
 /*     print_r($ret["error"]); */
-    print_r("La generación del pago falló");
-    return;
+$responseJson = new \stdClass();
+$responseJson->status = false;
+$responseJson->msg = "error";
+$responseJson->charge = $jsonCharge;
+
+$myJSON = json_encode($responseJson);
+echo $myJSON;
 }
 
 ?>

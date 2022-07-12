@@ -53,7 +53,7 @@ public function ajaxEnviarOpen(){
 
 			/* $respuesta = Paypal::mdlPagoPaypal($datos); */
 
-	/* 		echo $respuesta; */
+			echo $respuesta;
 
 	}
 }
@@ -142,78 +142,20 @@ public function ajaxEnviarOpen(){
 MÉTODO OPEN PAY
 =============================================*/	
 
-if( isset($_POST["divisa"])){
+if( isset($_POST["metodoPago"]) && $_POST["metodoPago"] == "open" ){
 
-	/* print_r($_POST);
-	var_dump($_POST); */
+	
 	$idProductos = explode("," , $_POST["idProductoArray"]);
 	$cantidadProductos = explode("," , $_POST["cantidadArray"]);
 	$precioProductos = explode("," , $_POST["valorItemArray"]);
 
 	$item = "id";
 
-	for($i = 0; $i < count($idProductos); $i ++){
-
-		$valor = $idProductos[$i];
-
-		$verificarProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
-
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, "http://free.currconv.com/api/v7/convert?q=MXN_".$_POST["divisa"]."&compact=ultra&apiKey=bdaab752b1d5aefb5db0-"); 
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-
-		if(curl_getinfo($ch, CURLINFO_HTTP_CODE) == 200){
-		
-			$divisa = curl_exec($ch);
-
-			$jsonDivisa = json_decode($divisa, true);   
-			
-			if($jsonDivisa["status"] == 400){
-
-				$conversion = 1;
-			
-			}else{
-
-				$conversion = $jsonDivisa["MXN_".$_POST["divisa"]];
-
-			}
-
-		}else{
-
-			$conversion = 1;
-		}
-
-		if($verificarProductos["precioOferta"] == 0){
-
-			$precio = $verificarProductos["precio"]*$conversion;
-		
-		}else{
-
-			$precio = $verificarProductos["precioOferta"]*$conversion;
-
-		}
-
-		$verificarSubTotal = $cantidadProductos[$i]*$precio;
-
-		
-
-		if(number_format($verificarSubTotal,2) != number_format($precioProductos[$i],2)){
-
-			echo "carrito-de-compras";
-
-			return;
-
-		}
-
-	}
 
 	$paypal = new AjaxCarrito();
-	$paypal ->divisa = $_POST["divisa"];
-	$paypal ->total = $_POST["total"];
-	$paypal ->totalEncriptado = $_POST["totalEncriptado"];
-	$paypal ->impuesto = $_POST["impuesto"];
-	$paypal ->envio = $_POST["envio"];
-	$paypal ->subtotal = $_POST["subtotal"];
+	/* $paypal ->total = $_POST["total"];
+
+	$paypal ->subtotal = $_POST["subtotal"]; */
 	$paypal ->tituloArray = $_POST["tituloArray"];
 	$paypal ->cantidadArray = $_POST["cantidadArray"];
 	$paypal ->valorItemArray = $_POST["valorItemArray"];
@@ -226,10 +168,13 @@ if( isset($_POST["divisa"])){
 
 
 
-	$paypal -> ajaxEnviarOpen();
+	/* $paypal -> ajaxEnviarOpen(); */
 	$paypal -> ajaxActualizarUser();
 
 
+	return;
+/* 	$paypal = new AjaxCarrito();
+	$paypal -> ajaxTraerComercioPayu(); */
 
 }
 /*=============================================
@@ -410,7 +355,7 @@ if(isset($_POST["metodoPago"]) && $_POST["metodoPago"] == "payu"){
 VERIFICAR QUE NO TENGA EL PRODUCTO ADQUIRIDO
 =============================================*/	
 
-if(isset($_POST["idUsuario"])){
+if(isset($_POST["idUsuario"]) && isset($_POST["idProducto"])){
 
 	$deseo = new AjaxCarrito();
 	$deseo -> idUsuario = $_POST["idUsuario"];
