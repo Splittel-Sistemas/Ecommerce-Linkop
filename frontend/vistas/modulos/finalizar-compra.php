@@ -1,7 +1,7 @@
 <?php
 
 
-if(isset($_POST)){
+if(isset($_POST) &&  $_POST['metodoPago'] == 'open'){
    require_once "../../modelos/rutas.php";
    require_once "../../modelos/carrito.modelo.php";
    require_once "../../modelos/usuarios.modelo.php";
