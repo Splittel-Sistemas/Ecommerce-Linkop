@@ -1,7 +1,6 @@
 <?php
 
 require_once "../extensiones/paypal.controlador.php";
-require_once "../extensiones/open.controlador.php";
 
 require_once "../controladores/carrito.controlador.php";
 require_once "../modelos/carrito.modelo.php";
@@ -51,7 +50,6 @@ public function ajaxEnviarOpen(){
 					"idProductoArray"=>$this->idProductoArray,
 				);
 
-			/* $respuesta = Paypal::mdlPagoPaypal($datos); */
 
 			echo $respuesta;
 

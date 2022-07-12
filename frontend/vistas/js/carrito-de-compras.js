@@ -739,8 +739,9 @@ function sumaTotalCompra() {
 /*=============================================
 MÉTODO DE PAGO PARA CAMBIO DE DIVISA
 =============================================*/
+var metodoPago = "paypal";
 
-var metodoPago = $("input[name='pago']:checked").val();
+/* var metodoPago = $("input[name='pago']:checked").val(); */
 divisas(metodoPago);
 
 $("input[name='pago']").change(function () {
@@ -771,7 +772,13 @@ $("input[name='pago']").change(function () {
     pagarConPaypal();
   }
 });
-
+if (metodoPago == "paypal") {
+  $(".btnPagar").show();
+  $(".formPayu").hide();
+  $("#tarjetasr").css("display", "none");
+  cambioDivisa("MXN");
+  pagarConPaypal();
+}
 /*=============================================
 /*=============================================
 /*=============================================
@@ -922,6 +929,7 @@ BOTÓN PAGAR PAYPAL
 =============================================*/
 
 function pagarConPaypal() {
+  $(".btnPagar").click(function(){
   var tipo = $(this).attr("tipo");
 
   if (tipo == "fisico" && $("#direccion").val() == "") {
@@ -1004,6 +1012,7 @@ function pagarConPaypal() {
   datos.append("valorItemArray", valorItemArray);
   datos.append("idProductoArray", idProductoArray);
   /* RMN */
+  datos.append("metodoPago", "paypal");
 
   datos.append("direccion", direccion);
   datos.append("codigo", codigo);
@@ -1023,6 +1032,8 @@ function pagarConPaypal() {
       window.location = respuesta;
     },
   });
+
+});
 }
 
 /*=============================================
