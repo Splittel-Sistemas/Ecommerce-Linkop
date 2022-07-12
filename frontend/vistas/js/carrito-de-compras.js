@@ -929,7 +929,7 @@ BOTÓN PAGAR PAYPAL
 =============================================*/
 
 function pagarConPaypal() {
- 
+  $(".btnPagar").click(function(){
   var tipo = $(this).attr("tipo");
 
   if (tipo == "fisico" && $("#direccion").val() == "") {
@@ -1033,7 +1033,7 @@ function pagarConPaypal() {
     },
   });
 
-
+});
 }
 
 /*=============================================
