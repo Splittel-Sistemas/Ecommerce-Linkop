@@ -929,6 +929,11 @@ BOTÓN PAGAR PAYPAL
 =============================================*/
 
 function pagarConPaypal() {
+  $("#pay-button").on("click", function (event) {
+    event.preventDefault();
+    	$("#pay-button").prop("disabled", true);
+   
+  });
   $(".btnPagar").click(function(){
   var tipo = $(this).attr("tipo");
 
@@ -1191,7 +1196,7 @@ function pagarConPayu() {
 function pagarConOpen() {
   $("#pay-button").on("click", function (event) {
     event.preventDefault();
-    /* 	$("#pay-button").prop("disabled", true); */
+    	$("#pay-button").prop("disabled", true);
     OpenPay.token.extractFormAndCreate(
       "formulario-tarjeta",
       sucess_callbak,
@@ -1306,8 +1311,13 @@ function pagarConOpen() {
          
           
         } else {
-          $("#pay-button").prop("disabled", false);
+          
           alert("ERORO AL REALIZAR EL PAGO : " + response.charge);
+          $("#pay-button").on("click", function (event) {
+            event.preventDefault();
+              $("#pay-button").prop("disabled", false);
+           
+          });
         }
       },
     });

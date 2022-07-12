@@ -1375,7 +1375,22 @@ VENTANA MODAL PARA CHECKOUT
 ======================================-->
 
 <div id="modalComprarAhora" class="modal fade modalFormulario" role="dialog">
+	<link rel="stylesheet" href="vistas/css/estilos.css">
+	<script type="text/javascript" src="https://openpay.s3.amazonaws.com/openpay.v1.min.js"></script>
+	<script type='text/javascript' src="https://openpay.s3.amazonaws.com/openpay-data.v1.min.js"></script>
 
+	<script>
+		/* chance costo de estado  */
+		$(document).ready(function() {
+
+			OpenPay.setId('mzpbsqxe2u5jgqywfd3u');
+			OpenPay.setApiKey('pk_4c7ac187abf243d08a2893b31d78a6c3');
+			OpenPay.setSandboxMode(true);
+			//Se genera el id de dispositivo
+			var deviceSessionId = OpenPay.deviceData.setup("formulario-tarjeta", "deviceIdHiddenFieldName");
+
+		});
+	</script>
 	<div class="modal-content modal-dialog">
 
 		<div class="modal-body modalTitulo">
@@ -1387,10 +1402,10 @@ VENTANA MODAL PARA CHECKOUT
 			<div class="contenidoCheckout">
 
 				<?php
-	$item = "id";
-	$valor = $_SESSION["id"];
+				$item = "id";
+				$valor = $_SESSION["id"];
 
-	$datosUsuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
+				$datosUsuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
 				$respuesta = ControladorCarrito::ctrMostrarTarifas();
 
 				echo '<input type="hidden" id="tasaImpuesto" value="' . $respuesta["impuesto"] . '">
@@ -1404,74 +1419,74 @@ VENTANA MODAL PARA CHECKOUT
 
 				?>
 
-<div class="formEnvio row">
+				<div class="formEnvio row">
 
-<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
-
-
-<div class="col-xs-12 text-center ">
+					<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
 
 
-	<label>Direccion de envio</label>
-
-	<input type="text" class="form-control seleccionedireccion" name="direccion" id="direccion" placeholder="Direccion de envio" value="<?php echo $datosUsuario["direccion"] ?>">
-
-</div>
-<br>
-
-<div class="row">
-	<br>
-	<div class="col-xs-6 text-center ">
+					<div class="col-xs-12 text-center ">
 
 
-		<label>Numero de telefono</label>
+						<label>Direccion de envio</label>
 
-		<input type="number" class="form-control " name="telefono" id="telefono" placeholder="Numero de telefono" value="<?php echo $datosUsuario["telefono"] ?>">
+						<input type="text" class="form-control seleccionedireccion" name="direccion" id="direccion" placeholder="Direccion de envio" value="<?php echo $datosUsuario["direccion"] ?>">
 
-	</div>
-	<div class="col-xs-6 text-center ">
+					</div>
+					<br>
 
-
-		<label>Codigo Postal</label>
-
-		<input type="number" class="form-control " name="codigo" id="codigo" placeholder="Codigo Postal" value="<?php echo $datosUsuario["codigo"] ?>">
-
-	</div>
-<input name="idUsuario" id="idUsuario" type="hidden" value="<?php echo $_SESSION["id"] ?>" />
-
-</div>
-
-<br>
+					<div class="row">
+						<br>
+						<div class="col-xs-6 text-center ">
 
 
-				<!-- <div class="col-xs-12 seleccionePais">
-			
-			
+							<label>Numero de telefono</label>
 
-		</div> -->
-<div class="row">
-	<div class="col-xs-6 text-center ">
+							<input type="number" class="form-control " name="telefono" id="telefono" placeholder="Numero de telefono" value="<?php echo $datosUsuario["telefono"] ?>">
 
-
-		<label>Ciudad</label>
-
-		<input type="text" class="form-control " name="ciudad" id="ciudad" placeholder="Ciudad" value="<?php echo $datosUsuario["ciudad"] ?>">
-
-	</div>
-	<label> Estado</label>
-
-	<div class="col-xs-6 seleccioneEstado text-center">
+						</div>
+						<div class="col-xs-6 text-center ">
 
 
+							<label>Codigo Postal</label>
 
-	</div>
-</div>
+							<input type="number" class="form-control " name="codigo" id="codigo" placeholder="Codigo Postal" value="<?php echo $datosUsuario["codigo"] ?>">
+
+						</div>
+						<input name="idUsuario" id="idUsuario" type="hidden" value="<?php echo $_SESSION["id"] ?>" />
+
+					</div>
+
+					<br>
+
+
+										<!-- <div class="col-xs-12 seleccionePais">
+								
+								
+
+							</div> -->
+					<div class="row">
+						<div class="col-xs-6 text-center ">
+
+
+							<label>Ciudad</label>
+
+							<input type="text" class="form-control " name="ciudad" id="ciudad" placeholder="Ciudad" value="<?php echo $datosUsuario["ciudad"] ?>">
+
+						</div>
+						<label> Estado</label>
+
+						<div class="col-xs-6 seleccioneEstado text-center">
 
 
 
+						</div>
+					</div>
 
 
-</div>
+
+
+
+				</div>
 
 				<br>
 
@@ -1492,36 +1507,128 @@ VENTANA MODAL PARA CHECKOUT
 					</figure>
 					<figure class="col-xs-6">
 
-<center>
-
-		<input id="open" type="radio" name="pago" value="open">
-
-</center>
-
-	<img src="<?php echo $url; 
-					?>vistas/img/plantilla/open.png" class="img-thumbnail">
-
-</figure>
-				<!-- 	<figure class="col-xs-6"> -->
-
 						<center>
 
-							<!-- <input id="checkPayu" type="radio" name="pago" value="payu"> -->
+							<input id="open" type="radio" name="pago" value="open">
 
 						</center>
 
-						<!-- <img src="<?php #echo $url; 
-										?>vistas/img/plantilla/payu.jpg" class="img-thumbnail"> -->
+						<img src="<?php echo $url;
+									?>vistas/img/plantilla/open.png" class="img-thumbnail">
+
+					</figure>
+					<!-- 	<figure class="col-xs-6"> -->
+
+					<center>
+
+						<input id="checkPayu" type="hidden" name="pago" value="payu">
+
+					</center>
+
+					<!-- 	<img src="<?php #echo $url; 
+										?>vistas/img/plantilla/images.png" class="img-thumbnail"> -->
 
 					<!-- </figure> -->
 
 				</div>
 
 				<br>
+				<div class="contenedor col-sm-12 col-xs-12 text-center" id="tarjetasr" style="display: none;">
+
+					<!-- Tarjeta -->
+					<section class="tarjeta" id="tarjeta">
+						<div class="delantera">
+							<div class="logo-marca" id="logo-marca">
+								<!-- <img src="img/logos/visa.png" alt=""> -->
+							</div>
+							<img src="vistas/img/chip-tarjeta.png" class="chip" alt="">
+							<div class="datos">
+								<div class="grupo" id="numero">
+									<p class="label">Número Tarjeta</p>
+									<p class="numero">#### #### #### ####</p>
+								</div>
+								<div class="flexbox">
+									<div class="grupo" id="nombre">
+										<p class="label">Nombre Tarjeta</p>
+										<p class="nombre"></p>
+									</div>
+
+									<div class="grupo" id="expiracion">
+										<p class="label">Expiracion</p>
+										<p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="trasera">
+							<div class="barra-magnetica"></div>
+							<div class="datos">
+								<div class="grupo" id="firma">
+									<p class="label">Firma</p>
+									<div class="firma">
+										<p></p>
+									</div>
+								</div>
+								<div class="grupo" id="ccv">
+									<p class="label">CCV</p>
+									<p class="ccv"></p>
+								</div>
+							</div>
+							<p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
+							<!-- 	<a href="#" class="link-banco">www.tubanco.com</a> -->
+						</div>
+					</section>
+					<br><br><br><br><br>
+					<br><br>
+
+
+					<form action="" id="formulario-tarjeta" method="POST" class="formulario-tarjeta">
+						<input type="hidden" name="token_id" id="token_id">
+
+						<div class="grupo">
+							<label for="inputNumero">Número Tarjeta</label>
+							<input type="text" class="form-control" id="inputNumero" maxlength="16" autocomplete="off" data-openpay-card="card_number">
+						</div>
+						<div class="grupo">
+							<label for="inputNombre">Nombre</label>
+							<input type="text" class="form-control" id="inputNombre" maxlength="19" autocomplete="off" data-openpay-card="holder_name">
+						</div>
+						<br>
+						<div class="row">
+							<label for="inputNombre">Expiracion</label>
+
+							<br>
+							<div class="col-xs-6 text-center ">
+
+
+								<select name="mes" class="form-control" id="selectMes" data-openpay-card="expiration_month">
+									<option selected>05</option>
+								</select>
+							</div>
+							<div class="col-xs-6 text-center ">
+
+								<select name="year" class="form-control" id="selectYear" data-openpay-card="expiration_year">
+									<option selected>25</option>
+								</select>
+							</div>
+
+						</div>
+
+						<div class="grupo ccv">
+							<label for="inputCCV">CCV</label>
+							<input type="text" class="form-control" id="inputCCV" maxlength="3" data-openpay-card="cvv2">
+						</div>
+						Tus pagos se realizan de forma segura con encriptación de 256 bits
+						<br>
+						<!-- <button type="submit" class="btn-enviar">Enviar</button> -->
+
+
+					</form>
+				</div>
 
 				<div class="listaProductos row">
 
-					<h4 class="text-center well text-muted text-uppercase">Productos a comprar</h4>
 
 					<table class="table table-striped tablaProductos">
 
@@ -1538,6 +1645,7 @@ VENTANA MODAL PARA CHECKOUT
 						<tbody>
 
 
+							<h4 class="text-center well text-muted text-uppercase">Productos a comprar</h4>
 
 						</tbody>
 
@@ -1545,28 +1653,29 @@ VENTANA MODAL PARA CHECKOUT
 
 					<div class="col-sm-6 col-xs-12 pull-right">
 
+
 						<table class="table table-striped tablaTasas">
 
 							<tbody>
 
 								<tr>
 									<td>Subtotal</td>
-									<td><span class="cambioDivisa"></span> $<span class="valorSubtotal" valor="0">0</span></td>
+									<td><span class="cambioDivisa">MXN</span> $<span class="valorSubtotal" valor="0">0</span></td>
 								</tr>
 
 								<tr>
 									<td>Envío</td>
-									<td><span class="cambioDivisa"></span> $<span class="valorTotalEnvio" valor="0">0</span></td>
+									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalEnvio" valor="0">0</span></td>
 								</tr>
 
 								<tr>
 									<td>Impuesto</td>
-									<td><span class="cambioDivisa"></span> $<span class="valorTotalImpuesto" valor="0">0</span></td>
+									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalImpuesto" valor="0">0</span></td>
 								</tr>
 
 								<tr>
 									<td><strong>Total</strong></td>
-									<td><strong><span class="cambioDivisa"></span> $<span class="valorTotalCompra" valor="0">0</span></strong></td>
+									<td><strong><span class="cambioDivisa">MXN</span> $<span class="valorTotalCompra" valor="0">0</span></strong></td>
 								</tr>
 
 							</tbody>
@@ -1611,20 +1720,22 @@ VENTANA MODAL PARA CHECKOUT
 						<input name="Submit" class="btn btn-block btn-lg btn-default backColor" type="submit" value="PAGAR">
 					</form>
 
-					<button class="btn btn-block btn-lg btn-default backColor btnPagar">PAGAR</button>
+					<button class="btn btn-block btn-lg btn-default backColor btnPagar" id="pay-button">PAGAR</button>
 
 				</div>
 
 			</div>
 
-		</div>
-
-		<div class="modal-footer">
-
-		</div>
 
 	</div>
 
+	<div class="modal-footer">
+
+	</div>
+
+</div>
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+<script src="vistas/js/main.js"></script>
 </div>
 
 
