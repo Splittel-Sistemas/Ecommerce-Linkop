@@ -108,7 +108,7 @@ formulario.selectMes.addEventListener('change', (e) => {
 
 // * Select Año
 formulario.selectYear.addEventListener('change', (e) => {
-	yearExpiracion.textContent = e.target.value.slice(2);
+	yearExpiracion.textContent = e.target.value;
 	mostrarFrente();
 });
 

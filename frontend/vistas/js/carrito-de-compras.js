@@ -742,6 +742,7 @@ MÉTODO DE PAGO PARA CAMBIO DE DIVISA
 /* var metodoPago = "paypal"; */
 
 var metodoPago = $("input[name='pago']:checked").val();
+/* alert(metodoPago); */
 divisas(metodoPago);
 /* if (metodoPago == "paypal") {
   $(".btnPagar").show();
@@ -778,7 +779,13 @@ $("input[name='pago']").change(function () {
     pagarConPaypal();
   }
 });
-
+/* if (metodoPago == "paypal") {
+  $(".btnPagar").show();
+  $(".formPayu").hide();
+  $("#tarjetasr").css("display", "none");
+  cambioDivisa("MXN");
+  pagarConPaypal();
+} */
 /*=============================================
 /*=============================================
 /*=============================================
@@ -927,8 +934,7 @@ function cambioDivisa(divisa) {
 /*=============================================
 BOTÓN PAGAR PAYPAL
 =============================================*/
-
-function pagarConPaypal() {
+$(".btnPagar").click(function(){
   $("#pay-button").on("click", function (event) {
     event.preventDefault();
     	$("#pay-button").prop("disabled", true);
@@ -963,6 +969,7 @@ function pagarConPaypal() {
     $(".btnPagar").after(
       '<div class="alert alert-danger">Seleccione el Estado </div>'
     );
+    $("#pay-button").prop("disabled", false);
 
     return;
   }
@@ -1039,7 +1046,7 @@ function pagarConPaypal() {
   });
 
 });
-}
+});
 
 /*=============================================
 /*=============================================

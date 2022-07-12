@@ -141,7 +141,7 @@ TABLA CARRITO DE COMPRAS
 			======================================-->
 
 			<div class="panel-heading cabeceraCheckout">
-				<a href="#modalIngreso1" data-toggle="modal"><button class="btn btn-default backColor btn-lg pull-center">Verificar Envio</button></a>
+			<!-- 	<a href="#modalIngreso1" data-toggle="modal"><button class="btn btn-default backColor btn-lg pull-center">Verificar Envio</button></a> -->
 
 				<?php
 
