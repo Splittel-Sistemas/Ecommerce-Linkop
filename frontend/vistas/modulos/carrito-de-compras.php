@@ -234,6 +234,7 @@ VENTANA MODAL PARA CHECKOUT
 
 						</div>
 						<input name="idUsuario" id="idUsuario" type="hidden" value="<?php echo $_SESSION["id"] ?>" />
+						<input name="correoE" id="correoE" type="hidden" value="<?php echo $datosUsuario["email"] ?>" />
 
 					</div>
 
@@ -384,13 +385,13 @@ VENTANA MODAL PARA CHECKOUT
 
 
 								<select name="mes" class="form-control" id="selectMes" data-openpay-card="expiration_month">
-									<option selected>05</option>
+									<option disable selected>mes</option>
 								</select>
 							</div>
 							<div class="col-xs-6 text-center ">
 
 								<select name="year" class="form-control" id="selectYear" data-openpay-card="expiration_year">
-									<option selected>25</option>
+									<option disable selected>año</option>
 								</select>
 							</div>
 
@@ -398,7 +399,7 @@ VENTANA MODAL PARA CHECKOUT
 
 						<div class="grupo ccv">
 							<label for="inputCCV">CCV</label>
-							<input type="text" class="form-control" id="inputCCV" maxlength="3" data-openpay-card="cvv2">
+							<input type="text" class="form-control" id="inputCCV" maxlength="4" data-openpay-card="cvv2">
 						</div>
 						Tus pagos se realizan de forma segura con encriptación de 256 bits
 						<br>

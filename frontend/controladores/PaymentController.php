@@ -18,13 +18,14 @@ class Cargo
 
 	public function crearCargo($datos)
 	{
-	/* 	print_r($datos); */
+		
+
 		$customer = array(
-			'name' => 'Juan',
-			'last_name' => 'Vazquez Juarez',
-			/* 'phone_number' => $datos[0]['telefono'], */
-			'phone_number' => '4423456723',
-			'email' => 'juan.vazquez@empresa.com.mx');
+			'name' => $datos[0]['holder_name'],
+			'last_name' => '',
+			'phone_number' => $datos[0]['telefono'],
+		/* 	'phone_number' => '4423456723', */
+			'email' => $datos[0]['correoE']);
 	   
 	  /*  $chargeRequest = array(
 		   "method" => "card",

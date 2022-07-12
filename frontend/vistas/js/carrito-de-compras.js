@@ -1226,6 +1226,7 @@ function pagarConOpen() {
     var telefono = $("#telefono").val();
     var ciudad = $("#ciudad").val();
     var idUsuario = $("#idUsuario").val();
+    var correoE = $("#correoE").val();
 
     var inputNumero = $("#inputNumero").val();
     var inputNombre = $("#inputNombre").val();
@@ -1272,6 +1273,7 @@ function pagarConOpen() {
     formData.append("tituloArray", tituloArray);
     formData.append("idUsuario", idUsuario);
     formData.append("subtotal", subtotal);
+    formData.append("correoE", correoE);
 
     formData.append("function", "addPay");
 
@@ -1303,10 +1305,7 @@ function pagarConOpen() {
          localStorage.removeItem("cantidadCesta");
          localStorage.removeItem("sumaCesta");
          window.location = rutaOculta + 'ofertas/aviso';
-         
-            
-
-            },
+         },
           });
          
           

@@ -1453,6 +1453,7 @@ VENTANA MODAL PARA CHECKOUT
 
 						</div>
 						<input name="idUsuario" id="idUsuario" type="hidden" value="<?php echo $_SESSION["id"] ?>" />
+						<input name="correoE" id="correoE" type="hidden" value="<?php echo $datosUsuario["email"] ?>" />
 
 					</div>
 
@@ -1602,16 +1603,16 @@ VENTANA MODAL PARA CHECKOUT
 							<div class="col-xs-6 text-center ">
 
 
-								<select name="mes" class="form-control" id="selectMes" data-openpay-card="expiration_month">
-									<option selected>05</option>
-								</select>
-							</div>
-							<div class="col-xs-6 text-center ">
+<select name="mes" class="form-control" id="selectMes" data-openpay-card="expiration_month">
+	<option disable selected>mes</option>
+</select>
+</div>
+<div class="col-xs-6 text-center ">
 
-								<select name="year" class="form-control" id="selectYear" data-openpay-card="expiration_year">
-									<option selected>25</option>
-								</select>
-							</div>
+<select name="year" class="form-control" id="selectYear" data-openpay-card="expiration_year">
+	<option disable selected>año</option>
+</select>
+</div>
 
 						</div>
 

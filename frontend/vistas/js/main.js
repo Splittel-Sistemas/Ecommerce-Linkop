@@ -36,8 +36,11 @@ for(let i = 1; i <= 12; i++){
 }
 
 // * Select del año generado dinamicamente.
-const yearActual = new Date().getFullYear();
-for(let i = yearActual; i <= yearActual + 8; i++){
+const yearActual = new Date().getYear();
+year = yearActual.toString().substr(-2);
+year1 = Number(year);
+
+for(let i = year1; i <= year1 + 8; i++){
 	let opcion = document.createElement('option');
 	opcion.value = i;
 	opcion.innerText = i;
