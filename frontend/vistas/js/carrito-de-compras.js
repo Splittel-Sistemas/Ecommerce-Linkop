@@ -1278,48 +1278,55 @@ function pagarConOpen() {
     formData.append("function", "addPay");
 
     // $('#payment-form').submit();
+    if ($("#seleccionarEstado").val() == "") {
+      $(".btnPagar").after(
+        '<div class="alert alert-danger">Seleccione el Estado </div>'
+      );
+      $("#pay-button").prop("disabled", false);
+     
+    }else{
+      $("#pay-button").prop("disabled", true);
 
-    $.ajax({
-      data: formData, //send data via AJAX
-      url: "vistas/modulos/crearPago.php", //url file controller PHP
-      dataType: "json",
-      contentType: false,
-      processData: false,
-      type: "post", //send POST data
-      success: function (response) {
-        //get request
-     /*    console.log(response); */
-        if (response.status == true) {
-          /*  */
-
-          $.ajax({
-            url: rutaOculta + "vistas/modulos/finalizar-compra.php",
-            method: "POST",
-            data: formData,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function (respuesta) {
-              
-         localStorage.removeItem("listaProductos");
-         localStorage.removeItem("cantidadCesta");
-         localStorage.removeItem("sumaCesta");
-         window.location = rutaOculta + 'ofertas/aviso';
-         },
-          });
-         
-          
-        } else {
-          
-          alert("ERORO AL REALIZAR EL PAGO : " + response.charge);
-          $("#pay-button").on("click", function (event) {
-            event.preventDefault();
-              $("#pay-button").prop("disabled", false);
+      $.ajax({
+        data: formData, //send data via AJAX
+        url: "vistas/modulos/crearPago.php", //url file controller PHP
+        dataType: "json",
+        contentType: false,
+        processData: false,
+        type: "post", //send POST data
+        success: function (response) {
+          //get request
+       /*    console.log(response); */
+          if (response.status == true) {
+            /*  */
+  
+            $.ajax({
+              url: rutaOculta + "vistas/modulos/finalizar-compra.php",
+              method: "POST",
+              data: formData,
+              cache: false,
+              contentType: false,
+              processData: false,
+              success: function (respuesta) {
+                
+           localStorage.removeItem("listaProductos");
+           localStorage.removeItem("cantidadCesta");
+           localStorage.removeItem("sumaCesta");
+           window.location = rutaOculta + 'ofertas/aviso';
+           },
+            });
            
-          });
-        }
-      },
-    });
+            
+          } else {
+            
+            alert("ERORO AL REALIZAR EL PAGO : " + response.charge);
+            $("#pay-button").prop("disabled", false);
+          }
+        },
+      });
+
+    }
+   
   };
 
   var error_callbak = function (response) {
