@@ -739,11 +739,17 @@ function sumaTotalCompra() {
 /*=============================================
 MÉTODO DE PAGO PARA CAMBIO DE DIVISA
 =============================================*/
-var metodoPago = "paypal";
+/* var metodoPago = "paypal"; */
 
-/* var metodoPago = $("input[name='pago']:checked").val(); */
+var metodoPago = $("input[name='pago']:checked").val();
 divisas(metodoPago);
-
+if (metodoPago == "paypal") {
+  $(".btnPagar").show();
+  $(".formPayu").hide();
+  $("#tarjetasr").css("display", "none");
+  cambioDivisa("MXN");
+  pagarConPaypal();
+}
 $("input[name='pago']").change(function () {
   var metodoPago = $(this).val();
   /* var metodoPago = $("input[name='pago']:checked").val(); */
@@ -772,13 +778,7 @@ $("input[name='pago']").change(function () {
     pagarConPaypal();
   }
 });
-if (metodoPago == "paypal") {
-  $(".btnPagar").show();
-  $(".formPayu").hide();
-  $("#tarjetasr").css("display", "none");
-  cambioDivisa("MXN");
-  pagarConPaypal();
-}
+
 /*=============================================
 /*=============================================
 /*=============================================
