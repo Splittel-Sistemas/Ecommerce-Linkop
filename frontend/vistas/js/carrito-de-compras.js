@@ -653,7 +653,7 @@ $("#btnCheckout").click(function () {
           var estado = item.name;
           var codEstado = item.code;
           var costo = item.costo;
-
+        
           $("#seleccionarEstado").append(
             '<option value="' + costo + '">' + estado + "</option>"
           );
@@ -698,8 +698,15 @@ $("#btnCheckout").click(function () {
 
     $("#seleccionarEstado").change(function () {
       $(".alert").remove();
+      var total = $(".valorSubtotal").html();
 
-      var costo = $(this).val();
+      if( total  <  500){
+        var costo = $(this).val();
+
+      }else{
+        var costo = 0;
+
+      }
 
       $(".valorTotalEnvio").html(costo);
       $(".valorTotalEnvio").attr("valor", costo);
@@ -740,10 +747,11 @@ function sumaTotalCompra() {
 MÉTODO DE PAGO PARA CAMBIO DE DIVISA
 =============================================*/
 /* var metodoPago = "paypal"; */
-
+$(document).ready(function() {
 var metodoPago = $("input[name='pago']:checked").val();
-/* alert(metodoPago); */
 divisas(metodoPago);
+});
+
 /* if (metodoPago == "paypal") {
   $(".btnPagar").show();
   $(".formPayu").hide();
@@ -752,9 +760,8 @@ divisas(metodoPago);
   pagarConPaypal();
 } */
 $("input[name='pago']").change(function () {
-  var metodoPago = $(this).val();
+  var metodoPago = $("input[name='pago']:checked").val();
   /* var metodoPago = $("input[name='pago']:checked").val(); */
-  /*  alert(metodoPago); */
   divisas(metodoPago);
 
   if (metodoPago == "payu") {
@@ -887,7 +894,7 @@ function cambioDivisa(divisa) {
             Number(conversion) * Number($(".valorTotalEnvio").attr("valor"))
           ).toFixed(2)
         );
-
+            
         $(".valorTotalImpuesto").html(
           (
             Number(conversion) * Number($(".valorTotalImpuesto").attr("valor"))
@@ -934,119 +941,229 @@ function cambioDivisa(divisa) {
 /*=============================================
 BOTÓN PAGAR PAYPAL
 =============================================*/
-$(".btnPagar").click(function(){
+function pagarConPaypal() {
   $("#pay-button").on("click", function (event) {
     event.preventDefault();
-    	$("#pay-button").prop("disabled", true);
-   
+    $("#pay-button").prop("disabled", true);
   });
-  $(".btnPagar").click(function(){
-  var tipo = $(this).attr("tipo");
+  $(".btnPagar").click(function () {
+    var tipo = $(this).attr("tipo");
 
-  if (tipo == "fisico" && $("#direccion").val() == "") {
-    $(".btnPagar").after(
-      '<div class="alert alert-danger">Ingrese la Direccion de Envio</div>'
-    );
+    if (tipo == "fisico" && $("#direccion").val() == "") {
+      $(".btnPagar").after(
+        '<div class="alert alert-danger">Ingrese la Direccion de Envio</div>'
+      );
 
-    return;
-  }
-  if (tipo == "fisico" && $("#telefono").val() == "") {
-    $(".btnPagar").after(
-      '<div class="alert alert-danger">Ingrese el  telefono </div>'
-    );
+      return;
+    }
+    if (tipo == "fisico" && $("#telefono").val() == "") {
+      $(".btnPagar").after(
+        '<div class="alert alert-danger">Ingrese el  telefono </div>'
+      );
 
-    return;
-  }
-  if (tipo == "fisico" && $("#codigo").val() == "") {
-    $(".btnPagar").after(
-      '<div class="alert alert-danger">Ingrese el codigo postal </div>'
-    );
+      return;
+    }
+    if (tipo == "fisico" && $("#codigo").val() == "") {
+      $(".btnPagar").after(
+        '<div class="alert alert-danger">Ingrese el codigo postal </div>'
+      );
 
-    return;
-  }
+      return;
+    }
 
-  if (tipo == "fisico" && $("#seleccionarEstado").val() == "") {
-    $(".btnPagar").after(
-      '<div class="alert alert-danger">Seleccione el Estado </div>'
-    );
-    $("#pay-button").prop("disabled", false);
+    if (tipo == "fisico" && $("#seleccionarEstado").val() == "") {
+      $(".btnPagar").after(
+        '<div class="alert alert-danger">Seleccione el Estado </div>'
+      );
+      $("#pay-button").prop("disabled", false);
 
-    return;
-  }
-  if (tipo == "fisico" && $("#ciudad").val() == "") {
-    $(".btnPagar").after(
-      '<div class="alert alert-danger">Ingrese la ciudad </div>'
-    );
+      return;
+    }
+    if (tipo == "fisico" && $("#ciudad").val() == "") {
+      $(".btnPagar").after(
+        '<div class="alert alert-danger">Ingrese la ciudad </div>'
+      );
 
-    return;
-  }
+      return;
+    }
 
-  var idUsuario = $("#idUsuario").val();
+    var idUsuario = $("#idUsuario").val();
 
-  var divisa = $("#cambiarDivisa").val();
-  var total = $(".valorTotalCompra").html();
-  var totalEncriptado = localStorage.getItem("total");
-  var impuesto = $(".valorTotalImpuesto").html();
-  var envio = $(".valorTotalEnvio").html();
-  var subtotal = $(".valorSubtotal").html();
-  var titulo = $(".valorTitulo");
-  var cantidad = $(".valorCantidad");
-  var valorItem = $(".valorItem");
-  var idProducto = $(".cuerpoCarrito button, .comprarAhora button");
+    var divisa = $("#cambiarDivisa").val();
+    var total = $(".valorTotalCompra").html();
+    var totalEncriptado = localStorage.getItem("total");
+    var impuesto = $(".valorTotalImpuesto").html();
+    var envio = $(".valorTotalEnvio").html();
+    var subtotal = $(".valorSubtotal").html();
+    var titulo = $(".valorTitulo");
+    var cantidad = $(".valorCantidad");
+    var valorItem = $(".valorItem");
+    var idProducto = $(".cuerpoCarrito button, .comprarAhora button");
 
-  var direccion = $("#direccion").val();
-  var codigo = $("#codigo").val();
-  var telefono = $("#telefono").val();
-  var ciudad = $("#ciudad").val();
+    var direccion = $("#direccion").val();
+    var codigo = $("#codigo").val();
+    var telefono = $("#telefono").val();
+    var ciudad = $("#ciudad").val();
 
-  var tituloArray = [];
-  var cantidadArray = [];
-  var valorItemArray = [];
-  var idProductoArray = [];
+    var tituloArray = [];
+    var cantidadArray = [];
+    var valorItemArray = [];
+    var idProductoArray = [];
 
-  for (var i = 0; i < titulo.length; i++) {
-    tituloArray[i] = $(titulo[i]).html();
-    cantidadArray[i] = $(cantidad[i]).html();
-    valorItemArray[i] = $(valorItem[i]).html();
-    idProductoArray[i] = $(idProducto[i]).attr("idProducto");
-  }
+    for (var i = 0; i < titulo.length; i++) {
+      tituloArray[i] = $(titulo[i]).html();
+      cantidadArray[i] = $(cantidad[i]).html();
+      valorItemArray[i] = $(valorItem[i]).html();
+      idProductoArray[i] = $(idProducto[i]).attr("idProducto");
+    }
 
-  var datos = new FormData();
+    var datos = new FormData();
 
-  datos.append("divisa", divisa);
-  datos.append("total", total);
-  datos.append("totalEncriptado", totalEncriptado);
-  datos.append("impuesto", impuesto);
-  datos.append("envio", envio);
-  datos.append("subtotal", subtotal);
-  datos.append("tituloArray", tituloArray);
-  datos.append("cantidadArray", cantidadArray);
-  datos.append("valorItemArray", valorItemArray);
-  datos.append("idProductoArray", idProductoArray);
-  /* RMN */
-  datos.append("metodoPago", "paypal");
+    datos.append("divisa", divisa);
+    datos.append("total", total);
+    datos.append("totalEncriptado", totalEncriptado);
+    datos.append("impuesto", impuesto);
+    datos.append("envio", envio);
+    datos.append("subtotal", subtotal);
+    datos.append("tituloArray", tituloArray);
+    datos.append("cantidadArray", cantidadArray);
+    datos.append("valorItemArray", valorItemArray);
+    datos.append("idProductoArray", idProductoArray);
+    /* RMN */
+    datos.append("metodoPago", "paypal");
 
-  datos.append("direccion", direccion);
-  datos.append("codigo", codigo);
-  datos.append("telefono", telefono);
-  datos.append("ciudad", ciudad);
-  datos.append("idUsuario", idUsuario);
-  datos.append("token_id", token_id);
+    datos.append("direccion", direccion);
+    datos.append("codigo", codigo);
+    datos.append("telefono", telefono);
+    datos.append("ciudad", ciudad);
+    datos.append("idUsuario", idUsuario);
+    datos.append("token_id", token_id);
 
-  $.ajax({
-    url: rutaOculta + "ajax/carrito.ajax.php",
-    method: "POST",
-    data: datos,
-    cache: false,
-    contentType: false,
-    processData: false,
-    success: function (respuesta) {
-      window.location = respuesta;
-    },
+    $.ajax({
+      url: rutaOculta + "ajax/carrito.ajax.php",
+      method: "POST",
+      data: datos,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (respuesta) {
+        window.location = respuesta;
+      },
+    });
   });
+}
+if (metodoPago == "paypal") {
+ 
+    $("#pay-button").on("click", function (event) {
+      event.preventDefault();
+      $("#pay-button").prop("disabled", true);
+    });
+    $(".btnPagar").click(function () {
+      var tipo = $(this).attr("tipo");
 
-});
-});
+      if (tipo == "fisico" && $("#direccion").val() == "") {
+        $(".btnPagar").after(
+          '<div class="alert alert-danger">Ingrese la Direccion de Envio</div>'
+        );
+
+        return;
+      }
+      if (tipo == "fisico" && $("#telefono").val() == "") {
+        $(".btnPagar").after(
+          '<div class="alert alert-danger">Ingrese el  telefono </div>'
+        );
+
+        return;
+      }
+      if (tipo == "fisico" && $("#codigo").val() == "") {
+        $(".btnPagar").after(
+          '<div class="alert alert-danger">Ingrese el codigo postal </div>'
+        );
+
+        return;
+      }
+
+      if (tipo == "fisico" && $("#seleccionarEstado").val() == "") {
+        $(".btnPagar").after(
+          '<div class="alert alert-danger">Seleccione el Estado </div>'
+        );
+        $("#pay-button").prop("disabled", false);
+
+        return;
+      }
+      if (tipo == "fisico" && $("#ciudad").val() == "") {
+        $(".btnPagar").after(
+          '<div class="alert alert-danger">Ingrese la ciudad </div>'
+        );
+
+        return;
+      }
+
+      var idUsuario = $("#idUsuario").val();
+
+      var divisa = $("#cambiarDivisa").val();
+      var total = $(".valorTotalCompra").html();
+      var totalEncriptado = localStorage.getItem("total");
+      var impuesto = $(".valorTotalImpuesto").html();
+      var envio = $(".valorTotalEnvio").html();
+      var subtotal = $(".valorSubtotal").html();
+      var titulo = $(".valorTitulo");
+      var cantidad = $(".valorCantidad");
+      var valorItem = $(".valorItem");
+      var idProducto = $(".cuerpoCarrito button, .comprarAhora button");
+
+      var direccion = $("#direccion").val();
+      var codigo = $("#codigo").val();
+      var telefono = $("#telefono").val();
+      var ciudad = $("#ciudad").val();
+
+      var tituloArray = [];
+      var cantidadArray = [];
+      var valorItemArray = [];
+      var idProductoArray = [];
+
+      for (var i = 0; i < titulo.length; i++) {
+        tituloArray[i] = $(titulo[i]).html();
+        cantidadArray[i] = $(cantidad[i]).html();
+        valorItemArray[i] = $(valorItem[i]).html();
+        idProductoArray[i] = $(idProducto[i]).attr("idProducto");
+      }
+
+      var datos = new FormData();
+
+      datos.append("divisa", divisa);
+      datos.append("total", total);
+      datos.append("totalEncriptado", totalEncriptado);
+      datos.append("impuesto", impuesto);
+      datos.append("envio", envio);
+      datos.append("subtotal", subtotal);
+      datos.append("tituloArray", tituloArray);
+      datos.append("cantidadArray", cantidadArray);
+      datos.append("valorItemArray", valorItemArray);
+      datos.append("idProductoArray", idProductoArray);
+      datos.append("metodoPago", "paypal");
+
+      datos.append("direccion", direccion);
+      datos.append("codigo", codigo);
+      datos.append("telefono", telefono);
+      datos.append("ciudad", ciudad);
+      datos.append("idUsuario", idUsuario);
+      datos.append("token_id", token_id);
+
+      $.ajax({
+        url: rutaOculta + "ajax/carrito.ajax.php",
+        method: "POST",
+        data: datos,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (respuesta) {
+          window.location = respuesta;
+        },
+      });
+    });
+ 
+} 
 
 /*=============================================
 /*=============================================
@@ -1203,7 +1320,7 @@ function pagarConPayu() {
 function pagarConOpen() {
   $("#pay-button").on("click", function (event) {
     event.preventDefault();
-    	$("#pay-button").prop("disabled", true);
+    $("#pay-button").prop("disabled", true);
     OpenPay.token.extractFormAndCreate(
       "formulario-tarjeta",
       sucess_callbak,
@@ -1290,8 +1407,7 @@ function pagarConOpen() {
         '<div class="alert alert-danger">Seleccione el Estado </div>'
       );
       $("#pay-button").prop("disabled", false);
-     
-    }else{
+    } else {
       $("#pay-button").prop("disabled", true);
 
       $.ajax({
@@ -1303,10 +1419,10 @@ function pagarConOpen() {
         type: "post", //send POST data
         success: function (response) {
           //get request
-       /*    console.log(response); */
+          /*    console.log(response); */
           if (response.status == true) {
             /*  */
-  
+
             $.ajax({
               url: rutaOculta + "vistas/modulos/finalizar-compra.php",
               method: "POST",
@@ -1315,25 +1431,19 @@ function pagarConOpen() {
               contentType: false,
               processData: false,
               success: function (respuesta) {
-                
-           localStorage.removeItem("listaProductos");
-           localStorage.removeItem("cantidadCesta");
-           localStorage.removeItem("sumaCesta");
-           window.location = rutaOculta + 'ofertas/aviso';
-           },
+                localStorage.removeItem("listaProductos");
+                localStorage.removeItem("cantidadCesta");
+                localStorage.removeItem("sumaCesta");
+                window.location = rutaOculta + "ofertas/aviso";
+              },
             });
-           
-            
           } else {
-            
             alert("ERORO AL REALIZAR EL PAGO : " + response.charge);
             $("#pay-button").prop("disabled", false);
           }
         },
       });
-
     }
-   
   };
 
   var error_callbak = function (response) {
