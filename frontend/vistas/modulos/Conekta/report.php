@@ -28,82 +28,6 @@ if(!isset($token_url) || !MyConekta::check_token($token_url))
 $_SESSION['token'] = MyConekta::tokengenerator();
 ?>
 
-<!-- <!DOCTYPE html>
-<html>
-    <head>
-	    <title>Deposito en efectivo en <?=ucfirst($type)?></title>
-    </head>
-    <body>     
-    	<h1>Resumen del Deposito</h1>
-    	<div id="resumen">
-    		<table>
-    			<tr>
-    				<td>Descripcion</td>
-    				<td><?=$description?></td>
-    			</tr>
-    			<tr>
-    				<td>Fecha <?=($type=='oxxo')?'de expiracion':''?></td>
-    				<td>
-    					<?php    						 
-    						 if ($type == 'oxxo')
-    							echo substr($expiry_date, 0, 2).'/'.substr($expiry_date, 2, 2).'/20'.substr($expiry_date, 4, 2);
-    						else
-    							echo $expiry_date;
-    					?>
-    				</td>
-    			</tr>
-    			<tr>
-    				<td>Metodo de pago</td>
-    				<td>Deposito en <?=ucfirst($type)?></td>
-    			</tr>
-    			<tr>
-    				<td>Monto</td>
-    				<td>$<?=substr($amount, 0, -2)?>.00 <?=strtoupper($currency)?></td>
-    			</tr>
-    		</table>
-    	</div>
-
-    	<h1>Informacion de la Ficha</h1>
-    	<div id="informacion">
-    		<?php if ($type != 'oxxo') : ?>
-    		<table>
-    			<tr>
-    				<td>Banco</td>
-    				<td><?=ucfirst($type)?></td>
-    			</tr>
-    			<tr>
-    				<td>Nombre de Servicio</td>
-    				<td><?=$service_name?></td>
-    			</tr>
-    			<tr>
-    				<td>Numero de Servicio</td>
-    				<td><?=$service_number?></td>
-    			</tr>
-    			<tr>
-    				<td>Numero de Referencia</td>
-    				<td><?=$reference?></td>
-    				<td><img src="logos/<?=$type?>.png"></td>
-    			</tr>
-    			
-    		</table>
-    		<?php else :?>
-			<table>
-    			<tr>
-    				<td><img src="<?=$barcode_url?>"></td>
-    				<td><img src="logos/<?=$type?>.png"></td>
-    			</tr>
-    			<tr>
-    				<td><?='<span class="txt-left">'.$barcode.'</span><span class="txt-right">EXP.'.$expiry_date.'</span>'?></td>
-    				<td></td>
-    			</tr>    			
-    		</table>
-
-    		<?php endif; ?>
-    	</div>
-
-    </body>    
-</html> -->
-
 <html>
 <head>
     <link href="styles.css" media="all" rel="stylesheet" type="text/css" />
@@ -277,3 +201,63 @@ a {
     </div>	
 </body>
 </html>
+
+<?php
+
+date_default_timezone_set("America/Bogota");
+
+
+$mail = new PHPMailer;
+
+$mail->CharSet = 'UTF-8';
+
+$mail->isMail();
+
+$mail->setFrom('info@linkop.com.mx', 'Linkop');
+
+
+$mail->Subject = "Solicitud de nueva contraseña";
+
+$mail->addAddress("ramon.olea@splittel.com");
+
+$mail->msgHTML('<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
+
+		<center>
+			
+			<img style="padding:20px; width:10%" src="">
+
+		</center>
+
+		<div style="position:relative; margin:auto; width:600px; background:white; padding:20px">
+		
+			<center>
+			
+			<img style="padding:20px; width:15%" src="">
+
+			<h3 style="font-weight:100; color:#999">SOLICITUD DE NUEVA CONTRASEÑA</h3>
+
+			<hr style="border:1px solid #ccc; width:80%">
+
+			<h4 style="font-weight:100; color:#999; padding:0 20px"><strong>Su nueva contraseña: </strong></h4>
+
+			<a href="" target="_blank" style="text-decoration:none">
+
+			<div style="line-height:60px; background:#0aa; width:60%; color:white">Ingrese nuevamente al sitio</div>
+
+			</a>
+
+			<br>
+
+			<hr style="border:1px solid #ccc; width:80%">
+
+			<h5 style="font-weight:100; color:#999">Si no se inscribió en esta cuenta, puede ignorar este correo electrónico y la cuenta se eliminará.</h5>
+
+			</center>
+
+		</div>
+
+	</div>');
+
+$envio = $mail->Send();
+
+?>

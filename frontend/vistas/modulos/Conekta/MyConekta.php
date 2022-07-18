@@ -93,7 +93,7 @@ class MyConekta {
 		    '&type='.$response['payment_method']['type'].
 		    '&email='.$email.
 		    '&token='.$_SESSION['token'];  	 */	
-			header("Location: report.php?status=".$response['status']."&currency=".$response['currency']."&description=".$response['description']."&amount=".$response['amount']."&expiry_date=".$response['payment_method']['expiry_date']."&barcode=".$response['payment_method']['barcode']."&barcode_url=".$response['payment_method']['barcode_url']."&type=".$response['payment_method']['type']."&email=".$email."&token=".$_SESSION['token']." ");
+			return header("Location: report.php?status=".$response['status']."&currency=".$response['currency']."&description=".$response['description']."&amount=".$response['amount']."&expiry_date=".$response['payment_method']['expiry_date']."&barcode=".$response['payment_method']['barcode']."&barcode_url=".$response['payment_method']['barcode_url']."&type=".$response['payment_method']['type']."&email=".$email."&token=".$_SESSION['token']." ");
 		  	  
 			
 		  

@@ -1558,9 +1558,10 @@ function pagarConOxxo() {
         contentType: false,
         processData: false,
         type: "post", //send POST data
-        success: function (response) {
+        success: function (resp) {
           //get request
 
+             console.log(resp);
 
           alert("SE ENVIO A SU CORREO EL CODIGO DE BARRAS ");
              /* console.log(response);
