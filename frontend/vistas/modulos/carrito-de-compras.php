@@ -276,7 +276,7 @@ VENTANA MODAL PARA CHECKOUT
 
 					<h4 class="text-center well text-muted text-uppercase">Elige la forma de pago</h4>
 
-					<figure class="col-xs-6">
+					<figure class="col-xs-4">
 
 						<center>
 
@@ -287,7 +287,7 @@ VENTANA MODAL PARA CHECKOUT
 						<img src="<?php echo $url; ?>vistas/img/plantilla/paypal.jpg" class="img-thumbnail">
 
 					</figure>
-					<figure class="col-xs-6">
+					<figure class="col-xs-4">
 
 						<center>
 
@@ -299,18 +299,19 @@ VENTANA MODAL PARA CHECKOUT
 									?>vistas/img/plantilla/open.png" class="img-thumbnail">
 
 					</figure>
-					<!-- 	<figure class="col-xs-6"> -->
+
+						<figure class="col-xs-4">
 
 					<center>
 
-						<input id="checkPayu" type="hidden" name="pago" value="payu">
+						<input id="oxxo" type="radio" name="pago" value="oxxo">
 
 					</center>
 
-					<!-- 	<img src="<?php #echo $url; 
-										?>vistas/img/plantilla/images.png" class="img-thumbnail"> -->
+						<img src="<?php echo $url; 
+										?>vistas/img/plantilla/oxxopay.png" class="img-thumbnail">
 
-					<!-- </figure> -->
+					</figure>
 
 				</div>
 

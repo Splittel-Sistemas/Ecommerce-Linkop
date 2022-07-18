@@ -767,7 +767,7 @@ $("input[name='pago']").change(function () {
   if (metodoPago == "payu") {
     $(".btnPagar").hide();
     $(".formPayu").show();
-
+    $("#tarjetasr").css("display", "none");
     pagarConPayu();
     cambioDivisa("MXN");
   } else if (metodoPago == "open") {
@@ -784,6 +784,13 @@ $("input[name='pago']").change(function () {
     $("#tarjetasr").css("display", "none");
     cambioDivisa("MXN");
     pagarConPaypal();
+  }
+  else if (metodoPago == "oxxo") {
+    $(".btnPagar").show();
+    $(".formPayu").hide();
+    $("#tarjetasr").css("display", "none");
+    cambioDivisa("MXN");
+    pagarConOxxo();
   }
 });
 /* if (metodoPago == "paypal") {
@@ -1455,6 +1462,158 @@ function pagarConOpen() {
     $("#pay-button").prop("disabled", false);
   };
 }
+
+
+/* pago con oxxo  */
+
+/* pago con oxxo  */
+function pagarConOxxo() {
+  $("#pay-button").on("click", function (event) {
+    event.preventDefault();
+    $("#pay-button").prop("disabled", true);
+
+    /* 	alert(token_id); */
+    var divisa = $("#cambiarDivisa").val();
+    var total = $(".valorTotalCompra").html();
+    var impuesto = $(".valorTotalImpuesto").html();
+    var envio = $(".valorTotalEnvio").html();
+    var subtotal = $(".valorSubtotal").html();
+    var titulo = $(".valorTitulo");
+    var cantidad = $(".valorCantidad");
+    var valorItem = $(".valorItem");
+    var idProducto = $(".cuerpoCarrito button, .comprarAhora button");
+    var tituloArray = [];
+    var cantidadArray = [];
+    var idProductoArray = [];
+    var valorItemArray = [];
+    var direccion = $("#direccion").val();
+    var codigo = $("#codigo").val();
+    var telefono = $("#telefono").val();
+    var ciudad = $("#ciudad").val();
+    var idUsuario = $("#idUsuario").val();
+    var correoE = $("#correoE").val();
+
+    var inputNumero = $("#inputNumero").val();
+    var inputNombre = $("#inputNombre").val();
+    var selectMes = $("#selectMes").val();
+    var selectYear = $("#selectYear").val();
+
+    for (var i = 0; i < titulo.length; i++) {
+      tituloArray[i] = $(titulo[i]).html();
+      cantidadArray[i] = $(cantidad[i]).html();
+      idProductoArray[i] = $(idProducto[i]).attr("idProducto");
+      valorItemArray[i] = $(valorItem[i]).html();
+    }
+
+    var valorItemString = valorItemArray.toString();
+    var pago = valorItemString.replace(",", "-");
+
+    var address = direccion + " " + codigo;
+    var deviceIdHiddenFieldName = $("#deviceIdHiddenFieldName").val();
+
+    var formData = new FormData();
+
+    formData.append("phone_number", telefono);
+    formData.append("holder_name", inputNombre);
+    formData.append("card_number", inputNumero);
+    formData.append("expiration_month", selectMes);
+    formData.append("expiration_year", selectYear);
+    formData.append("cvv", inputCCV);
+    formData.append("address", address);
+    formData.append("amount", total);
+    formData.append("email", "prueba@gmail.com");
+    formData.append("token_id", token_id);
+    formData.append("deviceIdHiddenFieldName", deviceIdHiddenFieldName);
+    formData.append("metodoPago", "open");
+    formData.append("cantidadArray", cantidadArray);
+    formData.append("valorItemArray", valorItemArray);
+    formData.append("idProductoArray", idProductoArray);
+    formData.append("divisaPayu", divisa);
+    formData.append("direccion", direccion);
+    formData.append("codigo", codigo);
+    formData.append("telefono", telefono);
+    formData.append("ciudad", ciudad);
+    formData.append("idUsuario", idUsuario);
+    formData.append("token_id", token_id);
+    formData.append("tituloArray", tituloArray);
+    formData.append("idUsuario", idUsuario);
+    formData.append("subtotal", subtotal);
+    formData.append("correoE", correoE);
+
+    formData.append("function", "addPay");
+
+    // $('#payment-form').submit();
+    if ($("#seleccionarEstado").val() == "") {
+      $(".btnPagar").after(
+        '<div class="alert alert-danger">Seleccione el Estado </div>'
+      );
+      $("#pay-button").prop("disabled", false);
+    } else {
+      $("#pay-button").prop("disabled", true);
+
+      $.ajax({
+        data: formData, //send data via AJAX
+        url: "vistas/modulos/Conekta/conekta_oxxo.php", //url file controller PHP
+        dataType: "json",
+        contentType: false,
+        processData: false,
+        type: "post", //send POST data
+        success: function (response) {
+          //get request
+
+
+          alert("SE ENVIO A SU CORREO EL CODIGO DE BARRAS ");
+             /* console.log(response);
+             window.open('report.php?'+formData, '_blank');           */
+
+          /* $.ajax({
+            type: "POST",
+            url: "conekta_oxxo.php",
+            data: response,
+            success: function(response) {                               
+                window.open('report.php?'+response, '_blank');          
+             
+            }
+        });  */
+        /*   if (response.status == true) {
+
+            $.ajax({
+              url: rutaOculta + "vistas/modulos/finalizar-compra.php",
+              method: "POST",
+              data: formData,
+              cache: false,
+              contentType: false,
+              processData: false,
+              success: function (respuesta) {
+                localStorage.removeItem("listaProductos");
+                localStorage.removeItem("cantidadCesta");
+                localStorage.removeItem("sumaCesta");
+                window.location = rutaOculta + "ofertas/aviso";
+              },
+            });
+          } else {
+            alert("ERORO AL REALIZAR EL PAGO : " + response.charge);
+            $("#pay-button").prop("disabled", false);
+          } */
+        },
+      });
+      alert("SE ENVIO A SU CORREO EL CODIGO DE BARRAS ");
+
+    }
+  });
+}
+
+/* fin pago con oxxo  */
+
+
+
+
+
+
+
+
+
+/* fin pago con oxxo  */
 /*=============================================
 /*=============================================
 /*=============================================

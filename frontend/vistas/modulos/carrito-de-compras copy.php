@@ -1,21 +1,36 @@
 <?php
-    
-    $url = Ruta::ctrRuta();
 
- ?>
+$url = Ruta::ctrRuta();
+
+?>
 
 <!--=====================================
 BREADCRUMB CARRITO DE COMPRAS
 ======================================-->
+<link rel="stylesheet" href="vistas/css/estilos.css">
+<script type="text/javascript" src="https://openpay.s3.amazonaws.com/openpay.v1.min.js"></script>
+<script type='text/javascript' src="https://openpay.s3.amazonaws.com/openpay-data.v1.min.js"></script>
+
+<script>  /* chance costo de estado  */
+        $(document).ready(function() {
+
+			OpenPay.setId('mzpbsqxe2u5jgqywfd3u');
+	OpenPay.setApiKey('pk_4c7ac187abf243d08a2893b31d78a6c3');
+	OpenPay.setSandboxMode(true);
+	//Se genera el id de dispositivo
+	var deviceSessionId = OpenPay.deviceData.setup("formulario-tarjeta", "deviceIdHiddenFieldName");
+	
+});
+	</script>
 
 <div class="container-fluid well well-sm">
-	
+
 	<div class="container">
-		
+
 		<div class="row">
-			
+
 			<ul class="breadcrumb fondoBreadcrumb text-uppercase">
-				
+
 				<li><a href="<?php echo $url;  ?>">CARRITO DE COMPRAS</a></li>
 				<li class="active pagActiva"><?php echo $rutas[0] ?></li>
 
@@ -36,15 +51,15 @@ TABLA CARRITO DE COMPRAS
 	<div class="container">
 
 		<div class="panel panel-default">
-			
+
 			<!--=====================================
 			CABECERA CARRITO DE COMPRAS
 			======================================-->
 
 			<div class="panel-heading cabeceraCarrito">
-				
-				<div class="col-md-6 col-sm-7 col-xs-12 text-center">
-					
+
+				<div class="col-md-4 col-sm-7 col-xs-12 text-center">
+
 					<h3>
 						<small>PRODUCTO</small>
 					</h3>
@@ -52,15 +67,21 @@ TABLA CARRITO DE COMPRAS
 				</div>
 
 				<div class="col-md-2 col-sm-1 col-xs-0 text-center">
-					
+
 					<h3>
 						<small>PRECIO</small>
 					</h3>
 
 				</div>
+				<div class="col-sm-2 col-xs-0 text-center">
+
+					<h3>
+						<small>DISPONIBLES</small>
+					</h3>
+				</div>
 
 				<div class="col-sm-2 col-xs-0 text-center">
-					
+
 					<h3>
 						<small>CANTIDAD</small>
 					</h3>
@@ -68,7 +89,7 @@ TABLA CARRITO DE COMPRAS
 				</div>
 
 				<div class="col-sm-2 col-xs-0 text-center">
-					
+
 					<h3>
 						<small>SUBTOTAL</small>
 					</h3>
@@ -83,7 +104,7 @@ TABLA CARRITO DE COMPRAS
 
 			<div class="panel-body cuerpoCarrito">
 
-				
+
 
 			</div>
 
@@ -94,9 +115,9 @@ TABLA CARRITO DE COMPRAS
 			<div class="panel-body sumaCarrito">
 
 				<div class="col-md-4 col-sm-6 col-xs-12 pull-right well">
-					
+
 					<div class="col-xs-6">
-						
+
 						<h4>TOTAL:</h4>
 
 					</div>
@@ -104,12 +125,12 @@ TABLA CARRITO DE COMPRAS
 					<div class="col-xs-6">
 
 						<h4 class="sumaSubTotal">
-							
-							
+
+
 
 						</h4>
 
-					</div> 
+					</div>
 
 				</div>
 
@@ -120,24 +141,22 @@ TABLA CARRITO DE COMPRAS
 			======================================-->
 
 			<div class="panel-heading cabeceraCheckout">
+			<!-- 	<a href="#modalIngreso1" data-toggle="modal"><button class="btn btn-default backColor btn-lg pull-center">Verificar Envio</button></a> -->
 
-			<?php
+				<?php
 
-				if(isset($_SESSION["validarSesion"])){
+				if (isset($_SESSION["validarSesion"])) {
 
-					if($_SESSION["validarSesion"] == "ok"){
+					if ($_SESSION["validarSesion"] == "ok") {
 
-						echo '<a id="btnCheckout" href="#modalCheckout" data-toggle="modal" idUsuario="'.$_SESSION["id"].'"><button class="btn btn-default backColor btn-lg pull-right">REALIZAR PAGO</button></a>';
-
+						echo '<a id="btnCheckout" href="#modalCheckout" data-toggle="modal" idUsuario="' . $_SESSION["id"] . '"><button class="btn btn-default backColor btn-lg pull-right">REALIZAR PAGO</button></a>';
 					}
-
-
-				}else{
+				} else {
 
 					echo '<a href="#modalIngreso" data-toggle="modal"><button class="btn btn-default backColor btn-lg pull-right">REALIZAR PAGO</button></a>';
 				}
 
-			?>	
+				?>
 
 			</div>
 
@@ -152,11 +171,11 @@ VENTANA MODAL PARA CHECKOUT
 ======================================-->
 
 <div id="modalCheckout" class="modal fade modalFormulario" role="dialog">
-	
-	 <div class="modal-content modal-dialog">
-	 	
+
+	<div class="modal-content modal-dialog">
+
 		<div class="modal-body modalTitulo">
-			
+
 			<h3 class="backColor">REALIZAR PAGO</h3>
 
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -164,159 +183,326 @@ VENTANA MODAL PARA CHECKOUT
 			<div class="contenidoCheckout">
 
 				<?php
+				$item = "id";
+				$valor = $_SESSION["id"];
 
+				$datosUsuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
 				$respuesta = ControladorCarrito::ctrMostrarTarifas();
 
-				echo '<input type="hidden" id="tasaImpuesto" value="'.$respuesta["impuesto"].'">
-					  <input type="hidden" id="envioNacional" value="'.$respuesta["envioNacional"].'">
-				      <input type="hidden" id="envioInternacional" value="'.$respuesta["envioInternacional"].'">
-				      <input type="hidden" id="tasaMinimaNal" value="'.$respuesta["tasaMinimaNal"].'">
-				      <input type="hidden" id="tasaMinimaInt" value="'.$respuesta["tasaMinimaInt"].'">
-				      <input type="hidden" id="tasaPais" value="'.$respuesta["pais"].'">
+				echo '<input type="hidden" id="tasaImpuesto" value="' . $respuesta["impuesto"] . '">
+					  <input type="hidden" id="envioNacional" value="' . $respuesta["envioNacional"] . '">
+				      <input type="hidden" id="envioInternacional" value="' . $respuesta["envioInternacional"] . '">
+				      <input type="hidden" id="tasaMinimaNal" value="' . $respuesta["tasaMinimaNal"] . '">
+				      <input type="hidden" id="tasaMinimaInt" value="' . $respuesta["tasaMinimaInt"] . '">
+				      <input type="hidden" id="tasaPais" value="' . $respuesta["pais"] . '">
 
 				';
 
 				?>
-				
+
 				<div class="formEnvio row">
-					
+
 					<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
 
-					<div class="col-xs-12 seleccionePais">
-						
-						
+
+					<div class="col-xs-12 text-center ">
+
+
+						<label>Direccion de envio</label>
+
+						<input type="text" class="form-control seleccionedireccion" name="direccion" id="direccion" placeholder="Direccion de envio" value="<?php echo $datosUsuario["direccion"] ?>">
 
 					</div>
+					<br>
+
+					<div class="row">
+						<br>
+						<div class="col-xs-6 text-center ">
+
+
+							<label>Numero de telefono</label>
+
+							<input type="number" class="form-control " name="telefono" id="telefono" placeholder="Numero de telefono" value="<?php echo $datosUsuario["telefono"] ?>">
+
+						</div>
+						<div class="col-xs-6 text-center ">
+
+
+							<label>Codigo Postal</label>
+
+							<input type="number" class="form-control " name="codigo" id="codigo" placeholder="Codigo Postal" value="<?php echo $datosUsuario["codigo"] ?>">
+
+						</div>
+						<input name="idUsuario" id="idUsuario" type="hidden" value="<?php echo $_SESSION["id"] ?>" />
+						<input name="correoE" id="correoE" type="hidden" value="<?php echo $datosUsuario["email"] ?>" />
+
+					</div>
+
+					<br>
+
+
+					<!-- <div class="col-xs-12 seleccionePais">
+								
+								
+
+							</div> -->
+					<div class="row">
+						<div class="col-xs-6 text-center ">
+
+
+							<label>Ciudad</label>
+
+							<input type="text" class="form-control " name="ciudad" id="ciudad" placeholder="Ciudad" value="<?php echo $datosUsuario["ciudad"] ?>">
+
+						</div>
+						<label> Estado</label>
+
+						<div class="col-xs-6 seleccioneEstado text-center">
+
+
+
+						</div>
+					</div>
+
+
+
+
 
 				</div>
 
 				<br>
 
 				<div class="formaPago row">
-					
+
 					<h4 class="text-center well text-muted text-uppercase">Elige la forma de pago</h4>
 
 					<figure class="col-xs-6">
-						
+
 						<center>
-							
+
 							<input id="checkPaypal" type="radio" name="pago" value="paypal" checked>
-
-						</center>	
-						
-						<img src="<?php echo $url; ?>vistas/img/plantilla/paypal.jpg" class="img-thumbnail">		
-
-					</figure>
-
-					<figure class="col-xs-6">
-						
-						<center>
-							
-							<input id="checkPayu" type="radio" name="pago" value="payu">
 
 						</center>
 
-						<img src="<?php echo $url; ?>vistas/img/plantilla/images.png" class="img-thumbnail">
+						<img src="<?php echo $url; ?>vistas/img/plantilla/paypal.jpg" class="img-thumbnail">
 
 					</figure>
+					<figure class="col-xs-6">
+
+						<center>
+
+							<input id="open" type="radio" name="pago" value="open">
+
+						</center>
+
+						<img src="<?php echo $url;
+									?>vistas/img/plantilla/open.png" class="img-thumbnail">
+
+					</figure>
+					<!-- 	<figure class="col-xs-6"> -->
+
+					<center>
+
+						<input id="checkPayu" type="hidden" name="pago" value="payu">
+
+					</center>
+
+					<!-- 	<img src="<?php #echo $url; 
+										?>vistas/img/plantilla/images.png" class="img-thumbnail"> -->
+
+					<!-- </figure> -->
 
 				</div>
 
 				<br>
+				<div class="contenedor col-sm-12 col-xs-12 text-center" id="tarjetasr" style="display: none;">
+
+					<!-- Tarjeta -->
+					<section class="tarjeta" id="tarjeta">
+						<div class="delantera">
+							<div class="logo-marca" id="logo-marca">
+								<!-- <img src="img/logos/visa.png" alt=""> -->
+							</div>
+							<img src="vistas/img/chip-tarjeta.png" class="chip" alt="">
+							<div class="datos">
+								<div class="grupo" id="numero">
+									<p class="label">Número Tarjeta</p>
+									<p class="numero">#### #### #### ####</p>
+								</div>
+								<div class="flexbox">
+									<div class="grupo" id="nombre">
+										<p class="label">Nombre Tarjeta</p>
+										<p class="nombre"></p>
+									</div>
+
+									<div class="grupo" id="expiracion">
+										<p class="label">Expiracion</p>
+										<p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="trasera">
+							<div class="barra-magnetica"></div>
+							<div class="datos">
+								<div class="grupo" id="firma">
+									<p class="label">Firma</p>
+									<div class="firma">
+										<p></p>
+									</div>
+								</div>
+								<div class="grupo" id="ccv">
+									<p class="label">CCV</p>
+									<p class="ccv"></p>
+								</div>
+							</div>
+							<p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
+							<!-- 	<a href="#" class="link-banco">www.tubanco.com</a> -->
+						</div>
+					</section>
+					<br><br><br><br><br>
+					<br><br>
+				
+					
+					<form action="" id="formulario-tarjeta" method="POST" class="formulario-tarjeta">
+					<input type="hidden" name="token_id" id="token_id">
+
+						<div class="grupo">
+							<label for="inputNumero">Número Tarjeta</label>
+							<input type="text" class="form-control" id="inputNumero" maxlength="16" autocomplete="off" data-openpay-card="card_number">
+						</div>
+						<div class="grupo">
+							<label for="inputNombre">Nombre</label>
+							<input type="text" class="form-control" id="inputNombre" maxlength="19" autocomplete="off" data-openpay-card="holder_name">
+						</div>
+						<br>
+						<div class="row">
+							<label for="inputNombre">Expiracion</label>
+
+							<br>
+							<div class="col-xs-6 text-center ">
+
+
+								<select name="mes" class="form-control" id="selectMes" data-openpay-card="expiration_month">
+									<option disable selected>mes</option>
+								</select>
+							</div>
+							<div class="col-xs-6 text-center ">
+
+								<select name="year" class="form-control" id="selectYear" data-openpay-card="expiration_year">
+									<option disable selected>año</option>
+								</select>
+							</div>
+
+						</div>
+
+						<div class="grupo ccv">
+							<label for="inputCCV">CCV</label>
+							<input type="text" class="form-control" id="inputCCV" maxlength="4" data-openpay-card="cvv2">
+						</div>
+						Tus pagos se realizan de forma segura con encriptación de 256 bits
+						<br>
+						<!-- <button type="submit" class="btn-enviar">Enviar</button> -->
+
+
+					</form>
+				</div>
 
 				<div class="listaProductos row">
-					
-					<h4 class="text-center well text-muted text-uppercase">Productos a comprar</h4>
+
 
 					<table class="table table-striped tablaProductos">
-						
-						 <thead>
-						 	
-							<tr>		
+
+						<thead>
+
+							<tr>
 								<th>Producto</th>
 								<th>Cantidad</th>
 								<th>Precio</th>
 							</tr>
 
-						 </thead>
+						</thead>
 
-						 <tbody>
-						 	
+						<tbody>
 
 
-						 </tbody>
+							<h4 class="text-center well text-muted text-uppercase">Productos a comprar</h4>
+
+						</tbody>
 
 					</table>
 
 					<div class="col-sm-6 col-xs-12 pull-right">
-						
+
+
 						<table class="table table-striped tablaTasas">
-							
+
 							<tbody>
-								
+
 								<tr>
-									<td>Subtotal</td>	
-									<td><span class="cambioDivisa">MXN</span> $<span class="valorSubtotal" valor="0">0</span></td>	
+									<td>Subtotal</td>
+									<td><span class="cambioDivisa">MXN</span> $<span class="valorSubtotal" valor="0">0</span></td>
 								</tr>
 
 								<tr>
-									<td>Envío</td>	
-									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalEnvio" valor="0">0</span></td>	
+									<td>Envío</td>
+									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalEnvio" valor="0">0</span></td>
 								</tr>
 
 								<tr>
-									<td>Impuesto</td>	
-									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalImpuesto" valor="0">0</span></td>	
+									<td>Impuesto</td>
+									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalImpuesto" valor="0">0</span></td>
 								</tr>
 
 								<tr>
-									<td><strong>Total</strong></td>	
-									<td><strong><span class="cambioDivisa">MXN</span> $<span class="valorTotalCompra" valor="0">0</span></strong></td>	
+									<td><strong>Total</strong></td>
+									<td><strong><span class="cambioDivisa">MXN</span> $<span class="valorTotalCompra" valor="0">0</span></strong></td>
 								</tr>
 
-							</tbody>	
+							</tbody>
 
 						</table>
 
-						 <div class="divisa">
+						<div class="divisa">
 
-						 	<select class="form-control" id="cambiarDivisa" name="divisa">
-						 		
-							
+							<select class="form-control" id="cambiarDivisa" name="divisa">
 
-						 	</select>	
 
-						 	<br>
 
-						 </div>
+							</select>
+
+							<br>
+
+						</div>
 
 					</div>
 
 					<div class="clearfix"></div>
 
 					<form class="formPayu" style="display:none">
-					 
-						<input name="merchantId" type="hidden" value=""/>
-						<input name="accountId" type="hidden" value=""/>
-						<input name="description" type="hidden" value=""/>
-						<input name="referenceCode" type="hidden" value=""/>	
-						<input name="amount" type="hidden" value=""/>
-						<input name="tax" type="hidden" value=""/>
-						<input name="taxReturnBase" type="hidden" value=""/>
-						<input name="shipmentValue" type="hidden" value=""/>
-						<input name="currency" type="hidden" value=""/>
-						<input name="lng" type="hidden" value="es"/>
-						<input name="confirmationUrl" type="hidden" value="" />
-						<input name="responseUrl" type="hidden" value=""/>
-						<input name="declinedResponseUrl" type="hidden" value=""/>
-						<input name="displayShippingInformation" type="hidden" value=""/>
-						<input name="test" type="hidden" value="" />
-						<input name="signature" type="hidden" value=""/>
 
-					  <input name="Submit" class="btn btn-block btn-lg btn-default backColor" type="submit"  value="PAGAR" >
+						<input name="merchantId" type="hidden" value="" />
+						<input name="accountId" type="hidden" value="" />
+						<input name="description" type="hidden" value="" />
+						<input name="referenceCode" type="hidden" value="" />
+						<input name="amount" type="hidden" value="" />
+						<input name="tax" type="hidden" value="" />
+						<input name="taxReturnBase" type="hidden" value="" />
+						<input name="shipmentValue" type="hidden" value="" />
+						<input name="currency" type="hidden" value="" />
+						<input name="lng" type="hidden" value="es" />
+						<input name="confirmationUrl" type="hidden" value="" />
+						<input name="responseUrl" type="hidden" value="" />
+						<input name="declinedResponseUrl" type="hidden" value="" />
+						<input name="displayShippingInformation" type="hidden" value="" />
+						<input name="test" type="hidden" value="" />
+						<input name="signature" type="hidden" value="" />
+
+						<input name="Submit" class="btn btn-block btn-lg btn-default backColor" type="submit" value="PAGAR">
 					</form>
-					
-					<button class="btn btn-block btn-lg btn-default backColor btnPagar">PAGAR</button>
+
+					<button class="btn btn-block btn-lg btn-default backColor btnPagar" id="pay-button">PAGAR</button>
 
 				</div>
 
@@ -325,9 +511,12 @@ VENTANA MODAL PARA CHECKOUT
 		</div>
 
 		<div class="modal-footer">
-      	
-      	</div>
+
+		</div>
 
 	</div>
 
 </div>
+
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+<script src="vistas/js/main.js"></script>

@@ -1,76 +1,110 @@
-<?php 
-require_once("lib/Conekta.php");
-\Conekta\Conekta::setApiKey("key_uIXUFhVCmt9XmHtDynXtMK");
-\Conekta\Conekta::setApiVersion("2.0.0");
+<?php
+session_start();
+require_once 'MyConekta.php';
+require_once '../../../extensiones/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require_once '../../../extensiones/vendor/phpmailer/phpmailer/src/Exception.php';
 
-try{
-    $thirty_days_from_now = (new DateTime())->add(new DateInterval('P30D'))->getTimestamp(); 
-  
-    $order = \Conekta\Order::create(
-      [
-        "line_items" => [
-          [
-            "name" => "Tacos",
-            "unit_price" => 1000,
-            "quantity" => 12
-          ]
-        ],
-        "shipping_lines" => [
-          [
-            "amount" => 1500,
-            "carrier" => "FEDEX"
-          ]
-        ], //shipping_lines - physical goods only
-        "currency" => "MXN",
-        "customer_info" => [
-          "name" => "Fulanito Pérez",
-          "email" => "fulanito@conekta.com",
-          "phone" => "+5218181818181"
-        ],
-        "shipping_contact" => [
-          "address" => [
-            "street1" => "Calle 123, int 2",
-            "postal_code" => "06100",
-            "country" => "MX"
-          ]
-        ], //shipping_contact - required only for physical goods
-        "charges" => [
-          [
-            "payment_method" => [
-              "type" => "oxxo_cash",
-              "expires_at" => $thirty_days_from_now
-            ]
-          ]
-        ]
-      ]
-    );
-  } catch (\Conekta\ParameterValidationError $error){
-    echo $error->getMessage();
-  } catch (\Conekta\Handler $error){
-    echo $error->getMessage();
-  }
-  
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+/* print_r($_GET); */
+//Filter all the GET[] variables
+$token_url      = filter_input(INPUT_GET, 'token');
+$type           = filter_input(INPUT_GET, 'type');
+$description    = filter_input(INPUT_GET, 'description');
+$expiry_date    = filter_input(INPUT_GET, 'expiry_date');
+$amount         = filter_input(INPUT_GET, 'amount');
+$currency       = filter_input(INPUT_GET, 'currency');
+$service_name   = filter_input(INPUT_GET, 'service_name');
+$service_number = filter_input(INPUT_GET, 'service_number');
+$reference      = filter_input(INPUT_GET, 'reference');
+$barcode        = filter_input(INPUT_GET, 'barcode');
+$barcode_url    = filter_input(INPUT_GET, 'barcode_url');
 
+if(!isset($token_url) || !MyConekta::check_token($token_url))
+    die('Reporte Invalido. Solo puede imprimir el reporte UNA vez, 
+        vuelva a generar el donativo');
 
-/*   echo "ID: ". $order->id;
-echo "Payment Method:". $order->charges[0]->payment_method->service_name;
-echo "Reference: ". $order->charges[0]->payment_method->reference;
-echo "$". $order->amount/100 . $order->currency;
-echo "Order";
-echo $order->line_items[0]->quantity .
-      "-". $order->line_items[0]->name .
-      "- $". $order->line_items[0]->unit_price/100;
- */
+//Regenerate the token value to avoid repeat the report
+$_SESSION['token'] = MyConekta::tokengenerator();
+?>
 
-// Response
-// ID: ord_2fsQdMUmsFNP2WjqS
-// Payment Method: OxxoPay
-// Reference: 123456789012
-// $ 135.0 MXN
-// Order
-// 12 - Tacos - $10.0
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+	    <title>Deposito en efectivo en <?=ucfirst($type)?></title>
+    </head>
+    <body>     
+    	<h1>Resumen del Deposito</h1>
+    	<div id="resumen">
+    		<table>
+    			<tr>
+    				<td>Descripcion</td>
+    				<td><?=$description?></td>
+    			</tr>
+    			<tr>
+    				<td>Fecha <?=($type=='oxxo')?'de expiracion':''?></td>
+    				<td>
+    					<?php    						 
+    						 if ($type == 'oxxo')
+    							echo substr($expiry_date, 0, 2).'/'.substr($expiry_date, 2, 2).'/20'.substr($expiry_date, 4, 2);
+    						else
+    							echo $expiry_date;
+    					?>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>Metodo de pago</td>
+    				<td>Deposito en <?=ucfirst($type)?></td>
+    			</tr>
+    			<tr>
+    				<td>Monto</td>
+    				<td>$<?=substr($amount, 0, -2)?>.00 <?=strtoupper($currency)?></td>
+    			</tr>
+    		</table>
+    	</div>
 
-?><html>
+    	<h1>Informacion de la Ficha</h1>
+    	<div id="informacion">
+    		<?php if ($type != 'oxxo') : ?>
+    		<table>
+    			<tr>
+    				<td>Banco</td>
+    				<td><?=ucfirst($type)?></td>
+    			</tr>
+    			<tr>
+    				<td>Nombre de Servicio</td>
+    				<td><?=$service_name?></td>
+    			</tr>
+    			<tr>
+    				<td>Numero de Servicio</td>
+    				<td><?=$service_number?></td>
+    			</tr>
+    			<tr>
+    				<td>Numero de Referencia</td>
+    				<td><?=$reference?></td>
+    				<td><img src="logos/<?=$type?>.png"></td>
+    			</tr>
+    			
+    		</table>
+    		<?php else :?>
+			<table>
+    			<tr>
+    				<td><img src="<?=$barcode_url?>"></td>
+    				<td><img src="logos/<?=$type?>.png"></td>
+    			</tr>
+    			<tr>
+    				<td><?='<span class="txt-left">'.$barcode.'</span><span class="txt-right">EXP.'.$expiry_date.'</span>'?></td>
+    				<td></td>
+    			</tr>    			
+    		</table>
+
+    		<?php endif; ?>
+    	</div>
+
+    </body>    
+</html> -->
+
+<html>
 <head>
     <link href="styles.css" media="all" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
@@ -212,21 +246,21 @@ a {
         <div class="opps-header">
             <div class="opps-reminder">Ficha digital. No es necesario imprimir.</div>
             <div class="opps-info">
-                <div class="opps-brand"><img src="oxxopay_brand.png" alt="OXXOPay"></div>
+                <div class="opps-brand"><img src="https://linkop.com.mx/vistas/modulos/Conekta/logos/oxxopay_brand.png" alt="OXXOPay"></div>
                 <div class="opps-ammount">
                     <h3>Monto a pagar</h3>
-                    <h2><?php echo "$". $order->amount/100 ;?> <sup><?php echo $order->currency;?> </sup></h2>
+                    <h2> <td>$<?=substr($amount, 0, -2)?><?=strtoupper($currency)?></td></sup></h2>
                     <p>OXXO cobrará una comisión adicional al momento de realizar el pago.</p>
                 </div>
             </div>
             <div class="opps-reference">
                 <h3>Referencia</h3>
-                <h1><?php echo "Reference: ". $order->charges[0]->payment_method->reference;?></h1>
+                <h3><?php echo $barcode?></h3>
+            </div>
+			<div>
+			<td style="text-align:center;"><img src="<?=$barcode_url?>"></td>
             </div>
             <div>
-                <h3><?php echo $order->line_items[0]->quantity .
-      "-". $order->line_items[0]->name .
-      "- $". $order->line_items[0]->unit_price/100; ?></h3>
             </div>
         </div>
         <div class="opps-instructions">
