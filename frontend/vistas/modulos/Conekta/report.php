@@ -6,7 +6,8 @@ require_once '../../../extensiones/vendor/phpmailer/phpmailer/src/Exception.php'
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-print_r($_GET);
+/* print_r($_GET);
+exit; */
 //Filter all the GET[] variables
 $token_url      = filter_input(INPUT_GET, 'token');
 $type           = filter_input(INPUT_GET, 'type');
@@ -19,6 +20,7 @@ $service_number = filter_input(INPUT_GET, 'service_number');
 $reference      = filter_input(INPUT_GET, 'reference');
 $barcode        = filter_input(INPUT_GET, 'barcode');
 $barcode_url    = filter_input(INPUT_GET, 'barcode_url');
+$correo    = filter_input(INPUT_GET, 'email');
 
 if(!isset($token_url) || !MyConekta::check_token($token_url))
     die('Reporte Invalido. Solo puede imprimir el reporte UNA vez, 
@@ -46,8 +48,8 @@ $mail->setFrom('info@linkop.com.mx', 'Linkop');
 
 $mail->Subject = "Pago en Tienda OXXO";
 
-$mail->addAddress("olearamon3@gmail.com");
-
+$mail->addAddress($correo);
+print_r($correo);
 $mail->msgHTML('<html>
 <head>
     <link href="styles.css" media="all" rel="stylesheet" type="text/css" />

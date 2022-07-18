@@ -68,19 +68,24 @@ class MyConekta {
 	}
 
 	//Function to make payments in Oxxo stores
-	public static function oxxo($amount, $email,$description){	
+	public static function oxxo($amount, $email,$descriptions,$name, $phone){	
 
 		Conekta::setApiKey(self::$api_key);
 		$request = array(
 		    'amount' => $amount,
 		    'currency' => self::$currency,
-		    'description' => self::$description,
-		    'details'=> array('email' => $email),
+		    'description' => $descriptions,
+			'details' => array(
+				'name' => $name,
+				'email' => $email,
+				'phone' => $phone
+			),
 		    'cash'=> array('type' => 'oxxo')
 		    );
 		try {
 			$response = Conekta_Charge::create($request);  
-			echo 'Thanks for your donation';
+			/* print_r($response);
+			exit; */
 			/* echo
 		    'status='.$response['status'].
 		    '&currency='.$response['currency'].
@@ -93,7 +98,7 @@ class MyConekta {
 		    '&type='.$response['payment_method']['type'].
 		    '&email='.$email.
 		    '&token='.$_SESSION['token'];  	 */	
-			return header("Location: report.php?status=".$response['status']."&currency=".$response['currency']."&description=".$response['description']."&amount=".$response['amount']."&expiry_date=".$response['payment_method']['expiry_date']."&barcode=".$response['payment_method']['barcode']."&barcode_url=".$response['payment_method']['barcode_url']."&type=".$response['payment_method']['type']."&email=".$email."&token=".$_SESSION['token']." ");
+			return header("Location: report.php?status=".$response['status']."&currency=".$response['currency']."&description=".$response['description']."&amount=".$response['amount']."&expiry_date=".$response['payment_method']['expiry_date']."&barcode=".$response['payment_method']['barcode']."&barcode_url=".$response['payment_method']['barcode_url']."&type=".$response['payment_method']['type']."&email=".$response['email']."&token=".$_SESSION['token']." ");
 		  	  
 			
 		  
