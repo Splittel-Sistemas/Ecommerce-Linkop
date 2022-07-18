@@ -6,7 +6,7 @@ require_once '../../../extensiones/vendor/phpmailer/phpmailer/src/Exception.php'
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-/* print_r($_GET); */
+print_r($_GET);
 //Filter all the GET[] variables
 $token_url      = filter_input(INPUT_GET, 'token');
 $type           = filter_input(INPUT_GET, 'type');
@@ -44,9 +44,9 @@ $mail->isMail();
 $mail->setFrom('info@linkop.com.mx', 'Linkop');
 
 
-$mail->Subject = "Solicitud de nueva contraseña";
+$mail->Subject = "Pago en Tienda OXXO";
 
-$mail->addAddress("ramon.olea@splittel.com");
+$mail->addAddress("olearamon3@gmail.com");
 
 $mail->msgHTML('<html>
 <head>
@@ -86,7 +86,7 @@ $mail->msgHTML('<html>
         <div class="opps-header">
             <div class="opps-reminder" style="position: relative;top: -1px;padding: 9px 0 10px;font-size: 11px;text-transform: uppercase;text-align: center;color: #ffffff;background: #000000;">Ficha digital. No es necesario imprimir.</div>
             <div class="opps-info" style="margin-top: 26px;position: relative;">
-                <div class="opps-brand" style="width: 45%;float: left;"><img src="https://linkop.com.mx/vistas/modulos/Conekta/logos/oxxopay_brand.png" alt="OXXOPay" style="max-width: 150px;margin-top: 2px;"></div>
+                <div class="opps-brand" style="width: 45%;float: left;"><img src="logos/oxxopay_brand.png" alt="OXXOPay" style="max-width: 150px;margin-top: 2px;"></div>
                 <div class="opps-ammount" style="width: 55%;float: right;">
                      <h3 style="margin-bottom: 10px;font-size: 15px;font-weight: 600;text-transform: uppercase;">Monto a pagar</h3>
 	
