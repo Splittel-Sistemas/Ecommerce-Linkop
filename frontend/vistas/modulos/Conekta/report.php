@@ -49,7 +49,7 @@ $mail->setFrom('info@linkop.com.mx', 'Linkop');
 $mail->Subject = "Pago en Tienda OXXO";
 
 $mail->addAddress($correo);
-print_r($correo);
+
 $mail->msgHTML('<html>
 <head>
     <link href="styles.css" media="all" rel="stylesheet" type="text/css" />

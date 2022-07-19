@@ -1560,22 +1560,9 @@ function pagarConOxxo() {
         type: "post", //send POST data
         success: function (resp) {
           //get request
-
-             console.log(resp);
-
-          alert("SE ENVIO A SU CORREO EL CODIGO DE BARRAS ");
-             /* console.log(response);
-             window.open('report.php?'+formData, '_blank');           */
-
-          /* $.ajax({
-            type: "POST",
-            url: "conekta_oxxo.php",
-            data: response,
-            success: function(response) {                               
-                window.open('report.php?'+response, '_blank');          
-             
-            }
-        });  */
+/* console.log(response); */
+       
+     
         /*   if (response.status == true) {
 
             $.ajax({
@@ -1598,7 +1585,17 @@ function pagarConOxxo() {
           } */
         },
       });
-      alert("SE ENVIO A SU CORREO EL CODIGO DE BARRAS ");
+   /*    alert("SE ENVIO A SU CORREO EL CODIGO DE BARRAS "); */
+
+      swal({
+        title: "SE ENVIO A SU CORREO EL CODIGO DE BARRAS",
+        text: "",
+        type: "success",
+        showCancelButton: false,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Regresar",
+        closeOnConfirm: false,
+      });
 
     }
   });
