@@ -13,6 +13,10 @@ $fee 				= $json->fee;
 $amount 			= $json->amount;
 $status				= $json->status;
 $transid 			= $json->id;
+$correo             =$json->details->email;
+$idUsuario             =$json->details->name;
+$productos             =$json->details->line_items;
+$tituloarray             =$json->description;
 
 
 
@@ -54,9 +58,9 @@ if($json->payment_method->type=='oxxo')
     
     $mail->Subject = "Pago en Tienda OXXO Realizado";
     
-    $mail->addAddress("ramon.olea@splittel.com",);
+    $mail->addAddress($correo);
     
-    $mail->msgHTML('PAGO EXITOSO REVISE SU PERFIL PARA COMPROBAR LOS ARCHIVOS COMPRADOS');
+    $mail->msgHTML('PAGO EXITOSO REVISE SU PERFIL PARA COMPROBAR LOS ARCHIVOS COMPRADOS '.$correo.'');
     
     $envio = $mail->Send();
 
