@@ -1590,9 +1590,9 @@ function pagarConOxxo() {
         },
         function (isConfirm) {
           if (isConfirm) {
-           /*  localStorage.removeItem("listaProductos");
+            localStorage.removeItem("listaProductos");
             localStorage.removeItem("cantidadCesta");
-            localStorage.removeItem("sumaCesta"); */
+            localStorage.removeItem("sumaCesta");
             window.location = rutaOculta + "perfil";
           }
         }
