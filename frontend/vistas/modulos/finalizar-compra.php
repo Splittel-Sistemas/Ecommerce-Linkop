@@ -80,12 +80,9 @@ if(isset($_GET['metodoPago']) &&  $_GET['metodoPago'] == 'oxxo'){
    
  /*   $r = print_r($_GET); */
    
-   $fp = fopen('oxxo_'.md5(uniqid()).".txt","wb");
-	fwrite($fp,$_GET['metodoPago']);
-	fclose($fp);
+  
 
 
-   exit;
    require_once "../../modelos/rutas.php";
    require_once "../../modelos/carrito.modelo.php";
    require_once "../../modelos/usuarios.modelo.php";
@@ -102,14 +99,14 @@ if(isset($_GET['metodoPago']) &&  $_GET['metodoPago'] == 'oxxo'){
 
    
    #recibo los productos comprados
-   $productos = explode(",", $_POST['idProductoArray']);
-   $cantidad = explode(",", $_POST['cantidadArray']);
-   $pago = explode(",", $_POST['valorItemArray']);
-   $titulo = explode(",", $_POST['tituloArray']);
+   $productos = explode(",", $_GET['idProductoArray']);
+   $cantidad = explode(",", $_GET['cantidadArray']);
+   $pago = explode(",", $_GET['valorItemArray']);
+   $titulo = explode(",", $_GET['tituloArray']);
 
 
             $item = "id";
-            $valor = $_POST['idUsuario'];
+            $valor = $_GET['idUsuario'];
 
             $datosUsuarios = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
          $direccionBase = $datosUsuarios["direccion"].", ".$datosUsuarios["ciudad"].", ".$datosUsuarios["telefono"].", ".$datosUsuarios["codigo"];
@@ -118,7 +115,7 @@ if(isset($_GET['metodoPago']) &&  $_GET['metodoPago'] == 'oxxo'){
          #Actualizamos la base de datos
          for($i = 0; $i < count($productos); $i++){
 
-               $datos = array("idUsuario"=>$_POST['idUsuario'],
+               $datos = array("idUsuario"=>$_GET['idUsuario'],
                            "idProducto"=>$productos[$i],
                            "metodo"=>"open pay",
                            "email"=>$datosUsuarios["email"],
@@ -148,7 +145,9 @@ if(isset($_GET['metodoPago']) &&  $_GET['metodoPago'] == 'oxxo'){
                }
 
                if($respuesta == "ok" && $actualizarCompra == "ok"){
-
+                  $fp = fopen('oxxo_'.md5(uniqid()).".txt","wb");
+                  fwrite($fp,"LISTO");
+                  fclose($fp);
                
 
                }
