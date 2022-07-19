@@ -26,10 +26,10 @@ if($json->payment_method->type=='oxxo'){
 	if($status=='paid'){$status=1;}else{$status=0;}
     if ($status=="1") {
 	  // Guardar Log de webhook (comentar esto para no guardar logs)
-	$fp = fopen('oxxo_'.md5(uniqid()).".txt","wb");
+	/* $fp = fopen('oxxo_'.md5(uniqid()).".txt","wb");
 	fwrite($fp,$body);
 	fclose($fp);
-
+ */
     date_default_timezone_set("America/Bogota");
 
 
