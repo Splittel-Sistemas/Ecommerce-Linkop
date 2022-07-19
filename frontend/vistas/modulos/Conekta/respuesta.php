@@ -1,5 +1,9 @@
 <?php
+require_once '../../../extensiones/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require_once '../../../extensiones/vendor/phpmailer/phpmailer/src/Exception.php';
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 $body = @file_get_contents('php://input');
 $json 				= json_decode($body);
 $json 				= $json->data->object;
@@ -17,10 +21,7 @@ if($json->payment_method->type=='oxxo')
 
 {
 	
-	/* if ($json->type == 'charge.paid'){ */
-        $msg = "Tu pago ha sido comprobado.";
-        mail("ramon.olea@splittel.com","Pago confirmado",$msg);
-    /*   } */
+	
 	// Convertimos montos con decimales
 	$amount_2 			= substr($amount, 0, -2);
 	$decimals_2 		= substr($amount, strlen($amount_2), strlen($amount));
@@ -38,6 +39,29 @@ if($json->payment_method->type=='oxxo')
 	$fp = fopen('oxxo_'.md5(uniqid()).".txt","wb");
 	fwrite($fp,$body);
 	fclose($fp);
+
+    date_default_timezone_set("America/Bogota");
+
+
+    $mail = new PHPMailer;
+    
+    $mail->CharSet = 'UTF-8';
+    
+    $mail->isMail();
+    
+    $mail->setFrom('info@linkop.com.mx', 'Linkop');
+    
+    
+    $mail->Subject = "Pago en Tienda OXXO Realizado";
+    
+    $mail->addAddress("ramon.olea@splittel.com",);
+    
+    $mail->msgHTML('PAGO EXITOSO REVISE SU PERFIL PARA COMPROBAR LOS ARCHIVOS COMPRADOS');
+    
+    $envio = $mail->Send();
+
+
+
 	} else {
 	
 	}
