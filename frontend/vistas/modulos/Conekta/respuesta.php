@@ -10,17 +10,17 @@ $amount 			= $json->amount;
 $status				= $json->status;
 $transid 			= $json->id;
 
-if ($data->type == 'charge.paid'){
-  $msg = "Tu pago ha sido comprobado.";
-  mail("fulanito@conekta.com","Pago confirmado",$msg);
-}
+
 
 // Validamos que el IPN sea de Banorte
 if($json->payment_method->type=='oxxo')
 
 {
 	
-	
+	/* if ($json->type == 'charge.paid'){ */
+        $msg = "Tu pago ha sido comprobado.";
+        mail("ramon.olea@splittel.com","Pago confirmado",$msg);
+    /*   } */
 	// Convertimos montos con decimales
 	$amount_2 			= substr($amount, 0, -2);
 	$decimals_2 		= substr($amount, strlen($amount_2), strlen($amount));
