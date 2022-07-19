@@ -117,7 +117,7 @@ if(isset($_GET['metodoPago']) &&  $_GET['metodoPago'] == 'oxxo'){
 
                $datos = array("idUsuario"=>$_GET['idUsuario'],
                            "idProducto"=>$productos[$i],
-                           "metodo"=>"open pay",
+                           "metodo"=>"oxxo",
                            "email"=>$datosUsuarios["email"],
                            "direccion"=>$direccionBase,
                            "pais"=>"MX",
@@ -145,9 +145,9 @@ if(isset($_GET['metodoPago']) &&  $_GET['metodoPago'] == 'oxxo'){
                }
 
                if($respuesta == "ok" && $actualizarCompra == "ok"){
-                  $fp = fopen('oxxo_'.md5(uniqid()).".txt","wb");
+                /*   $fp = fopen('oxxo_'.md5(uniqid()).".txt","wb");
                   fwrite($fp,"LISTO");
-                  fclose($fp);
+                  fclose($fp); */
                
 
                }
