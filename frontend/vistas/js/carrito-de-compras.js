@@ -1518,7 +1518,7 @@ function pagarConOxxo() {
     formData.append("email", "prueba@gmail.com");
     formData.append("token_id", token_id);
     formData.append("deviceIdHiddenFieldName", deviceIdHiddenFieldName);
-    formData.append("metodoPago", "open");
+    formData.append("metodoPago", "oxxo");
     formData.append("cantidadArray", cantidadArray);
     formData.append("valorItemArray", valorItemArray);
     formData.append("idProductoArray", idProductoArray);
@@ -1590,6 +1590,9 @@ function pagarConOxxo() {
         },
         function (isConfirm) {
           if (isConfirm) {
+           /*  localStorage.removeItem("listaProductos");
+            localStorage.removeItem("cantidadCesta");
+            localStorage.removeItem("sumaCesta"); */
             window.location = rutaOculta + "perfil";
           }
         }

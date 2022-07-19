@@ -11,11 +11,17 @@ $amount = filter_input(INPUT_POST, 'amount');
 $amount = (strstr($amount = $_POST['amount'], '.')) ? str_replace('.', '', $amount) : $amount.'00';
 $email 	=  $_POST['correoE'];
 $descriptions 	=  $_POST['tituloArray'];
+$idproductos 	=  $_POST['idProductoArray'];
+$cantidadArray 	=  $_POST['cantidadArray'];
+$valorItemArray 	=  $_POST['valorItemArray'];
+
+
+
 $name 	=  $_POST['idUsuario'];
 $phone 	=  $_POST['telefono'];
 
 
-MyConekta::oxxo($amount, $email,$descriptions,$name, $phone);
+MyConekta::oxxo($amount, $email,$descriptions,$name, $phone,$idproductos,$cantidadArray,$valorItemArray);
 
 
 class MyConekta {
@@ -84,7 +90,7 @@ class MyConekta {
 	}
 
 	//Function to make payments in Oxxo stores
-	public static function oxxo($amount, $email,$descriptions,$name, $phone){	
+	public static function oxxo($amount, $email,$descriptions,$name, $phone,$idproductos,$cantidadArray,$valorItemArray){	
 
 		Conekta::setApiKey(self::$api_key);
 		$request = array(
@@ -94,7 +100,10 @@ class MyConekta {
 			'details' => array(
 				'name' => $name,
 				'email' => $email,
-				'phone' => $phone
+				'phone' => $phone,
+                'line_items'=> $idproductos,
+                'cantidad' => $cantidadArray,
+                'valor' => $valorItemArray
 			),
 		    'cash'=> array('type' => 'oxxo'),
 			"object" => "charge",
