@@ -22,9 +22,9 @@ $barcode        = filter_input(INPUT_GET, 'barcode');
 $barcode_url    = filter_input(INPUT_GET, 'barcode_url');
 $correo    = filter_input(INPUT_GET, 'email');
 
-if(!isset($token_url) || !MyConekta::check_token($token_url))
+/* if(!isset($token_url) || !MyConekta::check_token($token_url))
     die('Reporte Invalido. Solo puede imprimir el reporte UNA vez, 
-        vuelva a generar el donativo');
+        vuelva a generar el donativo'); */
 
 //Regenerate the token value to avoid repeat the report
 $_SESSION['token'] = MyConekta::tokengenerator();

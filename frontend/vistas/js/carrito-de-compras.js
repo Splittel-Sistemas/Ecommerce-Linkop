@@ -653,7 +653,7 @@ $("#btnCheckout").click(function () {
           var estado = item.name;
           var codEstado = item.code;
           var costo = item.costo;
-        
+
           $("#seleccionarEstado").append(
             '<option value="' + costo + '">' + estado + "</option>"
           );
@@ -700,12 +700,10 @@ $("#btnCheckout").click(function () {
       $(".alert").remove();
       var total = $(".valorSubtotal").html();
 
-      if( total  <  500){
+      if (total < 500) {
         var costo = $(this).val();
-
-      }else{
+      } else {
         var costo = 0;
-
       }
 
       $(".valorTotalEnvio").html(costo);
@@ -747,9 +745,9 @@ function sumaTotalCompra() {
 MÉTODO DE PAGO PARA CAMBIO DE DIVISA
 =============================================*/
 /* var metodoPago = "paypal"; */
-$(document).ready(function() {
-var metodoPago = $("input[name='pago']:checked").val();
-divisas(metodoPago);
+$(document).ready(function () {
+  var metodoPago = $("input[name='pago']:checked").val();
+  divisas(metodoPago);
 });
 
 /* if (metodoPago == "paypal") {
@@ -784,8 +782,7 @@ $("input[name='pago']").change(function () {
     $("#tarjetasr").css("display", "none");
     cambioDivisa("MXN");
     pagarConPaypal();
-  }
-  else if (metodoPago == "oxxo") {
+  } else if (metodoPago == "oxxo") {
     $(".btnPagar").show();
     $(".formPayu").hide();
     $("#tarjetasr").css("display", "none");
@@ -901,7 +898,7 @@ function cambioDivisa(divisa) {
             Number(conversion) * Number($(".valorTotalEnvio").attr("valor"))
           ).toFixed(2)
         );
-            
+
         $(".valorTotalImpuesto").html(
           (
             Number(conversion) * Number($(".valorTotalImpuesto").attr("valor"))
@@ -1060,117 +1057,115 @@ function pagarConPaypal() {
   });
 }
 if (metodoPago == "paypal") {
- 
-    $("#pay-button").on("click", function (event) {
-      event.preventDefault();
-      $("#pay-button").prop("disabled", true);
+  $("#pay-button").on("click", function (event) {
+    event.preventDefault();
+    $("#pay-button").prop("disabled", true);
+  });
+  $(".btnPagar").click(function () {
+    var tipo = $(this).attr("tipo");
+
+    if (tipo == "fisico" && $("#direccion").val() == "") {
+      $(".btnPagar").after(
+        '<div class="alert alert-danger">Ingrese la Direccion de Envio</div>'
+      );
+
+      return;
+    }
+    if (tipo == "fisico" && $("#telefono").val() == "") {
+      $(".btnPagar").after(
+        '<div class="alert alert-danger">Ingrese el  telefono </div>'
+      );
+
+      return;
+    }
+    if (tipo == "fisico" && $("#codigo").val() == "") {
+      $(".btnPagar").after(
+        '<div class="alert alert-danger">Ingrese el codigo postal </div>'
+      );
+
+      return;
+    }
+
+    if (tipo == "fisico" && $("#seleccionarEstado").val() == "") {
+      $(".btnPagar").after(
+        '<div class="alert alert-danger">Seleccione el Estado </div>'
+      );
+      $("#pay-button").prop("disabled", false);
+
+      return;
+    }
+    if (tipo == "fisico" && $("#ciudad").val() == "") {
+      $(".btnPagar").after(
+        '<div class="alert alert-danger">Ingrese la ciudad </div>'
+      );
+
+      return;
+    }
+
+    var idUsuario = $("#idUsuario").val();
+
+    var divisa = $("#cambiarDivisa").val();
+    var total = $(".valorTotalCompra").html();
+    var totalEncriptado = localStorage.getItem("total");
+    var impuesto = $(".valorTotalImpuesto").html();
+    var envio = $(".valorTotalEnvio").html();
+    var subtotal = $(".valorSubtotal").html();
+    var titulo = $(".valorTitulo");
+    var cantidad = $(".valorCantidad");
+    var valorItem = $(".valorItem");
+    var idProducto = $(".cuerpoCarrito button, .comprarAhora button");
+
+    var direccion = $("#direccion").val();
+    var codigo = $("#codigo").val();
+    var telefono = $("#telefono").val();
+    var ciudad = $("#ciudad").val();
+
+    var tituloArray = [];
+    var cantidadArray = [];
+    var valorItemArray = [];
+    var idProductoArray = [];
+
+    for (var i = 0; i < titulo.length; i++) {
+      tituloArray[i] = $(titulo[i]).html();
+      cantidadArray[i] = $(cantidad[i]).html();
+      valorItemArray[i] = $(valorItem[i]).html();
+      idProductoArray[i] = $(idProducto[i]).attr("idProducto");
+    }
+
+    var datos = new FormData();
+
+    datos.append("divisa", divisa);
+    datos.append("total", total);
+    datos.append("totalEncriptado", totalEncriptado);
+    datos.append("impuesto", impuesto);
+    datos.append("envio", envio);
+    datos.append("subtotal", subtotal);
+    datos.append("tituloArray", tituloArray);
+    datos.append("cantidadArray", cantidadArray);
+    datos.append("valorItemArray", valorItemArray);
+    datos.append("idProductoArray", idProductoArray);
+    datos.append("metodoPago", "paypal");
+
+    datos.append("direccion", direccion);
+    datos.append("codigo", codigo);
+    datos.append("telefono", telefono);
+    datos.append("ciudad", ciudad);
+    datos.append("idUsuario", idUsuario);
+    datos.append("token_id", token_id);
+
+    $.ajax({
+      url: rutaOculta + "ajax/carrito.ajax.php",
+      method: "POST",
+      data: datos,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (respuesta) {
+        window.location = respuesta;
+      },
     });
-    $(".btnPagar").click(function () {
-      var tipo = $(this).attr("tipo");
-
-      if (tipo == "fisico" && $("#direccion").val() == "") {
-        $(".btnPagar").after(
-          '<div class="alert alert-danger">Ingrese la Direccion de Envio</div>'
-        );
-
-        return;
-      }
-      if (tipo == "fisico" && $("#telefono").val() == "") {
-        $(".btnPagar").after(
-          '<div class="alert alert-danger">Ingrese el  telefono </div>'
-        );
-
-        return;
-      }
-      if (tipo == "fisico" && $("#codigo").val() == "") {
-        $(".btnPagar").after(
-          '<div class="alert alert-danger">Ingrese el codigo postal </div>'
-        );
-
-        return;
-      }
-
-      if (tipo == "fisico" && $("#seleccionarEstado").val() == "") {
-        $(".btnPagar").after(
-          '<div class="alert alert-danger">Seleccione el Estado </div>'
-        );
-        $("#pay-button").prop("disabled", false);
-
-        return;
-      }
-      if (tipo == "fisico" && $("#ciudad").val() == "") {
-        $(".btnPagar").after(
-          '<div class="alert alert-danger">Ingrese la ciudad </div>'
-        );
-
-        return;
-      }
-
-      var idUsuario = $("#idUsuario").val();
-
-      var divisa = $("#cambiarDivisa").val();
-      var total = $(".valorTotalCompra").html();
-      var totalEncriptado = localStorage.getItem("total");
-      var impuesto = $(".valorTotalImpuesto").html();
-      var envio = $(".valorTotalEnvio").html();
-      var subtotal = $(".valorSubtotal").html();
-      var titulo = $(".valorTitulo");
-      var cantidad = $(".valorCantidad");
-      var valorItem = $(".valorItem");
-      var idProducto = $(".cuerpoCarrito button, .comprarAhora button");
-
-      var direccion = $("#direccion").val();
-      var codigo = $("#codigo").val();
-      var telefono = $("#telefono").val();
-      var ciudad = $("#ciudad").val();
-
-      var tituloArray = [];
-      var cantidadArray = [];
-      var valorItemArray = [];
-      var idProductoArray = [];
-
-      for (var i = 0; i < titulo.length; i++) {
-        tituloArray[i] = $(titulo[i]).html();
-        cantidadArray[i] = $(cantidad[i]).html();
-        valorItemArray[i] = $(valorItem[i]).html();
-        idProductoArray[i] = $(idProducto[i]).attr("idProducto");
-      }
-
-      var datos = new FormData();
-
-      datos.append("divisa", divisa);
-      datos.append("total", total);
-      datos.append("totalEncriptado", totalEncriptado);
-      datos.append("impuesto", impuesto);
-      datos.append("envio", envio);
-      datos.append("subtotal", subtotal);
-      datos.append("tituloArray", tituloArray);
-      datos.append("cantidadArray", cantidadArray);
-      datos.append("valorItemArray", valorItemArray);
-      datos.append("idProductoArray", idProductoArray);
-      datos.append("metodoPago", "paypal");
-
-      datos.append("direccion", direccion);
-      datos.append("codigo", codigo);
-      datos.append("telefono", telefono);
-      datos.append("ciudad", ciudad);
-      datos.append("idUsuario", idUsuario);
-      datos.append("token_id", token_id);
-
-      $.ajax({
-        url: rutaOculta + "ajax/carrito.ajax.php",
-        method: "POST",
-        data: datos,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function (respuesta) {
-          window.location = respuesta;
-        },
-      });
-    });
- 
-} 
+  });
+}
 
 /*=============================================
 /*=============================================
@@ -1463,7 +1458,6 @@ function pagarConOpen() {
   };
 }
 
-
 /* pago con oxxo  */
 
 /* pago con oxxo  */
@@ -1540,7 +1534,7 @@ function pagarConOxxo() {
     formData.append("subtotal", subtotal);
     formData.append("correoE", correoE);
 
-    formData.append("function", "addPay");
+    /* formData.append("function", "addPay"); */
 
     // $('#payment-form').submit();
     if ($("#seleccionarEstado").val() == "") {
@@ -1558,12 +1552,45 @@ function pagarConOxxo() {
         contentType: false,
         processData: false,
         type: "post", //send POST data
-        success: function (resp) {
+        success: function (response) {
           //get request
-/* console.log(response); */
-       
-     
-        /*   if (response.status == true) {
+        /*   console.log(response); */
+
+           /* envio de datos para enviar el correo  */
+
+            $.ajax({
+              url: rutaOculta + "vistas/modulos/Conekta/report.php",
+              method: "GET",
+              data: response,
+              cache: false,
+              contentType: false,
+              processData: false,
+              success: function (respuesta) {
+                localStorage.removeItem("listaProductos");
+                localStorage.removeItem("cantidadCesta");
+                localStorage.removeItem("sumaCesta");
+                
+              },
+            });
+            swal(
+              {
+                title: "",
+                text: "Se ha enviado a su correo el codigo de barras",
+                type: "success",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                /*   cancelButtonText: "salir", */
+                confirmButtonText: "ok",
+                closeOnConfirm: false,
+              },
+              function (isConfirm) {
+                if (isConfirm) {
+                  window.location = rutaOculta + "perfil";
+                }
+              }
+            );
+
+          /*   if (response.status == true) {
 
             $.ajax({
               url: rutaOculta + "vistas/modulos/finalizar-compra.php",
@@ -1585,31 +1612,12 @@ function pagarConOxxo() {
           } */
         },
       });
-   /*    alert("SE ENVIO A SU CORREO EL CODIGO DE BARRAS "); */
-
-      swal({
-        title: "SE ENVIO A SU CORREO EL CODIGO DE BARRAS",
-        text: "",
-        type: "success",
-        showCancelButton: false,
-        confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Regresar",
-        closeOnConfirm: false,
-      });
-
+      /*    alert("SE ENVIO A SU CORREO EL CODIGO DE BARRAS "); */
     }
   });
 }
 
 /* fin pago con oxxo  */
-
-
-
-
-
-
-
-
 
 /* fin pago con oxxo  */
 /*=============================================

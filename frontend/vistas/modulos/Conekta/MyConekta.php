@@ -74,15 +74,17 @@ class MyConekta {
 		$request = array(
 		    'amount' => $amount,
 		    'currency' => self::$currency,
-			"payment_status"=> "pending_payment",
 		    'description' => $descriptions,
 			'details' => array(
 				'name' => $name,
 				'email' => $email,
 				'phone' => $phone
 			),
-		    'cash'=> array('type' => 'oxxo')
+		    'cash'=> array('type' => 'oxxo'),
+			"object" => "charge",
+			"status" =>  "pending_payment",
 		    );
+			
 		try {
 			$response = Conekta_Charge::create($request);  
 		/* 	print_r($response['details']['email']);
