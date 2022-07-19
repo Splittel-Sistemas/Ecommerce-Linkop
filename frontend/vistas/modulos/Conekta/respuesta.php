@@ -20,21 +20,8 @@ $productos             =$json->description;
 
 
 // Validamos que el IPN sea de Banorte
-if($json->payment_method->type=='oxxo')
+if($json->payment_method->type=='oxxo'){
 
-{
-	
-	
-	// Convertimos montos con decimales
-	$amount_2 			= substr($amount, 0, -2);
-	$decimals_2 		= substr($amount, strlen($amount_2), strlen($amount));
-	$amount				= $amount_2.'.'.$decimals_2;
-	
-	$amount_3 			= substr($fee, 0, -2);
-	$decimals_3 		= substr($fee, strlen($amount_3), strlen($fee));
-	$fee				= $amount_3.'.'.$decimals_3;
-	
-	$invoiceid 			= str_replace('factura_', '', $invoiceid);
 	
 	if($status=='paid'){$status=1;}else{$status=0;}
     if ($status=="1") {
@@ -63,6 +50,7 @@ if($json->payment_method->type=='oxxo')
     
     $envio = $mail->Send();
 
+    return header("Location: ../finalizar-compra.php?idUsuario=".$idUsuario."&productos=".$productos."&metodoPago=oxxo ");
 
 
 	} else {
