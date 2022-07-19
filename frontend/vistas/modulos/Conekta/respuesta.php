@@ -8,7 +8,8 @@ if ($data->type == 'charge.paid'){
   $msg = "Tu pago ha sido comprobado.";
   mail("fulanito@conekta.com","Pago confirmado",$msg);
 }
-ini_set('display_errors', 1);
+/* ini_set('display_errors', 1);
 ini_set("log_errors", 1);
-ini_set("error_log",  "conekta_error_log");
-ini_set($data ,  "conekta_error_log");
+ini_set("error_log",  "conekta_error_log"); */
+ini_set($data->type ,  "conekta_error_log");
+ini_set($body ,  "conekta_error_log");
