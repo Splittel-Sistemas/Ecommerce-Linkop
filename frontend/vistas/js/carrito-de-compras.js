@@ -1555,42 +1555,7 @@ function pagarConOxxo() {
         success: function (response) {
           //get request
         /*   console.log(response); */
-
-           /* envio de datos para enviar el correo  */
-
-            $.ajax({
-              url: rutaOculta + "vistas/modulos/Conekta/report.php",
-              method: "GET",
-              data: response,
-              cache: false,
-              contentType: false,
-              processData: false,
-              success: function (respuesta) {
-                localStorage.removeItem("listaProductos");
-                localStorage.removeItem("cantidadCesta");
-                localStorage.removeItem("sumaCesta");
-                
-              },
-            });
-            swal(
-              {
-                title: "",
-                text: "Se ha enviado a su correo el codigo de barras",
-                type: "success",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                /*   cancelButtonText: "salir", */
-                confirmButtonText: "ok",
-                closeOnConfirm: false,
-              },
-              function (isConfirm) {
-                if (isConfirm) {
-                  window.location = rutaOculta + "perfil";
-                }
-              }
-            );
-
-          /*   if (response.status == true) {
+/*   if (response.status == true) {
 
             $.ajax({
               url: rutaOculta + "vistas/modulos/finalizar-compra.php",
@@ -1611,8 +1576,24 @@ function pagarConOxxo() {
             $("#pay-button").prop("disabled", false);
           } */
         },
-      });
-      /*    alert("SE ENVIO A SU CORREO EL CODIGO DE BARRAS "); */
+        
+      }); swal(
+        {
+          title: "",
+          text: "Se ha enviado a su correo el codigo de barras",
+          type: "success",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          /*   cancelButtonText: "salir", */
+          confirmButtonText: "ok",
+          closeOnConfirm: false,
+        },
+        function (isConfirm) {
+          if (isConfirm) {
+            window.location = rutaOculta + "perfil";
+          }
+        }
+      );
     }
   });
 }
