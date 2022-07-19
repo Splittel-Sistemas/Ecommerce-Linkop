@@ -27,7 +27,7 @@ $correo    = filter_input(INPUT_GET, 'email');
         vuelva a generar el donativo'); */
 
 //Regenerate the token value to avoid repeat the report
-$_SESSION['token'] = MyConekta::tokengenerator();
+/* $_SESSION['token'] = MyConekta::tokengenerator(); */
 ?>
 
 

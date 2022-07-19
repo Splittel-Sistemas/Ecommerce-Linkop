@@ -97,22 +97,12 @@ class MyConekta {
             "livemode"=> false,
 		    'amount' => $amount,
 		    'currency' => self::$currency,
-		    'description' => $descriptions,
+		    'description' => $descriptions."/".$idproductos."/".$cantidadArray."/".$valorItemArray,
 			'details' => array(
 				'name' => $name,
 				'email' => $email,
-				'phone' => $phone,
-                'line_items'=> $idproductos,
-                'cantidad' => $cantidadArray,
-                'valor' => $valorItemArray
-			),'shipping_contact' => array(
-				'receiver' => "El Fulanito - The guy",
-				'phone' => "5555555555",
-				'between_streets' => "Entre la principal y la secundaria"
-            ),'line_items' => array(
-				'object' => "list",
-				'total' => "1"
-            ),
+				'phone' => $phone
+			),
 		    'cash'=> array('type' => 'oxxo'),
 			"object" => "charge",
 			"status" =>  "pending_payment",
@@ -120,6 +110,8 @@ class MyConekta {
 			
 		try {
 			$response = Conekta_Charge::create($request);  
+           /*  print_r($response);
+			exit;  */
 		/* 	$data = json_decode($response); */
 		/* 	print_r($response['details']['email']);
 			exit; */
@@ -138,7 +130,7 @@ class MyConekta {
 		  	  
 		/* 	echo $response ; */
 		/* 	return $response ; */
-			return header("Location: report.php?status=".$response['status']."&currency=".$response['currency']."&description=".$response['description']."&amount=".$response['amount']."&expiry_date=".$response['payment_method']['expiry_date']."&barcode=".$response['payment_method']['barcode']."&barcode_url=".$response['payment_method']['barcode_url']."&type=".$response['payment_method']['type']."&email=".$response['details']['email']."&token=".$_SESSION['token']." ");
+		return header("Location: report.php?status=".$response['status']."&currency=".$response['currency']."&description=".$response['description']."&amount=".$response['amount']."&expiry_date=".$response['payment_method']['expiry_date']."&barcode=".$response['payment_method']['barcode']."&barcode_url=".$response['payment_method']['barcode_url']."&type=".$response['payment_method']['type']."&email=".$response['details']['email']."&token=".$_SESSION['token']." ");
 
 		  
 		} 
