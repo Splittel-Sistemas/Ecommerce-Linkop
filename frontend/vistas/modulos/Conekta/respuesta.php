@@ -19,7 +19,7 @@ if ($data->type == 'charge.paid'){
 
 	// Guardar Log de webhook (comentar esto para no guardar logs)
 	$fp = fopen('oxxo_'.md5(uniqid()).".txt","wb");
-	fwrite($fp,$result);
+	fwrite($fp,$body);
 	fclose($fp);
 	
 	// Convertimos montos con decimales
