@@ -78,10 +78,10 @@ if(isset($_POST) &&  $_POST['metodoPago'] == 'open'){
 
 if(isset($_GET['metodoPago']) &&  $_GET['metodoPago'] == 'oxxo'){
    
-   $r = print_r($_GET);
+ /*   $r = print_r($_GET); */
    
    $fp = fopen('oxxo_'.md5(uniqid()).".txt","wb");
-	fwrite($fp,$r);
+	fwrite($fp,$_GET['metodoPago']);
 	fclose($fp);
 
 
