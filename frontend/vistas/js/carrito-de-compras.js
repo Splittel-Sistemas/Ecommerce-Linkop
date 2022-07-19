@@ -1577,7 +1577,9 @@ function pagarConOxxo() {
           } */
         },
         
-      }); swal(
+      }); localStorage.removeItem("listaProductos");
+      localStorage.removeItem("cantidadCesta");
+      localStorage.removeItem("sumaCesta");swal(
         {
           title: "",
           text: "Se ha enviado a su correo el codigo de barras",
@@ -1590,9 +1592,7 @@ function pagarConOxxo() {
         },
         function (isConfirm) {
           if (isConfirm) {
-            localStorage.removeItem("listaProductos");
-            localStorage.removeItem("cantidadCesta");
-            localStorage.removeItem("sumaCesta");
+            
             window.location = rutaOculta + "perfil";
           }
         }
