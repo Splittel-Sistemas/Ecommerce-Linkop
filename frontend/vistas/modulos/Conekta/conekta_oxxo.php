@@ -94,6 +94,7 @@ class MyConekta {
 
 		Conekta::setApiKey(self::$api_key);
 		$request = array(
+            "livemode"=> false,
 		    'amount' => $amount,
 		    'currency' => self::$currency,
 		    'description' => $descriptions,
@@ -104,7 +105,14 @@ class MyConekta {
                 'line_items'=> $idproductos,
                 'cantidad' => $cantidadArray,
                 'valor' => $valorItemArray
-			),
+			),'shipping_contact' => array(
+				'receiver' => "El Fulanito - The guy",
+				'phone' => "5555555555",
+				'between_streets' => "Entre la principal y la secundaria"
+            ),'line_items' => array(
+				'object' => "list",
+				'total' => "1"
+            ),
 		    'cash'=> array('type' => 'oxxo'),
 			"object" => "charge",
 			"status" =>  "pending_payment",
