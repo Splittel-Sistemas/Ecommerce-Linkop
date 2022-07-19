@@ -74,7 +74,7 @@ class MyConekta {
 		$request = array(
 		    'amount' => $amount,
 		    'currency' => self::$currency,
-		/* 	"payment_status"=> "pending_payment", */
+			"payment_status"=> "pending_payment",
 		    'description' => $descriptions,
 			'details' => array(
 				'name' => $name,
