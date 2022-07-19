@@ -16,7 +16,9 @@ if ($data->type == 'charge.paid'){
 }
 
 // Validamos que el IPN sea de Banorte
+if($json->payment_method->type=='oxxo')
 
+{
 	// Guardar Log de webhook (comentar esto para no guardar logs)
 	$fp = fopen('oxxo_'.md5(uniqid()).".txt","wb");
 	fwrite($fp,$body);
@@ -34,9 +36,13 @@ if ($data->type == 'charge.paid'){
 	$invoiceid 			= str_replace('factura_', '', $invoiceid);
 	
 	if($status=='paid'){$status=1;}else{$status=0;}
+    if ($status=="1") {
+	  
+	} else {
 	
+	}
 	
-	
+}
 
 
 header("HTTP/1.0 200");
