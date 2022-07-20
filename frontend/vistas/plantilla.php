@@ -304,6 +304,27 @@ if(isset($_GET["ruta"])){
 
 		include "modulos/contacto.php";
 
+	}
+	else if($rutas[0] == "garantias-envios"){
+
+
+		include "modulos/garantias-envios.php";
+
+	}else if($rutas[0] == "garantias-devolucion"){
+
+
+		include "modulos/garantias-devolucion.php";
+
+	}else if($rutas[0] == "metodos-pagos"){
+
+
+		include "modulos/metodos-pagos.php";
+
+	}else if($rutas[0] == "preguntas-frecuentes"){
+
+
+		include "modulos/preguntas-frecuentes.php";
+
 	}else{
 
 		include "modulos/error404.php";

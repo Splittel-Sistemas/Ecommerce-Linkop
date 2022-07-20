@@ -143,12 +143,12 @@ FOOTER
 
 			<h4><a href="#" class="" titulo="BLOG" style="color: white;">SOPORTE </a></h4>
 			<ul>
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Garantías y envíos:</a></li>
+				<li><a href="garantias-envios" class="pixelCategorias" style="color: gray;">Garantías y envíos:</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Garantía de devolución:</a></li>
+				<li><a href="garantias-devolucion" class="pixelCategorias" style="color: gray;">Garantía de devolución:</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Métodos de pago</a></li>
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Preguntas Frecuentes</a></li>
+				<li><a href="metodos-pagos" class="pixelCategorias" style="color: gray;">Métodos de pago</a></li>
+				<li><a href="preguntas-frecuentes" class="pixelCategorias" style="color: gray;">Preguntas Frecuentes</a></li>
 
 		
 
