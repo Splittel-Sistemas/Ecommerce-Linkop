@@ -97,15 +97,18 @@ BANNER
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row text-center">
 			<div id="slider" class="carousel slide" data-ride="carousel">
-				<!-- <ol class="carousel-indicators">
-					<li data-target="#slider" data-slide-to="1" class="active"></li>
-					<li data-target="#slider" data-slide-to="0"></li>
-				</ol> -->
-				o	Pay Pal
-o	Open Pay
-o	Conekta
+				<ul>
+					<li>Pay Pal</li>
+					<br>
+					<li>Open Pay</li>
+					<br>
+
+					<li>Conekta</li>
+
+				</ul>
+	
 
 
 			</div>
