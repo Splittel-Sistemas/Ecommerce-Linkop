@@ -83,13 +83,13 @@ FOOTER
 		<!--=====================================
 			CATEGORÍAS Y SUBCATEGORÍAS FOOTER
 			======================================-->
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
+		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  text-center ">
 
 			<h4><a href="#" class="" titulo="BLOG" style="color: white;">INFO</a></h4>
 			<ul>
 				<li><a href="#" class="pixelCategorias" style="color: gray;">Nuestra historia</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Contacto con Servicio al cliente</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Servicio al cliente</a></li>
 
 				<li><a href="#" class="pixelCategorias" style="color: gray;">Regístrate</a></li>
 
@@ -99,7 +99,7 @@ FOOTER
 
 
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
+		<!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  text-center ">
 
 			<h4><a href="#" class="" titulo="BLOG" style="color: white;">LEGAL</a></h4>
 			<ul>
@@ -115,8 +115,8 @@ FOOTER
 			</ul>
 
 
-		</div>
-		<!-- <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center">
+		</div> -->
+		<!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  text-center">
 
 				<h4><a href="#" class="" titulo="PRODUCTOS" style="color: white;">PRODUCTOS</a></h4>
 
@@ -139,7 +139,7 @@ FOOTER
 
 				?>
 			</div> -->
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
+		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  text-center ">
 
 			<h4><a href="#" class="" titulo="BLOG" style="color: white;">SOPORTE </a></h4>
 			<ul>
@@ -156,7 +156,7 @@ FOOTER
 
 
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
+		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  text-center ">
 
 			<h4><a href="#" class="" titulo="BLOG" style="color: white;">LO QUE DEBES SABER</a></h4>
 			<ul>
