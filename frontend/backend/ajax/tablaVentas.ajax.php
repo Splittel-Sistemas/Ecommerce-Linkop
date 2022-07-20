@@ -112,6 +112,16 @@ class TablaVentas{
 
 			$metodo = "<img class='img-responsive' src='vistas/img/plantilla/payu.jpg' width='300px'>";
 		
+		}else if($ventas[$i]["metodo"] == "oxxo"){
+
+			$metodo = "OXXO";
+
+		
+		}else if($ventas[$i]["metodo"] == "open pay"){
+
+			$metodo = "OPEN PAY";
+
+		
 		}else{
 
 			$metodo = "GRATIS";
