@@ -87,12 +87,11 @@ FOOTER
 
 			<h4><a href="#" class="" titulo="BLOG" style="color: white;">INFO</a></h4>
 			<ul>
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Our Story</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Nuestra historia</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Careers</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Contacto con Servicio al cliente</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Bulk Order Inquiry</a></li>
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Customer Reviews</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Regístrate</a></li>
 
 
 
@@ -142,18 +141,16 @@ FOOTER
 			</div> -->
 		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
 
-			<h4><a href="#" class="" titulo="BLOG" style="color: white;">SUPPORT</a></h4>
+			<h4><a href="#" class="" titulo="BLOG" style="color: white;">SOPORTE </a></h4>
 			<ul>
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Contact</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Garantías y envíos:</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Shipping</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Garantía de devolución:</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Return</a></li>
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Warranty</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Métodos de pago</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Preguntas Frecuentes</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Reward Policy</a></li>
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Web Accessibility</a></li>
-				<li><a href="#" class="pixelCategorias" style="color: gray;">FAQ</a></li>
+		
 
 			</ul>
 
@@ -161,13 +158,12 @@ FOOTER
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  text-center ">
 
-			<h4><a href="#" class="" titulo="BLOG" style="color: white;">OTHERS</a></h4>
+			<h4><a href="#" class="" titulo="BLOG" style="color: white;">LO QUE DEBES SABER</a></h4>
 			<ul>
-				<li><a href="#" class="pixelCategorias" style="color: gray;">My Account</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Políticas de Privacidad</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Reward Program</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;">Términos y Condiciones</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Tracking Order</a></li>
 
 
 			</ul>
