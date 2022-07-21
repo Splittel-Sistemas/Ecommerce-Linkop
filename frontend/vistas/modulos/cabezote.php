@@ -195,7 +195,7 @@ HEADER
 
 
 
-									echo '<li class="menu-item dropdown dropdown-submenu"><a href="' . $url . $value["ruta"] . '" class="dropdown-toggle" data-toggle="dropdown">' . $value["categoria"] . '</a>
+									echo '<li class="menu-item dropdown dropdown-submenu"><a href="' . $url . $value["ruta"] . '" >' . $value["categoria"] . '</a>
 								<ul class="dropdown-menu">
 								';
 
@@ -207,7 +207,7 @@ HEADER
 									
 									
 									
-									<li class="menu-item "><a href="' . $url . $value["ruta"] . '"  titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
+									<li class="menu-item " ><a href="' . $url . $value["ruta"] . '"  titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
 									}
 									echo '</ul></li>';
 								}
