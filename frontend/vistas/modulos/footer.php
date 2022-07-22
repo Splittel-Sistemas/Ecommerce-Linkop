@@ -39,11 +39,12 @@ FOOTER
 			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 formContacto  text-center">
 				<ul>
 					<li>
-						<!-- <li>
-							<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
+						<!-- 	<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">
 								<img src="<?php #echo $url; 
 											?>vistas/img/whatsapp(2).png" style="padding-bottom: 5px;"></a>
-						</li> -->
+											&nbsp
+						&nbsp&nbsp
+						&nbsp -->
 						<?php
 
 						$social = ControladorPlantilla::ctrEstiloPlantilla();
@@ -141,7 +142,7 @@ FOOTER
 			</div> -->
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  text-center ">
 
-			<h4><a href="#" class="" titulo="BLOG" style="color: white;">SOPORTE </a></h4>
+			<h4><a href="#" titulo="BLOG" style="color: white;">SOPORTE </a></h4>
 			<ul>
 				<li><a href="garantias-envios" class="pixelCategorias" style="color: gray;">Garantías y envíos:</a></li>
 
