@@ -41,6 +41,7 @@ class Cargo
 		'source_id' => $datos[0]['token_id'],
 		'amount' => $datos[0]['amount'], // formato númerico con hasta dos dígitos decimales. 
 		'description' => $datos[0]['tituloArray'],
+		'currency' => 'MXN',
 		/* 'use_card_points' => $_POST["use_card_points"], */ // Opcional, si estamos usando puntos
 		'device_session_id' => $datos[0]['deviceIdHiddenFieldName'],
 		'customer' => $customer
