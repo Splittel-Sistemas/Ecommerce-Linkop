@@ -102,7 +102,7 @@ HEADER
 
 	<br>
 	<style>
-		
+
 	</style>
 
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -122,7 +122,7 @@ HEADER
 				</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
-				
+
 				<ul class="nav navbar-nav">
 					<li class=""><a href="<?php echo $url; ?>">HOME</a></li>
 
@@ -160,20 +160,20 @@ HEADER
 						</ul>
 					</li>
  -->
-						<li class="menu-item dropdown">
-							<a href="#" class="dropdown-toggle" id="productos" data-toggle="dropdown">PRODUCTOS <b class="caret"></b></a>
-							<ul class="dropdown-menu" id="listaProductos">
+					<li class="menu-item dropdown">
+						<a href="#" class="dropdown-toggle" id="productos" data-toggle="dropdown">PRODUCTOS <b class="caret"></b></a>
+						<ul class="dropdown-menu" id="listaProductos">
 
 
-								<?php
+							<?php
 
-								$item = null;
-								$valor = null;
+							$item = null;
+							$valor = null;
 
-								$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
+							$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
 
-								foreach ($categorias as $key => $value) {
-									/* 
+							foreach ($categorias as $key => $value) {
+								/* 
 								echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
 
 										<h4>
@@ -185,52 +185,53 @@ HEADER
 										<hr>
 
 										<ul>'; */
-									/* 			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
+								/* 			<img  src="' . $servidor . $value["imgOferta"] . '" width="70%">
 										' . $value["categoria"] . '</a> */
-									$item = "id_categoria";
+								$item = "id_categoria";
 
-									$valor = $value["id"];
-
-
+								$valor = $value["id"];
 
 
 
-									echo '<li class="menu-item dropdown dropdown-submenu"><a href="' . $url . $value["ruta"] . '" >' . $value["categoria"] . '</a>
+
+
+								echo '<li class="menu-item dropdown dropdown-submenu"><a href="' . $url . $value["ruta"] . '" >' . $value["categoria"] . '</a>
 								<ul class="dropdown-menu">
 								';
 
-									$subcategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
+								$subcategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
 
-									foreach ($subcategorias as $key => $value) {
+								foreach ($subcategorias as $key => $value) {
 
-										echo '
+									echo '
 									
 									
 									
 									<li class="menu-item " ><a href="' . $url . $value["ruta"] . '"  titulo="' . $value["subcategoria"] . '">' . $value["subcategoria"] . '</a></li>';
-									}
-									echo '</ul></li>';
 								}
+								echo '</ul></li>';
+							}
 
 
 
 
 
-								?>
+							?>
 
 
 
-							</ul>
-						</li>
+						</ul>
+					</li>
 
 					<!-- <li><a href="<?php echo $url; ?>categorias">CATEGORIAS</a></li>
 
-					<li><a href=" <?php echo $url; ?>ofertas">OFERTAS</a></li> -->
+					 -->
 					<li><a href=" <?php echo $url; ?>postblog">BLOG</a></li>
+					<li><a href=" <?php echo $url; ?>ofertas">OFERTAS</a></li>
 					<li><a href=" <?php echo $url; ?>contacto">CONTACTO</a></li>
 
 				</ul>
-				
+
 
 				<ul class="nav navbar-nav navbar-right">
 					<li>
@@ -244,17 +245,17 @@ HEADER
 								<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
 
 								<span class="input-group-btn">
-									<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
 
-										<button class="btn btn-default " type="submit" style="padding:5px">
-										<img src="<?php echo $servidor; ?>vistas/img/plantilla/lupa.png" class=" text-center " style="width: 23px;padding-top:-12px; ">
-
-										<!-- 	<i class="fa fa-search"></i>
- -->
-										</button>
-
-									</a>
 								</span>
+								<!-- <a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
+
+									<button class="btn " type="submit" >
+										<img src="<?php echo $servidor; ?>vistas/img/plantilla/lupa.png" class=" text-center " style="width: 23px;">
+
+										
+									</button>
+
+								</a> -->
 							</div>
 						</div>
 					</li>
@@ -304,7 +305,7 @@ HEADER
 
 								if ($_SESSION["validarSesion"] == "ok") {
 
-									if ($_SESSION["modo"] == "directo" ||$_SESSION["modo"] == "invitado"  ) {
+									if ($_SESSION["modo"] == "directo" || $_SESSION["modo"] == "invitado") {
 
 										/* if ($_SESSION["foto"] != "") {
 
@@ -369,227 +370,227 @@ HEADER
 			<!--/.nav-collapse -->
 		</div>
 		<?php
-$mensaje = ControladorPlantilla::ctrMensajes();
+		$mensaje = ControladorPlantilla::ctrMensajes();
 
-if (isset($_SESSION["validarSesion"])) {
-/* 	echo '<div class="alert alert-primary text-center" style="background-color: #030F24;margin-bottom: 0px;" role="alert">
+		if (isset($_SESSION["validarSesion"])) {
+			/* 	echo '<div class="alert alert-primary text-center" style="background-color: #030F24;margin-bottom: 0px;" role="alert">
 	<strong style="color:white"> '. $mensaje["mensaje2"] .' </strong>
 </div>'; */
-$respuesta = $mensaje["mensaje2"] != null ? '<div class="alert alert-primary text-center backColor" style="margin-bottom: 0px;" role="alert">
-<strong style="color:white"> '.$mensaje["mensaje2"].'   </strong>
+			$respuesta = $mensaje["mensaje2"] != null ? '<div class="alert alert-primary text-center backColor" style="margin-bottom: 0px;" role="alert">
+<strong style="color:white"> ' . $mensaje["mensaje2"] . '   </strong>
 </div></nav>
 </header>
 <br><br><br><br>' : '</nav>
 </header>
 <br><br>';
-echo $respuesta;
-} else {
+			echo $respuesta;
+		} else {
 
-?>
+		?>
 
 
-<?php 
-$respuesta1 = $mensaje["mensaje"] != null ? '<div class="alert alert-primary text-center backColor" style="margin-bottom: 0px;" role="alert">
-<strong style="color:white"> '.$mensaje["mensaje"].'  <a href="#modalRegistro" data-toggle="modal" style="color: rgb(13, 255, 198);"> REGISTRARSE</a> </strong>
+			<?php
+			$respuesta1 = $mensaje["mensaje"] != null ? '<div class="alert alert-primary text-center backColor" style="margin-bottom: 0px;" role="alert">
+<strong style="color:white"> ' . $mensaje["mensaje"] . '  <a href="#modalRegistro" data-toggle="modal" style="color: rgb(13, 255, 198);"> REGISTRARSE</a> </strong>
 </div></nav>
 </header>
 <br><br><br><br>' : '</nav>
 </header>
 <br><br>';
-echo $respuesta1;
-?>
-	
-
-<?php
+			echo $respuesta1;
+			?>
 
 
-}
+		<?php
 
-?>
-	
-<!--=====================================
+
+		}
+
+		?>
+
+		<!--=====================================
 VENTANA MODAL PARA EL REGISTRO
 ======================================-->
 
 
-<div class="modal fade modalFormulario" id="modalRegistro" role="dialog">
+		<div class="modal fade modalFormulario" id="modalRegistro" role="dialog">
 
-	<div class="modal-content modal-dialog">
+			<div class="modal-content modal-dialog">
 
-		<div class="modal-body modalTitulo">
+				<div class="modal-body modalTitulo">
 
-			<h3 class="backColor">REGISTRARSE</h3>
+					<h3 class="backColor">REGISTRARSE</h3>
 
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
 
-			<!--=====================================
+					<!--=====================================
 			REGISTRO FACEBOOK
 			======================================-->
 
-			<div class="col-sm-6 col-xs-12 facebook">
+					<div class="col-sm-6 col-xs-12 facebook">
 
-				<p>
-					<i class="fa fa-facebook"></i>
-					Registro con Facebook
-				</p>
+						<p>
+							<i class="fa fa-facebook"></i>
+							Registro con Facebook
+						</p>
 
-			</div>
+					</div>
 
-			<!--=====================================
+					<!--=====================================
 			REGISTRO GOOGLE
 			======================================-->
-			<a href="<?php echo $rutaGoogle; ?>">
+					<a href="<?php echo $rutaGoogle; ?>">
 
-				<div class="col-sm-6 col-xs-12 google">
+						<div class="col-sm-6 col-xs-12 google">
 
-					<p>
-						<i class="fa fa-google"></i>
-						Registro con Google
-					</p>
+							<p>
+								<i class="fa fa-google"></i>
+								Registro con Google
+							</p>
 
-				</div>
-			</a>
+						</div>
+					</a>
 
-			<!--=====================================
+					<!--=====================================
 			REGISTRO DIRECTO
 			======================================-->
 
-			<form method="post" onsubmit="return registroUsuario()">
+					<form method="post" onsubmit="return registroUsuario()">
 
-				<hr>
+						<hr>
 
-				<div class="form-group">
+						<div class="form-group">
 
-					<div class="input-group">
+							<div class="input-group">
 
-						<span class="input-group-addon">
+								<span class="input-group-addon">
 
-							<i class="glyphicon glyphicon-user"></i>
+									<i class="glyphicon glyphicon-user"></i>
 
-						</span>
+								</span>
 
-						<input type="text" class="form-control text-uppercase" id="regUsuario" name="regUsuario" placeholder="Nombre Completo" required>
+								<input type="text" class="form-control text-uppercase" id="regUsuario" name="regUsuario" placeholder="Nombre Completo" required>
 
-					</div>
+							</div>
 
-				</div>
+						</div>
 
-				<div class="form-group">
+						<div class="form-group">
 
-					<div class="input-group">
+							<div class="input-group">
 
-						<span class="input-group-addon">
+								<span class="input-group-addon">
 
-							<i class="glyphicon glyphicon-envelope"></i>
+									<i class="glyphicon glyphicon-envelope"></i>
 
-						</span>
+								</span>
 
-						<input type="email" class="form-control" id="regEmail" name="regEmail" placeholder="Correo Electrónico" required>
+								<input type="email" class="form-control" id="regEmail" name="regEmail" placeholder="Correo Electrónico" required>
 
-					</div>
+							</div>
 
-				</div>
+						</div>
 
-				<div class="form-group">
+						<div class="form-group">
 
-					<div class="input-group">
+							<div class="input-group">
 
-						<span class="input-group-addon">
+								<span class="input-group-addon">
 
-							<i class="glyphicon glyphicon-lock"></i>
+									<i class="glyphicon glyphicon-lock"></i>
 
-						</span>
+								</span>
 
-						<input type="password" class="form-control" id="regPassword" name="regPassword" placeholder="Contraseña" required>
+								<input type="password" class="form-control" id="regPassword" name="regPassword" placeholder="Contraseña" required>
 
-					</div>
+							</div>
 
-				</div>
+						</div>
 
-				<!--=====================================
+						<!--=====================================
 				https://www.iubenda.com/ CONDICIONES DE USO Y POLÍTICAS DE PRIVACIDAD
 				======================================-->
 
-				<div class="checkBox">
+						<div class="checkBox">
 
-					<label>
+							<label>
 
-						<input id="regPoliticas" type="checkbox">
+								<input id="regPoliticas" type="checkbox">
 
-						<small>
+								<small>
 
-							Al registrarse, usted acepta nuestras condiciones de uso y políticas de privacidad
+									Al registrarse, usted acepta nuestras condiciones de uso y políticas de privacidad
 
-							<br>
+									<br>
 
-							<a href="https://www.iubenda.com/privacy-policy/26778001" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Privacidad ">Política de Privacidad</a>
-							<script type="text/javascript">
-								(function(w, d) {
-									var loader = function() {
-										var s = d.createElement("script"),
-											tag = d.getElementsByTagName("script")[0];
-										s.src = "https://cdn.iubenda.com/iubenda.js";
-										tag.parentNode.insertBefore(s, tag);
-									};
-									if (w.addEventListener) {
-										w.addEventListener("load", loader, false);
-									} else if (w.attachEvent) {
-										w.attachEvent("onload", loader);
-									} else {
-										w.onload = loader;
-									}
-								})(window, document);
-							</script>
-						</small>
+									<a href="https://www.iubenda.com/privacy-policy/26778001" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Privacidad ">Política de Privacidad</a>
+									<script type="text/javascript">
+										(function(w, d) {
+											var loader = function() {
+												var s = d.createElement("script"),
+													tag = d.getElementsByTagName("script")[0];
+												s.src = "https://cdn.iubenda.com/iubenda.js";
+												tag.parentNode.insertBefore(s, tag);
+											};
+											if (w.addEventListener) {
+												w.addEventListener("load", loader, false);
+											} else if (w.attachEvent) {
+												w.attachEvent("onload", loader);
+											} else {
+												w.onload = loader;
+											}
+										})(window, document);
+									</script>
+								</small>
 
-					</label>
+							</label>
+
+						</div>
+
+						<?php
+
+						$registro = new ControladorUsuarios();
+						$registro->ctrRegistroUsuario();
+
+						?>
+
+						<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
+
+					</form>
 
 				</div>
 
-				<?php
+				<div class="modal-footer">
 
-				$registro = new ControladorUsuarios();
-				$registro->ctrRegistroUsuario();
+					¿Ya tienes una cuenta registrada? | <strong><a href="#modalIngreso" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
 
-				?>
+				</div>
 
-				<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
-
-			</form>
+			</div>
 
 		</div>
 
-		<div class="modal-footer">
 
-			¿Ya tienes una cuenta registrada? | <strong><a href="#modalIngreso" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
-
-		</div>
-
-	</div>
-
-</div>
-
-
-<!--=====================================
+		<!--=====================================
 VENTANA MODAL PARA EL REGISTRO
 ======================================-->
 
 
-<div class="modal fade modalFormulario" id="modalRegistroInvitado" role="dialog">
+		<div class="modal fade modalFormulario" id="modalRegistroInvitado" role="dialog">
 
-	<div class="modal-content modal-dialog">
+			<div class="modal-content modal-dialog">
 
-		<div class="modal-body modalTitulo">
+				<div class="modal-body modalTitulo">
 
-			<h3 class="backColor">INVITADO</h3>
+					<h3 class="backColor">INVITADO</h3>
 
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
 
-			<!--=====================================
+					<!--=====================================
 			REGISTRO FACEBOOK
 			======================================-->
 
-		<!-- 	<div class="col-sm-6 col-xs-12 facebook">
+					<!-- 	<div class="col-sm-6 col-xs-12 facebook">
 
 				<p>
 					<i class="fa fa-facebook"></i>
@@ -598,10 +599,11 @@ VENTANA MODAL PARA EL REGISTRO
 
 			</div> -->
 
-			<!--=====================================
+					<!--=====================================
 			REGISTRO GOOGLE
 			======================================-->
-			<!-- <a href="<?php #echo $rutaGoogle; ?>">
+					<!-- <a href="<?php #echo $rutaGoogle; 
+									?>">
 
 				<div class="col-sm-6 col-xs-12 google">
 
@@ -613,46 +615,46 @@ VENTANA MODAL PARA EL REGISTRO
 				</div>
 			</a> -->
 
-			<!--=====================================
+					<!--=====================================
 			REGISTRO DIRECTO
 			======================================-->
 
-			<form method="post" onsubmit="return registroUsuarioInvitado()">
+					<form method="post" onsubmit="return registroUsuarioInvitado()">
 
-				<hr>
+						<hr>
 
-				<div class="form-group">
+						<div class="form-group">
 
-					<div class="input-group">
+							<div class="input-group">
 
-						<span class="input-group-addon">
+								<span class="input-group-addon">
 
-							<i class="glyphicon glyphicon-user"></i>
+									<i class="glyphicon glyphicon-user"></i>
 
-						</span>
+								</span>
 
-						<input type="text" class="form-control text-uppercase" id="regUsuario1" name="regUsuario1" placeholder="Nombre Completo" required>
+								<input type="text" class="form-control text-uppercase" id="regUsuario1" name="regUsuario1" placeholder="Nombre Completo" required>
 
-					</div>
+							</div>
 
-				</div>
+						</div>
 
-				<div class="form-group">
+						<div class="form-group">
 
-					<div class="input-group">
+							<div class="input-group">
 
-						<span class="input-group-addon">
+								<span class="input-group-addon">
 
-							<i class="glyphicon glyphicon-envelope"></i>
+									<i class="glyphicon glyphicon-envelope"></i>
 
-						</span>
+								</span>
 
-						<input type="email" class="form-control" id="regEmail1" name="regEmail1" placeholder="Correo Electrónico" required>
+								<input type="email" class="form-control" id="regEmail1" name="regEmail1" placeholder="Correo Electrónico" required>
 
-					</div>
+							</div>
 
-				</div>
-<!-- 
+						</div>
+						<!-- 
 				<div class="form-group">
 
 					<div class="input-group">
@@ -669,314 +671,314 @@ VENTANA MODAL PARA EL REGISTRO
 
 				</div> -->
 
-				<!--=====================================
+						<!--=====================================
 				https://www.iubenda.com/ CONDICIONES DE USO Y POLÍTICAS DE PRIVACIDAD
 				======================================-->
 
-				<div class="checkBox">
+						<div class="checkBox">
 
-					<label>
+							<label>
 
-						<input id="regPoliticas1" type="checkbox">
+								<input id="regPoliticas1" type="checkbox">
 
-						<small>
+								<small>
 
-							Al registrarse, usted acepta nuestras condiciones de uso y políticas de privacidad
+									Al registrarse, usted acepta nuestras condiciones de uso y políticas de privacidad
 
-							<br>
+									<br>
 
-							<a href="https://www.iubenda.com/privacy-policy/26778001" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Privacidad ">Política de Privacidad</a>
-							<script type="text/javascript">
-								(function(w, d) {
-									var loader = function() {
-										var s = d.createElement("script"),
-											tag = d.getElementsByTagName("script")[0];
-										s.src = "https://cdn.iubenda.com/iubenda.js";
-										tag.parentNode.insertBefore(s, tag);
-									};
-									if (w.addEventListener) {
-										w.addEventListener("load", loader, false);
-									} else if (w.attachEvent) {
-										w.attachEvent("onload", loader);
-									} else {
-										w.onload = loader;
-									}
-								})(window, document);
-							</script>
-						</small>
+									<a href="https://www.iubenda.com/privacy-policy/26778001" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Política de Privacidad ">Política de Privacidad</a>
+									<script type="text/javascript">
+										(function(w, d) {
+											var loader = function() {
+												var s = d.createElement("script"),
+													tag = d.getElementsByTagName("script")[0];
+												s.src = "https://cdn.iubenda.com/iubenda.js";
+												tag.parentNode.insertBefore(s, tag);
+											};
+											if (w.addEventListener) {
+												w.addEventListener("load", loader, false);
+											} else if (w.attachEvent) {
+												w.attachEvent("onload", loader);
+											} else {
+												w.onload = loader;
+											}
+										})(window, document);
+									</script>
+								</small>
 
-					</label>
+							</label>
+
+						</div>
+
+						<?php
+
+						$registro = new ControladorUsuarios();
+						$registro->ctrRegistroUsuarioInvitado();
+
+						?>
+
+						<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
+
+					</form>
 
 				</div>
 
-				<?php
+				<div class="modal-footer">
 
-				$registro = new ControladorUsuarios();
-				$registro->ctrRegistroUsuarioInvitado();
+					¿Ya tienes una cuenta registrada? | <strong><a href="#modalIngreso" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
 
-				?>
-
-				<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
-
-			</form>
-
-		</div>
-
-		<div class="modal-footer">
-
-			¿Ya tienes una cuenta registrada? | <strong><a href="#modalIngreso" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
-
-		</div>
-
-	</div>
-
-</div>
-
-<!--=====================================
-VENTANA MODAL PARA EL INGRESO
-======================================-->
-
-<div class="modal fade modalFormulario" id="modalIngreso" role="dialog">
-
-	<div class="modal-content modal-dialog">
-
-		<div class="modal-body modalTitulo">
-
-			<h3 class="backColor">INGRESAR</h3>
-
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
-
-			<!--=====================================
-			INGRESO FACEBOOK
-			======================================-->
-
-			<div class="col-sm-6 col-xs-12 facebook">
-
-				<p>
-					<i class="fa fa-facebook"></i>
-					Ingreso con Facebook
-				</p>
+				</div>
 
 			</div>
 
-			<!--=====================================
+		</div>
+
+		<!--=====================================
+VENTANA MODAL PARA EL INGRESO
+======================================-->
+
+		<div class="modal fade modalFormulario" id="modalIngreso" role="dialog">
+
+			<div class="modal-content modal-dialog">
+
+				<div class="modal-body modalTitulo">
+
+					<h3 class="backColor">INGRESAR</h3>
+
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+					<!--=====================================
+			INGRESO FACEBOOK
+			======================================-->
+
+					<div class="col-sm-6 col-xs-12 facebook">
+
+						<p>
+							<i class="fa fa-facebook"></i>
+							Ingreso con Facebook
+						</p>
+
+					</div>
+
+					<!--=====================================
 			INGRESO GOOGLE
 			======================================-->
-			<a href="<?php echo $rutaGoogle; ?>">
+					<a href="<?php echo $rutaGoogle; ?>">
 
-				<div class="col-sm-6 col-xs-12 google">
+						<div class="col-sm-6 col-xs-12 google">
 
-					<p>
-						<i class="fa fa-google"></i>
-						Ingreso con Google
-					</p>
+							<p>
+								<i class="fa fa-google"></i>
+								Ingreso con Google
+							</p>
 
-				</div>
+						</div>
 
-			</a>
+					</a>
 
-			<!--=====================================
+					<!--=====================================
 			INGRESO DIRECTO
 			======================================-->
 
-			<form method="post">
+					<form method="post">
 
-				<hr>
+						<hr>
 
-				<div class="form-group">
+						<div class="form-group">
 
-					<div class="input-group">
+							<div class="input-group">
 
-						<span class="input-group-addon">
+								<span class="input-group-addon">
 
-							<i class="glyphicon glyphicon-envelope"></i>
+									<i class="glyphicon glyphicon-envelope"></i>
 
-						</span>
+								</span>
 
-						<input type="email" class="form-control" id="ingEmail" name="ingEmail" placeholder="Correo Electrónico" required>
+								<input type="email" class="form-control" id="ingEmail" name="ingEmail" placeholder="Correo Electrónico" required>
 
-					</div>
+							</div>
+
+						</div>
+
+						<div class="form-group">
+
+							<div class="input-group">
+
+								<span class="input-group-addon">
+
+									<i class="glyphicon glyphicon-lock"></i>
+
+								</span>
+
+								<input type="password" class="form-control" id="ingPassword" name="ingPassword" placeholder="Contraseña" required>
+
+							</div>
+
+						</div>
+
+
+
+						<?php
+
+						$ingreso = new ControladorUsuarios();
+						$ingreso->ctrIngresoUsuario();
+
+						?>
+
+						<input type="submit" class="btn btn-default backColor btn-block btnIngreso" value="ENVIAR">
+
+						<br>
+
+						<center>
+
+							<a href="#modalPassword" data-dismiss="modal" data-toggle="modal">¿Olvidaste tu contraseña?</a>
+
+						</center>
+						<br><br>
+						<center><strong><a href="#modalRegistroInvitado" data-dismiss="modal" class="btn btn-default backColor btn-block " data-toggle="modal">COMPRAR COMO INVITADO</a></strong></center>
+
+					</form>
 
 				</div>
 
-				<div class="form-group">
+				<div class="modal-footer">
 
-					<div class="input-group">
-
-						<span class="input-group-addon">
-
-							<i class="glyphicon glyphicon-lock"></i>
-
-						</span>
-
-						<input type="password" class="form-control" id="ingPassword" name="ingPassword" placeholder="Contraseña" required>
-
-					</div>
+					¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
 
 				</div>
 
-
-
-				<?php
-
-				$ingreso = new ControladorUsuarios();
-				$ingreso->ctrIngresoUsuario();
-
-				?>
-
-				<input type="submit" class="btn btn-default backColor btn-block btnIngreso" value="ENVIAR">
-
-				<br>
-
-				<center>
-
-					<a href="#modalPassword" data-dismiss="modal" data-toggle="modal">¿Olvidaste tu contraseña?</a>
-
-				</center>
-				<br><br>
-				<center><strong><a href="#modalRegistroInvitado" data-dismiss="modal"  class="btn btn-default backColor btn-block " data-toggle="modal">COMPRAR COMO INVITADO</a></strong></center>
-
-			</form>
+			</div>
 
 		</div>
 
-		<div class="modal-footer">
-
-			¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
-
-		</div>
-
-	</div>
-
-</div>
 
 
 
 
 
-
-<!--=====================================
+		<!--=====================================
 VENTANA MODAL PARA EL COSTO DE ENVIO
 ======================================-->
 
-<div class="modal fade modalFormulario" id="modalIngreso1" role="dialog">
+		<div class="modal fade modalFormulario" id="modalIngreso1" role="dialog">
 
-	<div class="modal-content modal-dialog">
+			<div class="modal-content modal-dialog">
 
-		<div class="modal-body modalTitulo">
+				<div class="modal-body modalTitulo">
 
-			<h3 class="">ENVIO DHL</h3>
+					<h3 class="">ENVIO DHL</h3>
 
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
 
-			
 
-			<!--=====================================
+
+					<!--=====================================
 			INGRESO DIRECTO
 			======================================-->
 
-			<form method="post" action="vistas/modulos/logi_etiq_dhl7.php" >
+					<form method="post" action="vistas/modulos/logi_etiq_dhl7.php">
 
-				<hr>
+						<hr>
 
-				<div class="form-group">
+						<div class="form-group">
 
-					<div class="input-group">
+							<div class="input-group">
 
-						<span class="input-group-addon">
+								<span class="input-group-addon">
 
-							<i class="glyphicon glyphicon-envelope"></i>
+									<i class="glyphicon glyphicon-envelope"></i>
 
-						</span>
+								</span>
 
-						<input type="number" class="form-control" id="cp" name="cp" placeholder="Codigo Postal" required>
+								<input type="number" class="form-control" id="cp" name="cp" placeholder="Codigo Postal" required>
 
-					</div>
-						<input type="hidden" class="form-control" id="kg" name="kg"  >
+							</div>
+							<input type="hidden" class="form-control" id="kg" name="kg">
+
+						</div>
+
+
+
+
+
+
+
+						<input type="submit" class="btn btn-default backColor btn-block btnIngreso" value="ENVIAR">
+
+						<br>
+
+
+					</form>
 
 				</div>
 
-				
+				<div class="modal-footer">
 
+					<!-- ¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong> -->
 
+				</div>
 
-			
-
-				<input type="submit" class="btn btn-default backColor btn-block btnIngreso" value="ENVIAR">
-
-				<br>
-
-
-			</form>
+			</div>
 
 		</div>
-
-		<div class="modal-footer">
-
-			<!-- ¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong> -->
-
-		</div>
-
-	</div>
-
-</div>
-<!--=====================================
+		<!--=====================================
 VENTANA MODAL PARA OLVIDO DE CONTRASEÑA
 ======================================-->
 
-<div class="modal fade modalFormulario" id="modalPassword" role="dialog">
+		<div class="modal fade modalFormulario" id="modalPassword" role="dialog">
 
-	<div class="modal-content modal-dialog">
+			<div class="modal-content modal-dialog">
 
-		<div class="modal-body modalTitulo">
+				<div class="modal-body modalTitulo">
 
-			<h3 class="backColor">SOLICITUD DE NUEVA CONTRASEÑA</h3>
+					<h3 class="backColor">SOLICITUD DE NUEVA CONTRASEÑA</h3>
 
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
 
-			<!--=====================================
+					<!--=====================================
 			OLVIDO CONTRASEÑA
 			======================================-->
 
-			<form method="post">
+					<form method="post">
 
-				<label class="text-muted">Escribe el correo electrónico con el que estás registrado y allí te enviaremos una nueva contraseña:</label>
+						<label class="text-muted">Escribe el correo electrónico con el que estás registrado y allí te enviaremos una nueva contraseña:</label>
 
-				<div class="form-group">
+						<div class="form-group">
 
-					<div class="input-group">
+							<div class="input-group">
 
-						<span class="input-group-addon">
+								<span class="input-group-addon">
 
-							<i class="glyphicon glyphicon-envelope"></i>
+									<i class="glyphicon glyphicon-envelope"></i>
 
-						</span>
+								</span>
 
-						<input type="email" class="form-control" id="passEmail" name="passEmail" placeholder="Correo Electrónico" required>
+								<input type="email" class="form-control" id="passEmail" name="passEmail" placeholder="Correo Electrónico" required>
 
-					</div>
+							</div>
+
+						</div>
+
+						<?php
+
+						$password = new ControladorUsuarios();
+						$password->ctrOlvidoPassword();
+
+						?>
+
+						<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
+
+					</form>
 
 				</div>
 
-				<?php
+				<div class="modal-footer">
 
-				$password = new ControladorUsuarios();
-				$password->ctrOlvidoPassword();
+					¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
 
-				?>
+				</div>
 
-				<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
-
-			</form>
+			</div>
 
 		</div>
-
-		<div class="modal-footer">
-
-			¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
-
-		</div>
-
-	</div>
-
-</div>
