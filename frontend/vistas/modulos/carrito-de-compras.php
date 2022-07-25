@@ -280,7 +280,7 @@ VENTANA MODAL PARA CHECKOUT
 
 						<center>
 
-							<input id="checkPaypal" type="radio" name="pago" value="paypal" checked>
+							<input id="checkPaypal" type="radio" name="pago" value="paypal" >
 
 						</center>
 

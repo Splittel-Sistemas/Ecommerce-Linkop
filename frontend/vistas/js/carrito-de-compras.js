@@ -26,7 +26,11 @@ if (localStorage.getItem("listaProductos") != null) {
   var listaCarrito = JSON.parse(localStorage.getItem("listaProductos"));
 } else {
   $(".cuerpoCarrito").html(
-    '<div class="well">Aún no hay productos en el carrito de compras.</div>'
+    '<div class="well text-center"><h1>Aún no hay productos en el carrito de compras.</h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>'
+
+    
+
+
   );
   $(".sumaCarrito").hide();
   $(".cabeceraCheckout").hide();
@@ -508,8 +512,8 @@ CHECKOUT
 $("#btnCheckout").click(function () {
   $(".listaProductos table.tablaProductos tbody").html("");
 
-  $("#checkPaypal").prop("checked", true);
-  $("#checkPayu").prop("checked", false);
+ /*  $("#checkPaypal").prop("checked", true);
+  $("#checkPayu").prop("checked", false); */
 
   var idUsuario = $(this).attr("idUsuario");
   var peso = $(".cuerpoCarrito button, .comprarAhora button");
