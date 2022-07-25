@@ -374,7 +374,8 @@ $(document).on("click", ".quitarItemCarrito", function () {
     $(".sumaCesta").html("0");
 
     $(".cuerpoCarrito").html(
-      '<div class="well">Aún no hay productos en el carrito de compras.</div>'
+      '<div class="well text-center"><h1>Aún no hay productos en el carrito de compras.</h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>'
+
     );
     $(".sumaCarrito").hide();
     $(".cabeceraCheckout").hide();
