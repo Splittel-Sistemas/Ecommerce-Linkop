@@ -96,7 +96,7 @@ class MyConekta {
 		$request = array(
             "livemode"=> false,
 		    'amount' => $amount,
-		    'currency' => self::$currency,
+		    'currency' => 'MXN',
 		    'description' => $descriptions."/".$idproductos."/".$cantidadArray."/".$valorItemArray,
 			'details' => array(
 				'name' => $name,
