@@ -391,7 +391,7 @@ echo $respuesta;
 
 <?php 
 $respuesta1 = $mensaje["mensaje"] != null ? '<div class="alert alert-primary text-center backColor" style="margin-bottom: 0px;" role="alert">
-<strong style="color:white"> '.$mensaje["mensaje"].'  <a href="#modalRegistro" data-toggle="modal">REGISTRARSE</a> </strong>
+<strong style="color:white"> '.$mensaje["mensaje"].'  <a href="#modalRegistro" data-toggle="modal" style="color: rgb(13, 255, 198);"> REGISTRARSE</a> </strong>
 </div></nav>
 </header>
 <br><br><br><br>' : '</nav>
