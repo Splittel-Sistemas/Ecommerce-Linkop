@@ -8,6 +8,7 @@ $url = Ruta::ctrRuta();
 <!--=====================================
 BREADCRUMB INFOPRODUCTOS
 ======================================-->
+<br>
 <div class="container-fluid well well-sm">
 
 	<div class="container">
