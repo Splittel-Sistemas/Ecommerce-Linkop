@@ -905,7 +905,7 @@ INFOPRODUCTOS
 				echo ' <li class="nav-item">
 				<a class="nav-link" id="contact-tab1" data-toggle="tab" href="#contact" role="tab" aria-controls="contact1" aria-selected="false">COMENTARIOS ' . $cantidad . '</a>
 			  </li>
-						  <li><a id="verMas" href="">Ver más</a></li>';
+						  <li><a id="verMas" href="">Ver más </a></li>';
 
 
 				$sumaCalificacion = 0;
