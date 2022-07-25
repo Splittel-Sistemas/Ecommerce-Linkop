@@ -145,11 +145,15 @@ if(isset($_GET['metodoPago']) &&  $_GET['metodoPago'] == 'oxxo'){
                }
 
                if($respuesta == "ok" && $actualizarCompra == "ok"){
-                /*   $fp = fopen('oxxo_'.md5(uniqid()).".txt","wb");
-                  fwrite($fp,"LISTO");
-                  fclose($fp); */
-               
+                  echo '<script>
 
+            localStorage.removeItem("listaProductos");
+            localStorage.removeItem("cantidadCesta");
+            localStorage.removeItem("sumaCesta");
+            window.location = "'.$url.'ofertas/aviso";
+
+
+            </script>';
                }
 
             }
