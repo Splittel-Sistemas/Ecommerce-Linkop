@@ -90,9 +90,9 @@ FOOTER
 			<ul>
 				<li><a href="#" class="pixelCategorias" style="color: gray;">Nuestra historia</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Servicio al cliente</a></li>
+				<li><a href="#" class="pixelCategorias" style="color: gray;padding-left: 6px;">Servicio al cliente</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;">Regístrate</a></li>
+				<li><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal" class="pixelCategorias" style="color: gray;padding-right: 36px;">Regístrate</a></li>
 
 
 
@@ -144,12 +144,12 @@ FOOTER
 
 			<h4><a href="#" titulo="BLOG" style="color: white;">SOPORTE </a></h4>
 			<ul>
-				<li><a href="garantias-envios" class="pixelCategorias" style="color: gray;">Garantías y envíos:</a></li>
+				<li><a href="garantias-envios" class="pixelCategorias" style="color: gray;padding-right: 28px;">Garantías y envíos:</a></li>
 
 				<li><a href="garantias-devolucion" class="pixelCategorias" style="color: gray;">Garantía de devolución:</a></li>
 
-				<li><a href="metodos-pagos" class="pixelCategorias" style="color: gray;">Métodos de pago</a></li>
-				<li><a href="preguntas-frecuentes" class="pixelCategorias" style="color: gray;">Preguntas Frecuentes</a></li>
+				<li><a href="metodos-pagos" class="pixelCategorias" style="color: gray;padding-right: 37px;">Métodos de pago</a></li>
+				<li><a href="preguntas-frecuentes" class="pixelCategorias" style="color: gray;padding-right: 7px;">Preguntas Frecuentes</a></li>
 
 		
 
@@ -185,7 +185,7 @@ FOOTER
 
 	</div>
 
-	<div class="container-fluid final">
+	<div class="container-fluid final ">
 
 
 
