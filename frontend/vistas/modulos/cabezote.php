@@ -270,7 +270,7 @@ HEADER
 						</a></li> -->
 					<li class="dropdown notifications-menu ">
 
-						<a href="<?php echo $url; ?>carrito-de-compras" style="color: black; " id="">
+						<a href="<?php echo $url; ?>carrito-de-compras" style="color: black;padding-left:35px; " id="">
 
 							<!-- <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
 
@@ -375,12 +375,11 @@ if (isset($_SESSION["validarSesion"])) {
 /* 	echo '<div class="alert alert-primary text-center" style="background-color: #030F24;margin-bottom: 0px;" role="alert">
 	<strong style="color:white"> '. $mensaje["mensaje2"] .' </strong>
 </div>'; */
-$respuesta = $mensaje["mensaje2"] != null ? '<div class="alert alert-primary text-center" style="margin-bottom: 0px;" role="alert">
-<strong style="color:white"> '.$mensaje["mensaje2"].'  <a href="#modalRegistro" data-toggle="modal"></a> </strong>
-</div>
-</nav>
+$respuesta = $mensaje["mensaje2"] != null ? '<div class="alert alert-primary text-center backColor" style="margin-bottom: 0px;" role="alert">
+<strong style="color:white"> '.$mensaje["mensaje2"].'   </strong>
+</div></nav>
 </header>
-<br><br> ' : '</nav>
+<br><br><br><br>' : '</nav>
 </header>
 <br><br>';
 echo $respuesta;
