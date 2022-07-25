@@ -21,7 +21,7 @@ FOOTER
 						<input type="email" id="emailContactenos" name="emailContactenos" class="form-control" placeholder="Escriba su correo electrónico" required>
 
 						<span class="input-group-btn">
-							<input type="submit" value="Subscribete" class="btn btn-default backColor pull-center" id="enviar">
+							<input type="submit" value="Suscribete" class="btn btn-default backColor pull-center" id="enviar">
 
 						</span>
 					</div>
