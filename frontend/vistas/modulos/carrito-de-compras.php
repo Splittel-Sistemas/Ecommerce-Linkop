@@ -375,7 +375,7 @@ VENTANA MODAL PARA CHECKOUT
 						</div>
 						<div class="grupo">
 							<label for="inputNombre">Nombre</label>
-							<input type="text" class="form-control" id="inputNombre" maxlength="19" autocomplete="off" data-openpay-card="holder_name">
+							<input type="text" class="form-control" id="inputNombre" autocomplete="off" data-openpay-card="holder_name">
 						</div>
 						<br>
 						<div class="row">
