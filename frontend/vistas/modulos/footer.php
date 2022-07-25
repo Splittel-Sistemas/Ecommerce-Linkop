@@ -90,7 +90,7 @@ FOOTER
 			<ul>
 				<li><a href="#" class="pixelCategorias" style="color: gray;">Nuestra historia</a></li>
 
-				<li><a href="#" class="pixelCategorias" style="color: gray;padding-left: 6px;">Servicio al cliente</a></li>
+				<li><a href="contacto" class="pixelCategorias" style="color: gray;padding-left: 6px;">Servicio al cliente</a></li>
 
 				<li><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal" class="pixelCategorias" style="color: gray;padding-right: 36px;">Regístrate</a></li>
 
