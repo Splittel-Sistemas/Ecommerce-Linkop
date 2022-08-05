@@ -106,10 +106,19 @@ BANNER
 				En caso de que el producto se encuentre dañado total o parcialmente tendrás un periodo de reclamación con 30 días naturales una vez realizado el envío, una vez cumplido el plazo no podremos hacer válida nuestra garantía de devolución y reposición. 
 Es importante mencionar que nuestra política de devolución se basa en la reposición del producto y no en un reembolso económico. Nuestras reposiciones son únicas y exclusivamente bajo el argumento de que el producto ha sido recibido con algún desperfecto físico o funcional. 
 En caso que nuestra paquetería de envíos no logre llevar el producto hasta tu casa. Regresaremos el pedido a nuestros Centros de Distribución. Para que esto no suceda y tu envío llegue al tiempo esperado, te aconsejamos verificar la información brindada en nuestra plataforma. En el caso que el producto haya sido enviado a una oficina de paquetería tradicional, este al no ser reclamado en el periodo de tiempo estipulado por la oficina de correos/paquetería, será devuelto a nuestros Centros de Distribución.  Nuestra garantía de devoluciones es válida solo por 30 días, después de ese periodo de tiempo pactado, se anula cualquier reclamo. Te aconsejamos que si existe algún desperfecto en tu producto lo reportes inmediatamente. 
--	Costos de envío son estándar para toda la República Mexicana:
-o	Compras mayores a $500 pesos, el envío es gratis.
+<br>
+<br>
+Costos de envío son estándar para toda la República Mexicana:
+<br>
+<br>
 
--	Reclamos
+Compras mayores a $500 pesos, el envío es gratis.
+<br>
+<br>
+Reclamos
+<br>
+<br>
+
 Para cualquier tipo de reclamos, puedes comunicarte con nuestro equipo de Atención al Cliente a través del siguiente email: reclamos@linkop.mx.
 
 

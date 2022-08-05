@@ -247,15 +247,15 @@ HEADER
 								<span class="input-group-btn">
 
 								</span>
-								<!-- <a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
+								<a href="<?php echo $url; ?>buscador/1/recientes" style="color: black;">
 
-									<button class="btn " type="submit" >
+									<!-- <button class="btn " type="submit" >
 										<img src="<?php echo $servidor; ?>vistas/img/plantilla/lupa.png" class=" text-center " style="width: 23px;">
 
 										
-									</button>
+									</button> -->
 
-								</a> -->
+								</a>
 							</div>
 						</div>
 					</li>
