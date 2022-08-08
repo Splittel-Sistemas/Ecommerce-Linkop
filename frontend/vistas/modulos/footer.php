@@ -89,8 +89,10 @@ FOOTER
 			<h4><a href="#" class="" titulo="BLOG" style="color: white;">INFO</a></h4>
 			<ul>
 				<li><a href="#" class="pixelCategorias" style="color: gray;">Nuestra historia</a></li>
+				<br>
 
 				<li><a href="contacto" class="pixelCategorias" style="color: gray;padding-left: 6px;">Servicio al cliente</a></li>
+				<br>
 
 				<li><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal" class="pixelCategorias" style="color: gray;padding-right: 36px;">Regístrate</a></li>
 
@@ -144,11 +146,16 @@ FOOTER
 
 			<h4><a href="#" titulo="BLOG" style="color: white;">SOPORTE </a></h4>
 			<ul>
+
 				<li><a href="garantias-envios" class="pixelCategorias" style="color: gray;padding-right: 28px;">Garantías y envíos:</a></li>
+				<br>
 
 				<li><a href="garantias-devolucion" class="pixelCategorias" style="color: gray;">Garantía de devolución:</a></li>
+				<br>
 
 				<li><a href="metodos-pagos" class="pixelCategorias" style="color: gray;padding-right: 37px;">Métodos de pago</a></li>
+				<br>
+				
 				<li><a href="preguntas-frecuentes" class="pixelCategorias" style="color: gray;padding-right: 7px;">Preguntas Frecuentes</a></li>
 
 		
@@ -161,7 +168,9 @@ FOOTER
 
 			<h4><a href="#" class="" titulo="BLOG" style="color: white;">LO QUE DEBES SABER</a></h4>
 			<ul>
+
 				<li><a href="#" class="pixelCategorias" style="color: gray;">Políticas de Privacidad</a></li>
+				<br>
 
 				<li><a href="#" class="pixelCategorias" style="color: gray;">Términos y Condiciones</a></li>
 
