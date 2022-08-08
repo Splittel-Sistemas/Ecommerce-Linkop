@@ -21,7 +21,7 @@ BANNER
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">  -->
 
 <style>
-/* 	@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800); */
+	/* 	@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800); */
 
 	section {
 		padding: 60px 0px;
@@ -91,35 +91,30 @@ BANNER
 			<div class="col-lg-12 text-center">
 				<h2 style="color:#000000">
 					<span class="ion-minus"></span>
-				Métodos de pago
-<span class="ion-minus"></span>
+					Métodos de pago
+					<span class="ion-minus"></span>
 				</h2>
 			</div>
 		</div>
 
 		<div class="row text-center">
-			<div id="slider" class="carousel slide" data-ride="carousel">
-				<ul>
-					<li>Pay Pal</li>
-					<br>
-					<li>Open Pay</li>
-					<br>
-
-					<li>Conekta</li>
-
+				<ul class="list-group list-group-horizontal">
+					<li class="list-group-item">Pay Pal</li>
+					<li class="list-group-item">Open Pay</li>
+					<li class="list-group-item">Conekta</li>
 				</ul>
-	
+			
 
 
-			</div>
 
-		
+
+
 		</div>
 	</div>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br>
+	<br><br><br>
+	<br><br><br>
+	<br><br><br>
+	<br>
 
 	</div>
 </section>
