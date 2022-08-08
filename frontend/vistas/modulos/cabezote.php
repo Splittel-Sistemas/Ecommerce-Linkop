@@ -162,7 +162,7 @@ HEADER
  -->
 					<li class="menu-item dropdown">
 						<a href="#" class="dropdown-toggle" id="productos" data-toggle="dropdown">PRODUCTOS <b class="caret"></b></a>
-						<ul class="dropdown-menu" id="listaProductos">
+						<ul class="dropdown-menu " id="listaProductos">
 
 
 							<?php
@@ -195,7 +195,7 @@ HEADER
 
 
 
-								echo '<li class="menu-item dropdown dropdown-submenu"><a href="' . $url . $value["ruta"] . '" >' . $value["categoria"] . '</a>
+								echo '<li class="menu-item dropdown dropdown-submenu text-center"><a href="' . $url . $value["ruta"] . '" >' . $value["categoria"] . '</a>
 								<ul class="dropdown-menu">
 								';
 
