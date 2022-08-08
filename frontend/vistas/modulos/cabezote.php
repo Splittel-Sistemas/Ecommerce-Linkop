@@ -376,7 +376,7 @@ HEADER
 			/* 	echo '<div class="alert alert-primary text-center" style="background-color: #030F24;margin-bottom: 0px;" role="alert">
 	<strong style="color:white"> '. $mensaje["mensaje2"] .' </strong>
 </div>'; */
-			$respuesta = $mensaje["mensaje2"] != null ? '<div class="alert alert-primary text-center backColor" style="margin-bottom: 0px;" role="alert">
+			$respuesta = $mensaje["mensaje2"] != null ? '<div class="alert alert-primary text-center backColor" style="margin-bottom: 0px;padding: 0px;"  role="alert">
 <strong style="color:white"> ' . $mensaje["mensaje2"] . '   </strong>
 </div></nav>
 </header>
@@ -390,11 +390,11 @@ HEADER
 
 
 			<?php
-			$respuesta1 = $mensaje["mensaje"] != null ? '<div class="alert alert-primary text-center backColor" style="margin-bottom: 0px;" role="alert">
+			$respuesta1 = $mensaje["mensaje"] != null ? '<div class="alert alert-primary text-center backColor" style="margin-bottom: 0px;padding: 0px;" role="alert">
 <strong style="color:white"> ' . $mensaje["mensaje"] . '  <a href="#modalRegistro" data-toggle="modal" style="color: rgb(13, 255, 198);"> REGISTRARSE</a> </strong>
 </div></nav>
 </header>
-<br><br><br><br>' : '</nav>
+<br><br><br>' : '</nav>
 </header>
 <br><br>';
 			echo $respuesta1;
