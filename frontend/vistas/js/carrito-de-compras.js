@@ -1062,7 +1062,7 @@ function pagarConPaypal() {
     });
   });
 }
-if (metodoPago == "paypal") {
+/* if (metodoPago == "paypal") {
   $("#pay-button").on("click", function (event) {
     event.preventDefault();
     $("#pay-button").prop("disabled", true);
@@ -1172,7 +1172,7 @@ if (metodoPago == "paypal") {
     });
   });
 }
-
+ */
 /*=============================================
 /*=============================================
 /*=============================================
