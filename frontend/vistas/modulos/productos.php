@@ -165,7 +165,8 @@ if ($banner != null) {
 <!--=====================================
 BARRA PRODUCTOS
 ======================================-->
-<div class="container-fluid well well-sm barraProductos">
+<div class="container-fluid well well-sm barraProductos" style="background-color: #fff;
+	border: 1px solid #fff;">
 
 	<div class="container">
 
