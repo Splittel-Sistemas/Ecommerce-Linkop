@@ -280,7 +280,7 @@ HEADER
 
 
 
-							<span class="label label-info cantidadCesta text-rigth"></span>
+							<span class="label label-d cantidadCesta text-rigth" style="background-color: #030F24;"></span>
 
 
 

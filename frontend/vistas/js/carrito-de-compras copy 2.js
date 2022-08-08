@@ -334,7 +334,7 @@ $(".agregarCarrito").click(function(){
 			  text: "¡Se ha agregado un nuevo producto al carrito de compras!",
 			  type: "success",
 			  showCancelButton: true,
-			  confirmButtonColor: "#DD6B55",
+			  confirmButtonColor: "#030F24",
 			  cancelButtonText: "¡Continuar comprando!",
 			  confirmButtonText: "¡Ir a mi carrito de compras!",
 			  closeOnConfirm: false
