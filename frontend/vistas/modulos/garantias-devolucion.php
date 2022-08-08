@@ -21,7 +21,7 @@ BANNER
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">  -->
 
 <style>
-/* 	@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800); */
+	/* 	@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800); */
 
 	section {
 		padding: 60px 0px;
@@ -92,7 +92,7 @@ BANNER
 				<h2 style="color:#000000">
 					<span class="ion-minus"></span>
 					Garantía de devolución:
-<span class="ion-minus"></span>
+					<span class="ion-minus"></span>
 				</h2>
 			</div>
 		</div>
@@ -103,32 +103,62 @@ BANNER
 					<li data-target="#slider" data-slide-to="1" class="active"></li>
 					<li data-target="#slider" data-slide-to="0"></li>
 				</ol> -->
-				En caso de que el producto se encuentre dañado total o parcialmente tendrás un periodo de reclamación con 30 días naturales una vez realizado el envío, una vez cumplido el plazo no podremos hacer válida nuestra garantía de devolución y reposición. 
-Es importante mencionar que nuestra política de devolución se basa en la reposición del producto y no en un reembolso económico. Nuestras reposiciones son únicas y exclusivamente bajo el argumento de que el producto ha sido recibido con algún desperfecto físico o funcional. 
-En caso que nuestra paquetería de envíos no logre llevar el producto hasta tu casa. Regresaremos el pedido a nuestros Centros de Distribución. Para que esto no suceda y tu envío llegue al tiempo esperado, te aconsejamos verificar la información brindada en nuestra plataforma. En el caso que el producto haya sido enviado a una oficina de paquetería tradicional, este al no ser reclamado en el periodo de tiempo estipulado por la oficina de correos/paquetería, será devuelto a nuestros Centros de Distribución.  Nuestra garantía de devoluciones es válida solo por 30 días, después de ese periodo de tiempo pactado, se anula cualquier reclamo. Te aconsejamos que si existe algún desperfecto en tu producto lo reportes inmediatamente. 
-<br>
-<br>
-Costos de envío son estándar para toda la República Mexicana:
-<br>
-<br>
+				En caso de que el producto se encuentre dañado total o parcialmente tendrás un periodo de reclamación con 30 días naturales una vez realizado el envío, una vez cumplido el plazo no podremos hacer válida nuestra garantía de devolución y reposición.
+				Es importante mencionar que nuestra política de devolución se basa en la reposición del producto y no en un reembolso económico. Nuestras reposiciones son únicas y exclusivamente bajo el argumento de que el producto ha sido recibido con algún desperfecto físico o funcional.
+				En caso que nuestra paquetería de envíos no logre llevar el producto hasta tu casa. Regresaremos el pedido a nuestros Centros de Distribución. Para que esto no suceda y tu envío llegue al tiempo esperado, te aconsejamos verificar la información brindada en nuestra plataforma. En el caso que el producto haya sido enviado a una oficina de paquetería tradicional, este al no ser reclamado en el periodo de tiempo estipulado por la oficina de correos/paquetería, será devuelto a nuestros Centros de Distribución. Nuestra garantía de devoluciones es válida solo por 30 días, después de ese periodo de tiempo pactado, se anula cualquier reclamo. Te aconsejamos que si existe algún desperfecto en tu producto lo reportes inmediatamente.
+			
 
-Compras mayores a $500 pesos, el envío es gratis.
-<br>
-<br>
-Reclamos
-<br>
-<br>
-
-Para cualquier tipo de reclamos, puedes comunicarte con nuestro equipo de Atención al Cliente a través del siguiente email: reclamos@linkop.mx.
 
 
 			</div>
 
-		
+
 		</div>
+
+
+		<div class="accordion text-center" id="accordionExample">
+
+			<div class="card">
+				<div class="card-header" id="headingOne">
+					<h2 class="mb-0">
+						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+							Costos de envío son estándar para toda la República Mexicana:
+
+						</button>
+					</h2>
+					
+				</div>
+				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+					<div class="card-body">
+						Compras mayores a $500 pesos, el envío es gratis.
+						<br>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" id="heading4">
+					<h2 class="mb-0">
+						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+							Reclamos
+
+						</button>
+					</h2>
+				</div>
+				<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample">
+					<div class="card-body">
+
+						Para cualquier tipo de reclamos, puedes comunicarte con nuestro equipo de Atención al Cliente a través del siguiente email: reclamos@linkop.mx.
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+
 	</div>
-  <br><br><br>
-  <br><br><br>
+	<br><br><br>
+	<br><br><br>
 
 	</div>
 </section>
