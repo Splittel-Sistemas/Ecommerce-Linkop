@@ -380,7 +380,7 @@ HEADER
 <strong style="color:white"> ' . $mensaje["mensaje2"] . '   </strong>
 </div></nav>
 </header>
-<br><br><br><br>' : '</nav>
+<br><br><br>' : '</nav>
 </header>
 <br><br>';
 			echo $respuesta;
