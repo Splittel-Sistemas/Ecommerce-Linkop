@@ -203,7 +203,7 @@ $(".seleccionarCategoria").change(function () {
   datos.append("idCategoria", categoria);
 
   $.ajax({
-    url: "../../ajax/subCategorias.ajax.php",
+    url: "ajax/subCategorias.ajax.php",
     method: "POST",
     data: datos,
     cache: false,
@@ -824,7 +824,7 @@ $(".tablaProductos tbody").on("click", ".btnEditarProducto", function () {
         );
 
         $.ajax({
-          url: "../../ajax/subcategorias.ajax.php",
+          url: "ajax/subcategorias.ajax.php",
           method: "POST",
           data: datosSubCategoria,
           cache: false,
@@ -843,7 +843,7 @@ $(".tablaProductos tbody").on("click", ".btnEditarProducto", function () {
             datosCategoria.append("idCategoria", respuesta[0]["id_categoria"]);
 
             $.ajax({
-              url: "../../ajax/subcategorias.ajax.php",
+              url: "ajax/subcategorias.ajax.php",
               method: "POST",
               data: datosCategoria,
               cache: false,
