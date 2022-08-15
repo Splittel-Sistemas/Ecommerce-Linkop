@@ -1255,7 +1255,7 @@ ARTÏCULOS RELACIONADOS
 
 						</figure>
 
-						' . $value["id"] . '
+						
 
 						<h4>
 				
