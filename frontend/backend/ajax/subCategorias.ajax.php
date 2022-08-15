@@ -13,7 +13,7 @@ require_once "../modelos/productos.modelo.php";
 class AjaxSubCategorias{
 
 	/*=============================================
-  	ACTIVAR SUBCATEGORIA
+  	ACTIVAR SUBCATEGORIA 
  	=============================================*/	
 
 	public $activarSubCategoria;
