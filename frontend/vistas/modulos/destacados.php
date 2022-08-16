@@ -771,7 +771,7 @@ BREADCRUMB VISITAS
 <!-- 3 IMAGENES JUNTAS -->
 <div class="container-fluid">
 	<div class="row border border-dark ">
-		<div class="container-fluid">
+		<div class="container">
 			<!-- AQUI  -->
 			<div class="col-xs-12 col-sm-12 col-md-6  text-center">
 				<div class="col-sm-12 text-center" style="height:100%;border: 1px solid white;">
