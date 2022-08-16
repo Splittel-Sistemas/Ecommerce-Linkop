@@ -6,7 +6,7 @@ Mostrar errores
 
 ini_set('display_errors', 1);
 ini_set("log_errors", 1);
-ini_set("error_log",  "D:/xampp/htdocs/modo-desarrollo/frontend/php_error_log");
+ini_set("error_log",  "./php_error_log");
 
 
 require_once "controladores/plantilla.controlador.php";
