@@ -358,7 +358,7 @@ VENTANA MODAL PARA CHECKOUT
 									<p class="ccv"></p>
 								</div>
 							</div>
-							<p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
+							<!-- <p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p> -->
 							<!-- 	<a href="#" class="link-banco">www.tubanco.com</a> -->
 						</div>
 					</section>
