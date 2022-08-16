@@ -91,7 +91,7 @@ BANNER
 			<div class="col-lg-12 text-center">
 				<h2 style="color:#000000">
 					<span class="ion-minus"></span>
-					Garantía de devolución:
+					Garantía de devolución 
 					<span class="ion-minus"></span>
 				</h2>
 			</div>
@@ -122,7 +122,8 @@ BANNER
 				<div class="card-header" id="headingOne">
 					<h2 class="mb-0">
 						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-							Costos de envío son estándar para toda la República Mexicana:
+							Costos de envío son estándar para toda la República Mexicana &nbsp;<i class="fa fa-sort" aria-hidden="true"></i>
+
 
 						</button>
 					</h2>
@@ -139,7 +140,8 @@ BANNER
 				<div class="card-header" id="heading4">
 					<h2 class="mb-0">
 						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-							Reclamos
+							Reclamos &nbsp;<i class="fa fa-sort" aria-hidden="true"></i>
+
 
 						</button>
 					</h2>

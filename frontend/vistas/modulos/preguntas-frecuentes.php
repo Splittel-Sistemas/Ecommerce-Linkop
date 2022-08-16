@@ -102,7 +102,7 @@ BANNER
 				<div class="card-header" id="headingOne">
 					<h2 class="mb-0">
 						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-							¿Cómo puedo comprar?
+							¿Cómo puedo comprar?  &nbsp;<i class="fa fa-sort" aria-hidden="true"></i>
 						</button>
 					</h2>
 				</div>
@@ -121,7 +121,7 @@ BANNER
 				<div class="card-header" id="heading4">
 					<h2 class="mb-0">
 						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-						¿Cómo compro como invitado?
+						¿Cómo compro como invitado? &nbsp;<i class="fa fa-sort" aria-hidden="true"></i>
 
 						</button>
 					</h2>
@@ -140,7 +140,7 @@ BANNER
 				<div class="card-header" id="headingTwo">
 					<h2 class="mb-0">
 						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-							¿Qué pasa si mi producto no llega?
+							¿Qué pasa si mi producto no llega? &nbsp;<i class="fa fa-sort" aria-hidden="true"></i>
 						</button>
 					</h2>
 				</div>
@@ -156,7 +156,7 @@ BANNER
 				<div class="card-header" id="heading5">
 					<h2 class="mb-0">
 						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-						¿Qué pasa si mi producto llega dañado?						</button>
+						¿Qué pasa si mi producto llega dañado?		 &nbsp;<i class="fa fa-sort" aria-hidden="true"></i>				</button>
 					</h2>
 				</div>
 				<div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionExample">
@@ -169,7 +169,9 @@ BANNER
 				<div class="card-header" id="headingThree">
 					<h2 class="mb-0">
 						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-							¿Cuánto cuesta mi envío si compro menos de $500 pesos?
+							¿Cuánto cuesta mi envío si compro menos de $500 pesos? &nbsp;<i class="fa fa-sort" aria-hidden="true"></i>
+
+
 						</button>
 					</h2>
 				</div>

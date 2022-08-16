@@ -100,7 +100,10 @@ BANNER
 		<div class="row text-center">
 				<ul class="list-group list-group-horizontal">
 					<li class="list-group-item">Pay Pal</li>
+					<br>
 					<li class="list-group-item">Open Pay</li>
+					<br>
+
 					<li class="list-group-item">Conekta</li>
 				</ul>
 			
