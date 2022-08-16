@@ -21,7 +21,7 @@ BANNER
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">  -->
 
 <style>
-/* 	@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800); */
+	/* 	@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800); */
 
 	section {
 		padding: 60px 0px;
@@ -91,32 +91,32 @@ BANNER
 			<div class="col-lg-12 text-center">
 				<h2 style="color:#000000">
 					<span class="ion-minus"></span>
-          Garantías y envíos:
-<span class="ion-minus"></span>
+					Garantías y envíos:
+					<span class="ion-minus"></span>
 				</h2>
 			</div>
 		</div>
 
 		<div class="row">
-			<div id="slider" class="carousel slide" data-ride="carousel">
+			<div id="slider" class="col-md-12" data-ride="carousel">
 				<!-- <ol class="carousel-indicators">
 					<li data-target="#slider" data-slide-to="1" class="active"></li>
 					<li data-target="#slider" data-slide-to="0"></li>
 				</ol> -->
 
-        En LINK OP estamos comprometidos contigo, por ello cada uno de nuestros productos es evaluado bajo un estricto de régimen de normas y control de calidad. Sin embargo, sabemos que las excepciones pasan y por ello hemos creado un protocolo de devolución en caso de que exista algún desperfecto en tu producto.
-En este caso el origen radica cuando en su trayecto hacia tú hogar, nos haremos responsables de reponer de forma integral el producto para garantizar tu satisfacción (excepto en los casos cuando la impresión del etiquetado y embalaje.
+				En LINK OP estamos comprometidos contigo, por ello cada uno de nuestros productos es evaluado bajo un estricto de régimen de normas y control de calidad. Sin embargo, sabemos que las excepciones pasan y por ello hemos creado un protocolo de devolución en caso de que exista algún desperfecto en tu producto.
+				En este caso el origen radica cuando en su trayecto hacia tú hogar, nos haremos responsables de reponer de forma integral el producto para garantizar tu satisfacción (excepto en los casos cuando la impresión del etiquetado y embalaje.
 
 
 			</div>
 
-		
+
 		</div>
 	</div>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
+	<br><br><br>
+	<br><br><br>
+	<br><br><br>
+	<br><br><br>
 
 	</div>
 </section>

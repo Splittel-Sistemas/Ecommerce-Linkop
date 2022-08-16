@@ -98,7 +98,7 @@ BANNER
 		</div>
 
 		<div class="row">
-			<div id="slider" class="carousel slide" data-ride="carousel">
+			<div id="slider" class="col-md-12" data-ride="carousel">
 				<!-- <ol class="carousel-indicators">
 					<li data-target="#slider" data-slide-to="1" class="active"></li>
 					<li data-target="#slider" data-slide-to="0"></li>
@@ -116,13 +116,13 @@ BANNER
 		</div>
 
 
-		<div class="accordion text-center" id="accordionExample">
+		<div class="accordion text-center col-md-12" id="accordionExample">
 
 			<div class="card">
 				<div class="card-header" id="headingOne">
 					<h2 class="mb-0">
-						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-							Costos de envío son estándar para toda la República Mexicana &nbsp;<i class="fa fa-sort" aria-hidden="true"></i>
+						<button class="btn btn-link collapsed text-center col-md-4" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+							Costos de envío son estándar para toda la República Mexicana<i class="fa fa-sort" aria-hidden="true"></i>
 
 
 						</button>

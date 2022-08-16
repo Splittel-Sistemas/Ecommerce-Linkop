@@ -37,6 +37,7 @@ FOOTER
 
 
 			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 formContacto  text-center">
+			<br>
 				<ul>
 					<li>
 						<!-- 	<a target="_blank" href="https://api.whatsapp.com/send?phone=+526692710170&amp;text=%C2%A1Hola! Me gustario obtener informacion sobre Linkop">

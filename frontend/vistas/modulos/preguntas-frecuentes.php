@@ -169,7 +169,7 @@ BANNER
 				<div class="card-header" id="headingThree">
 					<h2 class="mb-0">
 						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-							¿Cuánto cuesta mi envío si compro menos de $500 pesos? &nbsp;<i class="fa fa-sort" aria-hidden="true"></i>
+							¿Cuánto cuesta mi envío si compro menos de $500 pesos? <i class="fa fa-sort" aria-hidden="true"></i>
 
 
 						</button>
