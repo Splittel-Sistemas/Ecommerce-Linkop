@@ -117,6 +117,25 @@ BANNER
 		}
 	}
 </style>
+<!-- <style>.whatsapp {
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:80px;
+  left:40px;
+  background-color:#000F33;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:30px;
+  z-index:100;
+}
+
+.whatsapp-icon {
+  margin-top:13px;
+}</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<a href="https://wa.me/526692710170?text=Me%20gustaría%20saber%20el%20precio" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a> -->
 <?php
 
 $servidor = Ruta::ctrRutaServidor();
