@@ -830,7 +830,7 @@ BREADCRUMB VISITAS
 
 					<article id="3685" class="location-listing">
 
-						<a class="location-title" href="<?php echo $url; ?>hubs-y-adaptadores" style="color: white;">
+						<a class="location-title" href="<?php echo $url; ?>hubs" style="color: white;">
 						HUBS Y ADAPTADORES </a>
 
 						<div class="location-image">
