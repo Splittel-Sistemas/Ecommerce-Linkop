@@ -350,7 +350,7 @@ MODAL AGREGAR PRODUCTO
               </div>
 
               <div class="col-xs-9">
-                <input type="number" class="form-control input-lg cantidad" min="0" step="any">
+                <input type="number" class="form-control input-lg cantidad" min="0" step="any" required>
               </div>
 
             </div>
@@ -543,7 +543,7 @@ MODAL AGREGAR PRODUCTO
 
                 <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                <input type="number" class="form-control input-lg precio" min="0" step="any">
+                <input type="number" class="form-control input-lg precio" min="0" step="any required">
 
               </div>
 
@@ -1370,7 +1370,7 @@ MODAL EDITAR PRODUCTO
             <div class="form-group row">
 
               <div class="col-xs-3">
-                <input class="form-control input-lg" type="text" value="Cantidad">
+                <input class="form-control input-lg" type="text" value="Cantidad" readonly>
               </div>
 
               <div class="col-xs-9 editarCantidad">
