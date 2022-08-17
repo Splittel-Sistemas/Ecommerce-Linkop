@@ -1,5 +1,0 @@
-LOGIN BACKEND 
-
-ADMINISTRADOR:
-email: admin@tiendavirtual.com	
-contraseña: admin123
