@@ -92,11 +92,40 @@ REDES SOCIALES
 .twitterBlanco{
 	color:white;
 }
-
+.twitterBlanco{
+	color:white;
+}
 .twitterNegro{
 	color:black;
 }
+/*whatsapp PLUS*/
 
+.whatsappColor{
+	color:white;
+	background:#d71617;
+}
+
+.whatsappBlanco{
+	color:white;
+}
+
+.whatsappNegro{
+	color:black;
+}
+/*whatsapp PLUS*/
+
+.whatsappColor{
+	color:white;
+	background:#d71617;
+}
+
+.whatsappBlanco{
+	color:white;
+}
+
+.whatsappNegro{
+	color:black;
+}
 /*GOOGLE PLUS*/
 
 .googleColor{
@@ -111,7 +140,6 @@ REDES SOCIALES
 .googleNegro{
 	color:black;
 }
-
 /*INSTAGRAM*/
 
 .instagramColor{
