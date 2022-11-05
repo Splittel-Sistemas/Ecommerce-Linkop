@@ -90,7 +90,8 @@
         underline: false
       },
       images_upload_handler: example_image_upload_handler,
-
+      relative_urls: false,
+    remove_script_host: false,
       tinycomments_mode: 'embedded',
       tinycomments_author: 'Supervisor',
       table_toolbar: "tableprops cellprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol",
