@@ -26,8 +26,8 @@ MyConekta::oxxo($amount, $email,$descriptions,$name, $phone,$idproductos,$cantid
 
 class MyConekta {
 	
-	public static $api_key = 'key_uIXUFhVCmt9XmHtDynXtMK';//CONEKTA MODO PRUEBAS
-	/* public static $api_key = 'key_8Z1zbrraXkv7WMtbednE6L'; */ //CONEKTA MODO PRODUCCION
+	/* public static $api_key = 'key_uIXUFhVCmt9XmHtDynXtMK';//CONEKTA MODO PRUEBAS */
+	public static $api_key = 'key_8Z1zbrraXkv7WMtbednE6L'; //CONEKTA MODO PRODUCCION
 
 	public static $description = 'Donation';	
 	public static $currency = 'mxn';	
